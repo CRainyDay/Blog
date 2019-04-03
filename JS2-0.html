@@ -214,7 +214,7 @@
       <div class="article-entry" itemprop="articleBody">
         <p>JS的Object类型</p>
 <a id="more"></a>
-<h1 id="Object对象"><a href="#Object对象" class="headerlink" title="Object对象"></a>Object对象</h1><p>Object类型, 我们也称为一个对象. 是JavaScript中的引用数据类型.</p>
+<h1 id="一-Object对象"><a href="#一-Object对象" class="headerlink" title="一.Object对象"></a>一.Object对象</h1><p>Object类型, 我们也称为一个对象. 是JavaScript中的引用数据类型.</p>
 <ul>
 <li>它是一种复合值, 它将很多值聚合到一起, 可以通过名字访问这些值.</li>
 <li>对象也可以看做是属性的无序集合, 每个属性都是一个名/值对.</li>
@@ -222,7 +222,7 @@
 <li>除了字符串、数字、true、false、null和undefined之外, JS中的值都是对象.</li>
 <li>对象可以说是对一些名值对的封装</li>
 </ul>
-<h2 id="对象的分类"><a href="#对象的分类" class="headerlink" title="对象的分类:"></a>对象的分类:</h2><ol>
+<h2 id="A-对象的分类"><a href="#A-对象的分类" class="headerlink" title="A.对象的分类:"></a>A.对象的分类:</h2><ol>
 <li>内建对象: 由ES标准制定的对象, 在任何ES的实现中都能使用</li>
 </ol>
 <ul>
@@ -237,17 +237,17 @@
 <ol start="3">
 <li>自定义对象(最难): 由开发人员自己创建的对象</li>
 </ol>
-<h3 id="创建自定义对象"><a href="#创建自定义对象" class="headerlink" title="创建自定义对象"></a>创建自定义对象</h3><p>访问属性的两种方式:</p>
+<h1 id="二-创建自定义对象"><a href="#二-创建自定义对象" class="headerlink" title="二.创建自定义对象"></a>二.创建自定义对象</h1><p>访问属性的两种方式:</p>
 <ul>
 <li>用 . 访问: 对象.属性名</li>
 <li>用 [] 访问: 对象[‘属性名’], 这样操作属性更灵活, 常用于操作一些特殊的属性名</li>
 </ul>
 <p>属性名的命名方式, 建议按照标识符的规范去做; 属性值可以是任意类型的值, 甚至是一个对象.</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方式一:先创建对象, 再添加属性</span></span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">person.name = <span class="string">"孙悟空"</span>;<span class="comment">//添加name属性</span></span><br><span class="line">person.age = <span class="number">18</span>;<span class="comment">//添加age属性</span></span><br><span class="line">person.name = <span class="string">"牛魔王"</span>;<span class="comment">//修改属性</span></span><br><span class="line"><span class="keyword">delete</span> person.name;<span class="comment">//删除属性</span></span><br><span class="line"><span class="built_in">console</span>.log(person.name);<span class="comment">//读取属性, 如果读取不到对象的属性会返回undefined</span></span><br><span class="line"><span class="comment">//方式二:创建对象的同时添加属性, 这种叫做对象字面量</span></span><br><span class="line"><span class="keyword">var</span> sex = <span class="string">"男"</span>;</span><br><span class="line"><span class="keyword">var</span> person1 = &#123;</span><br><span class="line">    name: <span class="string">"孙悟空"</span>,</span><br><span class="line">    age: <span class="number">18</span>,</span><br><span class="line">    <span class="string">"123"</span>: <span class="number">789</span><span class="comment">//最后一个属性后一定不能加逗号</span></span><br><span class="line">&#125;;</span><br><span class="line">person1[sex] = sex;</span><br><span class="line"><span class="built_in">console</span>.log(person1[sex]);</span><br><span class="line"><span class="keyword">var</span> index = <span class="string">'123'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(person1[<span class="string">'123'</span>]);<span class="comment">//person1.123是不允许的</span></span><br><span class="line"><span class="built_in">console</span>.log(person1[index]);<span class="comment">//与person1['123']等价</span></span><br></pre></td></tr></table></figure>
-<h2 id="in运算符"><a href="#in运算符" class="headerlink" title="in运算符"></a>in运算符</h2><p>通过该运算符检查对象是否有某个属性, 有则返回true, 没有返回false.</p>
+<h1 id="三-in运算符"><a href="#三-in运算符" class="headerlink" title="三.in运算符"></a>三.in运算符</h1><p>通过该运算符检查对象是否有某个属性, 有则返回true, 没有返回false.</p>
 <p>格式: “属性名” in object, 例:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">    name: <span class="string">"孙悟空"</span>,</span><br><span class="line">    age: <span class="number">18</span>,</span><br><span class="line">    <span class="string">"123"</span>: <span class="number">789</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"obj"</span> <span class="keyword">in</span> person);</span><br></pre></td></tr></table></figure>
-<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>基本数据类型&amp;引用数据类型</p>
+<h1 id="四-数据类型"><a href="#四-数据类型" class="headerlink" title="四.数据类型"></a>四.数据类型</h1><p>基本数据类型&amp;引用数据类型</p>
 <p>基本数据类型: Number String Boolean Null Undefined</p>
 <ul>
 <li>基本数据类型的值是无法修改的, 是不可变的.</li>
@@ -266,8 +266,8 @@
 <li>引用类型的实体(即对象)保存在堆空间, 变量中保存的实际上对象在堆内存中的地址.</li>
 <li>以上代码在内存中的情况如下:</li>
 </ul>
-<p><img src="..\..\..\..\imgs\JS\Memory.png" alt="Memory"></p>
-<h1 id="for…in语句"><a href="#for…in语句" class="headerlink" title="for…in语句"></a>for…in语句</h1><ul>
+<p><img src="imgs\JS\Memory.png" alt="Memory"></p>
+<h1 id="五-for…in语句"><a href="#五-for…in语句" class="headerlink" title="五.for…in语句"></a>五.for…in语句</h1><ul>
 <li>在开发过程中, 我们往往会使用别人给我们提供好的对象</li>
 <li>但我们不知道对象里有什么属性</li>
 <li>这时就用到了for…in语句来遍历对象的属性</li>
@@ -281,10 +281,10 @@
             <hr>
             <div class="new-meta-box">
               
-                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-02T21:13:41+08:00">
+                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-03T13:09:18+08:00">
                   <a class="notlink">
                     <i class="fas fa-save" aria-hidden="true"></i>
-                    2019-04-02
+                    2019-04-03
                   </a>
                 </div>
               
@@ -433,7 +433,7 @@
 </header>
 
     <div class="content material">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Object对象"><span class="toc-text">Object对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对象的分类"><span class="toc-text">对象的分类:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建自定义对象"><span class="toc-text">创建自定义对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#in运算符"><span class="toc-text">in运算符</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据类型"><span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#for…in语句"><span class="toc-text">for…in语句</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-Object对象"><span class="toc-text">一.Object对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#A-对象的分类"><span class="toc-text">A.对象的分类:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-创建自定义对象"><span class="toc-text">二.创建自定义对象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三-in运算符"><span class="toc-text">三.in运算符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四-数据类型"><span class="toc-text">四.数据类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五-for…in语句"><span class="toc-text">五.for…in语句</span></a></li></ol>
     </div>
   </section>
 
@@ -702,8 +702,6 @@
     </div>
   
   <br>
-  <!-- <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
-</div> -->
   <div style="color:rgb(27, 195, 251);"><p>本博客所有文章除特别声明外，均采用[<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">(CC BY-NC-SA 4.0)</a>]许可协议。转载请注明出处！</p></div>
   <div style="color:rgb(27, 195, 251);" id="sitetime"></div>
   <div style="color:rgb(27, 195, 251);">本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" style="color:rgb(27, 195, 251);" class="codename">Material X</a> 作为主题，总访问量为 <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
@@ -758,6 +756,14 @@
 
   <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
 
+
+  <!-- fastclick -->
+  <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+  </script>
 
 
 

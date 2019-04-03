@@ -207,8 +207,7 @@
         <p>static关键字<br>main()方法<br>代码块<br>final</p>
 <a id="more"></a>
 <h1 id="一-static"><a href="#一-static" class="headerlink" title="一.static"></a>一.static</h1><p>static: 静态的, 可以用来修饰<font style="color:red;font-weight:bold;">属性、方法、*代码块(或初始化块)、*内部类</font></p>
-<p>A.static修饰属性(类变量):</p>
-<ol>
+<h2 id="A-static修饰属性-类变量"><a href="#A-static修饰属性-类变量" class="headerlink" title="A.static修饰属性(类变量):"></a>A.static修饰属性(类变量):</h2><ol>
 <li>由类创建的所有的对象，都共用这一个属性</li>
 <li>当其中一个对象对此属性进行修改, 会导致其他对象对此属性调用时也会更改. vs 实例变量(非static修饰的属性, 各个对象各自拥有一套副本)</li>
 <li>类变量随着类的加载而加载的, 而且独一份</li>
@@ -216,8 +215,7 @@
 <li>类变量的加载是要早于对象. 所以当有对象以后, 可以“对象.类变量”使用. 但是”类.实例变量”是不行的.</li>
 <li>类变量存在于内存的静态域中.</li>
 </ol>
-<p>B.static修饰方法(类方法):</p>
-<ol>
+<h2 id="B-static修饰方法-类方法"><a href="#B-static修饰方法-类方法" class="headerlink" title="B.static修饰方法(类方法):"></a>B.static修饰方法(类方法):</h2><ol>
 <li>随着类的加载而加载, 在内存中也是独一份</li>
 <li>可以直接通过“类.类方法”的方式调用</li>
 <li><strong>方法内部可以调用静态的属性或静态的方法, 而不能调用非静态的属性或方法</strong>. 反之, 非静态的方法是可以调用静态的属性或静态的方法. <font style="color:red;font-weight:bold;">静态的方法内是不可以有this或super关键字的!</font></li>
@@ -229,8 +227,8 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Test&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String []args)</span></span>&#123;</span><br><span class="line">        SportsMan s1 = <span class="keyword">new</span> SportsMan(<span class="string">"金龙"</span>,<span class="number">23</span>);</span><br><span class="line">        SportsMan s2 = <span class="keyword">new</span> SportsMan(<span class="string">"银龙"</span>,<span class="number">20</span>);</span><br><span class="line">        s1.setName(<span class="string">"花龙"</span>);</span><br><span class="line">        s1.nation = <span class="string">"China"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SportsMan</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String nation;</span><br><span class="line">    SportsMan()&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    SportsMan(String name,<span class="keyword">int</span> age)&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </div></div>
-<p><img src="..\..\..\..\imgs\Java\static.png" alt="static"></p>
-<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p>23种设计模式</p>
+<p><img src="imgs\Java\static.png" alt="static"></p>
+<h2 id="C-单例模式"><a href="#C-单例模式" class="headerlink" title="C.单例模式"></a>C.单例模式</h2><p>23种设计模式</p>
 <ul>
 <li>单例模式(Singleton): 即<font style="color:red;font-weight:bold;">类只能创建一个对象</font>, Runtime类就是一个单例模式的应用</li>
 <li>解决的问题: 如何只让设计的类只能创建一个对象</li>
@@ -242,10 +240,7 @@
 <li>一个public static的方法, 获得该(单例)对象</li>
 <li>要求该对象也为static的</li>
 </ol>
-<div><div class="fold_hider"><div class="close hider_title">点击显/隐内容</div></div><div class="fold">
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//饿汉式1</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bank</span></span>&#123;</span><br><span class="line">	<span class="comment">//1.私有化构造器</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">Bank</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">	<span class="comment">//2.创建类的对象，同时设置为private的，通过公共的来调用，体现封装性</span></span><br><span class="line">	<span class="comment">//4.要求此对象也为static的</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Bank instance = <span class="keyword">new</span> Bank();</span><br><span class="line">	<span class="comment">//3.此公共的方法，必须为static </span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Bank <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> instance;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//饿汉式2</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bank</span></span>&#123;</span><br><span class="line">	<span class="comment">//1.私有化构造器</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">Bank</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">	<span class="comment">//2.创建类的对象，同时设置为private的，通过公共的来调用，体现封装性</span></span><br><span class="line">	<span class="comment">//4.要求此对象也为static的</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Bank instance = <span class="keyword">null</span>;</span><br><span class="line">	<span class="keyword">static</span>&#123;</span><br><span class="line">		instance  = <span class="keyword">new</span> Bank();	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//3.此公共的方法，必须为static </span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Bank <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> instance;	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//懒汉式</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bank</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">Bank</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Bank instance = <span class="keyword">null</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Bank <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(instance == <span class="keyword">null</span>)&#123;<span class="comment">//可能存在线程安全问题的!</span></span><br><span class="line">			instance = <span class="keyword">new</span> Bank();	</span><br><span class="line">		&#125;	</span><br><span class="line">		<span class="keyword">return</span> instance;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</div></div>
 <h1 id="二-main"><a href="#二-main" class="headerlink" title="二.main()"></a>二.main()</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">     <span class="comment">//方法体     </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol>
 <li>main()是一个方法, 是主方法, 为程序的入口</li>
@@ -262,14 +257,14 @@
 <li>作用: 用来初始化类的属性</li>
 <li>分类: 只能用static来修饰.</li>
 </ul>
-<h2 id="静态代码块"><a href="#静态代码块" class="headerlink" title="静态代码块"></a>静态代码块</h2><ol>
+<h2 id="A-静态代码块"><a href="#A-静态代码块" class="headerlink" title="A.静态代码块"></a>A.静态代码块</h2><ol>
 <li>里面可以有输出语句</li>
 <li>随着类的加载而加载，而且只被加载一次</li>
 <li>多个静态代码块之间按照顺序结构执行</li>
 <li>静态代码块的执行要早于非静态代码块的执行.</li>
 <li>静态的代码块中只能执行静态的结构(类属性, 类方法)</li>
 </ol>
-<h2 id="非静态代码块"><a href="#非静态代码块" class="headerlink" title="非静态代码块"></a>非静态代码块</h2><ol>
+<h2 id="B-非静态代码块"><a href="#B-非静态代码块" class="headerlink" title="B.非静态代码块"></a>B.非静态代码块</h2><ol>
 <li>可以对类的属性(静态的 &amp; 非静态的)进行初始化操作, 同时也可以调用本类声明的方法(静态的 &amp; 非静态的)</li>
 <li>里面可以有输出语句</li>
 <li>一个类中可以有多个非静态的代码块, 多个代码块之间按照顺序结构执行</li>
@@ -292,10 +287,10 @@
             <hr>
             <div class="new-meta-box">
               
-                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-02T21:13:41+08:00">
+                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-03T12:59:06+08:00">
                   <a class="notlink">
                     <i class="fas fa-save" aria-hidden="true"></i>
-                    2019-04-02
+                    2019-04-03
                   </a>
                 </div>
               
@@ -444,7 +439,7 @@
 </header>
 
     <div class="content material">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-static"><span class="toc-text">一.static</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#单例模式"><span class="toc-text">单例模式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-main"><span class="toc-text">二.main()</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三-代码块"><span class="toc-text">三.代码块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#静态代码块"><span class="toc-text">静态代码块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#非静态代码块"><span class="toc-text">非静态代码块</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四-final"><span class="toc-text">四.final</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-static"><span class="toc-text">一.static</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#A-static修饰属性-类变量"><span class="toc-text">A.static修饰属性(类变量):</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B-static修饰方法-类方法"><span class="toc-text">B.static修饰方法(类方法):</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-单例模式"><span class="toc-text">C.单例模式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-main"><span class="toc-text">二.main()</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三-代码块"><span class="toc-text">三.代码块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#A-静态代码块"><span class="toc-text">A.静态代码块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B-非静态代码块"><span class="toc-text">B.非静态代码块</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四-final"><span class="toc-text">四.final</span></a></li></ol>
     </div>
   </section>
 
@@ -713,8 +708,6 @@
     </div>
   
   <br>
-  <!-- <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
-</div> -->
   <div style="color:rgb(27, 195, 251);"><p>本博客所有文章除特别声明外，均采用[<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">(CC BY-NC-SA 4.0)</a>]许可协议。转载请注明出处！</p></div>
   <div style="color:rgb(27, 195, 251);" id="sitetime"></div>
   <div style="color:rgb(27, 195, 251);">本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" style="color:rgb(27, 195, 251);" class="codename">Material X</a> 作为主题，总访问量为 <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
@@ -769,6 +762,14 @@
 
   <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
 
+
+  <!-- fastclick -->
+  <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+  </script>
 
 
 

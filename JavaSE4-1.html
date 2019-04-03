@@ -215,9 +215,7 @@
         <p>面向对象特征二:继承性<br>方法的<font style="color:red;font-weight:bold;">重写</font><br>super关键字<br>子类对象的实例化过程</p>
 <a id="more"></a>
 <h1 id="一-继承性"><a href="#一-继承性" class="headerlink" title="一.继承性"></a>一.继承性</h1><p>1.为什么要有继承性:<br>&emsp;&emsp;有一些东西拥有某些公共的特性, 将他们相同的部分抽取出来放在一起, <font style="color:red;font-weight:bold;">方便代码的复用与修改</font><br>2.通过”<font style="color:red;font-weight:bold;">class A extends B</font>“类实现类的继承:<br>&emsp;&emsp;子类: A; 父类(或基类SuperClass): B<br>3.子类继承父类以后, 父类中声明的属性、方法, 子类就可以获取到.<br>&emsp;&emsp;明确: 当父类中有私有的属性或方法时, 子类同样可以获取得到, 只是由于封装性的设计, 使得<font style="color:red;font-weight:bold;">子类不可以直接<br>调用</font>罢了.<br>&emsp;&emsp;子类除了通过继承, 获取父类的结构之外, 还可以定义自己的特有的成分.<br>extends:子类是对父类功能的“扩展”, 明确子类不是父类的子集.<br>4.Java中类的继承性<font style="color:red;font-weight:bold;">只支持单继承</font>: 一个类只能继承一个父类. 反之, 一个父类可以有多个子类.<br>5.子父类是相对的概念.</p>
-<h1 id="二-orverwrite-or-override"><a href="#二-orverwrite-or-override" class="headerlink" title="二.orverwrite or override"></a>二.orverwrite or override</h1><font style="color:red;font-weight:bold;">方法的重载与重写的区别?</font>
-
-<p><strong>重载</strong>: “两同一不同”: 同一个类, 同一个方法名, 不同的参数列表. 注: 方法的重载与方法的返回值无关!<br>构造器也是可以重载的<br><strong>重写</strong>: (前提: 在继承的基础之上, 子类在获取了父类的结构以后, 可以对父类中同名的方法进行“重构”)</p>
+<h1 id="二-orverwrite-or-override"><a href="#二-orverwrite-or-override" class="headerlink" title="二.orverwrite or override"></a>二.orverwrite or override</h1><h2 id="方法的重载与重写的区别"><a href="#方法的重载与重写的区别" class="headerlink" title="方法的重载与重写的区别?"></a><font style="color:red;font-weight:bold;">方法的重载与重写的区别?</font></h2><p><strong>重载</strong>: “两同一不同”: 同一个类, 同一个方法名, 不同的参数列表. 注: 方法的重载与方法的返回值无关!<br>构造器也是可以重载的<br><strong>重写</strong>: (前提: 在继承的基础之上, 子类在获取了父类的结构以后, 可以对父类中同名的方法进行“重构”)</p>
 <ul>
 <li>方法的返回值, 方法名, 形参列表形同;</li>
 <li><font style="color:red;font-weight:bold;">权限修饰符不小于父类的同名方法;</font></li>
@@ -230,10 +228,7 @@
 <h1 id="四-子类对象的实例化"><a href="#四-子类对象的实例化" class="headerlink" title="四.子类对象的实例化"></a>四.子类对象的实例化</h1><font style="color:red;font-weight:bold;">先构建(调用父类的构造器构建)父类的内容, 再构建子类的内容</font>
 
 <p>为了直观的理解, 可以运行一下代码, 看输出的结果:</p>
-<div><div class="fold_hider"><div class="close hider_title">点击显/隐内容</div></div><div class="fold">
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//子类对象实例化的全过程</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDog</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Dog d = <span class="keyword">new</span> Dog();</span><br><span class="line">		d.setAge(<span class="number">10</span>);</span><br><span class="line">		d.setName(<span class="string">"小明"</span>);</span><br><span class="line">		d.setHostName(<span class="string">"花花"</span>);</span><br><span class="line">		System.out.println(<span class="string">"name:"</span> + d.getName() + <span class="string">" age:"</span> + d.getAge()</span><br><span class="line">				+ <span class="string">" hostName:"</span> + d.getHostName());		</span><br><span class="line">		System.out.println(d.toString());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 生物</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Creator</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Creator</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>();</span><br><span class="line">		System.out.println(<span class="string">"this is Creator's constructor"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 动物类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span> <span class="keyword">extends</span> <span class="title">Creator</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Animal</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>();</span><br><span class="line">		System.out.println(<span class="string">"this is Animal's constructor"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 狗</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String hostName;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getHostName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> hostName;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setHostName</span><span class="params">(String hostName)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.hostName = hostName;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Dog</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>();</span><br><span class="line">		System.out.println(<span class="string">"this is Dog's constructor"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</div></div>
 <p>输出结果为:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span> is Creator<span class="string">'s constructor</span></span><br><span class="line"><span class="string">this is Animal'</span>s constructor</span><br><span class="line"><span class="keyword">this</span> is Dog<span class="string">'s constructor</span></span><br><span class="line"><span class="string">name:小明 age:10 hostName:花花</span></span><br><span class="line"><span class="string">Dog类的对象dd在堆空间内的信息</span></span><br></pre></td></tr></table></figure>
 
@@ -243,10 +238,10 @@
             <hr>
             <div class="new-meta-box">
               
-                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-02T21:13:41+08:00">
+                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-03T12:53:41+08:00">
                   <a class="notlink">
                     <i class="fas fa-save" aria-hidden="true"></i>
-                    2019-04-02
+                    2019-04-03
                   </a>
                 </div>
               
@@ -395,7 +390,7 @@
 </header>
 
     <div class="content material">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-继承性"><span class="toc-text">一.继承性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-orverwrite-or-override"><span class="toc-text">二.orverwrite or override</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三-super"><span class="toc-text">三.super</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四-子类对象的实例化"><span class="toc-text">四.子类对象的实例化</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-继承性"><span class="toc-text">一.继承性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-orverwrite-or-override"><span class="toc-text">二.orverwrite or override</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#方法的重载与重写的区别"><span class="toc-text">方法的重载与重写的区别?</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三-super"><span class="toc-text">三.super</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四-子类对象的实例化"><span class="toc-text">四.子类对象的实例化</span></a></li></ol>
     </div>
   </section>
 
@@ -664,8 +659,6 @@
     </div>
   
   <br>
-  <!-- <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
-</div> -->
   <div style="color:rgb(27, 195, 251);"><p>本博客所有文章除特别声明外，均采用[<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">(CC BY-NC-SA 4.0)</a>]许可协议。转载请注明出处！</p></div>
   <div style="color:rgb(27, 195, 251);" id="sitetime"></div>
   <div style="color:rgb(27, 195, 251);">本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" style="color:rgb(27, 195, 251);" class="codename">Material X</a> 作为主题，总访问量为 <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
@@ -720,6 +713,14 @@
 
   <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
 
+
+  <!-- fastclick -->
+  <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+  </script>
 
 
 

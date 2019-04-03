@@ -212,18 +212,17 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <h1 id="面向对象的初步认识"><a href="#面向对象的初步认识" class="headerlink" title="面向对象的初步认识"></a>面向对象的初步认识</h1><a id="more"></a>
-<p>1.(了解)面向对象vs面向过程, 例:实现人把大象装进冰箱</p>
+        <h1 id="一-面向对象的初步认识"><a href="#一-面向对象的初步认识" class="headerlink" title="一.面向对象的初步认识"></a>一.面向对象的初步认识</h1><a id="more"></a>
+<h3 id="1-了解-面向对象vs面向过程"><a href="#1-了解-面向对象vs面向过程" class="headerlink" title="1.(了解)面向对象vs面向过程"></a>1.(了解)面向对象vs面向过程</h3><p>例:实现人把大象装进冰箱</p>
 <p>面向对象:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 人</span>&#123;<span class="comment">//可以这么理解</span></span><br><span class="line">    open()&#123;<span class="comment">//打开冰箱</span></span><br><span class="line">    &#125;</span><br><span class="line">    put()&#123;<span class="comment">//将大象放进冰箱</span></span><br><span class="line">    &#125;</span><br><span class="line">    close()&#123;<span class="comment">//关闭冰箱</span></span><br><span class="line">    &#125;</span><br><span class="line">    main()&#123;</span><br><span class="line">        人 = <span class="keyword">new</span> 人();</span><br><span class="line">        人.open();</span><br><span class="line">        人.put();</span><br><span class="line">        人.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>面向过程:①人打开冰箱;②将大象放进冰箱;③关闭冰箱</p>
-<p>2.面向对象的编程关注于类的设计!<br>1）一个项目或工程, 不管多庞大, 一定是有一个一个类构成的.<br>2）类是抽象的, 好比是制造汽车的图纸.而具体的一辆一辆的车, 是根据图纸制造的, 实际上就是类的实例化</p>
-<p>3.完成一个项目(或功能)的思路<br>1）所要完成的功能对应的类的对象是否存在.<br>2）若存在, 则通过对象直接调用对应的类中的属性或方法即可.<br>3）若不存在, 需要创建类的对象.甚至说, 类都不存在, 就需要设计类.</p>
-<p>4.面向对象编程的三条主线:<br>1）类及类的构成成分:<font style="color:red;font-weight:bold;">属性  方法 构造器  代码块 内部类</font><br>2）面向对象编程的特征:<font style="color:red;font-weight:bold;">封装性  继承性 多态性(抽象性)</font><br>3）其它的关键字:<font style="color:red;font-weight:bold;">this super package import static final abstract interface …</font></p>
-<h1 id="类及对象"><a href="#类及对象" class="headerlink" title="类及对象"></a>类及对象</h1><p>1.关于类的设计</p>
-<p>2.类的组成成分:<br>   1)属性(成员变量, Field)<br>   2)方法(成员方法, 函数, Method)</p>
-<p>2.1属性:</p>
-<h2 id="成员变量-vs-局部变量"><a href="#成员变量-vs-局部变量" class="headerlink" title="成员变量 vs 局部变量"></a><font color="black">成员变量 vs 局部变量</font></h2><p>相同点: 1.遵循变量声明的格式: 数据类型 变量名 = 初始化值 2.都有作用域</p>
+<h3 id="2-面向对象的编程关注于类的设计"><a href="#2-面向对象的编程关注于类的设计" class="headerlink" title="2.面向对象的编程关注于类的设计!"></a>2.面向对象的编程关注于类的设计!</h3><p>1）一个项目或工程, 不管多庞大, 一定是有一个一个类构成的.<br>2）类是抽象的, 好比是制造汽车的图纸.而具体的一辆一辆的车, 是根据图纸制造的, 实际上就是类的实例化</p>
+<h3 id="3-完成一个项目-或功能-的思路"><a href="#3-完成一个项目-或功能-的思路" class="headerlink" title="3.完成一个项目(或功能)的思路"></a>3.完成一个项目(或功能)的思路</h3><p>1）所要完成的功能对应的类的对象是否存在.<br>2）若存在, 则通过对象直接调用对应的类中的属性或方法即可.<br>3）若不存在, 需要创建类的对象.甚至说, 类都不存在, 就需要设计类.</p>
+<h3 id="4-面向对象编程的三条主线"><a href="#4-面向对象编程的三条主线" class="headerlink" title="4.面向对象编程的三条主线:"></a>4.面向对象编程的三条主线:</h3><p>1）类及类的构成成分:<font style="color:red;font-weight:bold;">属性  方法 构造器  代码块 内部类</font><br>2）面向对象编程的特征:<font style="color:red;font-weight:bold;">封装性  继承性 多态性(抽象性)</font><br>3）其它的关键字:<font style="color:red;font-weight:bold;">this super package import static final abstract interface …</font></p>
+<h1 id="二-类及对象"><a href="#二-类及对象" class="headerlink" title="二.类及对象"></a>二.类及对象</h1><p>1.关于类的设计</p>
+<h2 id="2-类的组成成分"><a href="#2-类的组成成分" class="headerlink" title="2.类的组成成分:"></a>2.类的组成成分:</h2><p>   1)属性(成员变量, Field)<br>   2)方法(成员方法, 函数, Method)</p>
+<h3 id="2-1属性"><a href="#2-1属性" class="headerlink" title="2.1属性:"></a>2.1属性:</h3><h2 id="成员变量-vs-局部变量"><a href="#成员变量-vs-局部变量" class="headerlink" title="成员变量 vs 局部变量"></a><font color="black">成员变量 vs 局部变量</font></h2><p>相同点: 1.遵循变量声明的格式: 数据类型 变量名 = 初始化值 2.都有作用域</p>
 <p>不同点: 1.声明的位置的不同: 成员变量: 声明在类里, 方法外; 局部变量: 声明在方法内, 方法的形参部分, 代码块内</p>
 <p>&emsp;&emsp;&emsp;&emsp;2.成员变量的修饰符有四个:public private protected 缺省, 局部变量没有修饰符, 与所在的方法修饰符相同</p>
 <p>&emsp;&emsp;&emsp;&emsp;3.初始化值: 一定会有初始化值, 成员变量:如果在声明的时候, 不显式的赋值, 那么不同数据类型会有不同的默认初始化值.局部变量: 一定要显式的赋值.(局部变量没有默认初始化值)</p>
@@ -240,8 +239,7 @@
 <li>1)按照数据类型的不同: 基本数据类型(8种)&amp;引用数据类型</li>
 <li>2)按照声明的位置的不同: 成员变量 &amp; 局部变量</li>
 </ul>
-<p>2.2 方法: 提供某种功能的实现</p>
-<p>1)实例:</p>
+<h3 id="2-2-方法-提供某种功能的实现"><a href="#2-2-方法-提供某种功能的实现" class="headerlink" title="2.2 方法: 提供某种功能的实现"></a>2.2 方法: 提供某种功能的实现</h3><p>1)实例:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;<span class="comment">//方法体&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String n)</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 <font style="color:red;font-weight:bold;">格式: 权限修饰符 返回值类型(void:无返回值/具体的返回值) 方法名(形参){}</font>
 
@@ -250,8 +248,8 @@
 <p>记忆: void 与return不可以同时出现一个方法内. 像一对“冤家”.</p>
 <p>3)方法内可以调用本类的其他方法或属性, 但是不能在方法内再定义方法!</p>
 <p>3.面向对象编程的思想的落地法则一:<br>1)设计并创建类及类的成分<br>2)实例化类的对象<br>3)通过“对象.属性”或”对象.方法”的形式完成某项功能</p>
-<p>4.类的初始化的内存解析<br>4.1 内存划分的结构:</p>
-<ul>
+<p>4.类的初始化的内存解析</p>
+<h3 id="4-1-内存划分的结构"><a href="#4-1-内存划分的结构" class="headerlink" title="4.1 内存划分的结构:"></a>4.1 内存划分的结构:</h3><ul>
 <li><strong>栈(stack):局部变量、对象的引用名、数组的引用名</strong></li>
 <li><strong>堆(heap):new 出来的“东西”(如: 对象的实体, 数组的实体), 含成员变量</strong></li>
 <li><strong>方法区: 含字符串常量</strong></li>
@@ -265,10 +263,10 @@
             <hr>
             <div class="new-meta-box">
               
-                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-02T21:13:41+08:00">
+                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-03T12:48:35+08:00">
                   <a class="notlink">
                     <i class="fas fa-save" aria-hidden="true"></i>
-                    2019-04-02
+                    2019-04-03
                   </a>
                 </div>
               
@@ -283,7 +281,7 @@
     <div class="-mob-share-list share-body">
       
         
-          <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer" href="http://connect.qq.com/widget/shareqq/index.html?url=http://crainyday.gitee.io/JavaSE3-1.html&title=面向对象1.1 | CRainyDay&summary=面向对象的初步认识">
+          <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer" href="http://connect.qq.com/widget/shareqq/index.html?url=http://crainyday.gitee.io/JavaSE3-1.html&title=面向对象1.1 | CRainyDay&summary=一.面向对象的初步认识">
             
               <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
             
@@ -291,7 +289,7 @@
         
       
         
-          <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://crainyday.gitee.io/JavaSE3-1.html&title=面向对象1.1 | CRainyDay&summary=面向对象的初步认识">
+          <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://crainyday.gitee.io/JavaSE3-1.html&title=面向对象1.1 | CRainyDay&summary=一.面向对象的初步认识">
             
               <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
             
@@ -299,7 +297,7 @@
         
       
         
-          <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer" href="http://service.weibo.com/share/share.php?url=http://crainyday.gitee.io/JavaSE3-1.html&title=面向对象1.1 | CRainyDay&summary=面向对象的初步认识">
+          <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer" href="http://service.weibo.com/share/share.php?url=http://crainyday.gitee.io/JavaSE3-1.html&title=面向对象1.1 | CRainyDay&summary=一.面向对象的初步认识">
             
               <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
             
@@ -417,7 +415,7 @@
 </header>
 
     <div class="content material">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#面向对象的初步认识"><span class="toc-text">面向对象的初步认识</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#类及对象"><span class="toc-text">类及对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#成员变量-vs-局部变量"><span class="toc-text">成员变量 vs 局部变量</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-面向对象的初步认识"><span class="toc-text">一.面向对象的初步认识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-了解-面向对象vs面向过程"><span class="toc-text">1.(了解)面向对象vs面向过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-面向对象的编程关注于类的设计"><span class="toc-text">2.面向对象的编程关注于类的设计!</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-完成一个项目-或功能-的思路"><span class="toc-text">3.完成一个项目(或功能)的思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-面向对象编程的三条主线"><span class="toc-text">4.面向对象编程的三条主线:</span></a></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#二-类及对象"><span class="toc-text">二.类及对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-类的组成成分"><span class="toc-text">2.类的组成成分:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1属性"><span class="toc-text">2.1属性:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#成员变量-vs-局部变量"><span class="toc-text">成员变量 vs 局部变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-方法-提供某种功能的实现"><span class="toc-text">2.2 方法: 提供某种功能的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-内存划分的结构"><span class="toc-text">4.1 内存划分的结构:</span></a></li></ol></li></ol></li>
     </div>
   </section>
 
@@ -686,8 +684,6 @@
     </div>
   
   <br>
-  <!-- <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
-</div> -->
   <div style="color:rgb(27, 195, 251);"><p>本博客所有文章除特别声明外，均采用[<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">(CC BY-NC-SA 4.0)</a>]许可协议。转载请注明出处！</p></div>
   <div style="color:rgb(27, 195, 251);" id="sitetime"></div>
   <div style="color:rgb(27, 195, 251);">本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" style="color:rgb(27, 195, 251);" class="codename">Material X</a> 作为主题，总访问量为 <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
@@ -742,6 +738,14 @@
 
   <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
 
+
+  <!-- fastclick -->
+  <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+  </script>
 
 
 

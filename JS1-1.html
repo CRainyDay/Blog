@@ -214,20 +214,20 @@
       <div class="article-entry" itemprop="articleBody">
         <p>JS基础语法</p>
 <a id="more"></a>
-<h2 id="JS注释"><a href="#JS注释" class="headerlink" title="JS注释"></a>JS注释</h2><ul>
+<h2 id="一-JS注释"><a href="#一-JS注释" class="headerlink" title="一.JS注释"></a>一.JS注释</h2><ul>
 <li>和其他高级语言差不多, 分为:</li>
 <li>多行注释: /**/</li>
 <li>单行注释: //</li>
 <li>注释中的代码不会被执行, 只能在源码中看见注释的内容</li>
 </ul>
-<h2 id="JS的变量与字面量"><a href="#JS的变量与字面量" class="headerlink" title="JS的变量与字面量"></a>JS的变量与字面量</h2><p>变量的作用是给某一个值或对象标注名称, 方便复用, 变量也用来保存字面量</p>
+<h2 id="二-JS的变量与字面量"><a href="#二-JS的变量与字面量" class="headerlink" title="二.JS的变量与字面量"></a>二.JS的变量与字面量</h2><p>变量的作用是给某一个值或对象标注名称, 方便复用, 变量也用来保存字面量</p>
 <p>字面量: 可以直接使用, 不能更改其值, 像: 123、”Hello”、1.23等</p>
 <ul>
 <li>变量的声明: 使用<font style="color:red;">var关键字声明一个变量</font>, 例: var a;</li>
 <li>变量的赋值: 使用=为变量赋值, 例: a=123;</li>
 <li>声明和赋值同时进行, 例, var a = 123;</li>
 </ul>
-<h2 id="JS标识符"><a href="#JS标识符" class="headerlink" title="JS标识符"></a>JS标识符</h2><p>所谓标识符, 就是指变量、函数、属性的名字, 或函数的参数.要求: </p>
+<h2 id="三-JS标识符"><a href="#三-JS标识符" class="headerlink" title="三.JS标识符"></a>三.JS标识符</h2><p>所谓标识符, 就是指变量、函数、属性的名字, 或函数的参数.要求: </p>
 <ul>
 <li>第一个字符必须是一个字母、下划线_或一个美元符号$.</li>
 <li>不能以数字开头, 不能是关键字或保留字</li>
@@ -236,7 +236,7 @@
 </ul>
 <p>JS底层保存标识符是用Unicode编码的</p>
 <p>命名时, 尽量见名知意, 遵守它的规则和行业规范.</p>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
+<h2 id="四-数据类型"><a href="#四-数据类型" class="headerlink" title="四.数据类型"></a>四.数据类型</h2><ul>
 <li>String(字符串型), 例: “Hello World”或’Hello World’</li>
 <li>Number(数值型), 例: 123、1.23</li>
 <li>Boolean(布尔型), 只有 true false两个取值</li>
@@ -250,7 +250,7 @@
 
 <p>用typeof运算符可以检查变量的类型, 例:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">123</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a);<span class="comment">//输出结果为:number</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="built_in">Number</span>.MAX_VALUE + <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(b);<span class="comment">//输出结果为:Infinity</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="built_in">Number</span>.MIN_VALUE;<span class="comment">//JS能表示的大于零的最小值</span></span><br><span class="line"><span class="comment">//Number有它能表示的最大值, 为Number.MAX_VALUE;</span></span><br><span class="line"><span class="comment">//当计算结果超过它时, 输出结果为:Infinity(number型)即正无穷</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"123"</span> * <span class="string">"123"</span>;</span><br><span class="line"><span class="comment">//当计算结果非数字时, 会返回一个NaN(number型)</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> str);<span class="comment">//结果为:NaN</span></span><br></pre></td></tr></table></figure>
-<h2 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h2><ul>
+<h2 id="五-强制类型转换"><a href="#五-强制类型转换" class="headerlink" title="五.强制类型转换"></a>五.强制类型转换</h2><ul>
 <li>其他类型变量转换为String, 调用变量的toString()方法, 或调用String()函数</li>
 <li>其他类型变量转换为Number, 调用Number()函数, 对于字符串还可调用parseInt()或parseFloat()函数</li>
 <li>其他类型变量转换为Boolean, 调用Boolean()函数</li>
@@ -259,7 +259,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//其他类型变量转换为String</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">123</span>;<span class="comment">//注意:当a = null;或a = undefined;时, 不能调用a.toString()方法</span></span><br><span class="line">a = a.toString();<span class="comment">//toString()方法, 无参数, 将a的内容变为string后返回</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="literal">null</span>;</span><br><span class="line">b = <span class="built_in">String</span>(b);<span class="comment">//String()函数, 将要转换的变量作为参数传递给函数, 后函数将结果返回</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"a = "</span> + a);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a);<span class="comment">//输出:string</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"b = "</span> + b);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> b);</span><br><span class="line"></span><br><span class="line"><span class="comment">//其他类型变量转换为Number</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"123"</span>;<span class="comment">//若字符串内容有非数字和空格, Number()函数会将内容转换为NaN</span></span><br><span class="line">str = <span class="built_in">Number</span>(str);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"str = "</span> + str);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> str);</span><br><span class="line"><span class="keyword">var</span> bool = <span class="literal">true</span>;<span class="comment">//true==&gt;1  false==&gt;0  null==&gt;0  undefined==&gt;NaN</span></span><br><span class="line">bool = <span class="built_in">Number</span>(bool);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"bool = "</span> + bool);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> bool);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> px = <span class="string">"123px"</span>;</span><br><span class="line">px = <span class="built_in">parseInt</span>(px);<span class="comment">//从第一个字符开始转换, 直到遇到非空和非数字.parseFolat()函数类似</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"px = "</span> + px);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> px);</span><br><span class="line"><span class="comment">//JS中数字的进制, 0x开头表示16进制, 0开头表示8进制</span></span><br><span class="line">px = <span class="string">"070"</span>;</span><br><span class="line">px = <span class="built_in">parseInt</span>(px,<span class="number">10</span>);<span class="comment">//第二个参数, 表示以几进制进行解析</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"px = "</span> + px);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> px);</span><br><span class="line"></span><br><span class="line"><span class="comment">//其他类型变量转换为Boolean</span></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">123</span>;<span class="comment">//数字只有0和NaN转换为false, 字符串只有空串转换为false</span></span><br><span class="line">num = <span class="built_in">Boolean</span>(num);<span class="comment">//null和undefined转换为false, 对象都转换为true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"num = "</span> + num);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> num);</span><br><span class="line"></span><br><span class="line"><span class="comment">//这里说一个isNaN()函数, 判断一个数字是不是NaN, 若是返回true, 不是返回false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(num));</span><br></pre></td></tr></table></figure>
 
 </div></div>
-<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><ul>
+<h2 id="六-运算符"><a href="#六-运算符" class="headerlink" title="六.运算符"></a>六.运算符</h2><ul>
 <li>算术运算符  + - * / ++(前置和后置) –(前置和后置) +(符号不变) -(符合取反) %(取模)</li>
 <li>逻辑运算符  &amp;&amp; || !  &amp; |</li>
 <li>关系运算符  &gt;  &lt;  &gt;=  &lt;=  ==  !=  ===  !==</li>
@@ -268,18 +268,18 @@
 <li>位运算符  ^ &amp; | ! (用于数值类型的操作)</li>
 <li>typeof运算符  判断类型并以字符串形式返回</li>
 </ul>
-<h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符:"></a>算术运算符:</h3><p>+的特殊性, 可以用来拼接字符串, 例:</p>
+<h3 id="A-算术运算符"><a href="#A-算术运算符" class="headerlink" title="A.算术运算符:"></a>A.算术运算符:</h3><p>+的特殊性, 可以用来拼接字符串, 例:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span> + <span class="number">2</span> + <span class="string">"3"</span>;<span class="comment">//33</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="string">"1"</span> + <span class="number">2</span> + <span class="number">3</span>;<span class="comment">//123</span></span><br></pre></td></tr></table></figure>
 <p>其他算数运算符在进行运算时, 会将操作数先转换为Number类型, 再进行运算, 并将结果以数值类型返回</p>
 <p>前++: 先对原变量加1, 在使用该变量的值;后++: 先使用给变量的值, 再给变量加1;–类似</p>
-<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><p>与 或 非, 运算时将其他类型转换为Boolean型, 再运算;</p>
+<h3 id="B-逻辑运算符"><a href="#B-逻辑运算符" class="headerlink" title="B.逻辑运算符"></a>B.逻辑运算符</h3><p>与 或 非, 运算时将其他类型转换为Boolean型, 再运算;</p>
 <p>注意短路与(&amp;&amp;)和短路或(||):</p>
 <p>短路与: 若第一个值为true, 则返回第二个值; 若第一个值为false, 则返回第一个值;</p>
 <p>短路或: 若第一个值为true, 则返回第一个值; 若第一个值为false, 则返回第二个值;</p>
-<h2 id="关系元算符"><a href="#关系元算符" class="headerlink" title="关系元算符"></a>关系元算符</h2><p>比较两个字符串时, 比较的是字符串的字符编码(按位比较); 其他类型转换为数值类型比较; 比较结果为true或false, 以字符串形式返回比较的结果.</p>
+<h3 id="C-关系元算符"><a href="#C-关系元算符" class="headerlink" title="C.关系元算符"></a>C.关系元算符</h3><p>比较两个字符串时, 比较的是字符串的字符编码(按位比较); 其他类型转换为数值类型比较; 比较结果为true或false, 以字符串形式返回比较的结果.</p>
 <p>注意==判等时会做隐式类型转换, ===表示全等; != 与 !==一样</p>
-<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><p>将运算符左边的表达式的值做一个操作, 然后将操作后的值赋值给右边的变量.</p>
-<h2 id="Unicode编码表"><a href="#Unicode编码表" class="headerlink" title="Unicode编码表"></a>Unicode编码表</h2><p>在JS的字符串中, 使用转义字符\u+四位16进制的编码表示Unicode编码</p>
+<h3 id="D-赋值运算符"><a href="#D-赋值运算符" class="headerlink" title="D.赋值运算符"></a>D.赋值运算符</h3><p>将运算符左边的表达式的值做一个操作, 然后将操作后的值赋值给右边的变量.</p>
+<h2 id="七-Unicode编码表"><a href="#七-Unicode编码表" class="headerlink" title="七.Unicode编码表"></a>七.Unicode编码表</h2><p>在JS的字符串中, 使用转义字符\u+四位16进制的编码表示Unicode编码</p>
 <p>在HTML中, 使用 &amp;#10进制编码; 表示Unicode编码. </p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>JS基础<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> str = <span class="string">"\u2620"</span>;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(str);</span></span><br><span class="line"><span class="undefined">		</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">h1</span>&gt;</span>&amp;#9760;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>注意:</p>
@@ -296,10 +296,10 @@
             <hr>
             <div class="new-meta-box">
               
-                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-02T21:13:41+08:00">
+                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-03T13:07:02+08:00">
                   <a class="notlink">
                     <i class="fas fa-save" aria-hidden="true"></i>
-                    2019-04-02
+                    2019-04-03
                   </a>
                 </div>
               
@@ -448,7 +448,7 @@
 </header>
 
     <div class="content material">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JS注释"><span class="toc-text">JS注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JS的变量与字面量"><span class="toc-text">JS的变量与字面量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JS标识符"><span class="toc-text">JS标识符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据类型"><span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#强制类型转换"><span class="toc-text">强制类型转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#运算符"><span class="toc-text">运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#算术运算符"><span class="toc-text">算术运算符:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#逻辑运算符"><span class="toc-text">逻辑运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关系元算符"><span class="toc-text">关系元算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#赋值运算符"><span class="toc-text">赋值运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unicode编码表"><span class="toc-text">Unicode编码表</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一-JS注释"><span class="toc-text">一.JS注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二-JS的变量与字面量"><span class="toc-text">二.JS的变量与字面量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三-JS标识符"><span class="toc-text">三.JS标识符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四-数据类型"><span class="toc-text">四.数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五-强制类型转换"><span class="toc-text">五.强制类型转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六-运算符"><span class="toc-text">六.运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-算术运算符"><span class="toc-text">A.算术运算符:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-逻辑运算符"><span class="toc-text">B.逻辑运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-关系元算符"><span class="toc-text">C.关系元算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#D-赋值运算符"><span class="toc-text">D.赋值运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#七-Unicode编码表"><span class="toc-text">七.Unicode编码表</span></a></li></ol>
     </div>
   </section>
 
@@ -717,8 +717,6 @@
     </div>
   
   <br>
-  <!-- <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
-</div> -->
   <div style="color:rgb(27, 195, 251);"><p>本博客所有文章除特别声明外，均采用[<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">(CC BY-NC-SA 4.0)</a>]许可协议。转载请注明出处！</p></div>
   <div style="color:rgb(27, 195, 251);" id="sitetime"></div>
   <div style="color:rgb(27, 195, 251);">本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" style="color:rgb(27, 195, 251);" class="codename">Material X</a> 作为主题，总访问量为 <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
@@ -773,6 +771,14 @@
 
   <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
 
+
+  <!-- fastclick -->
+  <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+  </script>
 
 
 

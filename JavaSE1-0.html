@@ -213,13 +213,13 @@
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
         <h1 id="走进Java"><a href="#走进Java" class="headerlink" title="走进Java"></a>走进Java</h1><a id="more"></a>
-<h2 id="关于Java"><a href="#关于Java" class="headerlink" title="关于Java"></a><font color="black">关于Java</font></h2><p>①关于Java语言, 其实它很简单, 就是我们人类与计算机交流的语言, 就像人类的语言: 英语、汉语……<br>②Java之父: 詹姆斯·高斯林, 他曾说过, C语言是撑起一切的基石, C语言之父: 丹尼斯·里奇<br>③Java语言由类C、C++等衍生出来, 属于完全面向对象的语言<br>④Java的技术体系平台: JavaSE、JavaEE、JavaME</p>
-<p><img src="..\..\..\..\imgs\Java\JavaSE图解.png" alt="JavaSE图解"></p>
-<h2 id="关于计算机"><a href="#关于计算机" class="headerlink" title="关于计算机"></a><font color="black">关于计算机</font></h2><p>1.计算机软件软件:  系统软件  and  应用软件</p>
+<h2 id="一-关于Java"><a href="#一-关于Java" class="headerlink" title="一.关于Java"></a><font color="black">一.关于Java</font></h2><p>①关于Java语言, 其实它很简单, 就是我们人类与计算机交流的语言, 就像人类的语言: 英语、汉语……<br>②Java之父: 詹姆斯·高斯林, 他曾说过, C语言是撑起一切的基石, C语言之父: 丹尼斯·里奇<br>③Java语言由类C、C++等衍生出来, 属于完全面向对象的语言<br>④Java的技术体系平台: JavaSE、JavaEE、JavaME</p>
+<p><img src="imgs\Java\JavaSE图解.png" alt="JavaSE图解"></p>
+<h2 id="二-关于计算机"><a href="#二-关于计算机" class="headerlink" title="二.关于计算机"></a><font color="black">二.关于计算机</font></h2><p>1.计算机软件软件:  系统软件  and  应用软件</p>
 <p>2.人与计算机做交互:  使用计算机语言.<br>        图形化界面(GUI)  vs  命令行方式(CLI): dir  md rd  cd  cd..  cd/  del  exit  echo  content  &gt;temp.txt<br>3.语言的分类:  第一代: 机器语言;  第二代: 汇编语言;  第三代: 高级语言(面向过程  — 面向对象)</p>
 <p><font style="color:red;font-weight:bold;">4.java语言的特性: ①面向对象性 ②健壮性 ③跨平台性(write once,run anywhere)—JVM</font><br>    不同的系统有不同的JVM(Java Virtual Machine即Java虚拟机), 所以要想编写Java程序, 就要在自己的系统上安装JVM等部件. 学习Java, 我们首先要做的, 就是安装JDK环境.</p>
 <h3 id="5-安装JDK及配置系统的path环境变量"><a href="#5-安装JDK及配置系统的path环境变量" class="headerlink" title="5.安装JDK及配置系统的path环境变量"></a>5.安装JDK及配置系统的path环境变量</h3><p>​    1)傻瓜式安装<a href="https://pan.baidu.com/s/1tjiG7KHYKSfdcWDW5Rm9Xw" target="_blank" rel="noopener">JDK</a>(提取码: et1y).<br>​    2)path: window操作系统在执行cmd命令时所要搜寻的路径.<br>​    我们需要将jdk中bin目录所在的路径: D:\Program Files\Java\jdk1.8.0_131\bin 保存在path环境变量下.<br>​    3)测试: 在命令行窗口, 任意的文件目录下, 执行javac.exe 或者java.exe都可以调用成功.<br>​    JDK(Java Development Kit, Java语言的软件开发工具包即Java的SDK, Software Development Kit)<br>​    JDK包含JRE(Java Runtime Environment, Java运行时环境), JRE包含JVM和一些常用的Java库类<br>​    &gt;河床好比操作底层, jdk好比是河水, java应用程序好比是船.</p>
-<p><img src="..\..\..\..\imgs\Java\JDK.png" alt="JDK"></p>
+<p><img src="imgs\Java\JDK.png" alt="JDK"></p>
 <h3 id="6-如何编写并运行第一个java程序"><a href="#6-如何编写并运行第一个java程序" class="headerlink" title="6.如何编写并运行第一个java程序"></a>6.如何编写并运行第一个java程序</h3><p>​    [过程]编写—-编译(javac.exe)—-运行(java.exe)<br>1)编写: 每一个java文件都是.java结尾的, 称为源文件[HelloWorld.java], java程序就存在于源文件中</p>
 <p>如下, 第一个Java程序:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span></span>&#123;</span><br><span class="line">	<span class="comment">//程序的主方法，是程序的入口</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">		<span class="comment">//要执行的代码</span></span><br><span class="line">		System.out.println(<span class="string">"HelloWorld"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;<span class="comment">//假设这是在桌面上的源文件HelloWorld.java中的源代码, 执行过程如下:</span></span><br></pre></td></tr></table></figure>
@@ -236,10 +236,10 @@
             <hr>
             <div class="new-meta-box">
               
-                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-02T21:13:41+08:00">
+                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-03T12:40:07+08:00">
                   <a class="notlink">
                     <i class="fas fa-save" aria-hidden="true"></i>
-                    2019-04-02
+                    2019-04-03
                   </a>
                 </div>
               
@@ -388,7 +388,7 @@
 </header>
 
     <div class="content material">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#走进Java"><span class="toc-text">走进Java</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于Java"><span class="toc-text">关于Java</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于计算机"><span class="toc-text">关于计算机</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-安装JDK及配置系统的path环境变量"><span class="toc-text">5.安装JDK及配置系统的path环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-如何编写并运行第一个java程序"><span class="toc-text">6.如何编写并运行第一个java程序</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#走进Java"><span class="toc-text">走进Java</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一-关于Java"><span class="toc-text">一.关于Java</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二-关于计算机"><span class="toc-text">二.关于计算机</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-安装JDK及配置系统的path环境变量"><span class="toc-text">5.安装JDK及配置系统的path环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-如何编写并运行第一个java程序"><span class="toc-text">6.如何编写并运行第一个java程序</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
@@ -657,8 +657,6 @@
     </div>
   
   <br>
-  <!-- <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
-</div> -->
   <div style="color:rgb(27, 195, 251);"><p>本博客所有文章除特别声明外，均采用[<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">(CC BY-NC-SA 4.0)</a>]许可协议。转载请注明出处！</p></div>
   <div style="color:rgb(27, 195, 251);" id="sitetime"></div>
   <div style="color:rgb(27, 195, 251);">本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" style="color:rgb(27, 195, 251);" class="codename">Material X</a> 作为主题，总访问量为 <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
@@ -713,6 +711,14 @@
 
   <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
 
+
+  <!-- fastclick -->
+  <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+  </script>
 
 
 

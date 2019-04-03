@@ -217,24 +217,24 @@
 <h1 id="一-多态性"><a href="#一-多态性" class="headerlink" title="一.多态性"></a>一.多态性</h1><ol>
 <li>多态性的表现: ①方法的重载与重写 ②子类对象的多态性</li>
 <li>使用的前提: ①要有继承关系 ②要有方法的重写</li>
-<li><p>格式: </p>
+<li>格式: </li>
+</ol>
 <div><div class="fold_hider"><div class="close hider_title">点击显/隐内容</div></div><div class="fold">
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"人吃饭"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">walk</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"人走路"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Man</span> <span class="keyword">extends</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">entertainment</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"男人娱乐"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Woman</span> <span class="keyword">extends</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shopping</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"女人购物"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </div></div>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Person p = <span class="keyword">new</span> Man();<span class="comment">//向上转型</span></span><br><span class="line"><span class="comment">//虚拟方法调用：通过父类的引用指向子类的对象实体，当调用方法时，实际执行的是子类重写父类的方法</span></span><br><span class="line">p1.eat();</span><br><span class="line">p1.walk();</span><br><span class="line"><span class="comment">//p1.entertainment();//不能调用, Man类里没有这个函数</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>编译时, 认为p是Person类型的, 故只能执行Person里才有的结构, 即Man里特有的结构不能够调用<br> 子类对象的多态性, 并不使用于属性.</p>
-</li>
+<ol start="4">
+<li>编译时, 认为p是Person类型的, 故只能执行Person里才有的结构, 即Man里特有的结构不能够调用<br> 子类对象的多态性, 并不使用于属性.</li>
 <li>关于向下转型:<br>①向下转型,使用强转符: ()<br>②为了保证不报ClassCastException, 最好在向下转型前, 进行判断: instanceof</li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 若a是A类的实例, 那么a也一定是A类的父类的实例。</span></span><br><span class="line"><span class="keyword">if</span> (p1 <span class="keyword">instanceof</span> Woman) &#123;</span><br><span class="line">    System.out.println(<span class="string">"hello!"</span>);</span><br><span class="line">    Woman w1 = (Woman) p1;</span><br><span class="line">    w1.shopping();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (p1 <span class="keyword">instanceof</span> Man) &#123;</span><br><span class="line">    Man m1 = (Man) p1;</span><br><span class="line">    m1.entertainment();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="二-Object类"><a href="#二-Object类" class="headerlink" title="二.Object类"></a>二.Object类</h1><ol>
 <li>java.lang.Object 类, 是所有类的根父类!</li>
-<li><p>Object类仅有一个空参的构造器  public Object(){  }<br>  关于方法:</p>
-<h2 id="①-equals-Object-obj"><a href="#①-equals-Object-obj" class="headerlink" title="① equals(Object obj)"></a>① equals(Object obj)</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (<span class="keyword">this</span> == obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><h2 id="Object类仅有一个空参的构造器-public-Object"><a href="#Object类仅有一个空参的构造器-public-Object" class="headerlink" title="Object类仅有一个空参的构造器  public Object(){  }"></a>Object类仅有一个空参的构造器  public Object(){  }</h2><p>  关于方法:</p>
 </li>
 </ol>
+<h2 id="①-equals-Object-obj"><a href="#①-equals-Object-obj" class="headerlink" title="① equals(Object obj)"></a>① equals(Object obj)</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (<span class="keyword">this</span> == obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>A.基本数据类型: 根据基本数据类型的值判断是否相等. 相等返回true, 反之返回false<br>&emsp;&emsp;注意: 两端数据类型可以不同, 在不同的情况下, 也可以返回true.<br>B.引用数据类型: 比较引用类型变量的地址值是否相等.<br>&emsp;&emsp;而我们希望比较的两个对象的属性值都相同的情况下返回true的话, 要<font style="color:red;font-weight:bold;">重写Object类的equals(Object obj)方法</font><br>&emsp;&emsp;像String类 File类 Date类…重写了Object类的equals()方法, 比较是两个对象的”实体内容”是否完全相同</p>
 <h2 id="②-toString"><a href="#②-toString" class="headerlink" title="② toString()"></a>② toString()</h2><ol>
 <li>当我们输出一个对象的引用时, 会默认调用toString()方法.</li>
@@ -243,7 +243,7 @@
 <li>像String类、Date、File类、包装类都重写了toString()方法.</li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Object类的toString()</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> getClass().getName() + <span class="string">"@"</span> + Integer.toHexString(hashCode());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>String的内存结构:<br><img src="..\..\..\..\imgs\Java\String.png" alt="String"></p>
+<h2 id="String的内存结构"><a href="#String的内存结构" class="headerlink" title="String的内存结构:"></a>String的内存结构:</h2><p><img src="imgs\Java\String.png" alt="String"></p>
 <h1 id="三-包装类"><a href="#三-包装类" class="headerlink" title="三.包装类"></a>三.包装类</h1><p>Wrapper Class, 包装类均位于java.lang包下</p>
 <p>基本数据类型由于不是类, 不能够使用Java类库里提供的大量的方法. 所以在设计上, 我们让每一个基本数据类型都对应一个类, 同时数据存储的范围还不变. 此时, 相当于基本数据类型就具有了类的特点. 这些类即为包装(wrapper 或封装类)</p>
 <ul>
@@ -259,21 +259,21 @@
 <p>需要掌握的:</p>
 <font style="color:red;font-weight:bold;">基本数据类型、包装类、String类之间的转换!</font>
 
-<p><img src="..\..\..\..\imgs\Java\包装类转换.png" alt="包装类转换"></p>
+<p><img src="imgs\Java\包装类转换.png" alt="包装类转换"></p>
 <p>简易理解:</p>
 <ol>
-<li><p>基本数据类型与对应的包装类有自动装箱、自动拆箱 (JDK5.0之后)</p>
+<li>基本数据类型与对应的包装类有自动装箱、自动拆箱 (JDK5.0之后)</li>
+</ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//如下:</span></span><br><span class="line"><span class="keyword">int</span> i = <span class="number">10</span>;</span><br><span class="line">Integer i1 = i;<span class="comment">//自动装箱</span></span><br><span class="line"><span class="keyword">int</span> j = i1;<span class="comment">//自动拆箱</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>基本数据类型、包装类—-&gt;String类: 调用String类的重载的<font style="color:red;font-weight:bold;">valueOf(Xxx xx);</font></p>
-</li>
+<ol start="2">
+<li>基本数据类型、包装类—-&gt;String类: 调用String类的重载的<font style="color:red;font-weight:bold;">valueOf(Xxx xx);</font></li>
 <li>String类—-&gt;基本数据类型、包装类: 调用相应的包装的<font style="color:red;font-weight:bold;">parseXxx(String str);</font></li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//注意:</span></span><br><span class="line">String str = <span class="string">"123"</span>;</span><br><span class="line"><span class="keyword">int</span> i = (<span class="keyword">int</span>)str;<span class="comment">//是错误的转换法.</span></span><br></pre></td></tr></table></figure>
 <ol start="4">
 <li>特别的: <font style="color:red;font-weight:bold;">Boolean的默认初始化值为null, 而boolean的默认初始化值为false;</font></li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Boolean b = <span class="keyword">new</span> Boolean(<span class="string">"true"</span>);<span class="comment">//除了这样传参之外, 其他传参均为false, 不会报java.lang.NumberFormatException</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Boolean b = <span class="keyword">new</span> Boolean(<span class="string">"true"</span>);<span class="comment">//除了这样传参之外, 其他传参均为false</span></span><br><span class="line"><span class="comment">//不会报java.lang.NumberFormatException</span></span><br></pre></td></tr></table></figure>
 
       </div>
         
@@ -281,10 +281,10 @@
             <hr>
             <div class="new-meta-box">
               
-                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-02T21:13:41+08:00">
+                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-03T12:56:35+08:00">
                   <a class="notlink">
                     <i class="fas fa-save" aria-hidden="true"></i>
-                    2019-04-02
+                    2019-04-03
                   </a>
                 </div>
               
@@ -433,7 +433,7 @@
 </header>
 
     <div class="content material">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-多态性"><span class="toc-text">一.多态性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-Object类"><span class="toc-text">二.Object类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#①-equals-Object-obj"><span class="toc-text">① equals(Object obj)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#②-toString"><span class="toc-text">② toString()</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三-包装类"><span class="toc-text">三.包装类</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-多态性"><span class="toc-text">一.多态性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-Object类"><span class="toc-text">二.Object类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object类仅有一个空参的构造器-public-Object"><span class="toc-text">Object类仅有一个空参的构造器  public Object(){  }</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#①-equals-Object-obj"><span class="toc-text">① equals(Object obj)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#②-toString"><span class="toc-text">② toString()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String的内存结构"><span class="toc-text">String的内存结构:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三-包装类"><span class="toc-text">三.包装类</span></a></li></ol>
     </div>
   </section>
 
@@ -702,8 +702,6 @@
     </div>
   
   <br>
-  <!-- <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
-</div> -->
   <div style="color:rgb(27, 195, 251);"><p>本博客所有文章除特别声明外，均采用[<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">(CC BY-NC-SA 4.0)</a>]许可协议。转载请注明出处！</p></div>
   <div style="color:rgb(27, 195, 251);" id="sitetime"></div>
   <div style="color:rgb(27, 195, 251);">本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" style="color:rgb(27, 195, 251);" class="codename">Material X</a> 作为主题，总访问量为 <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
@@ -758,6 +756,14 @@
 
   <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
 
+
+  <!-- fastclick -->
+  <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+  </script>
 
 
 

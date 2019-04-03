@@ -219,16 +219,13 @@
 <h1 id="1-自定义内置标签"><a href="#1-自定义内置标签" class="headerlink" title="1.自定义内置标签"></a>1.自定义内置标签</h1><p>&emsp;&emsp;通过查看自定义标签的<a href="https://hexo.io/api/" target="_blank" rel="noopener">API</a>, 发现主题自带标签脚本都会存放在<code>themes/xxx/scripts/tag/xxx.js</code>中</p>
 <p>首先, 我们要注册一个自己的代码隐藏内置标签fold.</p>
 <p>新建<a href="https://pan.baidu.com/s/1MPnkw17z_3uWIsEu0nfWPg" target="_blank" rel="noopener">fold.js</a>(提取码: 0khu)文件, 路径(没有相应目录的自建)如图:</p>
-<p><img src="..\..\..\..\imgs\fold.png" alt="fold"></p>
+<p><img src="imgs\fold.png" alt="fold"></p>
 <p>内容:<div><div class="fold_hider"><div class="close hider_title">点击显/隐内容</div></div><div class="fold">
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* global hexo */</span></span><br><span class="line"><span class="comment">// Usage: &#123;% fold ???? %&#125; Something &#123;% endfold %&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fold</span> (<span class="params">args, content</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> text = args[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">if</span>(!text) text = <span class="string">"点击显/隐"</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'&lt;div&gt;&lt;div class="fold_hider"&gt;&lt;div class="close hider_title"&gt;'</span> + text + <span class="string">'&lt;/div&gt;&lt;/div&gt;&lt;div class="fold"&gt;\n'</span> + hexo.render.renderSync(&#123;<span class="attr">text</span>: content, <span class="attr">engine</span>: <span class="string">'markdown'</span>&#125;) + <span class="string">'\n&lt;/div&gt;&lt;/div&gt;'</span>;</span><br><span class="line">&#125;</span><br><span class="line">hexo.extend.tag.register(<span class="string">'fold'</span>, fold, &#123;<span class="attr">ends</span>: <span class="literal">true</span>&#125;);</span><br></pre></td></tr></table></figure>
 
 </div></div></p>
 <h1 id="2-消除渲染undefined问题"><a href="#2-消除渲染undefined问题" class="headerlink" title="2.消除渲染undefined问题"></a>2.消除渲染undefined问题</h1><p>在scripts目录下添加一个<a href="https://pan.baidu.com/s/1-S1YsOh7B0G-QpQDeZ4iOQ" target="_blank" rel="noopener">tags.js</a>(提取码: giom)文件, 内容:</p>
-<div><div class="fold_hider"><div class="close hider_title">点击显/隐内容</div></div><div class="fold">
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">修复在 fold 标签里写 ```代码块```，最终会被渲染成 undefined 的问题</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">const</span> rEscapeContent = <span class="regexp">/&lt;escape(?:[^&gt;]*)&gt;([\s\S]*?)&lt;\/escape&gt;/g</span>;</span><br><span class="line"><span class="keyword">const</span> placeholder = <span class="string">'\uFFFD'</span>;</span><br><span class="line"><span class="keyword">const</span> rPlaceholder = <span class="regexp">/(?:&lt;|&amp;lt;)\!--\uFFFD(\d+)--(?:&gt;|&amp;gt;)/g</span>;</span><br><span class="line"><span class="keyword">const</span> cache = [];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">escapeContent</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'&lt;!--'</span> + placeholder + (cache.push(str) - <span class="number">1</span>) + <span class="string">'--&gt;'</span>;</span><br><span class="line">&#125;</span><br><span class="line">hexo.extend.filter.register(<span class="string">'before_post_render'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">  data.content = data.content.replace(rEscapeContent, <span class="function"><span class="keyword">function</span>(<span class="params">match, content</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> escapeContent(content);</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> data;</span><br><span class="line">&#125;);</span><br><span class="line">hexo.extend.filter.register(<span class="string">'after_post_render'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">  data.content = data.content.replace(rPlaceholder, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> cache[<span class="built_in">arguments</span>[<span class="number">1</span>]];</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> data;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-</div></div>
 <h1 id="3-设置默认折叠代码"><a href="#3-设置默认折叠代码" class="headerlink" title="3.设置默认折叠代码"></a>3.设置默认折叠代码</h1><p>将下列代码复制到你的主题的JS(每个页面都会加载的JS)文件中</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="built_in">document</span>).on(<span class="string">'click'</span>, <span class="string">'.fold_hider'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        $(<span class="string">'&gt;.fold'</span>, <span class="keyword">this</span>.parentNode).slideToggle();</span><br><span class="line">        $(<span class="string">'&gt;:first'</span>, <span class="keyword">this</span>).toggleClass(<span class="string">'open'</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">//默认情况下折叠</span></span><br><span class="line">	$(<span class="string">"div.fold"</span>).css(<span class="string">"display"</span>, <span class="string">"none"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h1 id="4-配置fold显示样式"><a href="#4-配置fold显示样式" class="headerlink" title="4.配置fold显示样式"></a>4.配置fold显示样式</h1><p>将下述代码复制到你的主题样式文件里:</p>
@@ -240,10 +237,10 @@
             <hr>
             <div class="new-meta-box">
               
-                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-02T21:13:41+08:00">
+                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-03T12:29:05+08:00">
                   <a class="notlink">
                     <i class="fas fa-save" aria-hidden="true"></i>
-                    2019-04-02
+                    2019-04-03
                   </a>
                 </div>
               
@@ -664,8 +661,6 @@
     </div>
   
   <br>
-  <!-- <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
-</div> -->
   <div style="color:rgb(27, 195, 251);"><p>本博客所有文章除特别声明外，均采用[<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">(CC BY-NC-SA 4.0)</a>]许可协议。转载请注明出处！</p></div>
   <div style="color:rgb(27, 195, 251);" id="sitetime"></div>
   <div style="color:rgb(27, 195, 251);">本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" style="color:rgb(27, 195, 251);" class="codename">Material X</a> 作为主题，总访问量为 <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
@@ -720,6 +715,14 @@
 
   <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
 
+
+  <!-- fastclick -->
+  <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+  </script>
 
 
 

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>JS2-3 | CRainyDay</title>
+  <title>JS数组 | CRainyDay</title>
   
   
 
@@ -160,7 +160,7 @@
   <div class="meta" id="header-meta">
     
       
-          <h1 class="title">JS2-3</h1>
+          <h1 class="title">JS数组</h1>
       
     
 
@@ -212,7 +212,57 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <a id="more"></a>
+        <p>JS数组(内建对象), 之前都是说的自定义对象.</p>
+<a id="more"></a>
+<h1 id="一-数组简介"><a href="#一-数组简介" class="headerlink" title="一.数组简介"></a>一.数组简介</h1><ul>
+<li>数组也是一个对象</li>
+<li>它和普通对象的功能类似, 也是用来存储一些值的</li>
+<li>不同的是, 普通对象用字符串作为索引, 数组用数字(&gt;=0的整数)作为索引</li>
+<li>数组的存储性能比普通对象好, 我们往往常用它来存储一些数据</li>
+</ul>
+<h2 id="1-操作数组"><a href="#1-操作数组" class="headerlink" title="1.操作数组"></a>1.操作数组</h2><ul>
+<li>①数组中添加元素, 语法: <font style="color:red;font-weight:bold;">变量名[数字索引] = 值;</font></li>
+<li>②读取数组元素, 语法: <font style="color:red;font-weight:bold;">变量名[数字索引];</font> 若读取不存在的索引不会报错, 会返回undefined</li>
+<li>③获取数组长度, <font style="color:red;font-weight:bold;">变量名.length;</font> 对于连续的数组, 这样可以得到数组长度, 对于不连续的数组这样使用length的值为当前数组的最大索引+1, 尽量不要用不连续的数组.</li>
+<li>④人为的设置length, 若设置的length大于原长度, 则多余部分会空出来; 若设置的length小于原长度, 则多余的元素会被删除</li>
+<li>⑤向数组最后一个位置添加索引, <font style="color:red;font-weight:bold;">变量名[变量名.length] = 某值;</font></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> arr);<span class="comment">//输出:object</span></span><br><span class="line"></span><br><span class="line">arr[<span class="number">0</span>] = <span class="string">"hello"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">0</span>]);<span class="comment">//输出:"hello"</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.length);<span class="comment">//输出:1</span></span><br><span class="line"></span><br><span class="line">arr[<span class="number">5</span>] = <span class="number">123</span>;</span><br><span class="line"><span class="built_in">console</span>.log(arr);<span class="comment">//输出:hello,,,,,123</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.length);<span class="comment">//输出:6</span></span><br><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">1</span>]);<span class="comment">//输出:undefined</span></span><br><span class="line"></span><br><span class="line">arr.length = <span class="number">1</span>;</span><br><span class="line">arr[arr.length] = <span class="string">"China"</span>;</span><br><span class="line">arr[arr.length] = <span class="number">521</span>;</span><br><span class="line">arr[arr.length] = <span class="literal">true</span>;</span><br><span class="line"><span class="built_in">console</span>.log(arr);<span class="comment">//输出:"hello","China",521,true</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-数组字面量"><a href="#2-数组字面量" class="headerlink" title="2.数组字面量"></a>2.数组字面量</h2><blockquote>
+<p>数组字面量创建数组, 语法: [];<br>例: var arr = [1,2,3,4,10];//允许在创建时指定要添加的数组元素</p>
+</blockquote>
+<blockquote>
+<p>使用数组的构造函数创建数组的同时, 也可以添加元素, 此时将要添加的元素作为参数传递<br>例: var arr = new Array(1,5,6,2,3);</p>
+</blockquote>
+<blockquote>
+<p>使用数组的构造函数创建数组, 也可以指定数组的初始长度<br>例: var arr = new Array(10);</p>
+</blockquote>
+<font style="color:red;font-size:1.2em;font-weight:bold;">注意: 数组的元素可以是任意类型的数据</font>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">5</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">1</span>];<span class="comment">//字面量创建数组</span></span><br><span class="line"><span class="keyword">var</span> arr2 = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">5</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arr1);<span class="comment">//输出:5,9,8,4,3,1</span></span><br><span class="line"><span class="built_in">console</span>.log(arr2);<span class="comment">//输出:5,9,8,4,3,1</span></span><br><span class="line"><span class="keyword">var</span> arr3 = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">10</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arr3);<span class="comment">//输出:,,,,,,,,,</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//数组的元素可以是任意类型的数据</span></span><br><span class="line"><span class="keyword">var</span> arr4 = [<span class="string">"hello"</span>,<span class="literal">true</span>,<span class="number">123</span>,<span class="literal">null</span>,<span class="literal">undefined</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr4);<span class="comment">//输出:"hello",true,123,null,undefined</span></span><br><span class="line"><span class="comment">//可以是对象</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">name</span>:<span class="string">"Bob"</span>&#125;;</span><br><span class="line">arr4[arr4.length] = obj;</span><br><span class="line"><span class="built_in">console</span>.log(arr4[<span class="number">5</span>].name);<span class="comment">//输出:Bob</span></span><br><span class="line"><span class="comment">//可以是函数</span></span><br><span class="line">arr4[arr4.length] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">"我是数组中的函数"</span>);</span><br><span class="line">&#125;;</span><br><span class="line">arr4[<span class="number">6</span>]();<span class="comment">//调用函数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//也可以放数组, 我们叫这种数组为: 二维数组</span></span><br><span class="line"><span class="keyword">var</span> arr = [[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]];</span><br><span class="line"><span class="built_in">console</span>.log(arr);<span class="comment">//输出:1,2,3,4,5,6,7,8,9</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.length);<span class="comment">//输出:3</span></span><br><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">0</span>].length);<span class="comment">//输出:3</span></span><br></pre></td></tr></table></figure>
+<h1 id="二-数组常用方法"><a href="#二-数组常用方法" class="headerlink" title="二.数组常用方法"></a>二.数组常用方法</h1><blockquote>
+<p>pop() 删除并返回数组的最后一个元素<br>push() 向数组的末尾添加一个或更多元素, 并返回新的长度<br>shift() 删除并返回数组的第一个元素<br>unshift() 向数组的开头添加一个或更多元素, 并返回新的长度</p>
+<hr>
+<p>slice() 从某个已有的数组返回选定的元素<br>——–该方法不会改变原数组, 而是将指定的数组元素封装到新数组中返回, 两个参数:<br>——–①截取开始位置的索引, 包括开始位置, 可以为负数(-1表示倒数第一个元素)<br>——–②截取结束位置的索引, 不包括结束位置(该参数可省略, 表示截取之后所有元素), 可以为负数<br>splice() 删除元素, 并向数组添加新元素<br>——–该方法会改变原数组, 会将指定元素从原数组中删除, 并将删除的元素作为返回值返回<br>——–参数(前两个必需):①开始位置的索引, 可以为负数(-1表示倒数第一个元素)<br>——–②要删除元素的数量<br>——–③第三个参数及以后, 可以传递新元素, 这些元素会自动插入到第一个参数索引的前边</p>
+<hr>
+<p>concat() 连接两个或更多的数组, 并返回结果.(不影响原数组)<br>join() 把数组的所有元素放入一个字符串, 元素通过指定的分隔符(默认为逗号)进行分隔.<br>reverse() 颠倒数组中元素的顺序.(影响原数组)<br>sort() 对数组的元素进行排序(影响原数组), 默认按Unicode编码排序</p>
+</blockquote>
+<h2 id="A-pop-push-shift-unshift"><a href="#A-pop-push-shift-unshift" class="headerlink" title="A.pop push shift unshift"></a>A.pop push shift unshift</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">"孙悟空"</span>, <span class="string">"猪八戒"</span>, <span class="string">"唐僧"</span>, <span class="string">"沙和尚"</span>];</span><br><span class="line"><span class="keyword">var</span> result = arr.pop();</span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">//输出:沙和尚</span></span><br><span class="line">result = arr.push(<span class="string">"白骨精"</span>, <span class="string">"玉帝"</span>, <span class="string">"蝎子精"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">//输出:6</span></span><br><span class="line"><span class="built_in">console</span>.log(arr);<span class="comment">//输出:孙悟空,猪八戒,唐僧,白骨精,玉帝,蝎子精</span></span><br><span class="line">result = arr.shift();</span><br><span class="line"><span class="built_in">console</span>.log(result);<span class="comment">//输出:孙悟空</span></span><br><span class="line">result = arr.unshift(<span class="string">"牛魔王"</span>, <span class="string">"红孩儿"</span>, <span class="string">"铁扇公主"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result);<span class="comment">//输出:8</span></span><br><span class="line"><span class="built_in">console</span>.log(arr);<span class="comment">//输出:牛魔王,红孩儿,铁扇公主,猪八戒,唐僧,白骨精,玉帝,蝎子精</span></span><br></pre></td></tr></table></figure>
+<h2 id="B-slice-splice"><a href="#B-slice-splice" class="headerlink" title="B.slice splice"></a>B.slice splice</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">"孙悟空"</span>, <span class="string">"猪八戒"</span>, <span class="string">"唐僧"</span>, <span class="string">"沙和尚"</span>];</span><br><span class="line"><span class="keyword">var</span> result = arr.slice(<span class="number">-3</span>,<span class="number">-1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result);<span class="comment">//输出:猪八戒,唐僧</span></span><br><span class="line">result = arr.slice(<span class="number">-3</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result);<span class="comment">//输出:猪八戒,唐僧,沙和尚</span></span><br><span class="line"></span><br><span class="line">result = arr.splice(<span class="number">1</span>,<span class="number">0</span>,<span class="string">"玉帝"</span>,<span class="string">"佛祖"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result);<span class="comment">//输出:""</span></span><br><span class="line"><span class="built_in">console</span>.log(arr);<span class="comment">//输出:孙悟空,玉帝,佛祖,猪八戒,唐僧,沙和尚</span></span><br></pre></td></tr></table></figure>
+<p>例: 数组去重练习</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; arr.length;i ++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j = i+<span class="number">1</span>;j &lt; arr.length;j ++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i] == arr[j])&#123;</span><br><span class="line">            arr.splice(j,<span class="number">1</span>);</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(arr);<span class="comment">//输出:1,2,3,5,4,6,8</span></span><br></pre></td></tr></table></figure>
+<h2 id="C-concat-join"><a href="#C-concat-join" class="headerlink" title="C.concat join"></a>C.concat join</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1 = [<span class="string">"孙悟空"</span>,<span class="string">"猪八戒"</span>,<span class="string">"沙和尚"</span>];</span><br><span class="line"><span class="keyword">var</span> arr2 = [<span class="string">"白骨精"</span>,<span class="string">"高玉兰"</span>,<span class="string">"玉兔精"</span>];</span><br><span class="line"><span class="keyword">var</span> result = arr1.concat(arr2,<span class="string">"牛魔王"</span>,<span class="string">"红孩儿"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result);<span class="comment">//输出:"孙悟空","猪八戒","沙和尚","白骨精","高玉兰","玉兔精","牛魔王","红孩儿"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> str = result.join();</span><br><span class="line"><span class="built_in">console</span>.log(str);<span class="comment">//输出:"孙悟空,猪八戒,沙和尚,白骨精,高玉兰,玉兔精,牛魔王,红孩儿"</span></span><br><span class="line">str = result.join(<span class="string">""</span>);<span class="comment">//分隔符为""</span></span><br><span class="line"><span class="built_in">console</span>.log(str);<span class="comment">//输出:"孙悟空猪八戒沙和尚白骨精高玉兰玉兔精牛魔王红孩儿"</span></span><br></pre></td></tr></table></figure>
+<h2 id="D-reverse-sort"><a href="#D-reverse-sort" class="headerlink" title="D.reverse sort"></a>D.reverse sort</h2><blockquote>
+<p>①sort方法, 默认按照Unicode编码排序, 对于数字的排序往往不是我们想要的结果, 这时我们就需要按照我们自己想要的排序方式, 编写一个回调函数传递给sort().<br>②sort的回调函数有两个形参, 代表要比较的数组中的两个元素, 第一个形参代表的元素相对于第二个靠前<br>③sort方法根据回调函数的返回值排序.<br>④参数为回调函数的函数, 我们一般用匿名方式传递参数</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">6</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">4</span>];</span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//return a-b;//升序</span></span><br><span class="line">    <span class="keyword">return</span> b-a;<span class="comment">//逆序</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
+<h1 id="三-遍历数组"><a href="#三-遍历数组" class="headerlink" title="三.遍历数组"></a>三.遍历数组</h1><h2 id="1-for循环遍历"><a href="#1-for循环遍历" class="headerlink" title="1.for循环遍历"></a>1.for循环遍历</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//遍历数组, 就是将数组的元素取出来使用</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,sex</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.sex = sex;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.toString = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Person[name:"</span>+<span class="keyword">this</span>.name+<span class="string">",age:"</span>+<span class="keyword">this</span>.age+<span class="string">",sex:"</span>+<span class="keyword">this</span>.sex+<span class="string">"]"</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> nameArr = [<span class="string">"孙悟空"</span>,<span class="string">"沙悟净"</span>,<span class="string">"猪悟能"</span>,<span class="string">"唐玄奘"</span>,<span class="string">"白骨精"</span>,<span class="string">"玉兔精"</span>,<span class="string">"蜘蛛精"</span>];</span><br><span class="line"><span class="keyword">var</span> ageArr = [<span class="number">18</span>,<span class="number">28</span>,<span class="number">38</span>,<span class="number">17</span>,<span class="number">16</span>,<span class="number">15</span>,<span class="number">14</span>];</span><br><span class="line"><span class="keyword">var</span> sexArr = [<span class="string">"男"</span>,<span class="string">"男"</span>,<span class="string">"男"</span>,<span class="string">"男"</span>,<span class="string">"女"</span>,<span class="string">"女"</span>,<span class="string">"女"</span>];</span><br><span class="line"><span class="keyword">var</span> personArr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">7</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; personArr.length;i ++)&#123;</span><br><span class="line">    personArr[i] = <span class="keyword">new</span> Person(nameArr[i],ageArr[i],sexArr[i]);</span><br><span class="line">    <span class="built_in">console</span>.log(personArr[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 输出:</span></span><br><span class="line"><span class="comment">Person[name:孙悟空,age:18,sex:男]</span></span><br><span class="line"><span class="comment">Person[name:沙悟净,age:28,sex:男]</span></span><br><span class="line"><span class="comment">Person[name:猪悟能,age:38,sex:男]</span></span><br><span class="line"><span class="comment">Person[name:唐玄奘,age:17,sex:男]</span></span><br><span class="line"><span class="comment">Person[name:白骨精,age:16,sex:女]</span></span><br><span class="line"><span class="comment">Person[name:玉兔精,age:15,sex:女]</span></span><br><span class="line"><span class="comment">Person[name:蜘蛛精,age:14,sex:女]</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>练习: 自定义一个函数, 将上述对象数组中person对象age属性大于等于18的对象放入一个新数组, 并将该新数组作为函数的返回值返回.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getAdult</span>(<span class="params">perArr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; perArr.length;i ++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(perArr[i].age&gt;=<span class="number">18</span>)&#123;</span><br><span class="line">            arr.push(perArr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-数组的for-Each-方法遍历"><a href="#2-数组的for-Each-方法遍历" class="headerlink" title="2.数组的for Each()方法遍历"></a>2.数组的for Each()方法遍历</h2><blockquote>
+<p>①该方法适用于IE 8.0+<br>②该方法需要一个函数作为参数, 我们称此函数为回调函数, 这种函数由我们创建, 但是我们不负责调用<br>③我们写回调函数时一般都以匿名形式给出<br>④数组中有几个元素, 该方法会执行几次, 该方法的调用者会将在数组中遍历到的元素以实参形式传递进函数, 我们可以定义形参来接收它们<br>⑤该函数被调用时会传递三个参数: 第一个, 当前正在遍历的元素;第二个, 当前正在遍历元素的索引;第三个, 正在遍历的数组.</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//接上上述代码</span></span><br><span class="line">personArr.forEach(</span><br><span class="line">    <span class="function"><span class="keyword">function</span> (<span class="params">per,index,perArr</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(perArr[index] == per);<span class="comment">//全是true</span></span><br><span class="line">        <span class="built_in">console</span>.log(per);</span><br><span class="line">    &#125;</span><br><span class="line">);</span><br><span class="line"><span class="comment">/* 结果:</span></span><br><span class="line"><span class="comment">true</span></span><br><span class="line"><span class="comment">Person[name:孙悟空,age:18,sex:男]</span></span><br><span class="line"><span class="comment">true</span></span><br><span class="line"><span class="comment">Person[name:沙悟净,age:28,sex:男]</span></span><br><span class="line"><span class="comment">true</span></span><br><span class="line"><span class="comment">Person[name:猪悟能,age:38,sex:男]</span></span><br><span class="line"><span class="comment">true</span></span><br><span class="line"><span class="comment">Person[name:唐玄奘,age:17,sex:男]</span></span><br><span class="line"><span class="comment">true</span></span><br><span class="line"><span class="comment">Person[name:白骨精,age:16,sex:女]</span></span><br><span class="line"><span class="comment">true</span></span><br><span class="line"><span class="comment">Person[name:玉兔精,age:15,sex:女]</span></span><br><span class="line"><span class="comment">true</span></span><br><span class="line"><span class="comment">Person[name:蜘蛛精,age:14,sex:女]</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 
       </div>
         
@@ -220,10 +270,10 @@
             <hr>
             <div class="new-meta-box">
               
-                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-02T21:13:41+08:00">
+                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-04T00:09:10+08:00">
                   <a class="notlink">
                     <i class="fas fa-save" aria-hidden="true"></i>
-                    2019-04-02
+                    2019-04-04
                   </a>
                 </div>
               
@@ -238,7 +288,7 @@
     <div class="-mob-share-list share-body">
       
         
-          <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer" href="http://connect.qq.com/widget/shareqq/index.html?url=http://crainyday.gitee.io/JS2-3.html&title=JS2-3 | CRainyDay&summary=">
+          <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer" href="http://connect.qq.com/widget/shareqq/index.html?url=http://crainyday.gitee.io/JS2-3.html&title=JS数组 | CRainyDay&summary=JS数组(内建对象), 之前都是说的自定义对象.">
             
               <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
             
@@ -246,7 +296,7 @@
         
       
         
-          <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://crainyday.gitee.io/JS2-3.html&title=JS2-3 | CRainyDay&summary=">
+          <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://crainyday.gitee.io/JS2-3.html&title=JS数组 | CRainyDay&summary=JS数组(内建对象), 之前都是说的自定义对象.">
             
               <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
             
@@ -254,7 +304,7 @@
         
       
         
-          <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer" href="http://service.weibo.com/share/share.php?url=http://crainyday.gitee.io/JS2-3.html&title=JS2-3 | CRainyDay&summary=">
+          <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer" href="http://service.weibo.com/share/share.php?url=http://crainyday.gitee.io/JS2-3.html&title=JS数组 | CRainyDay&summary=JS数组(内建对象), 之前都是说的自定义对象.">
             
               <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
             
@@ -347,7 +397,7 @@
 
 <script>
     window.subData = {
-        title: 'JS2-3',
+        title: 'JS数组',
         tools: true
     }
 </script>
@@ -362,6 +412,20 @@
       
       
         
+  <section class="toc-wrapper">
+    
+<header class="material">
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章目录</div>
+  
+    <div class="wrapper"><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class="content material">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-数组简介"><span class="toc-text">一.数组简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-操作数组"><span class="toc-text">1.操作数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-数组字面量"><span class="toc-text">2.数组字面量</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-数组常用方法"><span class="toc-text">二.数组常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#A-pop-push-shift-unshift"><span class="toc-text">A.pop push shift unshift</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B-slice-splice"><span class="toc-text">B.slice splice</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-concat-join"><span class="toc-text">C.concat join</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#D-reverse-sort"><span class="toc-text">D.reverse sort</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三-遍历数组"><span class="toc-text">三.遍历数组</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-for循环遍历"><span class="toc-text">1.for循环遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-数组的for-Each-方法遍历"><span class="toc-text">2.数组的for Each()方法遍历</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
 
       
     
@@ -627,8 +691,6 @@
     </div>
   
   <br>
-  <!-- <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
-</div> -->
   <div style="color:rgb(27, 195, 251);"><p>本博客所有文章除特别声明外，均采用[<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">(CC BY-NC-SA 4.0)</a>]许可协议。转载请注明出处！</p></div>
   <div style="color:rgb(27, 195, 251);" id="sitetime"></div>
   <div style="color:rgb(27, 195, 251);">本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" style="color:rgb(27, 195, 251);" class="codename">Material X</a> 作为主题，总访问量为 <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
@@ -683,6 +745,14 @@
 
   <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
 
+
+  <!-- fastclick -->
+  <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+  </script>
 
 
 

@@ -222,17 +222,17 @@
 <li>本地安装<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">git for windows</a></li>
 </ul>
 <h1 id="2-创建gitee仓库开启pages服务"><a href="#2-创建gitee仓库开启pages服务" class="headerlink" title="2.创建gitee仓库开启pages服务"></a>2.创建gitee仓库开启pages服务</h1><p>&emsp;&emsp;先创建仓库, 点击右上角的加号; 再进入仓库, 开启pages服务, 如图:</p>
-<p><img src="..\..\..\..\imgs\gitee.png" alt="gitee"></p>
-<p><img src="..\..\..\..\imgs\pages.png" alt="gitee"></p>
+<p><img src="imgs\gitee.png" alt="gitee"></p>
+<p><img src="imgs\pages.png" alt="gitee"></p>
 <font style="color:red;font-weight:bold;font-size:1.5em;">注意: !!!每次用hexo d提交代码后, 都需要更新一下pages服务!!!</font>
 
 <h1 id="3-Hexo的使用"><a href="#3-Hexo的使用" class="headerlink" title="3.Hexo的使用"></a>3.Hexo的使用</h1><p>&emsp;&emsp;Hexo是一个很常用的博客发布工具, 支持markdown格式(推荐一款<a href="https://www.typora.io/#windows" target="_blank" rel="noopener">md编译器</a>), 有很多插件和主题</p>
 <p>一定要配置好系统的环境变量, 才能用npm和hexo命令</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#全程在博客目录下进行, 先新建一个空文件夹(例:f:/blog), 再<span class="built_in">cd</span>进入</span><br><span class="line">#安装hexo</span><br><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install hexo-server --save</span><br><span class="line">#用hexo新建项目, 生成站点</span><br><span class="line">hexo init</span><br><span class="line">#清理缓存&amp;&amp;生成项目文件&amp;&amp;本地运行项目</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s#需要先安装hexo-server插件</span><br></pre></td></tr></table></figure>
 <p>&emsp;&emsp;执行到这里, 如果前面过程中没有错误, 就会在本地成功启用Hexo博客站点, 通过<a href="http://localhost:4000/blog" target="_blank" rel="noopener">http://localhost:4000/blog</a>访问本地博客站点, 如图:</p>
-<p><img src="..\..\..\..\imgs\hexo.png" alt="gitee"></p>
+<p><img src="imgs\hexo.png" alt="gitee"></p>
 <p>&emsp;&emsp;执行完hexo init命令, 生成的Hexo的目录结构如图:</p>
-<p><img src="..\..\..\..\imgs\目录.png" alt="gitee"></p>
+<p><img src="imgs\目录.png" alt="gitee"></p>
 <p>&emsp;&emsp;若想要将本地的博客文件push到gitee仓库, 需要先配置_config.yml全局配置文件, 再进行一下步骤4配置git相关信息, 再执行下列命令:</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#发布项目到远程</span><br><span class="line">hexo d#需要hexo-deployer-git插件, 配置完一些git的相关配置才能上传</span><br><span class="line">#生成页面</span><br><span class="line">hexo new page "xxx"</span><br><span class="line">#生成文章</span><br><span class="line">hexo new "xxx"</span><br><span class="line">#安装插件</span><br><span class="line">npm install xxx --save</span><br><span class="line">#卸载插件</span><br><span class="line">npm unstall xxx</span><br></pre></td></tr></table></figure>
 <p>&emsp;&emsp;以上命令既可以用Windows的cmd来完成, 也可以用git bash来完成, 但有的命令cmd执行会有一些问题, 建议全部使用git bash来执行. 之后会提到git bash的使用</p>
@@ -248,10 +248,10 @@
             <hr>
             <div class="new-meta-box">
               
-                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-02T21:13:41+08:00">
+                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-03T12:24:55+08:00">
                   <a class="notlink">
                     <i class="fas fa-save" aria-hidden="true"></i>
-                    2019-04-02
+                    2019-04-03
                   </a>
                 </div>
               
@@ -653,8 +653,6 @@
     </div>
   
   <br>
-  <!-- <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
-</div> -->
   <div style="color:rgb(27, 195, 251);"><p>本博客所有文章除特别声明外，均采用[<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">(CC BY-NC-SA 4.0)</a>]许可协议。转载请注明出处！</p></div>
   <div style="color:rgb(27, 195, 251);" id="sitetime"></div>
   <div style="color:rgb(27, 195, 251);">本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" style="color:rgb(27, 195, 251);" class="codename">Material X</a> 作为主题，总访问量为 <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
@@ -709,6 +707,14 @@
 
   <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
 
+
+  <!-- fastclick -->
+  <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+  </script>
 
 
 

@@ -212,7 +212,7 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <h1 id="Java的一些基本语法"><a href="#Java的一些基本语法" class="headerlink" title="Java的一些基本语法"></a>Java的一些基本语法</h1><a id="more"></a>
+        <h1 id="一-Java的一些基本语法"><a href="#一-Java的一些基本语法" class="headerlink" title="一.Java的一些基本语法"></a>一.Java的一些基本语法</h1><a id="more"></a>
 <h2 id="1-关键字＆标识符"><a href="#1-关键字＆标识符" class="headerlink" title="1.关键字＆标识符"></a><font color="black">1.关键字＆标识符</font></h2><p>关键字: 被Java语言赋予了特殊含义, 用做专门用途的字符串(单词), <font color="red">关键字全是小写的</font></p>
 <p>保留字: 以后可能用来作为关键字</p>
 <p>标识符: 凡是自己可以起名字的地方都叫标识符</p>
@@ -231,19 +231,19 @@
 </blockquote>
 <p>3.变量的运算:<br>   ①<strong>自动类型转换</strong>: 容量小的数据类型自动转换为容量大的数据类型转换.<br>    short s = 12;<br>    int i = s + 2;<br>    注意: byte  short char之间做运算, 结果为int型!<br>   ②<strong>强制类型转换</strong>: 是①的逆过程.使用“()”实现强转.</p>
 <h2 id="3-运算符"><a href="#3-运算符" class="headerlink" title="3.运算符"></a><font color="black">3.运算符</font></h2><p>运算符是一种特殊的符号, 用以表示数据的运算.</p>
-<h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符:"></a>算术运算符:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ - /  % ++ -- +</span><br></pre></td></tr></table></figure>
+<h3 id="A-算术运算符"><a href="#A-算术运算符" class="headerlink" title="A.算术运算符:"></a>A.算术运算符:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ - /  % ++ -- +</span><br></pre></td></tr></table></figure>
 <p>注意:</p>
 <p>1) /:  int i = 12; i = i / 5;地板除<br>2) %: 取模, 结果的符号与被模数相同<br>3) 前++: 先+1, 后运算     后++: 先运算, 后+1<br>4) +: String字符串与其他数据类型只能做连接运算, 且结果为String类型.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sysout(<span class="string">"*"</span> + <span class="string">'\t'</span> + <span class="string">'*'</span>); <span class="function">vs <span class="title">sysout</span><span class="params">(<span class="string">'*'</span> + <span class="string">'\t'</span> + <span class="string">'*'</span>)</span></span>;结果为<span class="number">93</span></span><br><span class="line"><span class="comment">//sysout为Java的快捷键用法, 先输入sysout, 再按"Alt + /", 即可打出System.out.println();</span></span><br></pre></td></tr></table></figure>
-<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符:"></a>赋值运算符:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//=    +=   -=  *=    /=   %=</span></span><br><span class="line"><span class="keyword">int</span> i = <span class="number">12</span>;</span><br><span class="line">i  = i * <span class="number">5</span>;</span><br><span class="line">i *= <span class="number">5</span>;<span class="comment">//与上一行代码同样的意思</span></span><br><span class="line"><span class="comment">//[特别地]</span></span><br><span class="line"><span class="keyword">short</span> s = <span class="number">10</span>;</span><br><span class="line">s = s + <span class="number">5</span>;<span class="comment">//报编译的异常，s+5会被默认转化为int类型，再赋值给short会出错</span></span><br><span class="line">s = (<span class="keyword">short</span>)(s + <span class="number">5</span>);<span class="comment">//强制类型转换便不会异常</span></span><br><span class="line">s += <span class="number">5</span>;<span class="comment">//相当于, s = s + 5, 但两者并不完全等价, 但是结果不会改变s的数据类型.</span></span><br></pre></td></tr></table></figure>
-<h3 id="比较运算符-关系运算符"><a href="#比较运算符-关系运算符" class="headerlink" title="比较运算符(关系运算符)"></a>比较运算符(关系运算符)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">==  &gt;   &lt;  &gt;=   &lt;=    <span class="keyword">instanceof</span></span><br></pre></td></tr></table></figure>
+<h3 id="B-赋值运算符"><a href="#B-赋值运算符" class="headerlink" title="B.赋值运算符:"></a>B.赋值运算符:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//=    +=   -=  *=    /=   %=</span></span><br><span class="line"><span class="keyword">int</span> i = <span class="number">12</span>;</span><br><span class="line">i  = i * <span class="number">5</span>;</span><br><span class="line">i *= <span class="number">5</span>;<span class="comment">//与上一行代码同样的意思</span></span><br><span class="line"><span class="comment">//[特别地]</span></span><br><span class="line"><span class="keyword">short</span> s = <span class="number">10</span>;</span><br><span class="line">s = s + <span class="number">5</span>;<span class="comment">//报编译的异常，s+5会被默认转化为int类型，再赋值给short会出错</span></span><br><span class="line">s = (<span class="keyword">short</span>)(s + <span class="number">5</span>);<span class="comment">//强制类型转换便不会异常</span></span><br><span class="line">s += <span class="number">5</span>;<span class="comment">//相当于, s = s + 5, 但两者并不完全等价, 但是结果不会改变s的数据类型.</span></span><br></pre></td></tr></table></figure>
+<h3 id="C-比较运算符-关系运算符"><a href="#C-比较运算符-关系运算符" class="headerlink" title="C.比较运算符(关系运算符)"></a>C.比较运算符(关系运算符)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">==  &gt;   &lt;  &gt;=   &lt;=    <span class="keyword">instanceof</span></span><br></pre></td></tr></table></figure>
 <p>[注意]  区分 ==  与 =  区别.<br>进行比较运算操作以后,返回一个boolean类型的值(true或false)<br>4&gt;=3  表达的是4 &gt; 3或者 4 = 3.结果是true.</p>
 <p>if(i &gt; 1 &amp;&amp; i &lt; 10){  }   不能写为: if(1 &lt; i &lt; 10){}</p>
-<h3 id="逻辑运算符-运算符的两端是boolean值"><a href="#逻辑运算符-运算符的两端是boolean值" class="headerlink" title="逻辑运算符(运算符的两端是boolean值)"></a>逻辑运算符(运算符的两端是boolean值)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;  &amp;&amp;  |  ||  ^  !</span><br></pre></td></tr></table></figure>
+<h3 id="D-逻辑运算符-运算符的两端是boolean值"><a href="#D-逻辑运算符-运算符的两端是boolean值" class="headerlink" title="D.逻辑运算符(运算符的两端是boolean值)"></a>D.逻辑运算符(运算符的两端是boolean值)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;  &amp;&amp;  |  ||  ^  !</span><br></pre></td></tr></table></figure>
 <p>[注意]区分&amp;与&amp;&amp;的区别, 以及 | 与 || 的区别<br>      我们使用的时候, 选择 &amp;&amp; , ||  <font color="red">短路与、短路或</font></p>
-<h3 id="位运算符-两端是数值类型的数据"><a href="#位运算符-两端是数值类型的数据" class="headerlink" title="位运算符(两端是数值类型的数据)"></a>位运算符(两端是数值类型的数据)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;   &gt;&gt;    &gt;&gt;&gt;(无符号右移)  &amp;  |   ^(异或)  ~(按位取反)</span><br></pre></td></tr></table></figure>
+<h3 id="E-位运算符-两端是数值类型的数据"><a href="#E-位运算符-两端是数值类型的数据" class="headerlink" title="E.位运算符(两端是数值类型的数据)"></a>E.位运算符(两端是数值类型的数据)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;   &gt;&gt;    &gt;&gt;&gt;(无符号右移)  &amp;  |   ^(异或)  ~(按位取反)</span><br></pre></td></tr></table></figure>
 <p>[例子] 1.如何交换m = 12和n = 5的值<br>           2.将60转换为十六进制输出.</p>
-<h3 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h3><p><font color="red">(条件表达式) ? 表达式1 : 表达式2;</font><br>1) 既然是运算符, 一定会返回一个结果, 并且结果的数据类型与表达式1, 2的类型一致<br>2) <strong>表达式1与表达式2的数据类型一致</strong>.<br>3) 使用三元运算符的, 一定可以转换为if-else. 反之不一定成立.<br>4) ?: 可以嵌套使用<br>例子: 获取两个数的较大值; 获取三个数的最大值.</p>
+<h3 id="F-三元运算符"><a href="#F-三元运算符" class="headerlink" title="F.三元运算符"></a>F.三元运算符</h3><p><font color="red">(条件表达式) ? 表达式1 : 表达式2;</font><br>1) 既然是运算符, 一定会返回一个结果, 并且结果的数据类型与表达式1, 2的类型一致<br>2) <strong>表达式1与表达式2的数据类型一致</strong>.<br>3) 使用三元运算符的, 一定可以转换为if-else. 反之不一定成立.<br>4) ?: 可以嵌套使用<br>例子: 获取两个数的较大值; 获取三个数的最大值.</p>
 <div><div class="fold_hider"><div class="close hider_title">点击显/隐内容</div></div><div class="fold">
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> max = (i &gt; j) ? i : j;</span><br><span class="line"><span class="keyword">int</span> k = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">int</span> max2 = (i &gt; j) ? ((i &gt; k) ? i : k) : (( j &gt; k) ? j : k);</span><br></pre></td></tr></table></figure>
 
@@ -255,10 +255,10 @@
             <hr>
             <div class="new-meta-box">
               
-                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-02T21:13:41+08:00">
+                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-03T12:41:37+08:00">
                   <a class="notlink">
                     <i class="fas fa-save" aria-hidden="true"></i>
-                    2019-04-02
+                    2019-04-03
                   </a>
                 </div>
               
@@ -273,7 +273,7 @@
     <div class="-mob-share-list share-body">
       
         
-          <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer" href="http://connect.qq.com/widget/shareqq/index.html?url=http://crainyday.gitee.io/JavaSE2-1.html&title=Java基本语法1 | CRainyDay&summary=Java的一些基本语法">
+          <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer" href="http://connect.qq.com/widget/shareqq/index.html?url=http://crainyday.gitee.io/JavaSE2-1.html&title=Java基本语法1 | CRainyDay&summary=一.Java的一些基本语法">
             
               <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
             
@@ -281,7 +281,7 @@
         
       
         
-          <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://crainyday.gitee.io/JavaSE2-1.html&title=Java基本语法1 | CRainyDay&summary=Java的一些基本语法">
+          <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://crainyday.gitee.io/JavaSE2-1.html&title=Java基本语法1 | CRainyDay&summary=一.Java的一些基本语法">
             
               <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
             
@@ -289,7 +289,7 @@
         
       
         
-          <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer" href="http://service.weibo.com/share/share.php?url=http://crainyday.gitee.io/JavaSE2-1.html&title=Java基本语法1 | CRainyDay&summary=Java的一些基本语法">
+          <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer" href="http://service.weibo.com/share/share.php?url=http://crainyday.gitee.io/JavaSE2-1.html&title=Java基本语法1 | CRainyDay&summary=一.Java的一些基本语法">
             
               <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
             
@@ -407,7 +407,7 @@
 </header>
 
     <div class="content material">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java的一些基本语法"><span class="toc-text">Java的一些基本语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-关键字＆标识符"><span class="toc-text">1.关键字＆标识符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命名规则"><span class="toc-text">命名规则:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命名规范"><span class="toc-text">命名规范:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-变量"><span class="toc-text">2.变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本数据类型"><span class="toc-text">基本数据类型:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-运算符"><span class="toc-text">3.运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#算术运算符"><span class="toc-text">算术运算符:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#赋值运算符"><span class="toc-text">赋值运算符:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#比较运算符-关系运算符"><span class="toc-text">比较运算符(关系运算符)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#逻辑运算符-运算符的两端是boolean值"><span class="toc-text">逻辑运算符(运算符的两端是boolean值)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#位运算符-两端是数值类型的数据"><span class="toc-text">位运算符(两端是数值类型的数据)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三元运算符"><span class="toc-text">三元运算符</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-Java的一些基本语法"><span class="toc-text">一.Java的一些基本语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-关键字＆标识符"><span class="toc-text">1.关键字＆标识符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命名规则"><span class="toc-text">命名规则:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命名规范"><span class="toc-text">命名规范:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-变量"><span class="toc-text">2.变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本数据类型"><span class="toc-text">基本数据类型:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-运算符"><span class="toc-text">3.运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-算术运算符"><span class="toc-text">A.算术运算符:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-赋值运算符"><span class="toc-text">B.赋值运算符:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-比较运算符-关系运算符"><span class="toc-text">C.比较运算符(关系运算符)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#D-逻辑运算符-运算符的两端是boolean值"><span class="toc-text">D.逻辑运算符(运算符的两端是boolean值)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#E-位运算符-两端是数值类型的数据"><span class="toc-text">E.位运算符(两端是数值类型的数据)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#F-三元运算符"><span class="toc-text">F.三元运算符</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
@@ -676,8 +676,6 @@
     </div>
   
   <br>
-  <!-- <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
-</div> -->
   <div style="color:rgb(27, 195, 251);"><p>本博客所有文章除特别声明外，均采用[<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">(CC BY-NC-SA 4.0)</a>]许可协议。转载请注明出处！</p></div>
   <div style="color:rgb(27, 195, 251);" id="sitetime"></div>
   <div style="color:rgb(27, 195, 251);">本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" style="color:rgb(27, 195, 251);" class="codename">Material X</a> 作为主题，总访问量为 <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
@@ -732,6 +730,14 @@
 
   <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
 
+
+  <!-- fastclick -->
+  <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+  </script>
 
 
 
