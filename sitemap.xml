@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://crainyday.gitee.io/friends/index.html</loc>
+    
+    <lastmod>2019-04-04T04:35:28.992Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://crainyday.gitee.io/404.html</loc>
+    
+    <lastmod>2019-04-04T04:34:21.546Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://crainyday.gitee.io/categories/index.html</loc>
+    
+    <lastmod>2019-04-04T04:27:30.176Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://crainyday.gitee.io/JS2-5.html</loc>
     
     <lastmod>2019-04-04T03:47:02.872Z</lastmod>
@@ -12,13 +33,6 @@
     <loc>http://crainyday.gitee.io/JS2-4.html</loc>
     
     <lastmod>2019-04-04T03:45:01.696Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://crainyday.gitee.io/404.html</loc>
-    
-    <lastmod>2019-04-04T00:28:52.591Z</lastmod>
     
   </url>
   
@@ -212,23 +226,9 @@
   </url>
   
   <url>
-    <loc>http://crainyday.gitee.io/friends/index.html</loc>
-    
-    <lastmod>2019-03-24T07:16:27.773Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://crainyday.gitee.io/bbs/index.html</loc>
     
     <lastmod>2019-03-23T08:52:52.333Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://crainyday.gitee.io/categories/index.html</loc>
-    
-    <lastmod>2019-03-15T11:34:43.592Z</lastmod>
     
   </url>
   
