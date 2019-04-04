@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.rainyday.top/JS2-5.html</loc>
+    
+    <lastmod>2019-04-04T03:47:02.872Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.rainyday.top/JS2-4.html</loc>
     
-    <lastmod>2019-04-03T17:03:32.008Z</lastmod>
+    <lastmod>2019-04-04T03:45:01.696Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.rainyday.top/404.html</loc>
+    
+    <lastmod>2019-04-04T00:28:52.591Z</lastmod>
     
   </url>
   
@@ -194,13 +208,6 @@
     <loc>https://blog.rainyday.top/copy-code.html</loc>
     
     <lastmod>2019-04-03T04:21:59.331Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.rainyday.top/404.html</loc>
-    
-    <lastmod>2019-04-02T09:19:08.446Z</lastmod>
     
   </url>
   
