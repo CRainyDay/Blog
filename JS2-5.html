@@ -25,11 +25,11 @@
   
 
   
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico">
   
 
   
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/blog/style.css">
   
 
   <script>
@@ -50,7 +50,7 @@
 <header class="l_header material">
 	<div class="wrapper">
 		<div class="nav-main container container--flex">
-      <a class="logo flat-box" href="/">
+      <a class="logo flat-box" href="/blog/">
         
           CRainyDay
         
@@ -60,25 +60,25 @@
           
   					
   						<li>
-								<a id="home" class="nav flat-box" href="/">
+								<a id="blog" class="nav flat-box" href="/blog/">
 									<i class="fas fa-home fa-fw"></i>&nbsp;博客
 								</a>
 							</li>
       			
   						<li>
-								<a id="archives" class="nav flat-box" href="/archives/">
+								<a id="blogarchives" class="nav flat-box" href="/blog/archives/">
 									<i class="fas fa-archive fa-fw"></i>&nbsp;归档
 								</a>
 							</li>
       			
   						<li>
-								<a id="friends" class="nav flat-box" href="/friends/">
+								<a id="blogfriends" class="nav flat-box" href="/blog/friends/">
 									<i class="fas fa-users fa-fw"></i>&nbsp;朋友
 								</a>
 							</li>
       			
   						<li>
-								<a id="bbs" class="nav flat-box" href="/bbs/">
+								<a id="blogbbs" class="nav flat-box" href="/blog/bbs/">
 									<i class="fas fa-comment-alt fa-fw"></i>&nbsp;留言板
 								</a>
 							</li>
@@ -119,25 +119,25 @@
           
               
                   <li>
-										<a id="home" class="nav flat-box" href="/">
+										<a id="blog" class="nav flat-box" href="/blog/">
 											<i class="fas fa-home fa-fw"></i>&nbsp;博客
 										</a>
                   </li>
               
                   <li>
-										<a id="archives" class="nav flat-box" href="/archives/">
+										<a id="blogarchives" class="nav flat-box" href="/blog/archives/">
 											<i class="fas fa-archive fa-fw"></i>&nbsp;归档
 										</a>
                   </li>
               
                   <li>
-										<a id="friends" class="nav flat-box" href="/friends/">
+										<a id="blogfriends" class="nav flat-box" href="/blog/friends/">
 											<i class="fas fa-users fa-fw"></i>&nbsp;朋友
 										</a>
                   </li>
               
                   <li>
-										<a id="bbs" class="nav flat-box" href="/bbs/">
+										<a id="blogbbs" class="nav flat-box" href="/blog/bbs/">
 											<i class="fas fa-comment-alt fa-fw"></i>&nbsp;留言板
 										</a>
                   </li>
@@ -167,7 +167,7 @@
     <div class="new-meta-box">
       
         <div class="new-meta-item author">
-          <a href="https://blog.rainyday.top">
+          <a href="http://crainyday.gitee.io">
             <i class="fas fa-user" aria-hidden="true"></i>
             CRainyDay
           </a>
@@ -185,7 +185,7 @@
         
           
           <div class="new-meta-item category">
-            <a href="/categories/JS/">
+            <a href="/blog/categories/JS/">
               <i class="fas fa-folder-open" aria-hidden="true"></i>
               JS
             </a>
@@ -214,6 +214,237 @@
       <div class="article-entry" itemprop="articleBody">
         <p>JS中的正则</p>
 <a id="more"></a>
+<h1 id="一-正则表达式简介"><a href="#一-正则表达式简介" class="headerlink" title="一.正则表达式简介"></a>一.正则表达式简介</h1><blockquote>
+<p>百度百科:正则表达式, 又称规则表达式. (英语: Regular Expression, 在代码中常简写为regex、regexp或RE), 计算机科学的一个概念. 正则表达式通常被用来检索、替换那些符合某个模式(规则)的文本.</p>
+<p>正则表达式用于定义一些字符串的规则, 计算机根据正则表达式, 来检查是否符合规则, 获取、提取字符串中符合规则的内容.</p>
+</blockquote>
+<h2 id="1-创建RegExp对象"><a href="#1-创建RegExp对象" class="headerlink" title="1.创建RegExp对象"></a>1.创建RegExp对象</h2><p>正则表达式对象即RegExp对象, JS内置的对象.</p>
+<p>RegExp对象的test()方法, 检索字符串中指定的值, 返回 true 或 false</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//语法:</span></span><br><span class="line"><span class="comment">//var 变量名 = new RegExp("正则表达式","匹配模式");</span></span><br><span class="line"><span class="comment">//匹配模式:i 忽略大小写;g 全局匹配;m 多行匹配;</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"a"</span>,<span class="string">"i"</span>);</span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"ABCD"</span>;</span><br><span class="line"><span class="keyword">var</span> result = reg.test(str);<span class="comment">//检查字符串中是否含A</span></span><br><span class="line"><span class="built_in">console</span>.log(result);<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-字面量创建RegExp对象"><a href="#2-字面量创建RegExp对象" class="headerlink" title="2.字面量创建RegExp对象"></a>2.字面量创建RegExp对象</h2><p>字面量的方式创建更加简单, 使用构造函数创建更加灵活(可以传参数).</p>
+<font style="font-size:1.2em;"><center>语法: var 变量名 = /正则表达式/匹配模式;</center></font>
+
+<font style="font-size:1.2em;color:red;">注意: 语法中没有引号</font>
+
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[abc]</td>
+<td>查找方括号之间的任何字符</td>
+</tr>
+<tr>
+<td>[^abc]</td>
+<td>查找任何不在方括号之间的字符</td>
+</tr>
+<tr>
+<td>[0-9]</td>
+<td>查找任何从 0 至 9 的数字</td>
+</tr>
+<tr>
+<td>[a-z]</td>
+<td>查找任何从小写 a 到小写 z 的字符</td>
+</tr>
+<tr>
+<td>[A-Z]</td>
+<td>查找任何从大写 A 到大写 Z 的字符</td>
+</tr>
+<tr>
+<td>[A-z]</td>
+<td>查找任何从大写 A 到小写 z 的字符</td>
+</tr>
+<tr>
+<td>[adgk]</td>
+<td>查找给定集合内的任何字符</td>
+</tr>
+<tr>
+<td>[^adgk]</td>
+<td>查找给定集合外的任何字符</td>
+</tr>
+<tr>
+<td>(red blue green)</td>
+<td>查找任何指定的选项</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/a/i</span>;<span class="comment">//等价于:var reg = new RegExp("a","i");</span></span><br><span class="line"><span class="comment">//1.创建一个正则表达式检查一个字符串中是否含有a或b</span></span><br><span class="line">reg = <span class="regexp">/a|b/</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//2.创建一个正则表达式检查一个字符串中是否含有字母</span></span><br><span class="line">reg = <span class="regexp">/[A-z]/</span>;<span class="comment">//中括号表示或的意思</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//3.检查一个字符串中是否含有abc或adc或aec</span></span><br><span class="line">reg = <span class="regexp">/a[bde]c/</span>;<span class="comment">//以a开头,c结尾,中间为b或d或e</span></span><br><span class="line"></span><br><span class="line">reg = <span class="regexp">/[^0-9]/</span>;<span class="comment">//检查除了数字之外的内容</span></span><br><span class="line">reg = <span class="regexp">/(abc)/</span>;<span class="comment">//abc连续出现</span></span><br><span class="line">reg = <span class="regexp">/(a|b|c)/</span>;<span class="comment">//出现过a或b或c</span></span><br></pre></td></tr></table></figure>
+<h1 id="二-字符串与正则相关的方法"><a href="#二-字符串与正则相关的方法" class="headerlink" title="二.字符串与正则相关的方法"></a>二.字符串与正则相关的方法</h1><h2 id="1-split"><a href="#1-split" class="headerlink" title="1.split"></a>1.split</h2><ul>
+<li>根据参数将字符串拆分为字符数组</li>
+<li>参数可以是正则表达式</li>
+<li>正则不需要设置全局匹配, split默认将所有符合条件的拆分</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"1a2b3c4d5e6f7g8"</span>;</span><br><span class="line"><span class="keyword">var</span> arr = str.split(<span class="regexp">/[A-z]/</span>);<span class="comment">//根据任意字母拆分</span></span><br><span class="line"><span class="built_in">console</span>.log(arr);<span class="comment">//1,2,3,4,5,6,7,8</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-search"><a href="#2-search" class="headerlink" title="2.search"></a>2.search</h2><ul>
+<li>检索与正则表达式相匹配的值</li>
+<li>如果可以搜索到指定内容, 则返回第一次出现过的位置, 没搜索到返回-1</li>
+<li>它能接受一个正则表达式作为参数, 然后根据正则表达式检索字符串</li>
+<li>search正则查找时不能设置全局匹配</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//功能和indexOf()类似</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"hello abc hello adc hello aec"</span>;</span><br><span class="line"><span class="comment">//搜索字符串中是否含有abc或adc或aec</span></span><br><span class="line"><span class="keyword">var</span> result = str.search(<span class="regexp">/a[bde]c/</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result);<span class="comment">//6</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-match"><a href="#3-match" class="headerlink" title="3.match"></a>3.match</h2><ul>
+<li>可以根据正则表达式, 从一个字符串中将符合条件的内容提取出来</li>
+<li>默认情况下, match只会找第一个符合条件的内容, 找到后停止检索, 我们可以将正则表达式设置为全局匹配模式, 这样match会找到所有符合条件的内容</li>
+<li>可以为正则表达式设置多个匹配模式, 且顺序无所谓</li>
+<li>match会将匹配到的内容封装到一个数组中返回, 即使只查询到一个结果.</li>
+<li>可以将一个没有规则的长串中, 有规则的内容提取出来, 很实用</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"1A2B3C4d5e6f7g8"</span>;</span><br><span class="line"><span class="keyword">var</span> result = str.match(<span class="regexp">/[a-z]/gi</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.isArray(result));<span class="comment">//true;</span></span><br><span class="line"><span class="built_in">console</span>.log(result);<span class="comment">//A,B,C,d,e,f,g</span></span><br><span class="line"><span class="built_in">console</span>.log(result[<span class="number">0</span>]);<span class="comment">//A</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//筛选出所有的QQ号</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"826720408abhfe826720407"</span>+</span><br><span class="line">    <span class="string">"freaf826720405C826720"</span>+</span><br><span class="line">    <span class="string">"404d826720405e8267204"</span>+</span><br><span class="line">    <span class="string">"00f826720409g826720401"</span>;</span><br><span class="line"><span class="keyword">var</span> result = str.match(<span class="regexp">/[0-9]&#123;8,10&#125;/g</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.isArray(result));<span class="comment">//true;</span></span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br></pre></td></tr></table></figure>
+<h2 id="4-replace"><a href="#4-replace" class="headerlink" title="4.replace"></a>4.replace</h2><ul>
+<li>将字符串中指定的内容替换为新的内容, 不影响原字符串</li>
+<li>参数:①被替换的内容, 可以接受一个正则表达式作为参数</li>
+<li>②新的内容</li>
+<li>默认只会替换一个,可以为正则表达式设置全局匹配模式替换所有内容</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"1A2B3C4d5e6f7g8"</span>;</span><br><span class="line"><span class="comment">//将所有字母替换为""</span></span><br><span class="line"><span class="keyword">var</span> result = str.replace(<span class="regexp">/[a-z]/gi</span>,<span class="string">""</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result);<span class="comment">//12345678</span></span><br></pre></td></tr></table></figure>
+<h1 id="三-正则表达式语法补充"><a href="#三-正则表达式语法补充" class="headerlink" title="三.正则表达式语法补充"></a>三.正则表达式语法补充</h1><h2 id="1-量词"><a href="#1-量词" class="headerlink" title="1.量词"></a>1.量词</h2><ul>
+<li>量词: 可以设置一个内容出现的次数, 它只对它前面的一个内容起作用</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">量词</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">n+</td>
+<td>匹配任何包含至少一个 n 的字符串, 相当于n{1, }</td>
+</tr>
+<tr>
+<td style="text-align:left">n*</td>
+<td>匹配任何包含零个或多个 n 的字符串, 相当于n{0, }</td>
+</tr>
+<tr>
+<td style="text-align:left">n?</td>
+<td>匹配任何包含零个或一个 n 的字符串, 相当于n{0,1}</td>
+</tr>
+<tr>
+<td style="text-align:left">n{x}</td>
+<td>匹配包含 x 个 n 的序列的字符串</td>
+</tr>
+<tr>
+<td style="text-align:left">n{x,y}</td>
+<td>匹配包含 x ~ y 个 n 的序列的字符串</td>
+</tr>
+<tr>
+<td style="text-align:left">n{x, }</td>
+<td>匹配包含至少 x 个 n 的序列的字符串</td>
+</tr>
+<tr>
+<td style="text-align:left">n$</td>
+<td>匹配任何结尾为 n 的字符串</td>
+</tr>
+<tr>
+<td style="text-align:left">^n</td>
+<td>匹配任何开头为 n 的字符串</td>
+</tr>
+<tr>
+<td style="text-align:left">?=n</td>
+<td>匹配任何其后紧接指定字符串 n 的字符串</td>
+</tr>
+<tr>
+<td style="text-align:left">?!n</td>
+<td>匹配任何其后没有紧接指定字符串 n 的字符串</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/a&#123;3&#125;/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">"xaaax"</span>));<span class="comment">//只有字符串中连续出现3个a时为true</span></span><br><span class="line">reg = <span class="regexp">/(ab)&#123;3&#125;/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">"xabababx"</span>));<span class="comment">//只有字符串中连续出现3个ab时为true</span></span><br><span class="line">reg = <span class="regexp">/ab&#123;3,5&#125;c/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">"xabbbbcx"</span>));<span class="comment">//只有字符串中a和c之间有3~5个b时为true</span></span><br><span class="line">reg = <span class="regexp">/ab&#123;3,&#125;c/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">"xabbbcx"</span>));<span class="comment">//只有字符串中a和c之间有2个以上b时为true</span></span><br><span class="line"></span><br><span class="line">reg = <span class="regexp">/^a$/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">"a"</span>));<span class="comment">//只有字符串为"a"时,结果为true</span></span><br><span class="line">reg = <span class="regexp">/^a|a$/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">"abc"</span>));<span class="comment">//字符串以a开头或以a结尾时为true</span></span><br></pre></td></tr></table></figure>
+<font style="color:red;font-size:1.2em;font-weight:blod;">注意: 在正则表达式中同时使用了 ^ 和 $ 量词, 则要求字符串必须完全符合正则表达式.</font>
+
+<h3 id="练习-手机号的正则表达式"><a href="#练习-手机号的正则表达式" class="headerlink" title="练习: 手机号的正则表达式"></a>练习: 手机号的正则表达式</h3><p>匹配手机号的正则表达式: <font style="color:red;font-size:1.2em;font-weight:bold;">/^1[3-9][0-9]{9}$/</font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*手机号的规则:</span></span><br><span class="line"><span class="comment"> *1. 以1开头</span></span><br><span class="line"><span class="comment"> *2. 第二位为3-9任意数字</span></span><br><span class="line"><span class="comment"> *3. 第三位之后为任意数字9个</span></span><br><span class="line"><span class="comment"> * ^ 和 $ 量词是必须的</span></span><br><span class="line"><span class="comment"> * ^1 [3-9] [0-9]&#123;9&#125;$</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> phoneNumReg = <span class="regexp">/^1[3-9][0-9]&#123;9&#125;$/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(phoneNumReg.test(<span class="string">"15555555555"</span>));<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-元字符"><a href="#2-元字符" class="headerlink" title="2.元字符"></a>2.元字符</h2><table>
+<thead>
+<tr>
+<th>元字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.</td>
+<td>查找单个字符, 除了换行和行结束符</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>查找单词字符(字母、数字、下划线)</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>查找非单词字符</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>查找数字</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>查找非数字字符</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>查找空白字符</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>查找非空白字符</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>匹配单词边界</td>
+</tr>
+<tr>
+<td>\B</td>
+<td>匹配非单词边界</td>
+</tr>
+<tr>
+<td>\0</td>
+<td>查找 NULL 字符</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>查找换行符</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>查找换页符</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>查找回车符</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>查找制表符</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>查找垂直制表符</td>
+</tr>
+<tr>
+<td>\xxx</td>
+<td>查找以八进制数 xxx 规定的字符</td>
+</tr>
+<tr>
+<td>\xdd</td>
+<td>查找以十六进制数 dd 规定的字符</td>
+</tr>
+<tr>
+<td>\uxxxx</td>
+<td>查找以十六进制数 xxxx 规定的 Unicode 字符</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//查找字符串中是否有.</span></span><br><span class="line"><span class="comment">//正则字面量:</span></span><br><span class="line"><span class="comment">//由于.是元字符,我们要用\.来代替.</span></span><br><span class="line"><span class="comment">//而\表示转义,要用\\来代替\</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/\./</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">"adsC.dSf l"</span>));<span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//正则构造函数:</span></span><br><span class="line"><span class="comment">//由于函数的参数为字符串,而在字符串中\代表转义字符</span></span><br><span class="line"><span class="comment">//故在字面量中的一个\要用\\来代替</span></span><br><span class="line"><span class="keyword">var</span> reg1 = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"\\."</span>);<span class="comment">//等价于reg</span></span><br><span class="line"><span class="built_in">console</span>.log(reg1);<span class="comment">//输出:/\./</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//查找字符串是否含单词child</span></span><br><span class="line">reg = <span class="regexp">/\bchild\b/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">"hello children"</span>));<span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">"hello child ren"</span>));<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h3 id="练习-A-去除字符串的前后空格"><a href="#练习-A-去除字符串的前后空格" class="headerlink" title="练习: A.去除字符串的前后空格"></a>练习: A.去除字符串的前后空格</h3><p>匹配开头和结尾空格的正则表达式: <font style="color:red;font-size:1.2em;font-weight:bold;"> /^\s*|\s*$/g</font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//可以考虑replace用空串替换空格</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"     Aaron Bob      "</span>;</span><br><span class="line"><span class="comment">//str = str.replace(/\s/g,"");//去除所有空格</span></span><br><span class="line"><span class="comment">//str = str.replace(/^\s*/,"");//去除开头的空格</span></span><br><span class="line"><span class="comment">//str = str.replace(/\s*$/,"");//去除结尾的空格</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//综合一下:</span></span><br><span class="line">str = str.replace(<span class="regexp">/^\s*|\s*$/g</span>,<span class="string">""</span>);</span><br><span class="line"><span class="comment">//因为是或的关系,若不加全局匹配,方法匹配完开头的空格就返回了</span></span><br><span class="line"><span class="built_in">console</span>.log(str);</span><br></pre></td></tr></table></figure>
+<h3 id="练习-B-email的正则表达式"><a href="#练习-B-email的正则表达式" class="headerlink" title="练习: B.email的正则表达式"></a>练习: B.email的正则表达式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*电子邮件格式:</span></span><br><span class="line"><span class="comment"> * hello           .hello           @ abc        .com           .cn</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 任意字母数字下划线 .任意字母数字下划线 @ 任意字母数字 .任意字母(2-5位) .任意字母(2-5位)</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * \w&#123;3,&#125;          (\.\w+)*         @ [A-z0-9]+  (\.[A-z]&#123;2,5&#125;)&#123;1,2&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> emailReg = <span class="regexp">/^\w&#123;3,&#125;(\.\w+)*@[A-z0-9]+(\.[A-z]&#123;2,5&#125;)&#123;1,2&#125;$/</span>;</span><br><span class="line"><span class="keyword">var</span> email = <span class="string">"crainyday@qq.com"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(emailReg.test(email));<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
 
       </div>
         
@@ -221,16 +452,16 @@
             <hr>
             <div class="new-meta-box">
               
-                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-04T11:47:02+08:00">
+                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-05T02:06:57+08:00">
                   <a class="notlink">
                     <i class="fas fa-save" aria-hidden="true"></i>
-                    2019-04-04
+                    2019-04-05
                   </a>
                 </div>
               
               
                 
-                <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JS/"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;JS</a></div>
+                <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/JS/"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;JS</a></div>
               
               
                 
@@ -239,7 +470,7 @@
     <div class="-mob-share-list share-body">
       
         
-          <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.rainyday.top/JS2-5.html&title=JS正则 | CRainyDay&summary=JS中的正则">
+          <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer" href="http://connect.qq.com/widget/shareqq/index.html?url=http://crainyday.gitee.io/JS2-5.html&title=JS正则 | CRainyDay&summary=JS中的正则">
             
               <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
             
@@ -247,7 +478,7 @@
         
       
         
-          <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.rainyday.top/JS2-5.html&title=JS正则 | CRainyDay&summary=JS中的正则">
+          <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://crainyday.gitee.io/JS2-5.html&title=JS正则 | CRainyDay&summary=JS中的正则">
             
               <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
             
@@ -255,7 +486,7 @@
         
       
         
-          <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer" href="http://service.weibo.com/share/share.php?url=https://blog.rainyday.top/JS2-5.html&title=JS正则 | CRainyDay&summary=JS中的正则">
+          <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer" href="http://service.weibo.com/share/share.php?url=http://crainyday.gitee.io/JS2-5.html&title=JS正则 | CRainyDay&summary=JS中的正则">
             
               <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
             
@@ -279,7 +510,7 @@
                         <span class="art-item-right" aria-hidden="true">
                             <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/JS2-4.html" rel="prev" title="JS内建对象">
+                                <a href="/blog/JS2-4.html" rel="prev" title="JS内建对象">
                                     
                                         JS内建对象
                                     
@@ -288,7 +519,7 @@
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/tags/JS/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>JS</a>
+                                    <a class="tag" href="/blog/tags/JS/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>JS</a>
                                 </h6>
                             
                         </span>
@@ -344,6 +575,20 @@
       
       
         
+  <section class="toc-wrapper">
+    
+<header class="material">
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章目录</div>
+  
+    <div class="wrapper"><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class="content material">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-正则表达式简介"><span class="toc-text">一.正则表达式简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-创建RegExp对象"><span class="toc-text">1.创建RegExp对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-字面量创建RegExp对象"><span class="toc-text">2.字面量创建RegExp对象</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-字符串与正则相关的方法"><span class="toc-text">二.字符串与正则相关的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-split"><span class="toc-text">1.split</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-search"><span class="toc-text">2.search</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-match"><span class="toc-text">3.match</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-replace"><span class="toc-text">4.replace</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三-正则表达式语法补充"><span class="toc-text">三.正则表达式语法补充</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-量词"><span class="toc-text">1.量词</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#练习-手机号的正则表达式"><span class="toc-text">练习: 手机号的正则表达式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-元字符"><span class="toc-text">2.元字符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#练习-A-去除字符串的前后空格"><span class="toc-text">练习: A.去除字符串的前后空格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#练习-B-email的正则表达式"><span class="toc-text">练习: B.email的正则表达式</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </section>
+
 
       
     
@@ -355,7 +600,7 @@
   <div class="content material">
     
       <div class="avatar">
-        <img class="avatar" src="/head.jpg">
+        <img class="avatar" src="/blog/head.jpg">
       </div>
     
     
@@ -377,6 +622,10 @@
         
           
             <a href="https://github.com/crainyday" class="social flat-btn" target="_blank" rel="external"><i class="social fab fa-github" aria-hidden="true"></i></a>
+          
+        
+          
+            <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=3013142340" class="social flat-btn" target="_blank" rel="external"><i class="social fab fa-qq" aria-hidden="true"></i></a>
           
         
           
@@ -405,11 +654,11 @@
     <div class="content material">
       <ul class="entry">
         
-          <li><a class="flat-box" title="/categories/Hexo/" href="/categories/Hexo/"><div class="name">Hexo</div><div class="badge">(3)</div></a></li>
+          <li><a class="flat-box" title="/blog/categories/Hexo/" href="/blog/categories/Hexo/"><div class="name">Hexo</div><div class="badge">(3)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/JS/" href="/categories/JS/"><div class="name">JS</div><div class="badge">(9)</div></a></li>
+          <li><a class="flat-box" title="/blog/categories/JS/" href="/blog/categories/JS/"><div class="name">JS</div><div class="badge">(9)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/JavaSE/" href="/categories/JavaSE/"><div class="name">JavaSE</div><div class="badge">(15)</div></a></li>
+          <li><a class="flat-box" title="/blog/categories/JavaSE/" href="/blog/categories/JavaSE/"><div class="name">JavaSE</div><div class="badge">(15)</div></a></li>
         
       </ul>
     </div>
@@ -433,7 +682,7 @@
     <div class="content material">
       <div id="myCanvasContainer" class="widget tagcloud">
         <canvas width="250" height="250" id="resCanvas" style="width=100%">
-          <a href="/tags/Gitee/" style="font-size: 14px; color: #999">Gitee</a> <a href="/tags/Hexo/" style="font-size: 17.33px; color: #828282">Hexo</a> <a href="/tags/JS/" style="font-size: 20.67px; color: #6c6c6c">JS</a> <a href="/tags/JavaSE/" style="font-size: 24px; color: #555">JavaSE</a> <a href="/tags/VPN/" style="font-size: 14px; color: #999">VPN</a>
+          <a href="/blog/tags/Gitee/" style="font-size: 14px; color: #999">Gitee</a> <a href="/blog/tags/Hexo/" style="font-size: 17.33px; color: #828282">Hexo</a> <a href="/blog/tags/JS/" style="font-size: 20.67px; color: #6c6c6c">JS</a> <a href="/blog/tags/JavaSE/" style="font-size: 24px; color: #555">JavaSE</a> <a href="/blog/tags/VPN/" style="font-size: 14px; color: #999">VPN</a>
 	</canvas>
       </div>
     </div>
@@ -451,7 +700,7 @@
 <header class="material">
   <div><i class="fas fa-medal fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;精选项目</div>
   
-    <a class="rightBtn" target="_blank" rel="external nofollow noopener noreferrer" href="/" title="/">
+    <a class="rightBtn" target="_blank" rel="external nofollow noopener noreferrer" href="/blog/" title="/">
     <i class="fas fa-arrow-right fa-fw"></i></a>
   
 </header>
@@ -459,7 +708,7 @@
   <div class="content material">
     <ul class="entry">
       
-        <li><a class="flat-box" title="/VPN.html" href="/VPN.html">
+        <li><a class="flat-box" title="/VPN.html" href="/blog/VPN.html">
           <div class="name">
             
               <i class="fas fa-cube fa-fw" aria-hidden="true"></i>
@@ -471,7 +720,7 @@
           
         </a></li>
       
-        <li><a class="flat-box" title="/Hexo.html" href="/Hexo.html">
+        <li><a class="flat-box" title="/Hexo.html" href="/blog/Hexo.html">
           <div class="name">
             
               <i class="fas fa-cube fa-fw" aria-hidden="true"></i>
@@ -503,7 +752,7 @@
   <div class="content material">
     <ul class="entry">
       
-        <li><a class="flat-box" title="bbs/" href="/bbs/">
+        <li><a class="flat-box" title="bbs/" href="/blog/bbs/">
           <div class="name">
             
               <i class="fas fa-comment-dots fa-fw" aria-hidden="true"></i>
@@ -568,7 +817,7 @@
 <header class="material">
   <div><i class="fas fa-bullhorn fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;注意啦～</div>
   
-    <a class="rightBtn" target="_blank" rel="external nofollow noopener noreferrer" href="/" title="/">
+    <a class="rightBtn" target="_blank" rel="external nofollow noopener noreferrer" href="/blog/" title="/">
     <i class="fas fa-question-circle fa-fw"></i></a>
   
 </header>
@@ -603,6 +852,10 @@
         
       
         
+          <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=3013142340" class="social fab fa-qq flat-btn" target="_blank" rel="external"></a>
+        
+      
+        
           <a href="https://music.163.com/#/user/home?id=1794783182" class="social fas fa-music flat-btn" target="_blank" rel="external"></a>
         
       
@@ -630,7 +883,7 @@
     var AZURE_QUERY_KEY = "";
     var BAIDU_API_ID = "";
     var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/"||"/";
+    var ROOT = "/blog/"||"/";
     if(!ROOT.endsWith('/'))ROOT += '/';
   </script>
 
@@ -711,8 +964,8 @@
 
 
 
-  <script src="/js/app.js"></script>
-<script src="/js/search.js"></script>
+  <script src="/blog/js/app.js"></script>
+<script src="/blog/js/search.js"></script>
 
 
 
@@ -827,12 +1080,12 @@
 
 
 
-<script type="text/javascript" src="/js/sitetime.js"></script>
-<script type="text/javascript" src="/js/cooltext.js"></script>
-<script type="text/javascript" src="/js/clicklove.js"></script>
-<script type="text/javascript" src="/js/tagcanvas.js"></script>
-<script type="text/javascript" src="/js/tagcloud.js"></script>
-<script type="text/javascript" color="102,185,255" zindex="-10" opacity="50" count="99" src="/js/canvas-nest.min.js"></script>
+<script type="text/javascript" src="/blog/js/sitetime.js"></script>
+<script type="text/javascript" src="/blog/js/cooltext.js"></script>
+<script type="text/javascript" src="/blog/js/clicklove.js"></script>
+<script type="text/javascript" src="/blog/js/tagcanvas.js"></script>
+<script type="text/javascript" src="/blog/js/tagcloud.js"></script>
+<script type="text/javascript" color="102,185,255" zindex="-10" opacity="50" count="99" src="/blog/js/canvas-nest.min.js"></script>
 
 
     <script>setLoadingBarProgress(100);</script>
