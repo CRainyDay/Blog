@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>面向对象总结 | CRainyDay</title>
+  
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico">
+  
+
+  
+  <link rel="stylesheet" href="/blog/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar" class="material"></div>
+</div>
+
+<header class="l_header material">
+	<div class="wrapper">
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href="/blog/">
+        
+          CRainyDay
+        
+      </a>
+			<div class="menu">
+				<ul class="h-list">
+          
+  					
+  						<li>
+								<a id="blog" class="nav flat-box" href="/blog/">
+									<i class="fas fa-home fa-fw"></i>&nbsp;博客
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="blogarchives" class="nav flat-box" href="/blog/archives/">
+									<i class="fas fa-archive fa-fw"></i>&nbsp;归档
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="blogfriends" class="nav flat-box" href="/blog/friends/">
+									<i class="fas fa-users fa-fw"></i>&nbsp;朋友
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="blogbbs" class="nav flat-box" href="/blog/bbs/">
+									<i class="fas fa-comment-alt fa-fw"></i>&nbsp;留言板
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜索">
+						<span class="icon"><i class="fas fa-search fa-fw"></i></span>
+					</form>
+				</div>
+			
+			<ul class="switcher h-list">
+				
+					<li class="s-search"><a class="fas fa-search fa-fw" href="javascript:void(0)"></a></li>
+				
+				<li class="s-menu"><a class="fas fa-bars fa-fw" href="javascript:void(0)"></a></li>
+			</ul>
+		</div>
+
+		<div class="nav-sub container container--flex">
+			<a class="logo flat-box"></a>
+			<ul class="switcher h-list">
+				<li class="s-comment"><a class="flat-btn fas fa-comments fa-fw" href="javascript:void(0)"></a></li>
+				<li class="s-toc"><a class="flat-btn fas fa-list fa-fw" href="javascript:void(0)"></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu">
+      <ul>
+          
+              
+                  <li>
+										<a id="blog" class="nav flat-box" href="/blog/">
+											<i class="fas fa-home fa-fw"></i>&nbsp;博客
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="blogarchives" class="nav flat-box" href="/blog/archives/">
+											<i class="fas fa-archive fa-fw"></i>&nbsp;归档
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="blogfriends" class="nav flat-box" href="/blog/friends/">
+											<i class="fas fa-users fa-fw"></i>&nbsp;朋友
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="blogbbs" class="nav flat-box" href="/blog/bbs/">
+											<i class="fas fa-comment-alt fa-fw"></i>&nbsp;留言板
+										</a>
+                  </li>
+              
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+    <div class="l_body">
+    <div class='container clearfix'>
+        <div class='l_main'>
+            <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+  
+<section class="meta">
+  
+  
+  <div class="meta" id="header-meta">
+    
+      
+          <h1 class="title">面向对象总结</h1>
+      
+    
+
+    <div class="new-meta-box">
+      
+        <div class="new-meta-item author">
+          <a href="http://crainyday.gitee.io/blog">
+            <i class="fas fa-user" aria-hidden="true"></i>
+            CRainyDay
+          </a>
+        </div>
+      
+      
+        <div class="new-meta-item date">
+          <a class="notlink">
+            <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+            2019-03-20
+          </a>
+        </div>
+      
+      
+        
+          
+          <div class="new-meta-item category">
+            <a href="/blog/categories/JavaSE/">
+              <i class="fas fa-folder-open" aria-hidden="true"></i>
+              JavaSE
+            </a>
+          </div>
+        
+      
+      
+        
+          <div class="new-meta-item browse busuanzi">
+            <a class="notlink">
+              <i class="fas fa-eye" aria-hidden="true"></i>
+              <span id="busuanzi_value_page_pv">
+                <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+              </span>
+            </a>
+          </div>
+        
+      
+      
+    </div>
+    <hr>
+  </div>
+</section>
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <p>面向对象的三条主线:<br>1.类及类的成分<br>2.面向对象的三大特性<br>3.其他的关键字: this super import package abstract static final interface等</p>
+<a id="more"></a>
+<h1 id="一-专注类的设计"><a href="#一-专注类的设计" class="headerlink" title="一.专注类的设计"></a>一.专注类的设计</h1><p>类从代码的角度: 并列关系! 从执行、设计的角度: 关联关系、继承关系、聚合关系</p>
+<h2 id="1-类的成分"><a href="#1-类的成分" class="headerlink" title="1.类的成分"></a>1.类的成分</h2><p>属性 方法 构造器 代码块 内部类</p>
+<ol>
+<li><h3 id="属性"><a href="#属性" class="headerlink" title="属性:"></a>属性:</h3><ul>
+<li>①变量的分类: 成员变量(属性 Field) vs 局部变量(方法的形参、方法内部、代码块内部)<br>基本数据类型(8种, 不同的数据类型对应不同的默认初始化值) vs 引用数据类型(数组、类、接口默认初始化值为null)</li>
+<li>②属性的声明格式: 修饰符  数据类型  变量名 = 初始化值; //java是强数据类型的语言</li>
+<li>③对属性的赋值的操作: A.默认初始化 B.显式的初始化 C.代码块的初始化 D.构造器的初始化 E.调用方法、属性进行赋值</li>
+</ul>
+</li>
+<li><h3 id="方法"><a href="#方法" class="headerlink" title="方法:"></a>方法:</h3><ul>
+<li>①格式: 修饰符 (其它的关键字: static/final/abstract)返回值类型 方法名 (形参列表){//方法体 }</li>
+<li>②方法的重载(overload) vs 方法的重写(override overwrite)</li>
+<li>③方法的参数传递机制: 值传递</li>
+</ul>
+</li>
+<li><h3 id="构造器"><a href="#构造器" class="headerlink" title="构造器:"></a>构造器:</h3><ul>
+<li>①构造器的作用: A.创建类的对象 B.初始化对象的成员变量</li>
+<li>②构造器也是可以重载的.</li>
+</ul>
+</li>
+<li><h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块:"></a>代码块:</h3><ul>
+<li>主要作用: 用来初始化类的成员变量</li>
+<li>分类: 静态的代码块 vs 非静态的代码块</li>
+</ul>
+</li>
+<li><h3 id="内部类"><a href="#内部类" class="headerlink" title="内部类:"></a>内部类:</h3><ul>
+<li>①分类: 成员内部类(static的成员 vs 非static的成员) vs 局部内部类(方法内部声明的类)</li>
+<li>②掌握: A.如何创建成员内部类的对象 B.如何区分调用外部类、内部类的变量(尤其是变量重名时) C.局部内部类的使用</li>
+</ul>
+</li>
+</ol>
+<h2 id="2-类的初始化"><a href="#2-类的初始化" class="headerlink" title="2.类的初始化"></a>2.类的初始化</h2><ol>
+<li>如何创建类的对象. 如: Person p = new Person(); Date d = new Date();</li>
+<li>内存解析:<ul>
+<li>栈: 局部变量、对象的引用名、数组的引用名</li>
+<li>堆: new 出来的“东西”</li>
+<li>方法区: (字符串常量池)</li>
+<li>静态域: 存放类中静态的变量</li>
+<li>理解创建的对象在内存中加载的过程</li>
+</ul>
+</li>
+</ol>
+<h1 id="二-面向对象的三大特性"><a href="#二-面向对象的三大特性" class="headerlink" title="二.面向对象的三大特性"></a>二.面向对象的三大特性</h1><h2 id="1-封装性"><a href="#1-封装性" class="headerlink" title="1.封装性"></a>1.封装性</h2><ul>
+<li>① 通过私有化类的成员变量, 通过公共的getter和setter方法来调用和修改</li>
+<li>② 还可以对类的其他结构进行“封装”</li>
+<li>③ 权限修饰符: public protected 缺省 private</li>
+</ul>
+<h2 id="2-继承性"><a href="#2-继承性" class="headerlink" title="2.继承性"></a>2.继承性</h2><p>通过让一个类A继承另一个类B, 就可以获取类B中的结构(主要的: 属性、方法、构造器). 子类: 类A; 父类: 类B</p>
+<p>java中的类的继承性: 单继承的</p>
+<h2 id="3-多态性"><a href="#3-多态性" class="headerlink" title="3.多态性"></a>3.多态性</h2><ul>
+<li>①体现: 方法的重载与重写; 子类对象的多态性 Person p = new Student();</li>
+<li>②子类对象多态性的使用: 虚拟方法调用.</li>
+<li>③向上转型 向下转型 Student s = (Student)p; //建议在向下转型之前: if(p instanceof Student)避免出现ClassCastException的异常</li>
+</ul>
+<h1 id="三-其他关键字"><a href="#三-其他关键字" class="headerlink" title="三.其他关键字"></a>三.其他关键字</h1><ol>
+<li>this: 修饰属性、方法、构造器. 表示: 当前对象或当前正在创建的对象</li>
+<li>super: 修饰属性、方法、构造器. 显式的调用父类的相应的结构, 尤其是子父类有重名的方法、属性</li>
+<li>static: 修饰属性、方法、代码块、内部类. 随着类的加载而加载!</li>
+<li>final: 修饰类、属性、方法. 表示“最终的”</li>
+<li>abstract: 修饰类、方法</li>
+<li>interface: 表示是一个接口, (接口是与类并列的一个结构). 类与接口之间同时“implements”发生关系.</li>
+<li>package import ……</li>
+</ol>
+<font style="color:red;font-weight:bold;">abstract不能修饰属性、构造器、不能与final static private共用.</font>
+
+
+      </div>
+        
+          <section class="meta" id="footer-meta">
+            <hr>
+            <div class="new-meta-box">
+              
+                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-03T13:02:58+08:00">
+                  <a class="notlink">
+                    <i class="fas fa-save" aria-hidden="true"></i>
+                    2019-04-03
+                  </a>
+                </div>
+              
+              
+                
+                <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/JavaSE/"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;JavaSE</a></div>
+              
+              
+                
+  <div class="new-meta-item share -mob-share-list">
+    <i class="fas fa-share-alt" aria-hidden="true"></i>
+    <div class="-mob-share-list share-body">
+      
+        
+          <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer" href="http://connect.qq.com/widget/shareqq/index.html?url=http://crainyday.gitee.io/blog/JavaSEOOP.html&title=面向对象总结 | CRainyDay&summary=面向对象的三条主线:1.类及类的成分2.面向对象的三大特性3.其他的关键字: this super import package abstract static final interface等">
+            
+              <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+            
+          </a>
+        
+      
+        
+          <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://crainyday.gitee.io/blog/JavaSEOOP.html&title=面向对象总结 | CRainyDay&summary=面向对象的三条主线:1.类及类的成分2.面向对象的三大特性3.其他的关键字: this super import package abstract static final interface等">
+            
+              <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+            
+          </a>
+        
+      
+        
+          <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer" href="http://service.weibo.com/share/share.php?url=http://crainyday.gitee.io/blog/JavaSEOOP.html&title=面向对象总结 | CRainyDay&summary=面向对象的三条主线:1.类及类的成分2.面向对象的三大特性3.其他的关键字: this super import package abstract static final interface等">
+            
+              <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+            
+          </a>
+        
+      
+    </div>
+  </div>
+
+
+              
+            </div>
+          </section>
+        
+
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                            <h4>
+                                <a href="/blog/JaveSE-Thread.html" rel="prev" title="Thread">
+                                  
+                                      Thread
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/blog/tags/JavaSE/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>JavaSE</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/blog/JavaSE5-2.html" rel="prev" title="面向对象3.2">
+                                    
+                                        面向对象3.2
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/blog/tags/JavaSE/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>JavaSE</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+
+    </section>
+
+</article>
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+<br>
+
+<!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+
+<script>
+    window.subData = {
+        title: '面向对象总结',
+        tools: true
+    }
+</script>
+
+
+        </div>
+        <aside class='l_side'>
+            
+  
+  
+    
+      
+      
+        
+  <section class="toc-wrapper">
+    
+<header class="material">
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章目录</div>
+  
+    <div class="wrapper"><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class="content material">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-专注类的设计"><span class="toc-text">一.专注类的设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-类的成分"><span class="toc-text">1.类的成分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#属性"><span class="toc-text">属性:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法"><span class="toc-text">方法:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构造器"><span class="toc-text">构造器:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码块"><span class="toc-text">代码块:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内部类"><span class="toc-text">内部类:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-类的初始化"><span class="toc-text">2.类的初始化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-面向对象的三大特性"><span class="toc-text">二.面向对象的三大特性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-封装性"><span class="toc-text">1.封装性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-继承性"><span class="toc-text">2.继承性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-多态性"><span class="toc-text">3.多态性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三-其他关键字"><span class="toc-text">三.其他关键字</span></a></li></ol>
+    </div>
+  </section>
+
+
+      
+    
+  
+    
+      
+      
+        <section class="author">
+  <div class="content material">
+    
+      <div class="avatar">
+        <img class="avatar" src="/blog/head.jpg">
+      </div>
+    
+    
+      <div class="text">
+        
+        
+        
+          <p><span id="jinrishici-sentence">柳暗花明又一村</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="mailto:3013142340@qq.com" class="social flat-btn" target="_blank" rel="external"><i class="social fas fa-envelope" aria-hidden="true"></i></a>
+          
+        
+          
+            <a href="https://github.com/crainyday" class="social flat-btn" target="_blank" rel="external"><i class="social fab fa-github" aria-hidden="true"></i></a>
+          
+        
+          
+            <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=3013142340" class="social flat-btn" target="_blank" rel="external"><i class="social fab fa-qq" aria-hidden="true"></i></a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=1794783182" class="social flat-btn" target="_blank" rel="external"><i class="social fas fa-music" aria-hidden="true"></i></a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+      
+    
+  
+    
+      
+      
+        
+  <section class="category">
+    
+<header class="material">
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;所有分类</div>
+  
+</header>
+
+    <div class="content material">
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/blog/categories/Hexo/" href="/blog/categories/Hexo/"><div class="name">Hexo</div><div class="badge">(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/JS/" href="/blog/categories/JS/"><div class="name">JS</div><div class="badge">(11)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/JavaSE/" href="/blog/categories/JavaSE/"><div class="name">JavaSE</div><div class="badge">(15)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+      
+    
+  
+    
+      
+      
+        
+  <section class="tagcloud">
+    
+<header class="material">
+  <div><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
+  
+</header>
+
+    <div class="content material">
+      <div id="myCanvasContainer" class="widget tagcloud">
+        <canvas width="250" height="250" id="resCanvas" style="width=100%">
+          <a href="/blog/tags/Gitee/" style="font-size: 14px; color: #999">Gitee</a> <a href="/blog/tags/Hexo/" style="font-size: 17.33px; color: #828282">Hexo</a> <a href="/blog/tags/JS/" style="font-size: 20.67px; color: #6c6c6c">JS</a> <a href="/blog/tags/JavaSE/" style="font-size: 24px; color: #555">JavaSE</a> <a href="/blog/tags/VPN/" style="font-size: 14px; color: #999">VPN</a>
+	</canvas>
+      </div>
+    </div>
+  </section>
+
+
+      
+    
+  
+    
+      
+      
+        <section class="list">
+  
+<header class="material">
+  <div><i class="fas fa-medal fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;精选项目</div>
+  
+    <a class="rightBtn" target="_blank" rel="external nofollow noopener noreferrer" href="/blog/" title="/">
+    <i class="fas fa-arrow-right fa-fw"></i></a>
+  
+</header>
+
+  <div class="content material">
+    <ul class="entry">
+      
+        <li><a class="flat-box" title="/VPN.html" href="/blog/VPN.html">
+          <div class="name">
+            
+              <i class="fas fa-cube fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;VPN
+          </div>
+          
+            <div class="badge">(搭建VPN)</div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/Hexo.html" href="/blog/Hexo.html">
+          <div class="name">
+            
+              <i class="fas fa-cube fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;网站
+          </div>
+          
+            <div class="badge">(Hexo+Gitee搭建博客)</div>
+          
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+      
+    
+  
+    
+      
+      
+        <section class="list">
+  
+<header class="material">
+  <div><i class="fas fa-link fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;特别链接</div>
+  
+</header>
+
+  <div class="content material">
+    <ul class="entry">
+      
+        <li><a class="flat-box" title="bbs/" href="/blog/bbs/">
+          <div class="name">
+            
+              <i class="fas fa-comment-dots fa-fw" aria-hidden="true"></i>
+            
+            &nbsp;&nbsp;关于我 / 留言板
+          </div>
+          
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+      
+    
+  
+    
+      
+      
+        
+
+      
+    
+  
+    
+      
+      
+        
+
+
+  <section class="music">
+    
+<header class="material">
+  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
+  
+    <a class="rightBtn" target="_blank" rel="external nofollow noopener noreferrer" href="https://music.163.com/#/user/home?id=1794783182" title="https://music.163.com/#/user/home?id=1794783182">
+    <i class="far fa-heart fa-fw"></i></a>
+  
+</header>
+
+    <div class="content material">
+      
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <div class="aplayer" data-theme="#1BCDFC" data-mode="circulation" data-server="netease" data-type="playlist" data-id="2737545165" data-volume="0.7">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+
+    </div>
+  </section>
+
+
+      
+    
+  
+    
+      
+      
+        <section class="plain">
+  
+<header class="material">
+  <div><i class="fas fa-bullhorn fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;注意啦～</div>
+  
+    <a class="rightBtn" target="_blank" rel="external nofollow noopener noreferrer" href="/blog/" title="/">
+    <i class="fas fa-question-circle fa-fw"></i></a>
+  
+</header>
+
+  <div class="content material">
+    <p>本站持续更新中…</p>
+
+  </div>
+</section>
+
+      
+    
+  
+
+
+        </aside>
+        <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+    </div>
+    <footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="mailto:3013142340@qq.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external"></a>
+        
+      
+        
+          <a href="https://github.com/crainyday" class="social fab fa-github flat-btn" target="_blank" rel="external"></a>
+        
+      
+        
+          <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=3013142340" class="social fab fa-qq flat-btn" target="_blank" rel="external"></a>
+        
+      
+        
+          <a href="https://music.163.com/#/user/home?id=1794783182" class="social fas fa-music flat-btn" target="_blank" rel="external"></a>
+        
+      
+    </div>
+  
+  <br>
+  <div style="color:rgb(27, 195, 251);"><p>本博客所有文章除特别声明外，均采用[<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">(CC BY-NC-SA 4.0)</a>]许可协议。转载请注明出处！</p></div>
+  <div style="color:rgb(27, 195, 251);" id="sitetime"></div>
+  <div style="color:rgb(27, 195, 251);">本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" style="color:rgb(27, 195, 251);" class="codename">Material X</a> 作为主题，总访问量为 <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
+  </div>
+  <div style="color:rgb(27, 195, 251);"><span>Copyright&nbsp;&copy;&nbsp;2019 CRainyDay's Blog 版权所有</span></div>
+</footer>
+
+    <script>setLoadingBarProgress(80);</script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/blog/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+  <!-- fastclick -->
+  <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+  </script>
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      <script src="https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1/js/volantis.min.js"></script>
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'false' == true;
+  var verify = 'false' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "47GAhNwwbbNreaJdvDNWHhOo-gzGzoHsz",
+    appKey: "pndiLFAmJvnhcIutpj4HIj6t",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    highlight:''
+  })
+  </script>
+
+
+
+
+  <script src="/blog/js/app.js"></script>
+<script src="/blog/js/search.js"></script>
+
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+<script type="text/javascript" src="/blog/js/sitetime.min.js"></script>
+<script type="text/javascript" src="/blog/js/cooltext.js"></script>
+<script type="text/javascript" src="/blog/js/clicklove.min.js"></script>
+<script type="text/javascript" src="/blog/js/tagcanvas.js"></script>
+<script type="text/javascript" src="/blog/js/tagcloud.js"></script>
+<script type="text/javascript" color="102,185,255" zindex="-10" opacity="50" count="99" src="/blog/js/canvas-nest.min.js"></script>
+
+
+    <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
