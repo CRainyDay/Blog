@@ -177,7 +177,7 @@
         <div class="new-meta-item date">
           <a class="notlink">
             <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-            2019-03-16
+            2019-03-15
           </a>
         </div>
       
@@ -206,19 +206,19 @@
       <div class="article-entry" itemprop="articleBody">
         <p>用VPS和shadowsocks搭建VPN, 手机端也能用的VPN</p>
 <a id="more"></a>
-<h1 id="1-前期准备"><a href="#1-前期准备" class="headerlink" title="1.前期准备"></a>1.前期准备</h1><ul>
+<h2 id="1-前期准备"><a href="#1-前期准备" class="headerlink" title="1.前期准备"></a>1.前期准备</h2><ul>
 <li>购买一个国外的VPS, 建议CentOS7系统</li>
 <li>安装<a href="https://xshell.en.softonic.com/download" target="_blank" rel="noopener">XShell</a>, 用来远程连接你的VPS</li>
 <li>安装<a href="https://www.netsarang.com/zh/xftp/" target="_blank" rel="noopener">XFTP</a>, 用来向你的VPS传输文件</li>
 </ul>
-<h1 id="2-安装-amp-配置shadowsocks"><a href="#2-安装-amp-配置shadowsocks" class="headerlink" title="2.安装&amp;配置shadowsocks"></a>2.安装&amp;配置shadowsocks</h1><p>&emsp;&emsp;启动XShell, 输入主机, 点击用户身份验证, 输入用户名:root, 和你的root密码</p>
+<h2 id="2-安装-amp-配置shadowsocks"><a href="#2-安装-amp-配置shadowsocks" class="headerlink" title="2.安装&amp;配置shadowsocks"></a>2.安装&amp;配置shadowsocks</h2><p>&emsp;&emsp;启动XShell, 输入主机, 点击用户身份验证, 输入用户名:root, 和你的root密码</p>
 <p><img src="imgs\shell.png" alt="shell"></p>
 <h3 id="A-先用shell命令安装pip"><a href="#A-先用shell命令安装pip" class="headerlink" title="A.先用shell命令安装pip"></a>A.先用shell命令安装pip</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>有yum可以用yum安装pip</span><br><span class="line">yum install python-setuptools</span><br><span class="line">easy_install pip</span><br><span class="line"><span class="meta">#</span>没有的用下面命令安装pip, 没有python需要先安装python</span><br><span class="line">wget https://bootstrap.pypa.io/get-pip.py</span><br><span class="line">python get-pip.py</span><br><span class="line"><span class="meta">#</span>安装完pip后, 用pip安装shadowsocks</span><br><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure>
 <h3 id="B-配置VPS上的shadowsocks"><a href="#B-配置VPS上的shadowsocks" class="headerlink" title="B.配置VPS上的shadowsocks"></a>B.配置VPS上的shadowsocks</h3><p>&emsp;&emsp;启动XFTP, 同XShell连接远程VPS, 将新建的shadowsocks.json文件, 上传到/etc目录下</p>
 <p><strong><a href="https://pan.baidu.com/s/1O2Ay5j35HfugFqrkpjmPdw" target="_blank" rel="noopener">shadowsocks.json</a>(提取码: 4k4l,下载的话请重命名)文件要用UTF-8编码</strong>, 内容如下:</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"server"</span>:<span class="string">"你的VPSIPv4地址"</span>,</span><br><span class="line">  <span class="attr">"local_address"</span>:<span class="string">"127.0.0.1"</span>,</span><br><span class="line">  <span class="attr">"local_port"</span>:<span class="number">1080</span>,</span><br><span class="line">  <span class="attr">"port_password"</span>:&#123;</span><br><span class="line">   <span class="attr">"443"</span>:<span class="string">"自己随便设置一个连接这个VPN的密码"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"timeout"</span>:<span class="number">300</span>,</span><br><span class="line">  <span class="attr">"method"</span>:<span class="string">"aes-256-cfb"</span>,</span><br><span class="line">  <span class="attr">"fast_open"</span>:<span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="C-开启shadowsocks服务"><a href="#C-开启shadowsocks服务" class="headerlink" title="C.开启shadowsocks服务"></a>C.开启shadowsocks服务</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>用以下命令之一关闭防火墙</span><br><span class="line">service iptables stop</span><br><span class="line">service firewalld stop</span><br><span class="line"><span class="meta">#</span>禁止firewall开机启动</span><br><span class="line">systemctl disable firewalld.service</span><br><span class="line"><span class="meta">#</span>加载shadowsocks配置</span><br><span class="line">ssserver -c /etc/shadowsocks.json</span><br><span class="line"><span class="meta">#</span>开启shadowsocks服务</span><br><span class="line">ssserver -c /etc/shadowsocks.json -d start</span><br><span class="line"><span class="meta">#</span>关闭shadowsocks服务</span><br><span class="line">ssserver -c /etc/shadowsocks.json -d stop</span><br></pre></td></tr></table></figure>
-<h1 id="3-本地配置shadowsocks"><a href="#3-本地配置shadowsocks" class="headerlink" title="3.本地配置shadowsocks"></a>3.本地配置shadowsocks</h1><ul>
+<h2 id="3-本地配置shadowsocks"><a href="#3-本地配置shadowsocks" class="headerlink" title="3.本地配置shadowsocks"></a>3.本地配置shadowsocks</h2><ul>
 <li><a href="https://github.com/shadowsocks/shadowsocks-android/releases" target="_blank" rel="noopener">Android</a></li>
 <li><a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="noopener">Windows</a></li>
 <li>IPhone(<a href="https://pan.baidu.com/s/1-YNaEjIsVk8IKBsJ07YEOQ" target="_blank" rel="noopener">百度网盘</a>提取码: lagp, 链接失效请向博主索取)</li>
@@ -235,10 +235,10 @@
             <hr>
             <div class="new-meta-box">
               
-                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-03T13:17:39+08:00">
+                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-05-02T14:07:44+08:00">
                   <a class="notlink">
                     <i class="fas fa-save" aria-hidden="true"></i>
-                    2019-04-03
+                    2019-05-02
                   </a>
                 </div>
               
@@ -292,16 +292,16 @@
                         <span class="art-item-left">
                             <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                             <h4>
-                                <a href="/blog/JavaSE1-0.html" rel="prev" title="JavaSE概述">
+                                <a href="/blog/Hexo2.html" rel="prev" title="利用Hexo和GitHub搭建一个静态博客">
                                   
-                                      JavaSE概述
+                                      利用Hexo和GitHub搭建一个静态博客
                                   
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/blog/tags/JavaSE/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>JavaSE</a>
+                                    <a class="tag" href="/blog/tags/Hexo/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>Hexo</a> <a class="tag" href="/blog/tags/GitHub/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>GitHub</a>
                                 </h6>
                             
                         </span>
@@ -312,16 +312,16 @@
                         <span class="art-item-right" aria-hidden="true">
                             <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/blog/copy-code.html" rel="prev" title="Hexo代码一键复制">
+                                <a href="/blog/NodeJS.html" rel="prev" title="windows上配置NodeJS和npm">
                                     
-                                        Hexo代码一键复制
+                                        windows上配置NodeJS和npm
                                     
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/blog/tags/Hexo/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>Hexo</a>
+                                    <a class="tag" href="/blog/tags/NodeJS/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>NodeJS</a> <a class="tag" href="/blog/tags/npm/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>npm</a>
                                 </h6>
                             
                         </span>
@@ -387,7 +387,7 @@
 </header>
 
     <div class="content material">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-前期准备"><span class="toc-text">1.前期准备</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-安装-amp-配置shadowsocks"><span class="toc-text">2.安装&amp;配置shadowsocks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-先用shell命令安装pip"><span class="toc-text">A.先用shell命令安装pip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-配置VPS上的shadowsocks"><span class="toc-text">B.配置VPS上的shadowsocks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-开启shadowsocks服务"><span class="toc-text">C.开启shadowsocks服务</span></a></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#3-本地配置shadowsocks"><span class="toc-text">3.本地配置shadowsocks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-Windows配置"><span class="toc-text">A.Windows配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-Android配置-IPhone一样"><span class="toc-text">B.Android配置(IPhone一样)</span></a></li></ol></li>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-前期准备"><span class="toc-text">1.前期准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-安装-amp-配置shadowsocks"><span class="toc-text">2.安装&amp;配置shadowsocks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-先用shell命令安装pip"><span class="toc-text">A.先用shell命令安装pip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-配置VPS上的shadowsocks"><span class="toc-text">B.配置VPS上的shadowsocks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-开启shadowsocks服务"><span class="toc-text">C.开启shadowsocks服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-本地配置shadowsocks"><span class="toc-text">3.本地配置shadowsocks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-Windows配置"><span class="toc-text">A.Windows配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-Android配置-IPhone一样"><span class="toc-text">B.Android配置(IPhone一样)</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -456,11 +456,17 @@
     <div class="content material">
       <ul class="entry">
         
-          <li><a class="flat-box" title="/blog/categories/Hexo/" href="/blog/categories/Hexo/"><div class="name">Hexo</div><div class="badge">(3)</div></a></li>
+          <li><a class="flat-box" title="/blog/categories/Ajax/" href="/blog/categories/Ajax/"><div class="name">Ajax</div><div class="badge">(3)</div></a></li>
         
-          <li><a class="flat-box" title="/blog/categories/JS/" href="/blog/categories/JS/"><div class="name">JS</div><div class="badge">(19)</div></a></li>
+          <li><a class="flat-box" title="/blog/categories/Hexo/" href="/blog/categories/Hexo/"><div class="name">Hexo</div><div class="badge">(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/JDBC/" href="/blog/categories/JDBC/"><div class="name">JDBC</div><div class="badge">(11)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/JS/" href="/blog/categories/JS/"><div class="name">JS</div><div class="badge">(20)</div></a></li>
         
           <li><a class="flat-box" title="/blog/categories/JavaSE/" href="/blog/categories/JavaSE/"><div class="name">JavaSE</div><div class="badge">(15)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/jQuery/" href="/blog/categories/jQuery/"><div class="name">jQuery</div><div class="badge">(7)</div></a></li>
         
       </ul>
     </div>
@@ -484,7 +490,7 @@
     <div class="content material">
       <div id="myCanvasContainer" class="widget tagcloud">
         <canvas width="250" height="250" id="resCanvas" style="width=100%">
-          <a href="/blog/tags/Gitee/" style="font-size: 14px; color: #999">Gitee</a> <a href="/blog/tags/Hexo/" style="font-size: 17.33px; color: #828282">Hexo</a> <a href="/blog/tags/JS/" style="font-size: 24px; color: #555">JS</a> <a href="/blog/tags/JavaSE/" style="font-size: 20.67px; color: #6c6c6c">JavaSE</a> <a href="/blog/tags/VPN/" style="font-size: 14px; color: #999">VPN</a>
+          <a href="/blog/tags/Ajax/" style="font-size: 15.67px; color: #8e8e8e">Ajax</a> <a href="/blog/tags/Database/" style="font-size: 20.67px; color: #6c6c6c">Database</a> <a href="/blog/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/blog/tags/Gitee/" style="font-size: 14px; color: #999">Gitee</a> <a href="/blog/tags/Hexo/" style="font-size: 17.33px; color: #828282">Hexo</a> <a href="/blog/tags/JDBC/" style="font-size: 20.67px; color: #6c6c6c">JDBC</a> <a href="/blog/tags/JS/" style="font-size: 22.33px; color: #606060">JS</a> <a href="/blog/tags/JavaSE/" style="font-size: 24px; color: #555">JavaSE</a> <a href="/blog/tags/NodeJS/" style="font-size: 14px; color: #999">NodeJS</a> <a href="/blog/tags/VPN/" style="font-size: 14px; color: #999">VPN</a> <a href="/blog/tags/jQuery/" style="font-size: 19px; color: #777">jQuery</a> <a href="/blog/tags/npm/" style="font-size: 14px; color: #999">npm</a>
 	</canvas>
       </div>
     </div>
