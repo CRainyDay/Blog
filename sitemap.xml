@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://crainyday.gitee.io/blog/friends/index.html</loc>
+    
+    <lastmod>2019-06-20T06:13:55.171Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://crainyday.gitee.io/blog/JDBC1-9.html</loc>
     
     <lastmod>2019-05-25T14:35:23.441Z</lastmod>
@@ -145,13 +152,6 @@
     <loc>http://crainyday.gitee.io/blog/JS1-0.html</loc>
     
     <lastmod>2019-04-28T09:42:16.602Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://crainyday.gitee.io/blog/friends/index.html</loc>
-    
-    <lastmod>2019-04-28T09:28:34.926Z</lastmod>
     
   </url>
   
