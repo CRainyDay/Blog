@@ -331,18 +331,37 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <h1 id="一-Java的一些基本语法"><a href="#一-Java的一些基本语法" class="headerlink" title="一.Java的一些基本语法"></a>一.Java的一些基本语法</h1><a id="more"></a>
-<h2 id="1-关键字＆标识符"><a href="#1-关键字＆标识符" class="headerlink" title="1.关键字＆标识符"></a><font color="black">1.关键字＆标识符</font></h2><p>关键字: 被Java语言赋予了特殊含义, 用做专门用途的字符串(单词), <font color="red">关键字全是小写的</font></p>
+        <p>Java的一些基本语法</p>
+<p>关键字、标识符、变量、运算符</p>
+<p>（流程控制、数组)后续</p>
+<a id="more"></a>
+<h2 id="1-关键字＆标识符"><a href="#1-关键字＆标识符" class="headerlink" title="1.关键字＆标识符"></a><font color="black">1.关键字＆标识符</font></h2><blockquote>
+<p>关键字: 被Java语言赋予了特殊含义, 用做专门用途的字符串(单词), <font color="red">关键字全是小写的</font></p>
 <p>保留字: 以后可能用来作为关键字</p>
 <p>标识符: 凡是自己可以起名字的地方都叫标识符</p>
-<h3 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则:"></a>命名规则:</h3><p>&emsp;&emsp;一定要遵守, 不遵守就会报编译的错误</p>
+</blockquote>
+<h3 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则:"></a>命名规则:</h3><p>&emsp;&emsp;<strong>一定要遵守, 不遵守就会报编译的错误</strong></p>
+<blockquote>
 <p>由26个<font style="color:red;font-weight:bold;">英文字母大小写,0-9, _或 $ </font>组成  数字不可以开头.<br>不可以使用关键字和保留字, 但能包含关键字和保留字.<br>Java中严格区分大小写, 长度无限制.<br>标识符不能包含空格.</p>
-<h3 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范:"></a>命名规范:</h3><p>&emsp;&emsp;不遵守, 也不会出现编译的错误</p>
+</blockquote>
+<h3 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范:"></a>命名规范:</h3><p>&emsp;&emsp;<strong>不遵守, 也不会出现编译的错误</strong></p>
+<blockquote>
 <p>包名: 多单词组成时所有字母都小写: xxxyyyzzz<br>类名、接口名: 多单词组成时, 所有单词的首字母大写: XxxYyyZzz<br>变量名、方法名: 多单词组成时, 第一个单词首字母小写, 第二个单词开始每个单词首字母大写: xxxYyyZzz<br>常量名: 所有字母都大写, 多单词时每个单词用下划线连接: XXX_YYY_ZZZ</p>
+</blockquote>
 <h2 id="2-变量"><a href="#2-变量" class="headerlink" title="2.变量"></a><font color="black">2.变量</font></h2><ol>
 <li>Java中变量按照数据类型来分类: <strong>基本数据类型</strong> vs  <strong>引用数据类型</strong>(数组 类 接口)</li>
 </ol>
-<h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型:"></a>基本数据类型:</h3><p>​     整型: byte(8 bit,-128~127)  short(-32768~32767)   int(默认类型,-2^31~2^31-1)   long<br>​     浮点型: float double (默认类型)<br>​     <strong>字符型: char（‘ ’）16 bit</strong>    是以十六进制保存的字符,例:char ch = ‘\u0041’;为’A’<br>​     布尔类型:  boolean (只能取值为true 或false, 不能取null)<br>​     String类型(引用数据类型): 值可以为null<br>数据类型    变量名 = 初始化值;<br>​     补充: 按照在类中存在的位置的不同: 成员变量 vs 局部变量<br>​     成员变量在声明时会被默认初始化, 因此可以在声明后直接使用, 而局部变量在使用之前必须先初始化<br>​     声明: long型常量需后缀”l”或”L”,long lo = 123L;<br>​     float类型变量要后缀”f”或”F”,float f = 12.3F;</p>
+<h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><blockquote>
+<p>整型: byte(8 bit,-128~127)  short(-32768~32767)   int(默认类型,-2^31~2^31-1)   long</p>
+<p>浮点型: float double(默认类型)</p>
+<p><strong>字符型: char（‘ ’）16 bit</strong>    是以十六进制保存的字符,例:char ch = ‘\u0041’;为’A’</p>
+<p>布尔类型:  boolean (只能取值为true 或false, 不能取null)</p>
+</blockquote>
+<h3 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h3><blockquote>
+<p>String类型: 值可以为null</p>
+<p>数组、对象(类的实例)等，之后会一一说明.</p>
+</blockquote>
+<p>数据类型    变量名 = 初始化值;<br>​     补充: 按照在类中存在的位置的不同: 成员变量 vs 局部变量<br>​     成员变量在声明时会被默认初始化, 因此可以在声明后直接使用, 而局部变量在使用之前必须先初始化<br>​     声明: long型常量需后缀”l”或”L”,long lo = 123L;<br>​     float类型变量要后缀”f”或”F”,float f = 12.3F;</p>
 <p>2.进制(了解)<br>    十进制  二进制  八进制 十六进制</p>
 <p>二进制: 计算机底层都是用二进制来存储、运算.</p>
 <blockquote>
@@ -352,7 +371,9 @@
 <h2 id="3-运算符"><a href="#3-运算符" class="headerlink" title="3.运算符"></a><font color="black">3.运算符</font></h2><p>运算符是一种特殊的符号, 用以表示数据的运算.</p>
 <h3 id="A-算术运算符"><a href="#A-算术运算符" class="headerlink" title="A.算术运算符:"></a>A.算术运算符:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ - /  % ++ -- +</span><br></pre></td></tr></table></figure>
 <p>注意:</p>
+<blockquote>
 <p>1) /:  int i = 12; i = i / 5;地板除<br>2) %: 取模, 结果的符号与被模数相同<br>3) 前++: 先+1, 后运算     后++: 先运算, 后+1<br>4) +: String字符串与其他数据类型只能做连接运算, 且结果为String类型.</p>
+</blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sysout(<span class="string">"*"</span> + <span class="string">'\t'</span> + <span class="string">'*'</span>); <span class="function">vs <span class="title">sysout</span><span class="params">(<span class="string">'*'</span> + <span class="string">'\t'</span> + <span class="string">'*'</span>)</span></span>;结果为<span class="number">93</span></span><br><span class="line"><span class="comment">//sysout为Java的快捷键用法, 先输入sysout, 再按"Alt + /", 即可打出System.out.println();</span></span><br></pre></td></tr></table></figure>
 <h3 id="B-赋值运算符"><a href="#B-赋值运算符" class="headerlink" title="B.赋值运算符:"></a>B.赋值运算符:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//=    +=   -=  *=    /=   %=</span></span><br><span class="line"><span class="keyword">int</span> i = <span class="number">12</span>;</span><br><span class="line">i  = i * <span class="number">5</span>;</span><br><span class="line">i *= <span class="number">5</span>;<span class="comment">//与上一行代码同样的意思</span></span><br><span class="line"><span class="comment">//[特别地]</span></span><br><span class="line"><span class="keyword">short</span> s = <span class="number">10</span>;</span><br><span class="line">s = s + <span class="number">5</span>;<span class="comment">//报编译的异常，s+5会被默认转化为int类型，再赋值给short会出错</span></span><br><span class="line">s = (<span class="keyword">short</span>)(s + <span class="number">5</span>);<span class="comment">//强制类型转换便不会异常</span></span><br><span class="line">s += <span class="number">5</span>;<span class="comment">//相当于, s = s + 5, 但两者并不完全等价, 但是结果不会改变s的数据类型.</span></span><br></pre></td></tr></table></figure>
 <h3 id="C-比较运算符-关系运算符"><a href="#C-比较运算符-关系运算符" class="headerlink" title="C.比较运算符(关系运算符)"></a>C.比较运算符(关系运算符)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">==  &gt;   &lt;  &gt;=   &lt;=    <span class="keyword">instanceof</span></span><br></pre></td></tr></table></figure>
@@ -362,7 +383,12 @@
 <p>[注意]区分&amp;与&amp;&amp;的区别, 以及 | 与 || 的区别<br>      我们使用的时候, 选择 &amp;&amp; , ||  <font color="red">短路与、短路或</font></p>
 <h3 id="E-位运算符-两端是数值类型的数据"><a href="#E-位运算符-两端是数值类型的数据" class="headerlink" title="E.位运算符(两端是数值类型的数据)"></a>E.位运算符(两端是数值类型的数据)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;   &gt;&gt;    &gt;&gt;&gt;(无符号右移)  &amp;  |   ^(异或)  ~(按位取反)</span><br></pre></td></tr></table></figure>
 <p>[例子] 1.如何交换m = 12和n = 5的值<br>           2.将60转换为十六进制输出.</p>
-<h3 id="F-三元运算符"><a href="#F-三元运算符" class="headerlink" title="F.三元运算符"></a>F.三元运算符</h3><p><font color="red">(条件表达式) ? 表达式1 : 表达式2;</font><br>1) 既然是运算符, 一定会返回一个结果, 并且结果的数据类型与表达式1, 2的类型一致<br>2) <strong>表达式1与表达式2的数据类型一致</strong>.<br>3) 使用三元运算符的, 一定可以转换为if-else. 反之不一定成立.<br>4) ?: 可以嵌套使用<br>例子: 获取两个数的较大值; 获取三个数的最大值.</p>
+<h3 id="F-三元运算符"><a href="#F-三元运算符" class="headerlink" title="F.三元运算符"></a>F.三元运算符</h3><font color="red">(条件表达式) ? 表达式1 : 表达式2;</font>
+
+<blockquote>
+<p>1) 既然是运算符, 一定会返回一个结果, 并且结果的数据类型与表达式1, 2的类型一致<br>2) <strong>表达式1与表达式2的数据类型一致</strong>.<br>3) 使用三元运算符的, 一定可以转换为if-else. 反之不一定成立.<br>4) ?: 可以嵌套使用</p>
+</blockquote>
+<p>例子: 获取两个数的较大值; 获取三个数的最大值.</p>
 <div><div class="fold_hider"><div class="close hider_title">点击显/隐内容</div></div><div class="fold">
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> max = (i &gt; j) ? i : j;</span><br><span class="line"><span class="keyword">int</span> k = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">int</span> max2 = (i &gt; j) ? ((i &gt; k) ? i : k) : (( j &gt; k) ? j : k);</span><br></pre></td></tr></table></figure>
 
@@ -378,10 +404,10 @@
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-03T12:41:37+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-10-03T20:57:02+08:00">
   <a class="notlink">
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2019年4月3日</p>
+    <p>更新于 2019年10月3日</p>
   </a>
 </div>
 
@@ -390,7 +416,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JavaSE/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>JavaSE</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JavaSE/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>JavaSE</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Java/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Java</p></a></div>
 
 
         
@@ -401,7 +427,9 @@
   <div class="-mob-share-list share-body">
     
       
-        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer" href="http://connect.qq.com/widget/shareqq/index.html?url=http://crainyday.gitee.io/JavaSE2-1.html&title=Java基本语法1 | CRainyDay&summary=一.Java的一些基本语法">
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer" href="http://connect.qq.com/widget/shareqq/index.html?url=http://crainyday.gitee.io/JavaSE2-1.html&title=Java基本语法1 | CRainyDay&summary=Java的一些基本语法
+关键字、标识符、变量、运算符
+（流程控制、数组)后续">
           
             <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
           
@@ -409,7 +437,9 @@
       
     
       
-        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://crainyday.gitee.io/JavaSE2-1.html&title=Java基本语法1 | CRainyDay&summary=一.Java的一些基本语法">
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://crainyday.gitee.io/JavaSE2-1.html&title=Java基本语法1 | CRainyDay&summary=Java的一些基本语法
+关键字、标识符、变量、运算符
+（流程控制、数组)后续">
           
             <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
           
@@ -417,7 +447,9 @@
       
     
       
-        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer" href="http://service.weibo.com/share/share.php?url=http://crainyday.gitee.io/JavaSE2-1.html&title=Java基本语法1 | CRainyDay&summary=一.Java的一些基本语法">
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer" href="http://service.weibo.com/share/share.php?url=http://crainyday.gitee.io/JavaSE2-1.html&title=Java基本语法1 | CRainyDay&summary=Java的一些基本语法
+关键字、标识符、变量、运算符
+（流程控制、数组)后续">
           
             <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
           
@@ -452,7 +484,7 @@
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/tags/JavaSE/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> JavaSE</a>
+                                  <a class="tag" href="/tags/JavaSE/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> JavaSE</a> <a class="tag" href="/tags/Java/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Java</a>
                               </h6>
                           
                       </span>
@@ -472,7 +504,7 @@
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/tags/JavaSE/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> JavaSE</a>
+                                  <a class="tag" href="/tags/JavaSE/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> JavaSE</a> <a class="tag" href="/tags/Java/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Java</a>
                               </h6>
                           
                       </span>
@@ -547,7 +579,7 @@
 </header>
 
     <div class="content material">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-Java的一些基本语法"><span class="toc-text">一.Java的一些基本语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-关键字＆标识符"><span class="toc-text">1.关键字＆标识符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命名规则"><span class="toc-text">命名规则:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命名规范"><span class="toc-text">命名规范:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-变量"><span class="toc-text">2.变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本数据类型"><span class="toc-text">基本数据类型:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-运算符"><span class="toc-text">3.运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-算术运算符"><span class="toc-text">A.算术运算符:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-赋值运算符"><span class="toc-text">B.赋值运算符:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-比较运算符-关系运算符"><span class="toc-text">C.比较运算符(关系运算符)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#D-逻辑运算符-运算符的两端是boolean值"><span class="toc-text">D.逻辑运算符(运算符的两端是boolean值)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#E-位运算符-两端是数值类型的数据"><span class="toc-text">E.位运算符(两端是数值类型的数据)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#F-三元运算符"><span class="toc-text">F.三元运算符</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-关键字＆标识符"><span class="toc-text">1.关键字＆标识符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命名规则"><span class="toc-text">命名规则:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命名规范"><span class="toc-text">命名规范:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-变量"><span class="toc-text">2.变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本数据类型"><span class="toc-text">基本数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引用数据类型"><span class="toc-text">引用数据类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-运算符"><span class="toc-text">3.运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-算术运算符"><span class="toc-text">A.算术运算符:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-赋值运算符"><span class="toc-text">B.赋值运算符:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-比较运算符-关系运算符"><span class="toc-text">C.比较运算符(关系运算符)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#D-逻辑运算符-运算符的两端是boolean值"><span class="toc-text">D.逻辑运算符(运算符的两端是boolean值)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#E-位运算符-两端是数值类型的数据"><span class="toc-text">E.位运算符(两端是数值类型的数据)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#F-三元运算符"><span class="toc-text">F.三元运算符</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -736,7 +768,7 @@
         
           <li><a class="flat-box" title="/categories/JS/" href="/categories/JS/"><div class="name">JS</div><div class="badge">(20)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/JavaSE/" href="/categories/JavaSE/"><div class="name">JavaSE</div><div class="badge">(15)</div></a></li>
+          <li><a class="flat-box" title="/categories/JavaSE/" href="/categories/JavaSE/"><div class="name">JavaSE</div><div class="badge">(20)</div></a></li>
         
           <li><a class="flat-box" title="/categories/Vue/" href="/categories/Vue/"><div class="name">Vue</div><div class="badge">(16)</div></a></li>
         
@@ -789,7 +821,7 @@
 
     <div id="myCanvasContainer" class="content material">
         <canvas width="250" height="250" id="resCanvas" style="width=100%">
-          <a href="/tags/Ajax/" style="font-size: 15.43px; color: #8f8f8f">Ajax</a> <a href="/tags/Database/" style="font-size: 19.71px; color: #727272">Database</a> <a href="/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/tags/Gitee/" style="font-size: 14px; color: #999">Gitee</a> <a href="/tags/Hexo/" style="font-size: 16.86px; color: #868686">Hexo</a> <a href="/tags/JDBC/" style="font-size: 19.71px; color: #727272">JDBC</a> <a href="/tags/JS/" style="font-size: 22.57px; color: #5f5f5f">JS</a> <a href="/tags/JavaSE/" style="font-size: 24px; color: #555">JavaSE</a> <a href="/tags/NodeJS/" style="font-size: 14px; color: #999">NodeJS</a> <a href="/tags/VPN/" style="font-size: 14px; color: #999">VPN</a> <a href="/tags/Vue/" style="font-size: 21.14px; color: #686868">Vue</a> <a href="/tags/jQuery/" style="font-size: 18.29px; color: #7c7c7c">jQuery</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a>
+          <a href="/tags/Ajax/" style="font-size: 15.25px; color: #919191">Ajax</a> <a href="/tags/Database/" style="font-size: 19px; color: #777">Database</a> <a href="/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/tags/Gitee/" style="font-size: 14px; color: #999">Gitee</a> <a href="/tags/Hexo/" style="font-size: 16.5px; color: #888">Hexo</a> <a href="/tags/JDBC/" style="font-size: 19px; color: #777">JDBC</a> <a href="/tags/JS/" style="font-size: 24px; color: #555">JS</a> <a href="/tags/Java/" style="font-size: 21.5px; color: #666">Java</a> <a href="/tags/JavaSE/" style="font-size: 22.75px; color: #5e5e5e">JavaSE</a> <a href="/tags/NodeJS/" style="font-size: 14px; color: #999">NodeJS</a> <a href="/tags/VPN/" style="font-size: 14px; color: #999">VPN</a> <a href="/tags/Vue/" style="font-size: 20.25px; color: #6f6f6f">Vue</a> <a href="/tags/jQuery/" style="font-size: 17.75px; color: #808080">jQuery</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a>
         </canvas>
     </div>
   </section>
@@ -1035,6 +1067,31 @@
 
 
 
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["https://img.vim-cn.com/69/104e0d1a60a99b72e5adfdfb5af3cfbaea47bb.jpg", "https://img.vim-cn.com/c9/1b86fe4d9802e0aae5072d6b3e8b124825593f.jpg", "https://img.vim-cn.com/a1/fd811d5d9621c590a608d6a7b968c064f514b3.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["https://img.vim-cn.com/69/104e0d1a60a99b72e5adfdfb5af3cfbaea47bb.jpg", "https://img.vim-cn.com/c9/1b86fe4d9802e0aae5072d6b3e8b124825593f.jpg", "https://img.vim-cn.com/a1/fd811d5d9621c590a608d6a7b968c064f514b3.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
 
 
 
@@ -1062,6 +1119,8 @@
     notify: notify,
     verify: verify,
     guest_info: guest_info,
+    
+      path: "/blog/JavaSE/",
     
     appId: "47GAhNwwbbNreaJdvDNWHhOo-gzGzoHsz",
     appKey: "pndiLFAmJvnhcIutpj4HIj6t",

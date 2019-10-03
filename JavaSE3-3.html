@@ -334,25 +334,39 @@
         <p>面向对象之封装性<br>构造器<br>this关键字<br>package与import</p>
 <a id="more"></a>
 <h1 id="一-封装性"><a href="#一-封装性" class="headerlink" title="一.封装性"></a>一.封装性</h1><p>面向对象的特征一: 封装与隐藏</p>
-<p>问题: 当创建了类的对象以后, 如果直接通过”对象.属性”的方式对相应的对象属性赋值的话, 可能会出现不满足实际<br>情况的意外, 我们考虑不让对象来直接作用属性, 而是通过”对象.方法”的形式, 来控制对象对属性的访问. 实际<br>情况中, 对属性的要求就可以通过方法来体现.</p>
-<font style="color:red;font-weight:bold;">封装性的思想: ①将类的属性私有化; ②提供公共的方法(setter&amp;getter)来实现调用.</font>
+<blockquote>
+<p>问题: 当创建了类的对象以后, 如果直接通过”对象.属性”的方式对相应的对象属性赋值的话, 可能会出现不满足实际情况的意外, 我们考虑不让对象来直接作用属性, 而是通过”对象.方法”的形式, 来控制对象对属性的访问. 实际情况中, 对属性的要求就可以通过方法来体现.</p>
+</blockquote>
+<font style="color:red;font-weight:bold;">封装性的思想: </font>
 
-<h2 id="A-四种权限修饰符"><a href="#A-四种权限修饰符" class="headerlink" title="A.四种权限修饰符"></a>A.四种权限修饰符</h2><p><strong>1.权限从大到小为：public   protected   缺省   private</strong><br><strong>2.四种权限都可以用来修饰属性、方法、构造器</strong><br><strong>3.修饰类的话：public 缺省(default)类只能被同一个包中的类访问</strong></p>
-<p><img src="imgs\Java\修饰符.png" alt="修饰符"></p>
+<ul>
+<li><p>①将类的属性私有化; </p>
+</li>
+<li><p>②提供公共的方法(setter&amp;getter)来实现调用.</p>
+</li>
+</ul>
+<h2 id="A-四种权限修饰符"><a href="#A-四种权限修饰符" class="headerlink" title="A.四种权限修饰符"></a>A.四种权限修饰符</h2><blockquote>
+<p><strong>1.权限从大到小为：public   protected   缺省   private</strong><br><strong>2.四种权限都可以用来修饰属性、方法、构造器</strong><br><strong>3.修饰类的话：public 缺省(default)类只能被同一个包中的类访问</strong></p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Java/修饰符.png" alt="修饰符"></p>
 <h1 id="二-构造器"><a href="#二-构造器" class="headerlink" title="二.构造器"></a>二.构造器</h1><p>类的第三个成员: 构造器(constructor 构造方法)</p>
 <h2 id="A-构造器的作用"><a href="#A-构造器的作用" class="headerlink" title="A.构造器的作用"></a>A.构造器的作用</h2><p>①创建对象 ②给创建的对象的属性赋值</p>
 <h2 id="B-构造器的特征"><a href="#B-构造器的特征" class="headerlink" title="B.构造器的特征"></a>B.构造器的特征</h2><p>①与类名一致②没有返回值类型③无return与语句</p>
 <p>④不能被static|final|abstract|native本地的|synchronized同步的</p>
+<blockquote>
 <ul>
 <li>1.设计类时, <font style="color:red;font-weight:bold;">若不显式声明类的构造器的话, 程序会默认提供一个空参的构造器.</font>.</li>
 <li>2.<font style="color:red;font-weight:bold;">一旦显式的定义类的构造器, 那么默认的构造器就不再提供.</font></li>
 <li>3.如何声明类的构造器. 格式: 权限修饰符  类名(形参){ }</li>
 <li>4.类的多个构造器之间<font style="color:red;font-weight:bold;">构成重载</font></li>
 </ul>
+</blockquote>
 <p>类对象的属性赋值的先后顺序: ①属性的默认初始化 ②属性的显式初始化 ③通过构造器给属性初始化</p>
 <p>④通过”对象.方法”的方式给属性赋值</p>
 <h1 id="三-this"><a href="#三-this" class="headerlink" title="三.this"></a>三.this</h1><p>this:</p>
+<blockquote>
 <p>1.使用在类中, 可以用来修饰属性、方法、构造器<br>2.表示当前对象或者是当前正在创建的对象<br>3.当形参与成员变量重名时, 如果在方法内部需要使用成员变量, 必须添加this来表明该变量时类成员<br>4.在任意方法内, 如果使用当前类的成员变量或成员方法可以在其前面添加this, 增强程序的阅读性<br>5.在构造器中使用<font style="color:red;font-weight:bold;">“this(形参列表)”</font>显式的调用本类中重载的其它的构造器<br>&emsp;&emsp;①要求“this(形参列表)”要声明在构造器的首行!<br>&emsp;&emsp;②类中若存在n个构造器, 那么最多有n-1构造器中使用了this.<br>6.静态方法中不能使用this和super关键字</p>
+</blockquote>
 <font style="color:red;font-weight:bold;">例子:</font>
 
 <div><div class="fold_hider"><div class="close hider_title">点击显/隐内容</div></div><div class="fold">
@@ -362,7 +376,18 @@
 <h1 id="四-package与import"><a href="#四-package与import" class="headerlink" title="四.package与import"></a>四.package与import</h1><p>package: <font style="color:red;font-weight:bold;">声明源文件(即当前文件)所在的包(即文件夹), 必须写在程序的第一行.</font></p>
 <p>每“.”一次, 表示一层文件目录; 包名都要小写.</p>
 <p>import:</p>
-<p>1)显式导入指定包下的类或接口<br>2)写在包的声明和源文件之间<br>3)如果需要引入多个类或接口, 那么并列写出<br>4)如果导入的类是java.lang包下的, 如: System String Math等, 就不需要显式的声明.<br>5)理解.*的概念.比如java.util.*;<br>6)如何处理同名类的导入. 如: 在util包和sql包下同时存在Date类.<br>7)import static 表示导入指定类的static的属性或方法<br>8)导入java.lang.*只能导入lang包下的所有类或接口, 不能导入lang的子包下的类或接口</p>
+<blockquote>
+<ul>
+<li>1)显式导入指定包下的类或接口</li>
+<li>2)写在包的声明和源文件之间</li>
+<li>3)如果需要引入多个类或接口, 那么并列写出</li>
+<li>4)如果导入的类是java.lang包下的, 如: System String Math等, 就不需要显式的声明.</li>
+<li>5)理解.*的概念.比如java.util.*;</li>
+<li>6)如何处理同名类的导入. 如: 在util包和sql包下同时存在Date类.</li>
+<li>7)import static 表示导入指定类的static的属性或方法</li>
+<li>8)导入java.lang.*只能导入lang包下的所有类或接口, 不能导入lang的子包下的类或接口</li>
+</ul>
+</blockquote>
 
       </div>
       
@@ -374,10 +399,10 @@
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-03T12:52:10+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-10-03T21:02:17+08:00">
   <a class="notlink">
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2019年4月3日</p>
+    <p>更新于 2019年10月3日</p>
   </a>
 </div>
 
@@ -386,7 +411,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JavaSE/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>JavaSE</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JavaSE/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>JavaSE</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Java/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Java</p></a></div>
 
 
         
@@ -448,7 +473,7 @@
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/tags/JavaSE/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> JavaSE</a>
+                                  <a class="tag" href="/tags/JavaSE/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> JavaSE</a> <a class="tag" href="/tags/Java/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Java</a>
                               </h6>
                           
                       </span>
@@ -468,7 +493,7 @@
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/tags/JavaSE/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> JavaSE</a>
+                                  <a class="tag" href="/tags/JavaSE/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> JavaSE</a> <a class="tag" href="/tags/Java/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Java</a>
                               </h6>
                           
                       </span>
@@ -732,7 +757,7 @@
         
           <li><a class="flat-box" title="/categories/JS/" href="/categories/JS/"><div class="name">JS</div><div class="badge">(20)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/JavaSE/" href="/categories/JavaSE/"><div class="name">JavaSE</div><div class="badge">(15)</div></a></li>
+          <li><a class="flat-box" title="/categories/JavaSE/" href="/categories/JavaSE/"><div class="name">JavaSE</div><div class="badge">(20)</div></a></li>
         
           <li><a class="flat-box" title="/categories/Vue/" href="/categories/Vue/"><div class="name">Vue</div><div class="badge">(16)</div></a></li>
         
@@ -785,7 +810,7 @@
 
     <div id="myCanvasContainer" class="content material">
         <canvas width="250" height="250" id="resCanvas" style="width=100%">
-          <a href="/tags/Ajax/" style="font-size: 15.43px; color: #8f8f8f">Ajax</a> <a href="/tags/Database/" style="font-size: 19.71px; color: #727272">Database</a> <a href="/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/tags/Gitee/" style="font-size: 14px; color: #999">Gitee</a> <a href="/tags/Hexo/" style="font-size: 16.86px; color: #868686">Hexo</a> <a href="/tags/JDBC/" style="font-size: 19.71px; color: #727272">JDBC</a> <a href="/tags/JS/" style="font-size: 22.57px; color: #5f5f5f">JS</a> <a href="/tags/JavaSE/" style="font-size: 24px; color: #555">JavaSE</a> <a href="/tags/NodeJS/" style="font-size: 14px; color: #999">NodeJS</a> <a href="/tags/VPN/" style="font-size: 14px; color: #999">VPN</a> <a href="/tags/Vue/" style="font-size: 21.14px; color: #686868">Vue</a> <a href="/tags/jQuery/" style="font-size: 18.29px; color: #7c7c7c">jQuery</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a>
+          <a href="/tags/Ajax/" style="font-size: 15.25px; color: #919191">Ajax</a> <a href="/tags/Database/" style="font-size: 19px; color: #777">Database</a> <a href="/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/tags/Gitee/" style="font-size: 14px; color: #999">Gitee</a> <a href="/tags/Hexo/" style="font-size: 16.5px; color: #888">Hexo</a> <a href="/tags/JDBC/" style="font-size: 19px; color: #777">JDBC</a> <a href="/tags/JS/" style="font-size: 24px; color: #555">JS</a> <a href="/tags/Java/" style="font-size: 21.5px; color: #666">Java</a> <a href="/tags/JavaSE/" style="font-size: 22.75px; color: #5e5e5e">JavaSE</a> <a href="/tags/NodeJS/" style="font-size: 14px; color: #999">NodeJS</a> <a href="/tags/VPN/" style="font-size: 14px; color: #999">VPN</a> <a href="/tags/Vue/" style="font-size: 20.25px; color: #6f6f6f">Vue</a> <a href="/tags/jQuery/" style="font-size: 17.75px; color: #808080">jQuery</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a>
         </canvas>
     </div>
   </section>
@@ -1031,6 +1056,31 @@
 
 
 
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["https://img.vim-cn.com/69/104e0d1a60a99b72e5adfdfb5af3cfbaea47bb.jpg", "https://img.vim-cn.com/c9/1b86fe4d9802e0aae5072d6b3e8b124825593f.jpg", "https://img.vim-cn.com/a1/fd811d5d9621c590a608d6a7b968c064f514b3.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["https://img.vim-cn.com/69/104e0d1a60a99b72e5adfdfb5af3cfbaea47bb.jpg", "https://img.vim-cn.com/c9/1b86fe4d9802e0aae5072d6b3e8b124825593f.jpg", "https://img.vim-cn.com/a1/fd811d5d9621c590a608d6a7b968c064f514b3.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
 
 
 
@@ -1058,6 +1108,8 @@
     notify: notify,
     verify: verify,
     guest_info: guest_info,
+    
+      path: "/blog/JavaSE/",
     
     appId: "47GAhNwwbbNreaJdvDNWHhOo-gzGzoHsz",
     appKey: "pndiLFAmJvnhcIutpj4HIj6t",
