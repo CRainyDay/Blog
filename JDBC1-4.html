@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>JDBC-一个通用的JDBC查询方法 | CRainyDay</title>
+  
+  <meta name="keywords" content="CRainyDay">
+  
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class="cover post half">
+      
+        
+  <h1 class="title">CRainyDay</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder>
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class="menu navgation">
+  <ul class="h-list">
+    
+      
+        <li>
+          <a class="nav home" href="/" id="home">
+            <i class="fas fa-home fa-fw"></i>&nbsp;博客
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/archives/" id="archives">
+            <i class="fas fa-archive fa-fw"></i>&nbsp;归档
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/categories/" rel="nofollow" id="categories">
+            <i class="fas fa-folder-open fa-fw"></i>&nbsp;分类
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/friends/" rel="nofollow" id="friends">
+            <i class="fas fa-users fa-fw"></i>&nbsp;朋友
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/about.html" rel="nofollow" id="about.html">
+            <i class="fas fa-info-circle fa-fw"></i>&nbsp;关于
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header material">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="material"></div>
+  </div>
+
+	<div class="wrapper">
+		<div class="nav-main container container--flex">
+      <a style="color: #FFF;" class="logo flat-box" href="/">
+        
+          CRainyDay
+        
+      </a>
+			<div class="menu navgation">
+				<ul class="h-list">
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/" id="home">
+									<i class="fas fa-home fa-fw"></i>&nbsp;首页
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/categories/" rel="nofollow" id="categories">
+									<i class="fas fa-folder-open fa-fw"></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/tags/" rel="nofollow" id="tags">
+									<i class="fas fa-hashtag fa-fw"></i>&nbsp;标签
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives/" rel="nofollow" id="archives">
+									<i class="fas fa-archive fa-fw"></i>&nbsp;归档
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/friends/" rel="nofollow" id="friends">
+									<i class="fas fa-users fa-fw"></i>&nbsp;朋友
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/about.html" rel="nofollow" id="about.html">
+									<i class="fas fa-info-circle fa-fw"></i>&nbsp;关于
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜索">
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class="switcher h-list">
+				
+					<li class="s-search"><a class="fas fa-search fa-fw" href="javascript:void(0)"></a></li>
+				
+				<li class="s-menu"><a class="fas fa-bars fa-fw" href="javascript:void(0)"></a></li>
+			</ul>
+		</div>
+
+		<div class="nav-sub container container--flex">
+			<a class="logo flat-box"></a>
+			<ul class="switcher h-list">
+				<li class="s-comment"><a class="flat-btn fas fa-comments fa-fw" href="javascript:void(0)"></a></li>
+        
+          <li class="s-toc"><a class="flat-btn fas fa-list fa-fw" href="javascript:void(0)"></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/" id="home">
+								<i class="fas fa-clock fa-fw"></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/categories/" rel="nofollow" id="categories">
+								<i class="fas fa-folder-open fa-fw"></i>&nbsp;文章分类
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives/" rel="nofollow" id="archives">
+								<i class="fas fa-archive fa-fw"></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/friends/" rel="nofollow" id="friends">
+								<i class="fas fa-link fa-fw"></i>&nbsp;我的友链
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about.html" rel="nofollow" id="about.html">
+								<i class="fas fa-info-circle fa-fw"></i>&nbsp;关于小站
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class="l_main">
+  
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
+
+
+  <section class="meta">
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/JDBC1-4.html">
+        JDBC-一个通用的JDBC查询方法
+      </a>
+    </h1>
+  
+
+
+      
+      <div class="new-meta-box">
+        
+          
+        
+          
+            
+  <div class="new-meta-item author">
+    
+      <a href="http://crainyday.gitee.io" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>CRainyDay</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class="notlink">
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-05-08</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class="new-meta-item category">
+    <a href="/categories/JDBC/" rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>JDBC</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class="notlink">
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <p>利用反射及 JDBC 元数据编写通用的查询方法.</p>
+<a id="more"></a>
+<h2 id="1-观察之前的查询方法"><a href="#1-观察之前的查询方法" class="headerlink" title="1.观察之前的查询方法"></a>1.观察之前的查询方法</h2><blockquote>
+<ol>
+<li>方法返回值不一定,要根据具体的运行时类确定</li>
+<li>创建的对象不一定,要根据具体的运行时类确定</li>
+<li>具体对象的属性与结果集的字段之间没有什么关系:<br>如何获取结果集中的字段?并给字段对应的对象的属性赋值?</li>
+</ol>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> Student <span class="title">getStudent</span><span class="params">(String sql,Object ... args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//1.方法返回值不一定,要根据具体的运行时类确定</span></span><br><span class="line">    Connection conn = <span class="keyword">null</span>;</span><br><span class="line">    PreparedStatement ps = <span class="keyword">null</span>;</span><br><span class="line">    ResultSet rs = <span class="keyword">null</span>;</span><br><span class="line">    Student stu = <span class="keyword">null</span>;<span class="comment">//2.创建的对象不一定,要根据具体的运行时类确定</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        conn = JDBCTools.getConnection();</span><br><span class="line">        ps = conn.prepareStatement(sql);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; args.length;i ++) &#123;</span><br><span class="line">            ps.setObject(i+<span class="number">1</span>, args[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        rs = ps.executeQuery();</span><br><span class="line">        <span class="keyword">if</span>(rs.next()) &#123;</span><br><span class="line">            stu = <span class="keyword">new</span> Student(</span><br><span class="line">                rs.getInt(<span class="number">1</span>),</span><br><span class="line">                rs.getString(<span class="number">2</span>).trim(),</span><br><span class="line">                rs.getString(<span class="number">3</span>).trim(),</span><br><span class="line">                rs.getDate(<span class="number">4</span>));</span><br><span class="line">            <span class="comment">//3.具体对象的属性与结果集的字段之间没有什么关系,</span></span><br><span class="line">            <span class="comment">//如何获取结果集中的字段?并给字段对应对象的属性复制?</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        JDBCTools.release(rs, ps, conn);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> stu;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-利用反射创建对象"><a href="#2-利用反射创建对象" class="headerlink" title="2.利用反射创建对象"></a>2.利用反射创建对象</h2><blockquote>
+<p>之前我们知道 Java 的反射是动态语言的关键.</p>
+</blockquote>
+<p>忘记如何用反射的可以看一下 , <a href="JavaReflection.html#3-初识反射">Java反射</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">get</span><span class="params">(Class&lt;T&gt; clazz,String sql,Object ... args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//1.由于不能确定返回值,利用泛型实现,通过传过来的clazz参数确定返回值</span></span><br><span class="line">    Connection conn = <span class="keyword">null</span>;</span><br><span class="line">    PreparedStatement ps = <span class="keyword">null</span>;</span><br><span class="line">    ResultSet rs = <span class="keyword">null</span>;</span><br><span class="line">    T entity = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        conn = JDBCTools.getConnection();</span><br><span class="line">        ps = conn.prepareStatement(sql);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; args.length;i ++) &#123;</span><br><span class="line">            ps.setObject(i+<span class="number">1</span>, args[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        rs = ps.executeQuery();</span><br><span class="line">        <span class="keyword">if</span>(rs.next()) &#123;</span><br><span class="line">            <span class="comment">//2.利用反射创建对象</span></span><br><span class="line">            entity = clazz.newInstance();</span><br><span class="line">            <span class="comment">//3.通过解析SQL语句来判断到底选择查询了哪些列,</span></span><br><span class="line">            <span class="comment">//以及需要为 entity 对象的哪些属性赋值</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        JDBCTools.release(rs, ps, conn);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> entity;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-对应列与属性"><a href="#3-对应列与属性" class="headerlink" title="3.对应列与属性"></a>3.对应列与属性</h2><blockquote>
+<p>注意到: SQL查询的数据表的列与对象的属性没有什么关系.</p>
+<p>我们要修改一下查询时的SQL语句, 查询时为每一列起一个别名, 该别名与对象的属性一一对应.</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Java/JDBC_12.png" alt="JDBC_12"></p>
+<h2 id="4-获取列名-别名"><a href="#4-获取列名-别名" class="headerlink" title="4.获取列名(别名)"></a>4.获取列名(别名)</h2><h3 id="A-数据库元数据"><a href="#A-数据库元数据" class="headerlink" title="A.数据库元数据"></a>A.数据库元数据</h3><blockquote>
+<ul>
+<li><p>Java 通过JDBC获得连接以后，得到一个Connection 对象，可以从这个对象获得<strong>有关数据库管理系统的各种信息</strong>，包括数据库中的各个表，表中的各个列，数据类型，触发器，存储过程等各方面的信息。根据这些信息，JDBC可以访问一个实现事先并不了解的数据库。</p>
+</li>
+<li><p>获取这些信息的方法都是在<strong>DatabaseMetaData</strong>类的对象上实现的，而DatabaseMetaData对象是在Connection对象上获得的.</p>
+</li>
+<li>可通过Connection 对象的 getMetaData()方法获取 DatabaseMetaData 对象</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>DatabaseMetaData 类中提供了许多方法用于获得数据源的各种信息，通过这些方法可以非常详细的了解数据库的信息:<br>&emsp;&emsp;–getURL(): 返回一个String类对象，代表数据库的URL。<br>&emsp;&emsp;–getUserName(): 返回连接当前数据库管理系统的用户名。<br>&emsp;&emsp;–isReadOnly(): 返回一个boolean值，指示数据库是否只允许读操作。<br>&emsp;&emsp;–getDatabaseProductName(): 返回数据库的产品名称。<br>&emsp;&emsp;–getDatabaseProductVersion(): 返回数据库的版本号。<br>&emsp;&emsp;–getDriverName(): 返回驱动驱动程序的名称。<br>&emsp;&emsp;–getDriverVersion(): 返回驱动程序的版本号。<br>&emsp;&emsp;–getCatalogs(): 返回数据库连接对应的数据库的结果集。</li>
+</ul>
+</blockquote>
+<h3 id="B-结果集元数据"><a href="#B-结果集元数据" class="headerlink" title="B.结果集元数据"></a>B.结果集元数据</h3><blockquote>
+<p><strong>ResultSetMetaData</strong>类</p>
+<ul>
+<li>可用于获取关于 ResultSet 对象中列的类型和属性信息的对象:</li>
+</ul>
+<p>–<strong>getColumnName</strong>(int column)：获取指定列的名称</p>
+<p>–<strong>getColumnCount</strong>()：返回当前 ResultSet 对象中的列数。 </p>
+<p>–<strong>getColumnTypeName</strong>(int column)：检索指定列的数据库特定的类型名称。 </p>
+<p>–<strong>getColumnDisplaySize</strong>(int column)：指示指定列的最大标准宽度，以字符为单位。 </p>
+<p>–<strong>isNullable</strong>(int column)：指示指定列中的值是否可以为 null。 </p>
+<p>– <strong>isAutoIncrement</strong>(int column)：指示是否自动为指定列进行编号，这样这些列仍然是只读的。 </p>
+<p>可通过 ResultSet 对象的 getMetaData()方法获取 ResultSetMetaData 对象</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//rs为ResultSet对象</span></span><br><span class="line">ResultSetMetaData rsmd = rs.getMetaData();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; rsmd.getColumnCount(); i++) &#123;</span><br><span class="line">    System.out.println(rsmd.getColumnName(i+<span class="number">1</span>));<span class="comment">//打印出列名</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="5-利用反射创建对象并赋值"><a href="#5-利用反射创建对象并赋值" class="headerlink" title="5.利用反射创建对象并赋值"></a>5.利用反射创建对象并赋值</h2><h3 id="A-反射工具类"><a href="#A-反射工具类" class="headerlink" title="A.反射工具类"></a>A.反射工具类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Field;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.InvocationTargetException;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Modifier;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.ParameterizedType;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Type;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 反射的 Utils 函数集合</span></span><br><span class="line"><span class="comment"> * 提供访问私有变量, 获取泛型类型 Class, 提取集合中元素属性等 Utils 函数</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Administrator</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReflectionUtils</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 通过反射, 获得定义 Class 时声明的父类的泛型参数的类型</span></span><br><span class="line"><span class="comment">	 * 如: public EmployeeDao extends BaseDao&lt;Employee, String&gt;</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> clazz</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> index</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">    <span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Class&lt;Object&gt; <span class="title">getSuperClassGenricType</span><span class="params">(Class&lt;Object&gt; clazz, <span class="keyword">int</span> index)</span></span>&#123;</span><br><span class="line">        Type genType = clazz.getGenericSuperclass();</span><br><span class="line">        <span class="keyword">if</span>(!(genType <span class="keyword">instanceof</span> ParameterizedType))&#123;</span><br><span class="line">            <span class="keyword">return</span> Object.class;</span><br><span class="line">        &#125;</span><br><span class="line">        Type [] params = ((ParameterizedType)genType).getActualTypeArguments();</span><br><span class="line">        <span class="keyword">if</span>(index &gt;= params.length || index &lt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> Object.class;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!(params[index] <span class="keyword">instanceof</span> Class))&#123;</span><br><span class="line">            <span class="keyword">return</span> Object.class;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (Class&lt;Object&gt;) params[index];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 通过反射, 获得 Class 定义中声明的父类的泛型参数类型</span></span><br><span class="line"><span class="comment">	 * 如: public EmployeeDao extends BaseDao&lt;Employee, String&gt;</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> &lt;T&gt;</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> clazz</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Class&lt;Object&gt; <span class="title">getSuperGenericType</span><span class="params">(Class&lt;Object&gt; clazz)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getSuperClassGenricType(clazz, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 循环向上转型, 获取对象的 DeclaredMethod</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> object</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> methodName</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> parameterTypes</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Method <span class="title">getDeclaredMethod</span><span class="params">(Object object, String methodName, Class&lt;?&gt;[] parameterTypes)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(Class&lt;?&gt; superClass = object.getClass(); superClass != Object.class; superClass = superClass.getSuperclass())&#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="comment">//superClass.getMethod(methodName, parameterTypes);</span></span><br><span class="line">                <span class="keyword">return</span> superClass.getDeclaredMethod(methodName, parameterTypes);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (NoSuchMethodException e) &#123;</span><br><span class="line">                <span class="comment">//Method 不在当前类定义, 继续向上转型</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//..</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 使 filed 变为可访问</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> field</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">makeAccessible</span><span class="params">(Field field)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!Modifier.isPublic(field.getModifiers()))&#123;</span><br><span class="line">            field.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 循环向上转型, 获取对象的 DeclaredField</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> object</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> filedName</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Field <span class="title">getDeclaredField</span><span class="params">(Object object, String filedName)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(Class&lt;?&gt; superClass = object.getClass(); superClass != Object.class; superClass = superClass.getSuperclass())&#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> superClass.getDeclaredField(filedName);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (NoSuchFieldException e) &#123;</span><br><span class="line">                <span class="comment">//Field 不在当前类定义, 继续向上转型</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 直接调用对象方法, 而忽略修饰符(private, protected)</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> object</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> methodName</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> parameterTypes</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> parameters</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> InvocationTargetException </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> IllegalArgumentException </span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Object <span class="title">invokeMethod</span><span class="params">(Object object, String methodName, Class&lt;?&gt; [] parameterTypes,</span></span></span><br><span class="line"><span class="function"><span class="params">                                      Object [] parameters)</span> <span class="keyword">throws</span> InvocationTargetException</span>&#123;</span><br><span class="line">        Method method = getDeclaredMethod(object, methodName, parameterTypes);</span><br><span class="line">        <span class="keyword">if</span>(method == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Could not find method ["</span> + methodName + <span class="string">"] on target ["</span> + object + <span class="string">"]"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        method.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> method.invoke(object, parameters);</span><br><span class="line">        &#125; <span class="keyword">catch</span>(IllegalAccessException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">"不可能抛出的异常"</span>);</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 直接设置对象属性值, 忽略 private/protected 修饰符, 也不经过 setter</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> object</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> fieldName</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> value</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setFieldValue</span><span class="params">(Object object, String fieldName, Object value)</span></span>&#123;</span><br><span class="line">        Field field = getDeclaredField(object, fieldName);</span><br><span class="line">        <span class="keyword">if</span> (field == <span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Could not find field ["</span> + fieldName + <span class="string">"] on target ["</span> + object + <span class="string">"]"</span>);</span><br><span class="line">        makeAccessible(field);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            field.set(object, value);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IllegalAccessException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">"不可能抛出的异常"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 直接读取对象的属性值, 忽略 private/protected 修饰符, 也不经过 getter</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> object</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> fieldName</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Object <span class="title">getFieldValue</span><span class="params">(Object object, String fieldName)</span></span>&#123;</span><br><span class="line">        Field field = getDeclaredField(object, fieldName);</span><br><span class="line">        <span class="keyword">if</span> (field == <span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Could not find field ["</span> + fieldName + <span class="string">"] on target ["</span> + object + <span class="string">"]"</span>);</span><br><span class="line">        makeAccessible(field);</span><br><span class="line">        Object result = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            result = field.get(object);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IllegalAccessException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">"不可能抛出的异常"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="B-利用反射赋值"><a href="#B-利用反射赋值" class="headerlink" title="B.利用反射赋值"></a>B.利用反射赋值</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JDBCTools</span> </span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 通用的查询方法,SQL为select类型.</span></span><br><span class="line"><span class="comment">	 * 查询结果最多是一行记录.</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> clazz</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> sql</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> args</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">get</span><span class="params">(Class&lt;T&gt; clazz,String sql,Object ... args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//由于不能确定返回值,利用泛型实现,通过传过来的clazz参数确定返回值</span></span><br><span class="line">		Connection conn = <span class="keyword">null</span>;</span><br><span class="line">		PreparedStatement ps = <span class="keyword">null</span>;</span><br><span class="line">		ResultSet rs = <span class="keyword">null</span>;</span><br><span class="line">		T entity = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			conn = JDBCTools.getConnection();</span><br><span class="line">			ps = conn.prepareStatement(sql);</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; args.length;i ++) &#123;</span><br><span class="line">				ps.setObject(i+<span class="number">1</span>, args[i]);</span><br><span class="line">			&#125;</span><br><span class="line">			rs = ps.executeQuery();</span><br><span class="line">			ResultSetMetaData rsmd = rs.getMetaData();</span><br><span class="line">            <span class="comment">//用HashMap暂时存放查询结果</span></span><br><span class="line">            <span class="comment">//键:列的别名即对象属性名; 值:记录中对应列的值</span></span><br><span class="line">			Map&lt;String, Object&gt; result = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">			<span class="keyword">if</span>(rs.next()) &#123;</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; rsmd.getColumnCount(); i++) &#123;</span><br><span class="line">					result.put(rsmd.getColumnLabel(i+<span class="number">1</span>), rs.getObject(i+<span class="number">1</span>));</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(result.size()&gt;<span class="number">0</span>) &#123;</span><br><span class="line">				entity = clazz.newInstance();</span><br><span class="line">                <span class="comment">//利用反射创建对象</span></span><br><span class="line">				<span class="keyword">for</span>(Map.Entry&lt;String, Object&gt; entry:result.entrySet()) &#123;</span><br><span class="line">                    <span class="comment">//利用反射为对象的各属性赋值</span></span><br><span class="line">					String fieldName = entry.getKey();</span><br><span class="line">					Object value = entry.getValue();</span><br><span class="line">					setFieldValue(entity, fieldName, value);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">			JDBCTools.release(rs, ps, conn);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> entity;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      </div>
+      
+        <br>
+        
+
+
+  <section class="meta" id="footer-meta">
+    <div class="new-meta-box">
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-10-06T17:38:26+08:00">
+  <a class="notlink">
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>更新于 2019年10月6日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JDBC/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>JDBC</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JavaSE/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>JavaSE</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Java/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Java</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Database/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Database</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer" href="http://connect.qq.com/widget/shareqq/index.html?url=http://crainyday.gitee.io/JDBC1-4.html&title=JDBC-一个通用的JDBC查询方法 | CRainyDay&summary=利用反射及 JDBC 元数据编写通用的查询方法.">
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://crainyday.gitee.io/JDBC1-4.html&title=JDBC-一个通用的JDBC查询方法 | CRainyDay&summary=利用反射及 JDBC 元数据编写通用的查询方法.">
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer" href="http://service.weibo.com/share/share.php?url=http://crainyday.gitee.io/JDBC1-4.html&title=JDBC-一个通用的JDBC查询方法 | CRainyDay&summary=利用反射及 JDBC 元数据编写通用的查询方法.">
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                          <h4>
+                              <a href="/JDBC1-5.html" rel="prev" title="JDBC-DAO设计模式">
+                                
+                                    JDBC-DAO设计模式
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/tags/JDBC/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> JDBC</a> <a class="tag" href="/tags/JavaSE/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> JavaSE</a> <a class="tag" href="/tags/Java/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Java</a> <a class="tag" href="/tags/Database/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Database</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/JDBC1-3.html" rel="prev" title="JDBC-PreparedStatement">
+                                  
+                                      JDBC-PreparedStatement
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/tags/JDBC/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> JDBC</a> <a class="tag" href="/tags/JavaSE/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> JavaSE</a> <a class="tag" href="/tags/Java/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Java</a> <a class="tag" href="/tags/Database/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Database</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'JDBC-一个通用的JDBC查询方法',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class="l_side">
+  
+    
+    
+      
+      
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class="widget toc-wrapper">
+    
+<header class="material">
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class="content material">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-观察之前的查询方法"><span class="toc-text">1.观察之前的查询方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-利用反射创建对象"><span class="toc-text">2.利用反射创建对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-对应列与属性"><span class="toc-text">3.对应列与属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-获取列名-别名"><span class="toc-text">4.获取列名(别名)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-数据库元数据"><span class="toc-text">A.数据库元数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-结果集元数据"><span class="toc-text">B.结果集元数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-利用反射创建对象并赋值"><span class="toc-text">5.利用反射创建对象并赋值</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-反射工具类"><span class="toc-text">A.反射工具类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-利用反射赋值"><span class="toc-text">B.利用反射赋值</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+            
+              <section class="widget author">
+  <div class="content material">
+    
+      <div class="avatar">
+        <img class="avatar" src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/avatar.png">
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="mailto:3013142340@qq.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/crainyday" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=3013142340" class="social fab fa-qq flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=1794783182" class="social fas fa-headphones-alt flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class="widget grid">
+  
+<header class="material">
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
+  
+</header>
+
+  <div class="content material">
+    <ul class="grid navgation">
+      
+        <li><a class="flat-box" title="/" href="/" id="home">
+          
+            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
+          
+          近期文章
+        </a></li>
+      
+        <li><a class="flat-box" title="/archives/" href="/archives/" rel="nofollow" id="archives">
+          
+            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
+          
+          文章归档
+        </a></li>
+      
+        <li><a class="flat-box" title="/friends/" href="/friends/" rel="nofollow" id="friends">
+          
+            <i class="fas fa-link fa-fw" aria-hidden="true"></i>
+          
+          我的友链
+        </a></li>
+      
+        <li><a class="flat-box" title="/bbs/" href="/bbs/" rel="nofollow" id="bbs">
+          
+            <i class="fas fa-comment-alt fa-fw" aria-hidden="true"></i>
+          
+          网站留言
+        </a></li>
+      
+        <li><a class="flat-box" title="/about.html" href="/about.html" rel="nofollow" id="about.html">
+          
+            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
+          
+          关于小站
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class="widget category">
+    
+<header class="material">
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分类</div>
+  
+    <a class="rightBtn" rel="nofollow" href="/categories/" title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class="content material">
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/Ajax/" href="/categories/Ajax/"><div class="name">Ajax</div><div class="badge">(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Hexo/" href="/categories/Hexo/"><div class="name">Hexo</div><div class="badge">(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/JDBC/" href="/categories/JDBC/"><div class="name">JDBC</div><div class="badge">(11)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/JS/" href="/categories/JS/"><div class="name">JS</div><div class="badge">(20)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/JavaSE/" href="/categories/JavaSE/"><div class="name">JavaSE</div><div class="badge">(15)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Vue/" href="/categories/Vue/"><div class="name">Vue</div><div class="badge">(16)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/jQuery/" href="/categories/jQuery/"><div class="name">jQuery</div><div class="badge">(7)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class="widget tagcloud">
+    
+<header class="material">
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
+  
+    <a class="rightBtn" rel="nofollow" href="/tags/" title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div id="myCanvasContainer" class="content material">
+        <canvas width="250" height="250" id="resCanvas" style="width=100%">
+          <a href="/tags/Ajax/" style="font-size: 15.43px; color: #8f8f8f">Ajax</a> <a href="/tags/Database/" style="font-size: 19.71px; color: #727272">Database</a> <a href="/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/tags/Gitee/" style="font-size: 14px; color: #999">Gitee</a> <a href="/tags/Hexo/" style="font-size: 16.86px; color: #868686">Hexo</a> <a href="/tags/JDBC/" style="font-size: 19.71px; color: #727272">JDBC</a> <a href="/tags/JS/" style="font-size: 24px; color: #555">JS</a> <a href="/tags/Java/" style="font-size: 22.57px; color: #5f5f5f">Java</a> <a href="/tags/JavaSE/" style="font-size: 22.57px; color: #5f5f5f">JavaSE</a> <a href="/tags/NodeJS/" style="font-size: 14px; color: #999">NodeJS</a> <a href="/tags/VPN/" style="font-size: 14px; color: #999">VPN</a> <a href="/tags/Vue/" style="font-size: 21.14px; color: #686868">Vue</a> <a href="/tags/jQuery/" style="font-size: 18.29px; color: #7c7c7c">jQuery</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a>
+        </canvas>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class="widget list">
+  
+<header class="material">
+  <div><i class="fas fa-thumbs-up fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;强烈推荐</div>
+  
+</header>
+
+  <div class="content material">
+    <ul class="entry">
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+
+
+  <section class="widget music">
+    
+<header class="material">
+  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
+  
+    <a class="rightBtn" rel="external nofollow noopener noreferrer" target="_blank" href="https://music.163.com/#/user/home?id=1794783182" title="https://music.163.com/#/user/home?id=1794783182">
+    <i class="far fa-heart fa-fw"></i></a>
+  
+</header>
+
+    <div class="content material">
+      
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <div class="aplayer" data-theme="#1BCDFC" data-mode="circulation" data-server="netease" data-type="playlist" data-id="2737545165" data-volume="0.7">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="mailto:3013142340@qq.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/crainyday" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=3013142340" class="social fab fa-qq flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://music.163.com/#/user/home?id=1794783182" class="social fas fa-headphones-alt flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <br>
+  <div style="color:rgb(27, 195, 251);"><p>本博客所有文章除特别声明外，均采用[<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">(CC BY-NC-SA 4.0)</a>]许可协议。转载请注明出处！</p></div>
+  <div style="color:rgb(27, 195, 251);" id="sitetime"></div>
+  <div style="color:rgb(27, 195, 251);">
+    本站使用
+    <a style="color:rgb(27, 195, 251);" href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    作为主题
+    
+      ，
+      总访问量为
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      次
+    
+    。
+  </div>
+  <div style="color:rgb(27, 195, 251);"><span>Copyright&nbsp;&copy;&nbsp;2019 CRainyDay's Blog 版权所有</span></div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+  <!-- fastclick -->
+  <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+  </script>
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["https://img.vim-cn.com/69/104e0d1a60a99b72e5adfdfb5af3cfbaea47bb.jpg", "https://img.vim-cn.com/c9/1b86fe4d9802e0aae5072d6b3e8b124825593f.jpg", "https://img.vim-cn.com/a1/fd811d5d9621c590a608d6a7b968c064f514b3.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["https://img.vim-cn.com/69/104e0d1a60a99b72e5adfdfb5af3cfbaea47bb.jpg", "https://img.vim-cn.com/c9/1b86fe4d9802e0aae5072d6b3e8b124825593f.jpg", "https://img.vim-cn.com/a1/fd811d5d9621c590a608d6a7b968c064f514b3.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      <script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/volantis.min.js"></script>
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "47GAhNwwbbNreaJdvDNWHhOo-gzGzoHsz",
+    appKey: "pndiLFAmJvnhcIutpj4HIj6t",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    highlight:'true'
+  })
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/sitetime.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/cooltext.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/clicklove.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/tagcanvas.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/tagcloud.js"></script>
+<script type="text/javascript" color="102,185,255" zindex="-10" opacity="50" count="99" src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/canvas-nest.min.js"></script>
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
