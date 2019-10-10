@@ -334,7 +334,7 @@
         <p>什么是 JavaBean ？(Java豆)</p>
 <p>在 JSP 中 使用 JavaBean。</p>
 <p>三个标签：</p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:useBean id="JavaBean的标识符" class="JavaBean的全类名" scope="作用范围"&gt;&lt;/jsp:useBean&gt;</span><br><span class="line">&lt;jsp:setProerty property=<span class="string">"属性名(键)"</span> value=<span class="string">"属性值"</span> name=<span class="string">"JavaBean的标识符"</span> /&gt;</span><br><span class="line">&lt;jsp:getProerty property=<span class="string">"属性名(键)"</span> name=<span class="string">"JavaBean的标识符"</span> /&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:useBean id="JavaBean的标识符" class="JavaBean的全类名" scope="作用范围"&gt;&lt;/jsp:useBean&gt;</span><br><span class="line">&lt;jsp:setProperty property=<span class="string">"属性名(键)"</span> value=<span class="string">"属性值"</span> name=<span class="string">"JavaBean的标识符"</span> /&gt;</span><br><span class="line">&lt;jsp:getProperty property=<span class="string">"属性名(键)"</span> name=<span class="string">"JavaBean的标识符"</span> /&gt;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h2 id="1-JavaBean"><a href="#1-JavaBean" class="headerlink" title="1. JavaBean"></a>1. JavaBean</h2><blockquote>
 <p>用作 JavaBean 的类的要求：</p>
@@ -360,36 +360,36 @@
 </thead>
 <tbody>
 <tr>
-<td>\<a href="jsp:useBean\" target="_blank" rel="noopener">jsp:useBean\</a></td>
+<td>&lt;jsp:useBean&gt;</td>
 <td>创建和查找 JavaBean 实例对象</td>
 </tr>
 <tr>
-<td>\<a href="jsp:setProperty\" target="_blank" rel="noopener">jsp:setProperty\</a></td>
+<td>&lt;jsp:setProperty&gt;</td>
 <td>设置 JavaBean 对象的属性</td>
 </tr>
 <tr>
-<td>\<a href="jsp:getProperty\" target="_blank" rel="noopener">jsp:getProperty\</a></td>
+<td>&lt;jsp:getProperty&gt;</td>
 <td>读取 JavaBean 对象的属性</td>
 </tr>
 </tbody>
 </table>
-<h3 id="B-jsp-useBean"><a href="#B-jsp-useBean" class="headerlink" title="B.\jsp:useBean\"></a>B.\<a href="jsp:useBean\" target="_blank" rel="noopener">jsp:useBean\</a></h3><blockquote>
-<p>\<a href="jsp:useBean\" target="_blank" rel="noopener">jsp:useBean\</a>用法：</p>
+<h3 id="B-lt-jsp-useBean-gt"><a href="#B-lt-jsp-useBean-gt" class="headerlink" title="B.&lt;jsp:useBean&gt;"></a>B.&lt;jsp:useBean&gt;</h3><blockquote>
+<p>&lt;jsp:useBean&gt;用法：</p>
 <p>&emsp;&emsp;用于在某个指定(<em>scope属性指定</em>)的域范围(application、session、request、pageContext等)内查找一个指定(<em>id属性指定</em>)名称的 JavaBean 对象，若查到则返回该对象的引用，若不存在则实例化一个新的 JavaBean 对象(<em>class属性指定</em>)并将它存进 <em>scope 属性</em> 指定的域范围内。</p>
 <p>语法：</p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; &lt;jsp:useBean id="beanInstanceName" class="package.class" scope="page|request|session|application"&gt;&lt;/jsp:useBean&gt;</span><br><span class="line">&gt; &lt;%-- scope只能取上述四个值，page 为默认值 --%&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:useBean id="beanInstanceName" class="package.class" scope="page|request|session|application"&gt;&lt;/jsp:useBean&gt;</span><br><span class="line">&lt;%-- scope只能取上述四个值，page 为默认值 --%&gt;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>另一种用法：（此时返回的bean是Object类型的对象）</p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; &lt;jsp:useBean id="beanInstanceName" beanName="package.class" type="java.lang.Object" scope="page|request|session|application"&gt;&lt;/jsp:useBean&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:useBean id="beanInstanceName" beanName="package.class" type="java.lang.Object" scope="page|request|session|application"&gt;&lt;/jsp:useBean&gt;</span><br></pre></td></tr></table></figure>
 <figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:useBean id="user" class="com.crd.design.domain.User" scope="session"&gt;&lt;/jsp:useBean&gt;</span><br><span class="line">&lt;%--以上代码相当于如下：</span><br><span class="line">&lt;%</span><br><span class="line">    User user = (User)session.getAttribute(<span class="string">"user"</span>);</span><br><span class="line">    <span class="keyword">if</span>(user == <span class="keyword">null</span>)&#123;</span><br><span class="line">    	user = (User)Class.forName(<span class="string">"com.crd.design.domain.User"</span>).newInstance();</span><br><span class="line">    	session.setAttribute(<span class="string">"user"</span>, user);</span><br><span class="line">    &#125;</span><br><span class="line">%&gt;</span><br><span class="line">--%&gt;</span><br><span class="line">&lt;%-- useBean之后就可以使用该bean对象，如： --%&gt;</span><br><span class="line">&lt;%</span><br><span class="line">    user.setUserName(<span class="string">"CRainyDay"</span>);</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="C-jsp-setProperty"><a href="#C-jsp-setProperty" class="headerlink" title="C.\jsp:setProperty\"></a>C.\<a href="jsp:setProperty\" target="_blank" rel="noopener">jsp:setProperty\</a></h3><blockquote>
-<p>\<a href="jsp:setProperty\" target="_blank" rel="noopener">jsp:setProperty\</a>用法：</p>
+<h3 id="C-lt-jsp-setProperty-gt"><a href="#C-lt-jsp-setProperty-gt" class="headerlink" title="C.&lt;jsp:setProperty&gt;"></a>C.&lt;jsp:setProperty&gt;</h3><blockquote>
+<p>&lt;jsp:setProperty&gt;用法：</p>
 <p>&emsp;&emsp;给指定(<em>name属性指定</em>)的 JavaBean 对象的 指定(<em>property属性指定</em>)属性 赋指定(<em>value属性指定</em>)的属性值。</p>
 <p>语法：</p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; &lt;jsp:setProperty property=<span class="string">"属性名"</span> value=<span class="string">"属性值"</span> name=<span class="string">"id指定的bean对象"</span> /&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:setProperty property=<span class="string">"属性名"</span> value=<span class="string">"属性值"</span> name=<span class="string">"id指定的bean对象"</span> /&gt;</span><br></pre></td></tr></table></figure>
 <figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:useBean id="user" class="com.crd.design.domain.User" scope="session"&gt;&lt;/jsp:useBean&gt;</span><br><span class="line">&lt;jsp:setProperty property=<span class="string">"userName"</span> value=<span class="string">"crainyday"</span> name=<span class="string">"user"</span> /&gt;</span><br><span class="line">&lt;%--以上代码相当于如下：</span><br><span class="line">&lt;%</span><br><span class="line">    user.setUserName(<span class="string">"crainyday"</span>);</span><br><span class="line">%&gt;</span><br><span class="line">--%&gt;</span><br></pre></td></tr></table></figure>
 <font style="color:red;font-size:1.3em;">setProperty 的特殊用法：</font>
 
@@ -397,12 +397,12 @@
 <p>若 property 属性值为 ”*“，省略 value 属性，则会自动为对应 JavaBean 对象的所有属性赋值为对应的请求参数的值。</p>
 </blockquote>
 <figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;%--例：请求参数为 ?userName=<span class="string">"crainyday"</span>&amp;userId=<span class="number">12</span>&amp;userPassword=<span class="string">"crainyday"</span>--%&gt;</span><br><span class="line">&lt;jsp:useBean id="user" class="com.crd.design.domain.User" scope="session"&gt;&lt;/jsp:useBean&gt;</span><br><span class="line">&lt;jsp:setProperty property=<span class="string">"*"</span> name=<span class="string">"user"</span> /&gt;</span><br><span class="line">&lt;%--这样做进一步简化了开发，</span><br><span class="line">    否则，必须先从request中取出对应参数的值，</span><br><span class="line">    然后为JavaBean对象对应属性赋值--%&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="D-jsp-getProperty"><a href="#D-jsp-getProperty" class="headerlink" title="D.\jsp:getProperty\"></a>D.\<a href="jsp:getProperty\" target="_blank" rel="noopener">jsp:getProperty\</a></h3><blockquote>
-<p>\<a href="jsp:getProperty\" target="_blank" rel="noopener">jsp:getProperty\</a>用法：</p>
+<h3 id="D-lt-jsp-getProperty-gt"><a href="#D-lt-jsp-getProperty-gt" class="headerlink" title="D.&lt;jsp:getProperty&gt;"></a>D.&lt;jsp:getProperty&gt;</h3><blockquote>
+<p>&lt;jsp:getProperty&gt;用法：</p>
 <p>&emsp;&emsp;获取指定(<em>name属性指定</em>)的 JavaBean 对象的 指定(<em>property属性指定</em>)属性 的属性值。</p>
 <p>语法：</p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; &lt;jsp:getProperty property=<span class="string">"属性名"</span> name=<span class="string">"id指定的bean对象"</span> /&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:getProperty property=<span class="string">"属性名"</span> name=<span class="string">"id指定的bean对象"</span> /&gt;</span><br></pre></td></tr></table></figure>
 <figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:useBean id="user" class="com.crd.design.domain.User" scope="session"&gt;&lt;/jsp:useBean&gt;</span><br><span class="line">&lt;jsp:getProperty property=<span class="string">"userName"</span> name=<span class="string">"user"</span> /&gt;</span><br><span class="line">&lt;%--以上代码相当于如下：</span><br><span class="line">&lt;%= user.getUserName()%&gt;</span><br><span class="line">--%&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="3-利用eclipse快速开发JavaBean"><a href="#3-利用eclipse快速开发JavaBean" class="headerlink" title="3.利用eclipse快速开发JavaBean"></a>3.利用eclipse快速开发JavaBean</h2><ul>
 <li>①新建类并创建 JavaBean 的私有属性。</li>
@@ -429,7 +429,7 @@
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-10-10T12:52:25+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-10-10T13:15:28+08:00">
   <a class="notlink">
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2019年10月10日</p>
@@ -588,7 +588,7 @@
 </header>
 
     <div class="content material">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-JavaBean"><span class="toc-text">1. JavaBean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-JSP中应用-JavaBean"><span class="toc-text">2. JSP中应用 JavaBean</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-相关标签"><span class="toc-text">A.相关标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-jsp-useBean"><span class="toc-text">B.\jsp:useBean\</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-jsp-setProperty"><span class="toc-text">C.\jsp:setProperty\</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#D-jsp-getProperty"><span class="toc-text">D.\jsp:getProperty\</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-利用eclipse快速开发JavaBean"><span class="toc-text">3.利用eclipse快速开发JavaBean</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-JavaBean"><span class="toc-text">1. JavaBean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-JSP中应用-JavaBean"><span class="toc-text">2. JSP中应用 JavaBean</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-相关标签"><span class="toc-text">A.相关标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-lt-jsp-useBean-gt"><span class="toc-text">B.&lt;jsp:useBean&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-lt-jsp-setProperty-gt"><span class="toc-text">C.&lt;jsp:setProperty&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#D-lt-jsp-getProperty-gt"><span class="toc-text">D.&lt;jsp:getProperty&gt;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-利用eclipse快速开发JavaBean"><span class="toc-text">3.利用eclipse快速开发JavaBean</span></a></li></ol>
     </div>
   </section>
 

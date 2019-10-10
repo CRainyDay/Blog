@@ -337,8 +337,8 @@
 <a id="more"></a>
 <h2 id="1-配置-JDK-环境"><a href="#1-配置-JDK-环境" class="headerlink" title="1.配置 JDK 环境"></a>1.配置 JDK 环境</h2><blockquote>
 <p>输入以下命令，查看 JDK 版本。</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; java -version</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>若是提示找不到 java 命令，请先安装 JDK 或 JRE。并配置系统变量: JAVA_HOME 或 JRE_HOME.</p>
 </blockquote>
@@ -385,8 +385,8 @@
 <hr>
 <h2 id="4-修改-tomcat-端口"><a href="#4-修改-tomcat-端口" class="headerlink" title="4.修改 tomcat 端口"></a>4.修改 tomcat 端口</h2><blockquote>
 <p>通过修改 apache-tomcat-8.5.37\conf\server.xml 文件中的配置信息来修改 Tomcat 服务的端口号。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8989"</span> <span class="attr">protocol</span>=<span class="string">"HTTP/1.1"</span> </span></span><br><span class="line"><span class="tag">&gt;</span>            connectionTimeout="20000" </span><br><span class="line">&gt;            redirectPort="8443" /&gt;</span><br><span class="line">&gt; <span class="comment">&lt;!--修改 port 为想要修改的端口号即可--&gt;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8989"</span> <span class="attr">protocol</span>=<span class="string">"HTTP/1.1"</span></span></span><br><span class="line"><span class="tag"><span class="attr">connectionTimeout</span>=<span class="string">"20000"</span> </span></span><br><span class="line"><span class="tag"><span class="attr">redirectPort</span>=<span class="string">"8443"</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!--修改 port 为想要修改的端口号即可--&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="5-配置启动-tomcat"><a href="#5-配置启动-tomcat" class="headerlink" title="5.配置启动 tomcat"></a>5.配置启动 tomcat</h2><blockquote>
 <p>往往为了方便开发，我们希望在任意文件夹下，通过相应命令即可启动、停止 tomcat。</p>
 <p>步骤：</p>
@@ -490,7 +490,7 @@
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-10-10T12:52:25+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-10-10T13:22:28+08:00">
   <a class="notlink">
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2019年10月10日</p>
