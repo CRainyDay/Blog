@@ -263,7 +263,7 @@
             
   <div class="new-meta-item author">
     
-      <a href="http://crainyday.gitee.io" rel="nofollow">
+      <a href="https://blog.crainyday.com" rel="nofollow">
         
           <i class="fas fa-user" aria-hidden="true"></i>
         
@@ -356,6 +356,10 @@
 <h3 id="②安装插件"><a href="#②安装插件" class="headerlink" title="②安装插件"></a>②安装插件</h3><p>打开命令行, 依次执行下列命令(路径改为你自己的). 执行完hexo s后, 访问<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 便是本地博客.</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">f:</span><br><span class="line">cd test</span><br><span class="line">npm install hexo-cli -g #之前没安装hexo的执行此命令</span><br><span class="line">hexo init</span><br><span class="line">npm install hexo-server --save</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line"><span class="meta">#</span>清理项目&amp;&amp;生成项目文件&amp;&amp;本地运行项目 hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br><span class="line"><span class="meta">#</span>修改完配置信息，再 hexo d 上传到远程仓库</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 <h3 id="③配置全局-config-yml文件"><a href="#③配置全局-config-yml文件" class="headerlink" title="③配置全局_config.yml文件"></a>③配置全局_config.yml文件</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">CRainyDay's</span> <span class="string">Blog</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">CRainyDay</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="comment">#url</span></span><br><span class="line"><span class="attr">url:</span> <span class="attr">https://crainyday.github.io/test</span> <span class="comment">#这里填写GitHub Pages生成的url</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/test</span> <span class="comment">#博客根目录，若是url为：https://crainyday.github.io，即一个二级域名，root: /</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">landscape</span> <span class="comment">#网站应用的主题名字,可以换为你喜欢的主题</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#与hexo d相关的配置</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="attr">https://github.com/用户名/仓库名.git</span> <span class="comment">#你的GitHub仓库地址</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这里是一些<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo 主题</a>，你可以选择一个自己喜欢的主题。下载后放在 themes 目录下即可。</p>
+<p>有关其他的主题配置，请看各主题的 README 文档。</p>
+</blockquote>
 <h3 id="④上传到GitHub"><a href="#④上传到GitHub" class="headerlink" title="④上传到GitHub"></a>④上传到GitHub</h3><p>接着上述命令执行hexo d命令. 第一次执行该命令, 期间第一次上传时，需要输入GitHub的账号密码. 上传之后, 更新一下Pages等一会访问给出的url, 便可以进入你的博客.</p>
 <h2 id="5-自定义博客url"><a href="#5-自定义博客url" class="headerlink" title="5.自定义博客url"></a>5.自定义博客url</h2><h3 id="①创建CNAME文件"><a href="#①创建CNAME文件" class="headerlink" title="①创建CNAME文件"></a>①创建CNAME文件</h3><p>在本地博客根目录的source目录下, 新建CNAME文件(无后缀名). 内容为你的二级域名或其他域名</p>
 <p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/github05.png" alt="github05"></p>
@@ -375,7 +379,7 @@
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-10-18T13:14:07+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-10-18T16:42:22+08:00">
   <a class="notlink">
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2019年10月18日</p>
@@ -398,7 +402,7 @@
   <div class="-mob-share-list share-body">
     
       
-        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer" href="http://connect.qq.com/widget/shareqq/index.html?url=http://crainyday.gitee.io/Hexo2.html&title=利用Hexo和GitHub搭建一个静态博客 | CRainyDay&summary=没有服务器也可以哦
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.crainyday.com/Hexo2.html&title=利用Hexo和GitHub搭建一个静态博客 | CRainyDay&summary=没有服务器也可以哦
 用github pages与Hexo搭建免费的个人博客">
           
             <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
@@ -407,7 +411,7 @@
       
     
       
-        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://crainyday.gitee.io/Hexo2.html&title=利用Hexo和GitHub搭建一个静态博客 | CRainyDay&summary=没有服务器也可以哦
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.crainyday.com/Hexo2.html&title=利用Hexo和GitHub搭建一个静态博客 | CRainyDay&summary=没有服务器也可以哦
 用github pages与Hexo搭建免费的个人博客">
           
             <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
@@ -416,7 +420,7 @@
       
     
       
-        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer" href="http://service.weibo.com/share/share.php?url=http://crainyday.gitee.io/Hexo2.html&title=利用Hexo和GitHub搭建一个静态博客 | CRainyDay&summary=没有服务器也可以哦
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer" href="http://service.weibo.com/share/share.php?url=https://blog.crainyday.com/Hexo2.html&title=利用Hexo和GitHub搭建一个静态博客 | CRainyDay&summary=没有服务器也可以哦
 用github pages与Hexo搭建免费的个人博客">
           
             <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
