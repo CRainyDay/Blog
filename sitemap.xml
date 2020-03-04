@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.crainyday.com/Markdown_Typora.html</loc>
+    
+    <lastmod>2020-03-04T13:42:53.482Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.crainyday.com/Flask.html</loc>
     
     <lastmod>2020-03-04T13:10:05.789Z</lastmod>
@@ -10,13 +17,6 @@
   
   <url>
     <loc>https://blog.crainyday.com/Python.html</loc>
-    
-    <lastmod>2020-03-04T13:10:05.789Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.crainyday.com/Markdown_Typora.html</loc>
     
     <lastmod>2020-03-04T13:10:05.789Z</lastmod>
     
