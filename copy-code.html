@@ -1,37 +1,63 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head hexo-theme='https://volantis.js.org/#2.0'>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- SEO相关 -->
   
-  <title>Hexo代码一键复制 | CRainyDay</title>
+    
   
-  <meta name="keywords" content="CRainyDay">
-  
-  
-
-  
-
-  <meta name="HandheldFriendly" content="True">
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <!-- meta -->
+
+  <!-- 页面元数据 -->
+  
+    <title>Hexo代码一键复制 - CRainyDay</title>
+  
+    <meta name="keywords" content="Hexo">
+  
+  
+    <meta name="description" content="有时候代码块是真的多啊, 添加一个一键复制功能吧">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
   
 
   <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
   
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
   
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
   
 
   
-  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/favicon.ico">
+  <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/favicon.ico">
   
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
   
 
   <script>
@@ -46,200 +72,333 @@
 
 <body>
   
-  
-  <div class="cover-wrapper">
-    <cover class="cover post half">
-      
-        
-  <h1 class="title">CRainyDay</h1>
-
-
-  <div class="m_search">
-    <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder>
-      <i class="icon fas fa-search fa-fw"></i>
-    </form>
-  </div>
-
-<div class="menu navgation">
-  <ul class="h-list">
-    
-      
-        <li>
-          <a class="nav home" href="/" id="home">
-            <i class="fas fa-home fa-fw"></i>&nbsp;博客
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/archives/" id="archives">
-            <i class="fas fa-archive fa-fw"></i>&nbsp;归档
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/categories/" rel="nofollow" id="categories">
-            <i class="fas fa-folder-open fa-fw"></i>&nbsp;分类
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/friends/" rel="nofollow" id="friends">
-            <i class="fas fa-users fa-fw"></i>&nbsp;朋友
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/about.html" rel="nofollow" id="about.html">
-            <i class="fas fa-info-circle fa-fw"></i>&nbsp;关于
-          </a>
-        </li>
-      
-    
-  </ul>
-</div>
-
-      
-    </cover>
-    <header class="l_header material">
   <div id="loading-bar-wrapper">
-    <div id="loading-bar" class="material"></div>
-  </div>
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow floatable blur">
 
-	<div class="wrapper">
+  <div class='wrapper'>
+    <div class='nav-sub container--flex'>
+      <a class="logo flat-box"></a>
+      <ul class='switcher h-list'>
+        <li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
 		<div class="nav-main container container--flex">
-      <a style="color: #FFF;" class="logo flat-box" href="/">
+      
         
-          CRainyDay
-        
-      </a>
-			<div class="menu navgation">
-				<ul class="h-list">
+        <a class="logo flat-box" target="_self" href='/'>
           
-  					
-  						<li>
-								<a class="nav flat-box" href="/" id="home">
-									<i class="fas fa-home fa-fw"></i>&nbsp;首页
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/categories/" rel="nofollow" id="categories">
-									<i class="fas fa-folder-open fa-fw"></i>&nbsp;分类
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/tags/" rel="nofollow" id="tags">
-									<i class="fas fa-hashtag fa-fw"></i>&nbsp;标签
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/archives/" rel="nofollow" id="archives">
-									<i class="fas fa-archive fa-fw"></i>&nbsp;归档
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/friends/" rel="nofollow" id="friends">
-									<i class="fas fa-users fa-fw"></i>&nbsp;朋友
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/about.html" rel="nofollow" id="about.html">
-									<i class="fas fa-info-circle fa-fw"></i>&nbsp;关于
-								</a>
-							</li>
-      			
-      		
+          
+            <i class='https://cdn.jsdelivr.net/gh/crainyday/blog@master/avatar.png'></i>
+          
+          
+            CRainyDay
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='h-list'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="nav flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  
+                    <i class='fas fa-home fa-fw'></i>
+                  
+                  博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="nav flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  
+                    <i class='fas fa-folder-open fa-fw'></i>
+                  
+                  分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="nav flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  
+                    <i class='fas fa-archive fa-fw'></i>
+                  
+                  归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="nav flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  
+                    <i class='fas fa-tags fa-fw'></i>
+                  
+                  标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="nav flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  
+                    <i class='fas fa-link fa-fw'></i>
+                  
+                  友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="nav flat-box" 
+                  
+                  
+                  >
+                  
+                    <i class='fas fa-ellipsis-v fa-fw'></i>
+                  
+                  更多
+                </a>
+                
+                  <ul class="submenu">
+                    
+                      
+            
+              <li>
+                <a class="nav flat-box" href=/bbs/
+                  
+                  
+                  
+                    id="bbs"
+                  >
+                  
+                    <i class='fas fa-comment-alt fa-fw'></i>
+                  
+                  留言
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="nav flat-box" href=/about.html
+                  
+                  
+                  
+                    id="about.html"
+                  >
+                  
+                    <i class='fas fa-info-circle fa-fw'></i>
+                  
+                  关于
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
 				</ul>
 			</div>
 
-			
-				<div class="m_search">
-					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="搜索">
-						<i class="icon fas fa-search fa-fw"></i>
-					</form>
-				</div>
-			
-			<ul class="switcher h-list">
-				
-					<li class="s-search"><a class="fas fa-search fa-fw" href="javascript:void(0)"></a></li>
-				
-				<li class="s-menu"><a class="fas fa-bars fa-fw" href="javascript:void(0)"></a></li>
-			</ul>
-		</div>
+      
+        <div class="m_search">
+          <form name="searchform" class="form u-search-form">
+            <i class="icon fas fa-search fa-fw"></i>
+            <input type="text" class="input u-search-input" placeholder="搜索" />
+          </form>
+        </div>
+      
 
-		<div class="nav-sub container container--flex">
-			<a class="logo flat-box"></a>
-			<ul class="switcher h-list">
-				<li class="s-comment"><a class="flat-btn fas fa-comments fa-fw" href="javascript:void(0)"></a></li>
-        
-          <li class="s-toc"><a class="flat-btn fas fa-list fa-fw" href="javascript:void(0)"></a></li>
-        
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
 			</ul>
 		</div>
 	</div>
 </header>
-	<aside class="menu-phone">
-    <header>
-		<nav class="menu navgation">
+<aside class="menu-phone white-box">
+  <header>
+  	<nav class="menu navigation">
       <ul>
         
-          
-            <li>
-							<a class="nav flat-box" href="/" id="home">
-								<i class="fas fa-clock fa-fw"></i>&nbsp;近期文章
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/categories/" rel="nofollow" id="categories">
-								<i class="fas fa-folder-open fa-fw"></i>&nbsp;文章分类
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/archives/" rel="nofollow" id="archives">
-								<i class="fas fa-archive fa-fw"></i>&nbsp;文章归档
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/friends/" rel="nofollow" id="friends">
-								<i class="fas fa-link fa-fw"></i>&nbsp;我的友链
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/about.html" rel="nofollow" id="about.html">
-								<i class="fas fa-info-circle fa-fw"></i>&nbsp;关于小站
-							</a>
-            </li>
-          
-       
+        
+          <li>
+            <a class="nav flat-box" href=/
+              
+              
+              
+                id="home"
+              >
+              
+                <i class='fas fa-home fa-fw'></i>
+              
+              博客
+            </a>
+          </li>
+        
+          <li>
+            <a class="nav flat-box" href=/archives/
+              
+              
+              
+                id="archives"
+              >
+              
+                <i class='fas fa-archive fa-fw'></i>
+              
+              归档
+            </a>
+          </li>
+        
+          <li>
+            <a class="nav flat-box" href=/categories/
+              
+              
+              
+                id="categories"
+              >
+              
+                <i class='fas fa-folder-open fa-fw'></i>
+              
+              分类
+            </a>
+          </li>
+        
+          <li>
+            <a class="nav flat-box" href=/friends/
+              
+              
+              
+                id="friends"
+              >
+              
+                <i class='fas fa-link fa-fw'></i>
+              
+              友链
+            </a>
+          </li>
+        
+          <li>
+            <a class="nav flat-box" href=/bbs/
+              
+              
+              
+                id="bbs"
+              >
+              
+                <i class='fas fa-comment-alt fa-fw'></i>
+              
+              留言
+            </a>
+          </li>
+        
+          <li>
+            <a class="nav flat-box" href=/about.html
+              
+              
+              
+                id="about.html"
+              >
+              
+                <i class='fas fa-info-circle fa-fw'></i>
+              
+              关于
+            </a>
+          </li>
+        
       </ul>
-		</nav>
-    </header>
-	</aside>
+  	</nav>
+  </header>
+</aside>
 <script>setLoadingBarProgress(40);</script>
 
-  </div>
 
 
-  <div class="l_body">
+  <div class="l_body nocover">
     <div class='body-wrapper'>
-      <div class="l_main">
+      
+
+<div class='l_main'>
   
 
-  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
-    
+  
+    <article id="post" class="post white-box shadow floatable article-type-post" itemscope itemprop="blogPost">
+      
 
 
-  <section class="meta">
+  <section class='meta'>
     
     
     <div class="meta" id="header-meta">
@@ -255,31 +414,16 @@
 
 
       
-      <div class="new-meta-box">
+      <div class='new-meta-box'>
         
           
         
           
             
-  <div class="new-meta-item author">
-    
-      <a href="https://blog.crainyday.com" rel="nofollow">
-        
-          <i class="fas fa-user" aria-hidden="true"></i>
-        
-        <p>CRainyDay</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class="notlink">
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-03-16</p>
+<div class='new-meta-item author'>
+  <a href="https://crainyday.gitee.io" rel="nofollow">
+    <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/avatar.png">
+    <p>crainyday</p>
   </a>
 </div>
 
@@ -288,8 +432,8 @@
           
             
   
-  <div class="new-meta-item category">
-    <a href="/categories/Hexo/" rel="nofollow">
+  <div class='new-meta-item category'>
+    <a href='/categories/Hexo/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
       <p>Hexo</p>
     </a>
@@ -299,20 +443,12 @@
           
         
           
-            
-  
-    <div class="new-meta-item browse busuanzi">
-      <a class="notlink">
-        <i class="fas fa-eye" aria-hidden="true"></i>
-        <p>
-          <span id="busuanzi_value_page_pv">
-            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
-          </span>
-        </p>
-      </a>
-    </div>
-  
-
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-edit" aria-hidden="true"></i>
+    <p>发布于：2019年3月16日</p>
+  </a>
+</div>
 
           
         
@@ -329,42 +465,112 @@
   </section>
 
 
-    <section class="article typo">
-      <div class="article-entry" itemprop="articleBody">
-        <p>有时候代码块是真的多啊, 添加一个一键复制功能吧</p>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>有时候代码块是真的多啊, 添加一个一键复制功能吧</p>
 <a id="more"></a>
-<h2 id="1-需要的JS文件"><a href="#1-需要的JS文件" class="headerlink" title="1.需要的JS文件"></a>1.需要的JS文件</h2><ul>
+<h2 id="1-需要的JS文件">1.需要的JS文件</h2>
+<ul>
 <li><a href="https://pan.baidu.com/s/1e9QsLHh2bV1SR-pDjs0lWA" target="_blank" rel="noopener">clipboard.min.js</a>(提取码: p3xj)</li>
 <li><a href="https://pan.baidu.com/s/1SydF42fBbfXg3pk-rhO5Tw" target="_blank" rel="noopener">clipboard-use.js</a>(提取码: sbsk)</li>
 </ul>
 <p>将以上js文件放到主题的js文件目录下.</p>
 <p>clipboard-use.js:</p>
-<div><div class="fold_hider"><div class="close hider_title">点击显/隐内容</div></div><div class="fold">
+
+
+<details>
+<summary>
+One More Thing 👇
+</summary>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">!<span class="function"><span class="keyword">function</span> (<span class="params">e, t, a</span>) </span>&#123;</span><br><span class="line">    <span class="comment">/* code */</span></span><br><span class="line">    <span class="keyword">var</span> initCopyCode = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> copyHtml = <span class="string">''</span>;</span><br><span class="line">        copyHtml += <span class="string">'&lt;button class="btn-copy" data-clipboard-snippet=""&gt;'</span>;</span><br><span class="line">        copyHtml += <span class="string">'  &lt;i class="fa fa-copy"&gt;&lt;/i&gt;&lt;span&gt;Copy&lt;/span&gt;'</span>;</span><br><span class="line">        copyHtml += <span class="string">'&lt;/button&gt;'</span>;</span><br><span class="line">        $(<span class="string">".highlight .code pre"</span>).before(copyHtml);</span><br><span class="line">        <span class="keyword">var</span> clipboard = <span class="keyword">new</span> ClipboardJS(<span class="string">'.btn-copy'</span>, &#123;</span><br><span class="line">            target: <span class="function"><span class="keyword">function</span>(<span class="params">trigger</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> trigger.nextElementSibling;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        clipboard.on(<span class="string">'success'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">            <span class="comment">//您可以加入成功提示</span></span><br><span class="line">            <span class="built_in">console</span>.info(<span class="string">'Action:'</span>, e.action);</span><br><span class="line">            <span class="built_in">console</span>.info(<span class="string">'Text:'</span>, e.text);</span><br><span class="line">            <span class="built_in">console</span>.info(<span class="string">'Trigger:'</span>, e.trigger);</span><br><span class="line">            success_prompt(COPY_SUCCESS);</span><br><span class="line">            e.clearSelection();</span><br><span class="line">        &#125;);</span><br><span class="line">        clipboard.on(<span class="string">'error'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">            <span class="comment">//您可以加入失败提示</span></span><br><span class="line">            <span class="built_in">console</span>.error(<span class="string">'Action:'</span>, e.action);</span><br><span class="line">            <span class="built_in">console</span>.error(<span class="string">'Trigger:'</span>, e.trigger);</span><br><span class="line">            fail_prompt(COPY_FAILURE);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    initCopyCode();</span><br><span class="line">&#125;(<span class="built_in">window</span>, <span class="built_in">document</span>);</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 弹出式提示框，默认1.5秒自动消失</span></span><br><span class="line"><span class="comment">   * @param message 提示信息</span></span><br><span class="line"><span class="comment">   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info</span></span><br><span class="line"><span class="comment">   * @param time 消失时间</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line"><span class="keyword">var</span> prompt = <span class="function"><span class="keyword">function</span> (<span class="params">message, style, time</span>)</span>&#123;</span><br><span class="line">    style = (style === <span class="literal">undefined</span>) ? <span class="string">'alert-success'</span> : style;</span><br><span class="line">    time = (time === <span class="literal">undefined</span>) ? <span class="number">1500</span> : time*<span class="number">1000</span>;</span><br><span class="line">    $(<span class="string">'&lt;div&gt;'</span>)</span><br><span class="line">        .appendTo(<span class="string">'body'</span>)</span><br><span class="line">        .addClass(<span class="string">'alert '</span> + style)</span><br><span class="line">        .html(message)</span><br><span class="line">        .show()</span><br><span class="line">        .delay(time)</span><br><span class="line">        .fadeOut();</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 成功提示</span></span><br><span class="line"><span class="keyword">var</span> success_prompt = <span class="function"><span class="keyword">function</span>(<span class="params">message, time</span>)</span>&#123;</span><br><span class="line">    prompt(message, <span class="string">'alert-success'</span>, time);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 失败提示</span></span><br><span class="line"><span class="keyword">var</span> fail_prompt = <span class="function"><span class="keyword">function</span>(<span class="params">message, time</span>)</span>&#123;</span><br><span class="line">    prompt(message, <span class="string">'alert-danger'</span>, time);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 提醒</span></span><br><span class="line"><span class="keyword">var</span> warning_prompt = <span class="function"><span class="keyword">function</span>(<span class="params">message, time</span>)</span>&#123;</span><br><span class="line">    prompt(message, <span class="string">'alert-warning'</span>, time);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 信息提示</span></span><br><span class="line"><span class="keyword">var</span> info_prompt = <span class="function"><span class="keyword">function</span>(<span class="params">message, time</span>)</span>&#123;</span><br><span class="line">    prompt(message, <span class="string">'alert-info'</span>, time);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-</div></div>
-<h2 id="2-引入JS文件"><a href="#2-引入JS文件" class="headerlink" title="2.引入JS文件"></a>2.引入JS文件</h2><p>将以上两个JS文件引入到主题每个页面都用的文件里, 一定要输入对你自己的src路径</p>
+</details>
+<h2 id="2-引入JS文件">2.引入JS文件</h2>
+<p>将以上两个JS文件引入到主题每个页面都用的文件里, 一定要输入对你自己的src路径</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"/blog/js/clipboard.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"/blog/js/clipboard-use.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="3-配置样式表"><a href="#3-配置样式表" class="headerlink" title="3.配置样式表"></a>3.配置样式表</h2><p>将下列代码添加到主题的样式表里, 根据自己的div修改</p>
-<div><div class="fold_hider"><div class="close hider_title">点击显/隐内容</div></div><div class="fold">
+<h2 id="3-配置样式表">3.配置样式表</h2>
+<p>将下列代码添加到主题的样式表里, 根据自己的div修改</p>
+
+<details>
+<summary>
+One More Thing 👇
+</summary>
+
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">//代码块复制按钮</span><br><span class="line"><span class="selector-class">.highlight</span>&#123;</span><br><span class="line">    //方便copy代码按钮（btn-copy）的定位</span><br><span class="line">    <span class="selector-tag">position</span>: <span class="selector-tag">relative</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.btn-copy</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">cursor</span>: pointer;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#eee</span>;</span><br><span class="line">    <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(#fcfcfc,#eee);</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#d5d5d5</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">    <span class="attribute">-webkit-user-select</span>: none;</span><br><span class="line">    <span class="attribute">-moz-user-select</span>: none;</span><br><span class="line">    <span class="attribute">-ms-user-select</span>: none;</span><br><span class="line">    <span class="attribute">user-select</span>: none;</span><br><span class="line">    <span class="attribute">-webkit-appearance</span>: none;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">13px</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: <span class="number">700</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">    <span class="attribute">-webkit-transition</span>: opacity .<span class="number">3s</span> ease-in-out;</span><br><span class="line">    <span class="attribute">-o-transition</span>: opacity .<span class="number">3s</span> ease-in-out;</span><br><span class="line">    <span class="attribute">transition</span>: opacity .<span class="number">3s</span> ease-in-out;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">2px</span> <span class="number">6px</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.btn-copy</span> <span class="selector-tag">span</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.highlight</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.btn-copy</span>&#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">//复制提示, 成功or失败</span><br><span class="line"><span class="selector-class">.alert</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line">    <span class="attribute">position</span>: fixed;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%,-50%);</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">99999</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">24px</span> <span class="number">36px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: @border_radius_code_block;</span><br><span class="line">    <span class="attribute">box-shadow</span>: @boxshadow_card_normal;</span><br><span class="line">    <span class="attribute">font-family</span>: @fontfamily_base;</span><br><span class="line">    <span class="attribute">font-weight</span>: bold;</span><br><span class="line">    <span class="attribute">font-size</span>: @fontsize_base;</span><br><span class="line">    &amp;.alert-success &#123;</span><br><span class="line">        <span class="selector-tag">color</span>: <span class="selector-id">#ffffff</span>;</span><br><span class="line">        <span class="selector-tag">background-color</span>: <span class="selector-id">#1BC3FB</span>;</span><br><span class="line">        <span class="selector-tag">border-color</span>: <span class="selector-id">#d6e9c6</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    &amp;<span class="selector-class">.alert-info</span> &#123;</span><br><span class="line">        <span class="attribute">color</span>: <span class="number">#31708f</span>;</span><br><span class="line">        <span class="attribute">background-color</span>: <span class="number">#d9edf7</span>;</span><br><span class="line">        <span class="attribute">border-color</span>: <span class="number">#bce8f1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    &amp;<span class="selector-class">.alert-warning</span> &#123;</span><br><span class="line">        <span class="attribute">color</span>: <span class="number">#8a6d3b</span>;</span><br><span class="line">        <span class="attribute">background-color</span>: <span class="number">#fcf8e3</span>;</span><br><span class="line">        <span class="attribute">border-color</span>: <span class="number">#faebcc</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    &amp;<span class="selector-class">.alert-danger</span> &#123;</span><br><span class="line">        <span class="attribute">color</span>: <span class="number">#a94442</span>;</span><br><span class="line">        <span class="attribute">background-color</span>: <span class="number">#f2dede</span>;</span><br><span class="line">        <span class="attribute">border-color</span>: <span class="number">#ebccd1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
 
-</div></div>
+          
+            <br>
+            
+  
+    
+    
 
-      </div>
-      
-        <br>
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
         
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://crainyday.gitee.io/copy-code.html>https://crainyday.gitee.io/copy-code.html</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <fancybox><img src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/alipay.png'
+        
+          height='64px'
+        ></fancybox>
+      
+    
+      
+        <fancybox><img src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/wechat.png'
+        
+          height='64px'
+        ></fancybox>
+      
+    
+  </div>
+</section>
+
+  
 
 
-  <section class="meta" id="footer-meta">
-    <div class="new-meta-box">
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-30T14:50:44+08:00">
-  <a class="notlink">
-    <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2019年4月30日</p>
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-10T11:27:15+08:00">
+  <a class='notlink'>
+    <i class="fas fa-save" aria-hidden="true"></i>
+    <p>更新于：2020年3月10日</p>
   </a>
 </div>
 
@@ -373,8 +579,13 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Hexo/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Hexo</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Hexo/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i><p>Hexo</p></a></div>
 
+
+        
+      
+        
+          
 
         
       
@@ -384,25 +595,37 @@
   <div class="-mob-share-list share-body">
     
       
-        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.crainyday.com/copy-code.html&title=Hexo代码一键复制 | CRainyDay&summary=有时候代码块是真的多啊, 添加一个一键复制功能吧">
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://crainyday.gitee.io/copy-code.html&title=Hexo代码一键复制 - CRainyDay&summary=有时候代码块是真的多啊, 添加一个一键复制功能吧"
           
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.crainyday.com/copy-code.html&title=Hexo代码一键复制 | CRainyDay&summary=有时候代码块是真的多啊, 添加一个一键复制功能吧">
+          >
           
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
           
         </a>
       
     
       
-        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer" href="http://service.weibo.com/share/share.php?url=https://blog.crainyday.com/copy-code.html&title=Hexo代码一键复制 | CRainyDay&summary=有时候代码块是真的多啊, 添加一个一键复制功能吧">
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://crainyday.gitee.io/copy-code.html&title=Hexo代码一键复制 - CRainyDay&summary=有时候代码块是真的多啊, 添加一个一键复制功能吧"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://crainyday.gitee.io/copy-code.html&title=Hexo代码一键复制 - CRainyDay&summary=有时候代码块是真的多啊, 添加一个一键复制功能吧"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
           
         </a>
       
@@ -418,63 +641,76 @@
   </section>
 
 
-      
-      
+        
+        
           <div class="prev-next">
-              
-                  <section class="prev">
-                      <span class="art-item-left">
-                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
-                          <h4>
-                              <a href="/JavaSE1-0.html" rel="prev" title="JavaSE概述">
-                                
-                                    JavaSE概述
-                                
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/JavaSE/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> JavaSE</a> <a class="tag" href="/tags/Java/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Java</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
-              
-                  <section class="next">
-                      <span class="art-item-right" aria-hidden="true">
-                          <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                          <h4>
-                              <a href="/hide-code.html" rel="prev" title="Hexo为主题添加代码隐藏功能">
-                                  
-                                      Hexo为主题添加代码隐藏功能
-                                  
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/Hexo/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Hexo</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
+            
+              <a class='prev' href='/JavaSE1-0.html'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>JavaSE概述</p>
+                <p class='content'>走进Java
+Java是什么?
+Java如何来的?
+Java干什么的?
+
+一.关于Java
+
+
+①关于Java语言, 其实它很简单, 就是我们人类与计算机交流的语言, 就像人类的语言: 英语、汉...</p>
+              </a>
+            
+            
+              <a class='next' href='/hide-code.html'>
+                <p class='title'>Hexo为主题添加代码隐藏功能<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>写博客有时候需要添加的代码真的很多, 而我们又不想让它显示在网页上.
+添加一个代码隐藏功能吧!
+
+  首先, 你要明白不论添加一些什么功能, 无非是添加一些js插件实现.
+1.自定义内置标签
+ ...</p>
+              </a>
+            
           </div>
-      
-    </section>
-  </article>
+        
+      </section>
+    </article>
+  
+
+  
+    
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/hide-code.html" title="Hexo为主题添加代码隐藏功能" rel="bookmark">Hexo为主题添加代码隐藏功能</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Hexo2.html" title="利用Hexo和GitHub搭建一个静态博客" rel="bookmark">利用Hexo和GitHub搭建一个静态博客</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Hexo.html" title="利用Hexo和Gitee搭建一个静态博客" rel="bookmark">利用Hexo和Gitee搭建一个静态博客</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/NodeJS.html" title="windows上配置NodeJS和npm" rel="bookmark">windows上配置NodeJS和npm</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
 
 
 
-  <!-- 显示推荐文章和评论 -->
-
-
-
-  <article class="post white-box comments">
+  <article class="post white-box comments shadow floatable">
     <section class="article typo">
-      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
       
       
       
@@ -489,6 +725,7 @@
   </article>
 
 
+  
 
 
 
@@ -506,468 +743,192 @@
 
 
 </div>
-<aside class="l_side">
+<aside class='l_side'>
+  
   
     
     
-      
-      
-        
-          
-          
-        
-          
-          
-            
-              
-  <section class="widget toc-wrapper">
-    
-<header class="material">
-  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
-  
-    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
-  
-</header>
 
-    <div class="content material">
+<section class="widget qrcode shadow floatable desktop">
+  
+  <header>
+    
+      <i class="fas fa-mobile fa-fw" aria-hidden="true"></i><span class='name'>手机观看</span>
+    
+  </header>
+
+
+  <div class='content article-entry'>
+    
+      
+        <img src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/https.png'
+        >
+      
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget grid shadow floatable desktop mobile">
+  
+  <header>
+    
+      <i class="fas fa-map-signs fa-fw" aria-hidden="true"></i><span class='name'>实用文档</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="grid navigation fixed">
+      
+        <a class="flat-box" title="/maven_05.html" href="/maven_05.html"
+          
+          
+          id="maven_05.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Maven工程
+        </a>
+      
+        <a class="flat-box" title="/Flask.html" href="/Flask.html"
+          
+          
+          id="Flask.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Flask应用
+        </a>
+      
+        <a class="flat-box" title="/Hexo.html" href="/Hexo.html"
+          
+          
+          id="Hexo.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Gitee搭站
+        </a>
+      
+    </div>
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-需要的JS文件"><span class="toc-text">1.需要的JS文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-引入JS文件"><span class="toc-text">2.引入JS文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-配置样式表"><span class="toc-text">3.配置样式表</span></a></li></ol>
     </div>
   </section>
 
 
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-            
-              <section class="widget author">
-  <div class="content material">
-    
-      <div class="avatar">
-        <img class="avatar" src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/avatar.jpg">
-      </div>
-    
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="mailto:3013142340@qq.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/crainyday" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=3013142340" class="social fab fa-qq flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=1794783182" class="social fas fa-headphones-alt flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              <section class="widget grid">
   
-<header class="material">
-  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
-  
-</header>
-
-  <div class="content material">
-    <ul class="grid navgation">
-      
-        <li><a class="flat-box" title="/" href="/" id="home">
-          
-            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
-          
-          近期文章
-        </a></li>
-      
-        <li><a class="flat-box" title="/archives/" href="/archives/" rel="nofollow" id="archives">
-          
-            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
-          
-          文章归档
-        </a></li>
-      
-        <li><a class="flat-box" title="/friends/" href="/friends/" rel="nofollow" id="friends">
-          
-            <i class="fas fa-link fa-fw" aria-hidden="true"></i>
-          
-          我的友链
-        </a></li>
-      
-        <li><a class="flat-box" title="/bbs/" href="/bbs/" rel="nofollow" id="bbs">
-          
-            <i class="fas fa-comment-alt fa-fw" aria-hidden="true"></i>
-          
-          网站留言
-        </a></li>
-      
-        <li><a class="flat-box" title="/about.html" href="/about.html" rel="nofollow" id="about.html">
-          
-            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
-          
-          关于小站
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
-
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              
-  <section class="widget category">
-    
-<header class="material">
-  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分类</div>
-  
-    <a class="rightBtn" rel="nofollow" href="/categories/" title="categories/">
-    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
-  
-</header>
-
-    <div class="content material">
-      <ul class="entry">
-        
-          <li><a class="flat-box" title="/categories/Ajax/" href="/categories/Ajax/"><div class="name">Ajax</div><div class="badge">(3)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/Flask/" href="/categories/Flask/"><div class="name">Flask</div><div class="badge">(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/Hexo/" href="/categories/Hexo/"><div class="name">Hexo</div><div class="badge">(4)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/JDBC/" href="/categories/JDBC/"><div class="name">JDBC</div><div class="badge">(12)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/JS/" href="/categories/JS/"><div class="name">JS</div><div class="badge">(20)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/JavaSE/" href="/categories/JavaSE/"><div class="name">JavaSE</div><div class="badge">(15)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/JavaWeb/" href="/categories/JavaWeb/"><div class="name">JavaWeb</div><div class="badge">(3)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/Ubuntu/" href="/categories/Ubuntu/"><div class="name">Ubuntu</div><div class="badge">(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/Vue/" href="/categories/Vue/"><div class="name">Vue</div><div class="badge">(16)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/jQuery/" href="/categories/jQuery/"><div class="name">jQuery</div><div class="badge">(7)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/ubuntu/" href="/categories/ubuntu/"><div class="name">ubuntu</div><div class="badge">(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
 
 
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              
-  <section class="widget tagcloud">
-    
-<header class="material">
-  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
-  
-    <a class="rightBtn" rel="nofollow" href="/tags/" title="tags/">
-    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
-  
-</header>
-
-    <div id="myCanvasContainer" class="content material">
-        <canvas width="250" height="250" id="resCanvas" style="width=100%">
-          <a href="/tags/Ajax/" style="font-size: 15.25px; color: #919191">Ajax</a> <a href="/tags/CentOS/" style="font-size: 14px; color: #999">CentOS</a> <a href="/tags/CentOS7/" style="font-size: 14px; color: #999">CentOS7</a> <a href="/tags/Database/" style="font-size: 19px; color: #777">Database</a> <a href="/tags/Flask/" style="font-size: 14px; color: #999">Flask</a> <a href="/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/tags/Gitee/" style="font-size: 14px; color: #999">Gitee</a> <a href="/tags/Hexo/" style="font-size: 16.5px; color: #888">Hexo</a> <a href="/tags/JDBC/" style="font-size: 19px; color: #777">JDBC</a> <a href="/tags/JS/" style="font-size: 24px; color: #555">JS</a> <a href="/tags/JSP/" style="font-size: 15.25px; color: #919191">JSP</a> <a href="/tags/Java/" style="font-size: 22.75px; color: #5e5e5e">Java</a> <a href="/tags/JavaSE/" style="font-size: 21.5px; color: #666">JavaSE</a> <a href="/tags/Markdown/" style="font-size: 14px; color: #999">Markdown</a> <a href="/tags/NodeJS/" style="font-size: 14px; color: #999">NodeJS</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/Python3/" style="font-size: 14px; color: #999">Python3</a> <a href="/tags/Servlet/" style="font-size: 15.25px; color: #919191">Servlet</a> <a href="/tags/Typora/" style="font-size: 14px; color: #999">Typora</a> <a href="/tags/Ubuntu/" style="font-size: 14px; color: #999">Ubuntu</a> <a href="/tags/VPN/" style="font-size: 14px; color: #999">VPN</a> <a href="/tags/Vue/" style="font-size: 20.25px; color: #6f6f6f">Vue</a> <a href="/tags/Web/" style="font-size: 16.5px; color: #888">Web</a> <a href="/tags/XMind/" style="font-size: 14px; color: #999">XMind</a> <a href="/tags/jQuery/" style="font-size: 17.75px; color: #808080">jQuery</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a>
-        </canvas>
-    </div>
-  </section>
-
-
-            
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              <section class="widget list">
-  
-<header class="material">
-  <div><i class="fas fa-thumbs-up fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;强烈推荐</div>
-  
-</header>
-
-  <div class="content material">
-    <ul class="entry">
-      
-    </ul>
-  </div>
-</section>
-
-            
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              
-
-
-  <section class="widget music">
-    
-<header class="material">
-  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
-  
-    <a class="rightBtn" rel="external nofollow noopener noreferrer" target="_blank" href="https://music.163.com/#/user/home?id=1794783182" title="https://music.163.com/#/user/home?id=1794783182">
-    <i class="far fa-heart fa-fw"></i></a>
-  
-</header>
-
-    <div class="content material">
-      
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
-  <div class="aplayer" data-theme="#1BCDFC" data-mode="circulation" data-server="netease" data-type="playlist" data-id="2737545165" data-volume="0.7">
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
-
-
-    </div>
-  </section>
-
-
-            
-          
-        
-          
-          
-        
-      
-    
-
-  
 </aside>
 
-<footer id="footer" class="clearfix">
+
   
-  
-    <div class="social-wrapper">
-      
-        
-          <a href="mailto:3013142340@qq.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://github.com/crainyday" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=3013142340" class="social fab fa-qq flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://music.163.com/#/user/home?id=1794783182" class="social fas fa-headphones-alt flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-    </div>
-  
-  <br>
-  <br>
-  <div style="color:rgb(27, 195, 251);"><p>本博客所有文章除特别声明外，均采用[<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">(CC BY-NC-SA 4.0)</a>]许可协议。转载请注明出处！</p></div>
-  <div style="color:rgb(27, 195, 251);" id="sitetime"></div>
-  <div style="color:rgb(27, 195, 251);">
-    本站使用
-    <a style="color:rgb(27, 195, 251);" href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
-    作为主题
+  <footer class="clearfix ">
+    <br><br>
     
-      ，
-      总访问量为
-      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
-      次
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='true'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='2709912289'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
     
-    。
-  </div>
-  <div style="color:rgb(27, 195, 251);"><span>Copyright&nbsp;&copy;&nbsp;2019 CRainyDay's Blog 版权所有</span></div>
-</footer>
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="mailto:crainyday@qq.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/crainyday"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=1794783182"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        <div id='sitetime'></div>
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作为主题
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://crainyday.gitee.io">Copyright © 2019-2020 CRainyDay</a></p>
+
+        </div>
+      
+    
+  </footer>
+
 <script>setLoadingBarProgress(80);</script>
 
 
@@ -975,38 +936,25 @@
     </div>
     <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
 
   <script>
-    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
-    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
-    var ALGOLIA_API_KEY = "";
-    var ALGOLIA_APP_ID = "";
-    var ALGOLIA_INDEX_NAME = "";
-    var AZURE_SERVICE_NAME = "";
-    var AZURE_INDEX_NAME = "";
-    var AZURE_QUERY_KEY = "";
-    var BAIDU_API_ID = "";
+    
     var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/"||"/";
-    if(!ROOT.endsWith('/'))ROOT += '/';
-  </script>
-
-<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
-
-
-  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      const $reveal = $('.reveal');
-      if ($reveal.length === 0) return;
-      const sr = ScrollReveal({ distance: 0 });
-      sr.reveal('.reveal');
-    });
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
   </script>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.0.0/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js" async></script>
+
   <script type="text/javascript">
     $(function() {
       Waves.attach('.flat-btn', ['waves-button']);
@@ -1020,38 +968,29 @@
   </script>
 
 
-  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
-
-
-  <!-- fastclick -->
-  <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      FastClick.attach(document.body)
-    }, false)
-  </script>
-
 
 
   
   
   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
     <script type="text/javascript">
       $(function(){
         if ('.cover') {
           $('.cover').backstretch(
-          ["https://img.vim-cn.com/69/104e0d1a60a99b72e5adfdfb5af3cfbaea47bb.jpg", "https://img.vim-cn.com/c9/1b86fe4d9802e0aae5072d6b3e8b124825593f.jpg", "https://img.vim-cn.com/a1/fd811d5d9621c590a608d6a7b968c064f514b3.jpg"],
+          ["https://img.vim-cn.com/69/104e0d1a60a99b72e5adfdfb5af3cfbaea47bb.jpg"],
           {
-            duration: "6000",
-            fade: "2500"
+            duration: "20000",
+            fade: "1500"
           });
         } else {
           $.backstretch(
-          ["https://img.vim-cn.com/69/104e0d1a60a99b72e5adfdfb5af3cfbaea47bb.jpg", "https://img.vim-cn.com/c9/1b86fe4d9802e0aae5072d6b3e8b124825593f.jpg", "https://img.vim-cn.com/a1/fd811d5d9621c590a608d6a7b968c064f514b3.jpg"],
+          ["https://img.vim-cn.com/69/104e0d1a60a99b72e5adfdfb5af3cfbaea47bb.jpg"],
           {
-            duration: "6000",
-            fade: "2500"
+            duration: "20000",
+            fade: "1500"
           });
         }
       });
@@ -1060,17 +999,27 @@
 
 
 
-
-
-
-
-
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   
     
-      <script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/volantis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js" async></script>
+
+  
     
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js" async></script>
+
+  
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/valine.js"></script>
+
   
   <script>
   var GUEST_INFO = ['nick','mail','link'];
@@ -1092,22 +1041,31 @@
     pageSize:'10',
     avatar:'mp',
     lang:'zh-cn',
+    visitor: 'false',
     highlight:'true'
   })
   </script>
 
 
 
-  <script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/app.js"></script>
+  
+<script src="/js/app.js"></script>
 
 
-  <script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/search.js"></script>
 
+  
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.0.0/js/comment_typing.js"></script>
 
 
 
 <!-- 复制 -->
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script>
   let COPY_SUCCESS = "复制成功";
   let COPY_FAILURE = "复制失败";
@@ -1117,7 +1075,7 @@
     var initCopyCode = function(){
       var copyHtml = '';
       copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
       copyHtml += '</button>';
       $(".highlight .code pre").before(copyHtml);
       var clipboard = new ClipboardJS('.btn-copy', {
@@ -1191,10 +1149,13 @@
 </script>
 
 
+
+
 <!-- fancybox -->
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <script>
-  let LAZY_LOAD_IMAGE = "";
+  let LAZY_LOAD_IMAGE = "[object Object]";
   $(".article-entry").find("fancybox").find("img").each(function () {
       var element = document.createElement("a");
       $(element).attr("data-fancybox", "gallery");
@@ -1215,14 +1176,10 @@
 
 
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/sitetime.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/cooltext.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/clicklove.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/tagcanvas.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/tagcloud.js"></script>
-<script type="text/javascript" color="102,185,255" zindex="-10" opacity="50" count="99" src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/canvas-nest.min.js"></script>
+
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/sitetime.min.js'></script>
 
 
   <script>setLoadingBarProgress(100);</script>
-</body>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
 </html>

@@ -1,37 +1,63 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head hexo-theme='https://volantis.js.org/#2.0'>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- SEO相关 -->
   
-  <title>JDBC-DBUtils | CRainyDay</title>
+    
   
-  <meta name="keywords" content="CRainyDay">
-  
-  
-
-  
-
-  <meta name="HandheldFriendly" content="True">
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <!-- meta -->
+
+  <!-- 页面元数据 -->
+  
+    <title>JDBC-DBUtils - CRainyDay</title>
+  
+    <meta name="keywords" content="JDBC,JavaSE,Java,Database">
+  
+  
+    <meta name="description" content="DBUtils------Apache下的一个JDBC开源工具类库">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
   
 
   <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
   
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
   
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
   
 
   
-  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/favicon.ico">
+  <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/favicon.ico">
   
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
   
 
   <script>
@@ -46,200 +72,333 @@
 
 <body>
   
-  
-  <div class="cover-wrapper">
-    <cover class="cover post half">
-      
-        
-  <h1 class="title">CRainyDay</h1>
-
-
-  <div class="m_search">
-    <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder>
-      <i class="icon fas fa-search fa-fw"></i>
-    </form>
-  </div>
-
-<div class="menu navgation">
-  <ul class="h-list">
-    
-      
-        <li>
-          <a class="nav home" href="/" id="home">
-            <i class="fas fa-home fa-fw"></i>&nbsp;博客
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/archives/" id="archives">
-            <i class="fas fa-archive fa-fw"></i>&nbsp;归档
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/categories/" rel="nofollow" id="categories">
-            <i class="fas fa-folder-open fa-fw"></i>&nbsp;分类
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/friends/" rel="nofollow" id="friends">
-            <i class="fas fa-users fa-fw"></i>&nbsp;朋友
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/about.html" rel="nofollow" id="about.html">
-            <i class="fas fa-info-circle fa-fw"></i>&nbsp;关于
-          </a>
-        </li>
-      
-    
-  </ul>
-</div>
-
-      
-    </cover>
-    <header class="l_header material">
   <div id="loading-bar-wrapper">
-    <div id="loading-bar" class="material"></div>
-  </div>
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow floatable blur">
 
-	<div class="wrapper">
+  <div class='wrapper'>
+    <div class='nav-sub container--flex'>
+      <a class="logo flat-box"></a>
+      <ul class='switcher h-list'>
+        <li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
 		<div class="nav-main container container--flex">
-      <a style="color: #FFF;" class="logo flat-box" href="/">
+      
         
-          CRainyDay
-        
-      </a>
-			<div class="menu navgation">
-				<ul class="h-list">
+        <a class="logo flat-box" target="_self" href='/'>
           
-  					
-  						<li>
-								<a class="nav flat-box" href="/" id="home">
-									<i class="fas fa-home fa-fw"></i>&nbsp;首页
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/categories/" rel="nofollow" id="categories">
-									<i class="fas fa-folder-open fa-fw"></i>&nbsp;分类
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/tags/" rel="nofollow" id="tags">
-									<i class="fas fa-hashtag fa-fw"></i>&nbsp;标签
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/archives/" rel="nofollow" id="archives">
-									<i class="fas fa-archive fa-fw"></i>&nbsp;归档
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/friends/" rel="nofollow" id="friends">
-									<i class="fas fa-users fa-fw"></i>&nbsp;朋友
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/about.html" rel="nofollow" id="about.html">
-									<i class="fas fa-info-circle fa-fw"></i>&nbsp;关于
-								</a>
-							</li>
-      			
-      		
+          
+            <i class='https://cdn.jsdelivr.net/gh/crainyday/blog@master/avatar.png'></i>
+          
+          
+            CRainyDay
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='h-list'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="nav flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  
+                    <i class='fas fa-home fa-fw'></i>
+                  
+                  博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="nav flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  
+                    <i class='fas fa-folder-open fa-fw'></i>
+                  
+                  分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="nav flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  
+                    <i class='fas fa-archive fa-fw'></i>
+                  
+                  归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="nav flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  
+                    <i class='fas fa-tags fa-fw'></i>
+                  
+                  标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="nav flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  
+                    <i class='fas fa-link fa-fw'></i>
+                  
+                  友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="nav flat-box" 
+                  
+                  
+                  >
+                  
+                    <i class='fas fa-ellipsis-v fa-fw'></i>
+                  
+                  更多
+                </a>
+                
+                  <ul class="submenu">
+                    
+                      
+            
+              <li>
+                <a class="nav flat-box" href=/bbs/
+                  
+                  
+                  
+                    id="bbs"
+                  >
+                  
+                    <i class='fas fa-comment-alt fa-fw'></i>
+                  
+                  留言
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="nav flat-box" href=/about.html
+                  
+                  
+                  
+                    id="about.html"
+                  >
+                  
+                    <i class='fas fa-info-circle fa-fw'></i>
+                  
+                  关于
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
 				</ul>
 			</div>
 
-			
-				<div class="m_search">
-					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="搜索">
-						<i class="icon fas fa-search fa-fw"></i>
-					</form>
-				</div>
-			
-			<ul class="switcher h-list">
-				
-					<li class="s-search"><a class="fas fa-search fa-fw" href="javascript:void(0)"></a></li>
-				
-				<li class="s-menu"><a class="fas fa-bars fa-fw" href="javascript:void(0)"></a></li>
-			</ul>
-		</div>
+      
+        <div class="m_search">
+          <form name="searchform" class="form u-search-form">
+            <i class="icon fas fa-search fa-fw"></i>
+            <input type="text" class="input u-search-input" placeholder="搜索" />
+          </form>
+        </div>
+      
 
-		<div class="nav-sub container container--flex">
-			<a class="logo flat-box"></a>
-			<ul class="switcher h-list">
-				<li class="s-comment"><a class="flat-btn fas fa-comments fa-fw" href="javascript:void(0)"></a></li>
-        
-          <li class="s-toc"><a class="flat-btn fas fa-list fa-fw" href="javascript:void(0)"></a></li>
-        
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
 			</ul>
 		</div>
 	</div>
 </header>
-	<aside class="menu-phone">
-    <header>
-		<nav class="menu navgation">
+<aside class="menu-phone white-box">
+  <header>
+  	<nav class="menu navigation">
       <ul>
         
-          
-            <li>
-							<a class="nav flat-box" href="/" id="home">
-								<i class="fas fa-clock fa-fw"></i>&nbsp;近期文章
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/categories/" rel="nofollow" id="categories">
-								<i class="fas fa-folder-open fa-fw"></i>&nbsp;文章分类
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/archives/" rel="nofollow" id="archives">
-								<i class="fas fa-archive fa-fw"></i>&nbsp;文章归档
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/friends/" rel="nofollow" id="friends">
-								<i class="fas fa-link fa-fw"></i>&nbsp;我的友链
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/about.html" rel="nofollow" id="about.html">
-								<i class="fas fa-info-circle fa-fw"></i>&nbsp;关于小站
-							</a>
-            </li>
-          
-       
+        
+          <li>
+            <a class="nav flat-box" href=/
+              
+              
+              
+                id="home"
+              >
+              
+                <i class='fas fa-home fa-fw'></i>
+              
+              博客
+            </a>
+          </li>
+        
+          <li>
+            <a class="nav flat-box" href=/archives/
+              
+              
+              
+                id="archives"
+              >
+              
+                <i class='fas fa-archive fa-fw'></i>
+              
+              归档
+            </a>
+          </li>
+        
+          <li>
+            <a class="nav flat-box" href=/categories/
+              
+              
+              
+                id="categories"
+              >
+              
+                <i class='fas fa-folder-open fa-fw'></i>
+              
+              分类
+            </a>
+          </li>
+        
+          <li>
+            <a class="nav flat-box" href=/friends/
+              
+              
+              
+                id="friends"
+              >
+              
+                <i class='fas fa-link fa-fw'></i>
+              
+              友链
+            </a>
+          </li>
+        
+          <li>
+            <a class="nav flat-box" href=/bbs/
+              
+              
+              
+                id="bbs"
+              >
+              
+                <i class='fas fa-comment-alt fa-fw'></i>
+              
+              留言
+            </a>
+          </li>
+        
+          <li>
+            <a class="nav flat-box" href=/about.html
+              
+              
+              
+                id="about.html"
+              >
+              
+                <i class='fas fa-info-circle fa-fw'></i>
+              
+              关于
+            </a>
+          </li>
+        
       </ul>
-		</nav>
-    </header>
-	</aside>
+  	</nav>
+  </header>
+</aside>
 <script>setLoadingBarProgress(40);</script>
 
-  </div>
 
 
-  <div class="l_body">
+  <div class="l_body nocover">
     <div class='body-wrapper'>
-      <div class="l_main">
+      
+
+<div class='l_main'>
   
 
-  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
-    
+  
+    <article id="post" class="post white-box shadow floatable article-type-post" itemscope itemprop="blogPost">
+      
 
 
-  <section class="meta">
+  <section class='meta'>
     
     
     <div class="meta" id="header-meta">
@@ -255,31 +414,16 @@
 
 
       
-      <div class="new-meta-box">
+      <div class='new-meta-box'>
         
           
         
           
             
-  <div class="new-meta-item author">
-    
-      <a href="https://blog.crainyday.com" rel="nofollow">
-        
-          <i class="fas fa-user" aria-hidden="true"></i>
-        
-        <p>CRainyDay</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class="notlink">
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-05-14</p>
+<div class='new-meta-item author'>
+  <a href="https://crainyday.gitee.io" rel="nofollow">
+    <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/avatar.png">
+    <p>crainyday</p>
   </a>
 </div>
 
@@ -288,10 +432,10 @@
           
             
   
-  <div class="new-meta-item category">
-    <a href="/categories/JDBC/" rel="nofollow">
+  <div class='new-meta-item category'>
+    <a href='/categories/Java/JDBC/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>JDBC</p>
+      <p>Java&nbsp;/&nbsp;JDBC</p>
     </a>
   </div>
 
@@ -299,20 +443,12 @@
           
         
           
-            
-  
-    <div class="new-meta-item browse busuanzi">
-      <a class="notlink">
-        <i class="fas fa-eye" aria-hidden="true"></i>
-        <p>
-          <span id="busuanzi_value_page_pv">
-            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
-          </span>
-        </p>
-      </a>
-    </div>
-  
-
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-edit" aria-hidden="true"></i>
+    <p>发布于：2019年5月14日</p>
+  </a>
+</div>
 
           
         
@@ -329,94 +465,179 @@
   </section>
 
 
-    <section class="article typo">
-      <div class="article-entry" itemprop="articleBody">
-        <p>DBUtils——Apache下的一个JDBC开源工具类库</p>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>DBUtils------Apache下的一个JDBC开源工具类库</p>
 <a id="more"></a>
-<h2 id="1-Apache—DBUtils简介"><a href="#1-Apache—DBUtils简介" class="headerlink" title="1.Apache—DBUtils简介"></a>1.Apache—DBUtils简介</h2><blockquote>
+<h2 id="1-Apache—DBUtils简介">1.Apache—DBUtils简介</h2>
+<blockquote>
 <ul>
-<li><p>commons-dbutils 是 Apache 组织提供的一个开源 JDBC工具类库，它是对JDBC的简单封装，学习成本极低，并且使用dbutils能极大简化jdbc编码的工作量，同时也不会影响程序的性能.</p>
+<li>
+<p>commons-dbutils 是 Apache 组织提供的一个开源 JDBC工具类库，它是对JDBC的简单封装，学习成本极低，并且使用dbutils能极大简化jdbc编码的工作量，同时也不会影响程序的性能.</p>
 </li>
-<li><p>API介绍:</p>
+<li>
+<p>API介绍:</p>
 </li>
 </ul>
-<p>&emsp;&emsp;–org.apache.commons.dbutils.QueryRunner</p>
-<p>&emsp;&emsp;–org.apache.commons.dbutils.ResultSetHandler</p>
-<p>&emsp;&emsp;–工具类: org.apache.commons.dbutils.DbUtils、…</p>
+<p>  –org.apache.commons.dbutils.QueryRunner</p>
+<p>  –org.apache.commons.dbutils.ResultSetHandler</p>
+<p>  –工具类: org.apache.commons.dbutils.DbUtils、…</p>
 </blockquote>
 <blockquote>
 <ul>
 <li>DbUtils类: 提供如关闭连接、装载JDBC驱动程序等常规工作的工具类，里面的所有方法都是静态的。主要方法如下:</li>
 </ul>
-<p>&emsp;&emsp;–public static void close(…) throws java.sql.SQLException：　DbUtils类提供了三个重载的关闭方法。这些方法检查所提供的参数是不是NULL，如果不是的话，它们就关闭Connection、Statement和ResultSet.</p>
-<p>&emsp;&emsp;–public static void closeQuietly(…): 这一类方法不仅能在Connection、Statement和ResultSet为NULL情况下避免关闭，还能隐藏一些在程序中抛出的SQLEeception.</p>
-<p>&emsp;&emsp;–public static void commitAndCloseQuietly(Connection conn)： 用来提交连接，然后关闭连接，并且在关闭连接时不抛出SQL异常.</p>
-<p>&emsp;&emsp;–public static boolean loadDriver(java.lang.String driverClassName)：这一方装载并注册JDBC驱动程序，如果成功就返回true. 使用该方法，你不需要捕捉这个异常ClassNotFoundException.</p>
+<p>  –public static void close(…) throws java.sql.SQLException：　DbUtils类提供了三个重载的关闭方法。这些方法检查所提供的参数是不是NULL，如果不是的话，它们就关闭Connection、Statement和ResultSet.</p>
+<p>  –public static void closeQuietly(…): 这一类方法不仅能在Connection、Statement和ResultSet为NULL情况下避免关闭，还能隐藏一些在程序中抛出的SQLEeception.</p>
+<p>  –public static void commitAndCloseQuietly(Connection conn)： 用来提交连接，然后关闭连接，并且在关闭连接时不抛出SQL异常.</p>
+<p>  –public static boolean loadDriver(java.lang.String driverClassName)：这一方装载并注册JDBC驱动程序，如果成功就返回true. 使用该方法，你不需要捕捉这个异常ClassNotFoundException.</p>
 </blockquote>
-<h2 id="2-DBUtils的更新操作"><a href="#2-DBUtils的更新操作" class="headerlink" title="2.DBUtils的更新操作"></a>2.DBUtils的更新操作</h2><blockquote>
+<h2 id="2-DBUtils的更新操作">2.DBUtils的更新操作</h2>
+<blockquote>
 <p>通过QueryRunner类执行SQL语句, 并将结果集按指定要求返回.</p>
 <ul>
-<li><p>QueryRunner类简单化了SQL查询，它与ResultSetHandler组合在一起使用可以完成大部分的数据库操作，能够大大减少编码量.</p>
+<li>
+<p>QueryRunner类简单化了SQL查询，它与ResultSetHandler组合在一起使用可以完成大部分的数据库操作，能够大大减少编码量.</p>
 </li>
-<li><p>QueryRunner类提供了两个构造方法:</p>
+<li>
+<p>QueryRunner类提供了两个构造方法:</p>
 </li>
 </ul>
-<p>&emsp;&emsp;–默认的构造方法</p>
-<p>&emsp;&emsp;–需要一个 javax.sql.DataSource 来作参数的构造方法.</p>
+<p>  –默认的构造方法</p>
+<p>  –需要一个 javax.sql.DataSource 来作参数的构造方法.</p>
 <ul>
-<li><p>QueryRunner类的主要方法:</p>
-<p>&emsp;&emsp;–public Object query(Connection conn, String sql, Object[] params, ResultSetHandler rsh) throws SQLException：执行一个查询操作，在这个查询中，对象数组中的每个元素值被用来作为查询语句的置换参数。该方法会自行处理 PreparedStatement 和 ResultSet 的创建和关闭.</p>
-<p>&emsp;&emsp;–public Object query(String sql, Object[] params, ResultSetHandler rsh) throws SQLException:　几乎与第一种方法一样；唯一的不同在于它不将数据库连接提供给方法，并且它是从提供给构造方法的数据源(DataSource) 或使用的setDataSource 方法中重新获得 Connection.</p>
-<p>&emsp;&emsp;–public Object query(Connection conn, String sql, ResultSetHandler rsh) throws SQLException : 执行一个不需要置换参数的查询操作.</p>
-<p>&emsp;&emsp;–public int update(Connection conn, String sql, Object[] params) throws SQLException:用来执行一个更新（插入、更新或删除）操作.</p>
-<p>&emsp;&emsp;–public int update(Connection conn, String sql) throws SQLException：用来执行一个不需要置换参数的更新操作.</p>
-</li>
+<li>QueryRunner类的主要方法:</li>
 </ul>
+<p>  –public Object query(Connection conn, String sql, Object[] params, ResultSetHandler rsh) throws SQLException：执行一个查询操作，在这个查询中，对象数组中的每个元素值被用来作为查询语句的置换参数。该方法会自行处理 PreparedStatement 和 ResultSet 的创建和关闭.</p>
+<p>  –public Object query(String sql, Object[] params, ResultSetHandler rsh) throws SQLException:　几乎与第一种方法一样；唯一的不同在于它不将数据库连接提供给方法，并且它是从提供给构造方法的数据源(DataSource) 或使用的setDataSource 方法中重新获得 Connection.</p>
+<p>  –public Object query(Connection conn, String sql, ResultSetHandler rsh) throws SQLException : 执行一个不需要置换参数的查询操作.</p>
+<p>  –public int update(Connection conn, String sql, Object[] params) throws SQLException:用来执行一个更新（插入、更新或删除）操作.</p>
+<p>  –public int update(Connection conn, String sql) throws SQLException：用来执行一个不需要置换参数的更新操作.</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testDBUtils</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//1. 创建执行SQL的 QueryRunner 对象</span></span><br><span class="line">    QueryRunner qr = <span class="keyword">new</span> QueryRunner();</span><br><span class="line">    <span class="comment">//2. 准备SQL语句,SQL可以是DELETE INSERT UPDATE操作</span></span><br><span class="line">    String sql = <span class="string">"delete from Student where id in (?,?)"</span>;</span><br><span class="line">    Connection conn = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">//4. 准备数据库连接</span></span><br><span class="line">        conn = JDBCTools.getConnection();</span><br><span class="line">        <span class="comment">//5. 传入相应参数,执行SQL</span></span><br><span class="line">        qr.update(conn, sql, <span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        JDBCTools.release(<span class="keyword">null</span>, <span class="keyword">null</span>, conn);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="3-DBUtils的查询操作"><a href="#3-DBUtils的查询操作" class="headerlink" title="3.DBUtils的查询操作"></a>3.DBUtils的查询操作</h2><blockquote>
+<h2 id="3-DBUtils的查询操作">3.DBUtils的查询操作</h2>
+<blockquote>
 <p>通过DBUtils的QueryRunner类的query()方法实现数据库查询, 但是这里要给query方法的第三个参数传一个 ResultSetHandler 接口的实现类.</p>
 <ul>
-<li><p>该接口用于处理 java.sql.ResultSet，将数据按要求转换为另一种形式.</p>
+<li>
+<p>该接口用于处理 java.sql.ResultSet，将数据按要求转换为另一种形式.</p>
 </li>
-<li><p>ResultSetHandler 接口提供了一个单独的方法: Object handle (java.sql.ResultSet .rs), 处理结果集时就是调用的该方法, 且query()方法的返回值就是 ResultSetHandler 实现类的 handle() 方法的返回值.</p>
+<li>
+<p>ResultSetHandler 接口提供了一个单独的方法: Object handle (java.sql.ResultSet .rs), 处理结果集时就是调用的该方法, 且query()方法的返回值就是 ResultSetHandler 实现类的 handle() 方法的返回值.</p>
 </li>
 </ul>
 </blockquote>
 <blockquote>
 <p>DBUtils提供的 ResultSetHandler 的实现类:</p>
 <ul>
-<li><p>BeanHandler：将结果集中的第一行数据封装到一个对应的JavaBean实例中.</p>
+<li>
+<p>BeanHandler：将结果集中的第一行数据封装到一个对应的JavaBean实例中.</p>
 </li>
-<li><p>BeanListHandler：将结果集中的每一行数据都封装到一个对应的JavaBean实例中，存放到List里.</p>
+<li>
+<p>BeanListHandler：将结果集中的每一行数据都封装到一个对应的JavaBean实例中，存放到List里.</p>
 </li>
-<li>MapHandler：将结果集中的第一行数据封装到一个Map里，key是列名，value就是对应的值.</li>
-<li>MapListHandler：将结果集中的每一行数据都封装到一个Map里，然后再存放到List.</li>
-<li>ScalarHandler: 把结果集转换为一个值(该值可以是任意基本类型和String、Date 等)返回</li>
-<li>ArrayHandler：把结果集中的第一行数据转成对象数组.</li>
-<li>ArrayListHandler：把结果集中的每一行数据都转成一个数组，再存放到List中.</li>
-<li>ColumnListHandler：将结果集中某一列的数据存放到List中。</li>
-<li>KeyedHandler(name)：将结果集中的每一行数据都封装到一个Map里，再把这些map再存到一个map里，其key为指定的key.</li>
+<li>
+<p>MapHandler：将结果集中的第一行数据封装到一个Map里，key是列名，value就是对应的值.</p>
+</li>
+<li>
+<p>MapListHandler：将结果集中的每一行数据都封装到一个Map里，然后再存放到List.</p>
+</li>
+<li>
+<p>ScalarHandler: 把结果集转换为一个值(该值可以是任意基本类型和String、Date 等)返回</p>
+</li>
+<li>
+<p>ArrayHandler：把结果集中的第一行数据转成对象数组.</p>
+</li>
+<li>
+<p>ArrayListHandler：把结果集中的每一行数据都转成一个数组，再存放到List中.</p>
+</li>
+<li>
+<p>ColumnListHandler：将结果集中某一列的数据存放到List中。</p>
+</li>
+<li>
+<p>KeyedHandler(name)：将结果集中的每一行数据都封装到一个Map里，再把这些map再存到一个map里，其key为指定的key.</p>
+</li>
 </ul>
 </blockquote>
-<h3 id="A-BeanListHandler"><a href="#A-BeanListHandler" class="headerlink" title="A.BeanListHandler"></a>A.BeanListHandler</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testBeanListHandler</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    QueryRunner qr = <span class="keyword">new</span> QueryRunner();</span><br><span class="line">    String sql = <span class="string">"SELECT id,name,email,birth date from Student where id in (?,?)"</span>;</span><br><span class="line">    Connection conn = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        conn = JDBCTools.getConnection();</span><br><span class="line">        List&lt;Student&gt; list = qr.query(conn, sql, <span class="keyword">new</span> BeanListHandler&lt;Student&gt;(Student.class),<span class="number">3</span>,<span class="number">4</span>);</span><br><span class="line">        System.out.println(list);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        JDBCTools.release(<span class="keyword">null</span>, <span class="keyword">null</span>, conn);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="B-MapListHandler"><a href="#B-MapListHandler" class="headerlink" title="B.MapListHandler"></a>B.MapListHandler</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMapListHandler</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    QueryRunner qr = <span class="keyword">new</span> QueryRunner();</span><br><span class="line">    String sql = <span class="string">"SELECT id,name,email,birth date from Student where id in (?,?)"</span>;</span><br><span class="line">    Connection conn = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        conn = JDBCTools.getConnection();</span><br><span class="line">        List&lt;Map&lt;String, Object&gt;&gt; map = qr.query(conn, sql, <span class="keyword">new</span> MapListHandler(),<span class="number">3</span>,<span class="number">4</span>);</span><br><span class="line">        System.out.println(map);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        JDBCTools.release(<span class="keyword">null</span>, <span class="keyword">null</span>, conn);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="C-ScalarHandler"><a href="#C-ScalarHandler" class="headerlink" title="C.ScalarHandler"></a>C.ScalarHandler</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testScalarHandler</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    QueryRunner qr = <span class="keyword">new</span> QueryRunner();</span><br><span class="line">    String sql = <span class="string">"SELECT name,birth date from Student where id in (?,?)"</span>;</span><br><span class="line">    Connection conn = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        conn = JDBCTools.getConnection();</span><br><span class="line">        <span class="comment">//注意: 这个查询结果只是一个值</span></span><br><span class="line">        Object obj = qr.query(conn, sql, <span class="keyword">new</span> ScalarHandler&lt;&gt;(),<span class="number">3</span>,<span class="number">4</span>);</span><br><span class="line">        System.out.println(obj);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        JDBCTools.release(<span class="keyword">null</span>, <span class="keyword">null</span>, conn);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="A-BeanListHandler">A.BeanListHandler</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testBeanListHandler</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    QueryRunner qr = <span class="keyword">new</span> QueryRunner();</span><br><span class="line">    String sql = <span class="string">"SELECT id,name,email,birth date from Student where id in (?,?)"</span>;</span><br><span class="line">    Connection conn = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        conn = JDBCTools.getConnection();</span><br><span class="line">        List&lt;Student&gt; list = qr.query(conn, sql, <span class="keyword">new</span> BeanListHandler&lt;Student&gt;(Student.class),<span class="number">3</span>,<span class="number">4</span>);</span><br><span class="line">        System.out.println(list);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        JDBCTools.release(<span class="keyword">null</span>, <span class="keyword">null</span>, conn);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="B-MapListHandler">B.MapListHandler</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMapListHandler</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    QueryRunner qr = <span class="keyword">new</span> QueryRunner();</span><br><span class="line">    String sql = <span class="string">"SELECT id,name,email,birth date from Student where id in (?,?)"</span>;</span><br><span class="line">    Connection conn = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        conn = JDBCTools.getConnection();</span><br><span class="line">        List&lt;Map&lt;String, Object&gt;&gt; map = qr.query(conn, sql, <span class="keyword">new</span> MapListHandler(),<span class="number">3</span>,<span class="number">4</span>);</span><br><span class="line">        System.out.println(map);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        JDBCTools.release(<span class="keyword">null</span>, <span class="keyword">null</span>, conn);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="C-ScalarHandler">C.ScalarHandler</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testScalarHandler</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    QueryRunner qr = <span class="keyword">new</span> QueryRunner();</span><br><span class="line">    String sql = <span class="string">"SELECT name,birth date from Student where id in (?,?)"</span>;</span><br><span class="line">    Connection conn = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        conn = JDBCTools.getConnection();</span><br><span class="line">        <span class="comment">//注意: 这个查询结果只是一个值</span></span><br><span class="line">        Object obj = qr.query(conn, sql, <span class="keyword">new</span> ScalarHandler&lt;&gt;(),<span class="number">3</span>,<span class="number">4</span>);</span><br><span class="line">        System.out.println(obj);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        JDBCTools.release(<span class="keyword">null</span>, <span class="keyword">null</span>, conn);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      </div>
-      
-        <br>
+          
+            <br>
+            
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
         
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://crainyday.gitee.io/JDBC1-10.html>https://crainyday.gitee.io/JDBC1-10.html</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <fancybox><img src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/alipay.png'
+        
+          height='64px'
+        ></fancybox>
+      
+    
+      
+        <fancybox><img src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/wechat.png'
+        
+          height='64px'
+        ></fancybox>
+      
+    
+  </div>
+</section>
+
+  
 
 
-  <section class="meta" id="footer-meta">
-    <div class="new-meta-box">
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-10-06T17:39:15+08:00">
-  <a class="notlink">
-    <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2019年10月6日</p>
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-10T17:18:58+08:00">
+  <a class='notlink'>
+    <i class="fas fa-save" aria-hidden="true"></i>
+    <p>更新于：2020年3月10日</p>
   </a>
 </div>
 
@@ -425,8 +646,13 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JDBC/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>JDBC</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JavaSE/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>JavaSE</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Java/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Java</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Database/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Database</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JDBC/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i><p>JDBC</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JavaSE/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i><p>JavaSE</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Java/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i><p>Java</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Database/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i><p>Database</p></a></div>
 
+
+        
+      
+        
+          
 
         
       
@@ -436,25 +662,37 @@
   <div class="-mob-share-list share-body">
     
       
-        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.crainyday.com/JDBC1-10.html&title=JDBC-DBUtils | CRainyDay&summary=DBUtils——Apache下的一个JDBC开源工具类库">
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://crainyday.gitee.io/JDBC1-10.html&title=JDBC-DBUtils - CRainyDay&summary=DBUtils------Apache下的一个JDBC开源工具类库"
           
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.crainyday.com/JDBC1-10.html&title=JDBC-DBUtils | CRainyDay&summary=DBUtils——Apache下的一个JDBC开源工具类库">
+          >
           
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
           
         </a>
       
     
       
-        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer" href="http://service.weibo.com/share/share.php?url=https://blog.crainyday.com/JDBC1-10.html&title=JDBC-DBUtils | CRainyDay&summary=DBUtils——Apache下的一个JDBC开源工具类库">
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://crainyday.gitee.io/JDBC1-10.html&title=JDBC-DBUtils - CRainyDay&summary=DBUtils------Apache下的一个JDBC开源工具类库"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://crainyday.gitee.io/JDBC1-10.html&title=JDBC-DBUtils - CRainyDay&summary=DBUtils------Apache下的一个JDBC开源工具类库"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
           
         </a>
       
@@ -470,63 +708,88 @@
   </section>
 
 
-      
-      
+        
+        
           <div class="prev-next">
-              
-                  <section class="prev">
-                      <span class="art-item-left">
-                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
-                          <h4>
-                              <a href="/Vue1-0.html" rel="prev" title="Vue初识">
-                                
-                                    Vue初识
-                                
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/JS/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> JS</a> <a class="tag" href="/tags/Vue/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Vue</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
-              
-                  <section class="next">
-                      <span class="art-item-right" aria-hidden="true">
-                          <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                          <h4>
-                              <a href="/JDBC1-9.html" rel="prev" title="JDBC-数据库连接池">
-                                  
-                                      JDBC-数据库连接池
-                                  
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/JDBC/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> JDBC</a> <a class="tag" href="/tags/JavaSE/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> JavaSE</a> <a class="tag" href="/tags/Java/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Java</a> <a class="tag" href="/tags/Database/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Database</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
+            
+              <a class='prev' href='/Vue1-0.html'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Vue初识</p>
+                <p class='content'>初步认识VUE
+
+1. Vue.js是什么?
+
+
+
+一位华裔前Google工程师(尤雨溪)开发的前端js库
+
+
+
+
+作用: 动态构建用户界面即前端界面
+
+
+
+
+特点:
+
+①遵循MVVM模式, M...</p>
+              </a>
+            
+            
+              <a class='next' href='/JDBC1-9.html'>
+                <p class='title'>JDBC-数据库连接池<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>JAVA------数据库连接池
+
+1.JDBC数据库连接池的必要性
+
+
+在使用开发基于数据库的web程序时，传统的模式基本是按以下步骤:
+
+–在主程序（如servlet、beans）中建立数据...</p>
+              </a>
+            
           </div>
-      
-    </section>
-  </article>
+        
+      </section>
+    </article>
+  
+
+  
+    
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JDBC1-9.html" title="JDBC-数据库连接池" rel="bookmark">JDBC-数据库连接池</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JDBC1-8.html" title="JDBC-批处理" rel="bookmark">JDBC-批处理</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JDBC1-7.html" title="JDBC-数据库事务" rel="bookmark">JDBC-数据库事务</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JDBC1-6.html" title="JDBC-获取主键值" rel="bookmark">JDBC-获取主键值</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JDBC2-0.html" title="JDBC-Web简单运用" rel="bookmark">JDBC-Web简单运用</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
 
 
 
-  <!-- 显示推荐文章和评论 -->
-
-
-
-  <article class="post white-box comments">
+  <article class="post white-box comments shadow floatable">
     <section class="article typo">
-      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
       
       
       
@@ -541,6 +804,7 @@
   </article>
 
 
+  
 
 
 
@@ -558,468 +822,192 @@
 
 
 </div>
-<aside class="l_side">
+<aside class='l_side'>
+  
   
     
     
-      
-      
-        
-          
-          
-        
-          
-          
-            
-              
-  <section class="widget toc-wrapper">
-    
-<header class="material">
-  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
-  
-    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
-  
-</header>
 
-    <div class="content material">
+<section class="widget qrcode shadow floatable desktop">
+  
+  <header>
+    
+      <i class="fas fa-mobile fa-fw" aria-hidden="true"></i><span class='name'>手机观看</span>
+    
+  </header>
+
+
+  <div class='content article-entry'>
+    
+      
+        <img src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/https.png'
+        >
+      
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget grid shadow floatable desktop mobile">
+  
+  <header>
+    
+      <i class="fas fa-map-signs fa-fw" aria-hidden="true"></i><span class='name'>实用文档</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="grid navigation fixed">
+      
+        <a class="flat-box" title="/maven_05.html" href="/maven_05.html"
+          
+          
+          id="maven_05.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Maven工程
+        </a>
+      
+        <a class="flat-box" title="/Flask.html" href="/Flask.html"
+          
+          
+          id="Flask.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Flask应用
+        </a>
+      
+        <a class="flat-box" title="/Hexo.html" href="/Hexo.html"
+          
+          
+          id="Hexo.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Gitee搭站
+        </a>
+      
+    </div>
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Apache—DBUtils简介"><span class="toc-text">1.Apache—DBUtils简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-DBUtils的更新操作"><span class="toc-text">2.DBUtils的更新操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-DBUtils的查询操作"><span class="toc-text">3.DBUtils的查询操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-BeanListHandler"><span class="toc-text">A.BeanListHandler</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-MapListHandler"><span class="toc-text">B.MapListHandler</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-ScalarHandler"><span class="toc-text">C.ScalarHandler</span></a></li></ol></li></ol>
     </div>
   </section>
 
 
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-            
-              <section class="widget author">
-  <div class="content material">
-    
-      <div class="avatar">
-        <img class="avatar" src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/avatar.jpg">
-      </div>
-    
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="mailto:3013142340@qq.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/crainyday" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=3013142340" class="social fab fa-qq flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=1794783182" class="social fas fa-headphones-alt flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              <section class="widget grid">
   
-<header class="material">
-  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
-  
-</header>
-
-  <div class="content material">
-    <ul class="grid navgation">
-      
-        <li><a class="flat-box" title="/" href="/" id="home">
-          
-            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
-          
-          近期文章
-        </a></li>
-      
-        <li><a class="flat-box" title="/archives/" href="/archives/" rel="nofollow" id="archives">
-          
-            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
-          
-          文章归档
-        </a></li>
-      
-        <li><a class="flat-box" title="/friends/" href="/friends/" rel="nofollow" id="friends">
-          
-            <i class="fas fa-link fa-fw" aria-hidden="true"></i>
-          
-          我的友链
-        </a></li>
-      
-        <li><a class="flat-box" title="/bbs/" href="/bbs/" rel="nofollow" id="bbs">
-          
-            <i class="fas fa-comment-alt fa-fw" aria-hidden="true"></i>
-          
-          网站留言
-        </a></li>
-      
-        <li><a class="flat-box" title="/about.html" href="/about.html" rel="nofollow" id="about.html">
-          
-            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
-          
-          关于小站
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
-
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              
-  <section class="widget category">
-    
-<header class="material">
-  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分类</div>
-  
-    <a class="rightBtn" rel="nofollow" href="/categories/" title="categories/">
-    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
-  
-</header>
-
-    <div class="content material">
-      <ul class="entry">
-        
-          <li><a class="flat-box" title="/categories/Ajax/" href="/categories/Ajax/"><div class="name">Ajax</div><div class="badge">(3)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/Flask/" href="/categories/Flask/"><div class="name">Flask</div><div class="badge">(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/Hexo/" href="/categories/Hexo/"><div class="name">Hexo</div><div class="badge">(4)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/JDBC/" href="/categories/JDBC/"><div class="name">JDBC</div><div class="badge">(12)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/JS/" href="/categories/JS/"><div class="name">JS</div><div class="badge">(20)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/JavaSE/" href="/categories/JavaSE/"><div class="name">JavaSE</div><div class="badge">(15)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/JavaWeb/" href="/categories/JavaWeb/"><div class="name">JavaWeb</div><div class="badge">(3)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/Ubuntu/" href="/categories/Ubuntu/"><div class="name">Ubuntu</div><div class="badge">(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/Vue/" href="/categories/Vue/"><div class="name">Vue</div><div class="badge">(16)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/jQuery/" href="/categories/jQuery/"><div class="name">jQuery</div><div class="badge">(7)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/ubuntu/" href="/categories/ubuntu/"><div class="name">ubuntu</div><div class="badge">(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
 
 
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              
-  <section class="widget tagcloud">
-    
-<header class="material">
-  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
-  
-    <a class="rightBtn" rel="nofollow" href="/tags/" title="tags/">
-    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
-  
-</header>
-
-    <div id="myCanvasContainer" class="content material">
-        <canvas width="250" height="250" id="resCanvas" style="width=100%">
-          <a href="/tags/Ajax/" style="font-size: 15.25px; color: #919191">Ajax</a> <a href="/tags/CentOS/" style="font-size: 14px; color: #999">CentOS</a> <a href="/tags/CentOS7/" style="font-size: 14px; color: #999">CentOS7</a> <a href="/tags/Database/" style="font-size: 19px; color: #777">Database</a> <a href="/tags/Flask/" style="font-size: 14px; color: #999">Flask</a> <a href="/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/tags/Gitee/" style="font-size: 14px; color: #999">Gitee</a> <a href="/tags/Hexo/" style="font-size: 16.5px; color: #888">Hexo</a> <a href="/tags/JDBC/" style="font-size: 19px; color: #777">JDBC</a> <a href="/tags/JS/" style="font-size: 24px; color: #555">JS</a> <a href="/tags/JSP/" style="font-size: 15.25px; color: #919191">JSP</a> <a href="/tags/Java/" style="font-size: 22.75px; color: #5e5e5e">Java</a> <a href="/tags/JavaSE/" style="font-size: 21.5px; color: #666">JavaSE</a> <a href="/tags/Markdown/" style="font-size: 14px; color: #999">Markdown</a> <a href="/tags/NodeJS/" style="font-size: 14px; color: #999">NodeJS</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/Python3/" style="font-size: 14px; color: #999">Python3</a> <a href="/tags/Servlet/" style="font-size: 15.25px; color: #919191">Servlet</a> <a href="/tags/Typora/" style="font-size: 14px; color: #999">Typora</a> <a href="/tags/Ubuntu/" style="font-size: 14px; color: #999">Ubuntu</a> <a href="/tags/VPN/" style="font-size: 14px; color: #999">VPN</a> <a href="/tags/Vue/" style="font-size: 20.25px; color: #6f6f6f">Vue</a> <a href="/tags/Web/" style="font-size: 16.5px; color: #888">Web</a> <a href="/tags/XMind/" style="font-size: 14px; color: #999">XMind</a> <a href="/tags/jQuery/" style="font-size: 17.75px; color: #808080">jQuery</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a>
-        </canvas>
-    </div>
-  </section>
-
-
-            
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              <section class="widget list">
-  
-<header class="material">
-  <div><i class="fas fa-thumbs-up fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;强烈推荐</div>
-  
-</header>
-
-  <div class="content material">
-    <ul class="entry">
-      
-    </ul>
-  </div>
-</section>
-
-            
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              
-
-
-  <section class="widget music">
-    
-<header class="material">
-  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
-  
-    <a class="rightBtn" rel="external nofollow noopener noreferrer" target="_blank" href="https://music.163.com/#/user/home?id=1794783182" title="https://music.163.com/#/user/home?id=1794783182">
-    <i class="far fa-heart fa-fw"></i></a>
-  
-</header>
-
-    <div class="content material">
-      
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
-  <div class="aplayer" data-theme="#1BCDFC" data-mode="circulation" data-server="netease" data-type="playlist" data-id="2737545165" data-volume="0.7">
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
-
-
-    </div>
-  </section>
-
-
-            
-          
-        
-          
-          
-        
-      
-    
-
-  
 </aside>
 
-<footer id="footer" class="clearfix">
+
   
-  
-    <div class="social-wrapper">
-      
-        
-          <a href="mailto:3013142340@qq.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://github.com/crainyday" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=3013142340" class="social fab fa-qq flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://music.163.com/#/user/home?id=1794783182" class="social fas fa-headphones-alt flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-    </div>
-  
-  <br>
-  <br>
-  <div style="color:rgb(27, 195, 251);"><p>本博客所有文章除特别声明外，均采用[<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">(CC BY-NC-SA 4.0)</a>]许可协议。转载请注明出处！</p></div>
-  <div style="color:rgb(27, 195, 251);" id="sitetime"></div>
-  <div style="color:rgb(27, 195, 251);">
-    本站使用
-    <a style="color:rgb(27, 195, 251);" href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
-    作为主题
+  <footer class="clearfix ">
+    <br><br>
     
-      ，
-      总访问量为
-      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
-      次
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='true'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='2709912289'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
     
-    。
-  </div>
-  <div style="color:rgb(27, 195, 251);"><span>Copyright&nbsp;&copy;&nbsp;2019 CRainyDay's Blog 版权所有</span></div>
-</footer>
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="mailto:crainyday@qq.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/crainyday"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=1794783182"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        <div id='sitetime'></div>
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作为主题
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://crainyday.gitee.io">Copyright © 2019-2020 CRainyDay</a></p>
+
+        </div>
+      
+    
+  </footer>
+
 <script>setLoadingBarProgress(80);</script>
 
 
@@ -1027,38 +1015,25 @@
     </div>
     <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
 
   <script>
-    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
-    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
-    var ALGOLIA_API_KEY = "";
-    var ALGOLIA_APP_ID = "";
-    var ALGOLIA_INDEX_NAME = "";
-    var AZURE_SERVICE_NAME = "";
-    var AZURE_INDEX_NAME = "";
-    var AZURE_QUERY_KEY = "";
-    var BAIDU_API_ID = "";
+    
     var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/"||"/";
-    if(!ROOT.endsWith('/'))ROOT += '/';
-  </script>
-
-<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
-
-
-  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      const $reveal = $('.reveal');
-      if ($reveal.length === 0) return;
-      const sr = ScrollReveal({ distance: 0 });
-      sr.reveal('.reveal');
-    });
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
   </script>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.0.0/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js" async></script>
+
   <script type="text/javascript">
     $(function() {
       Waves.attach('.flat-btn', ['waves-button']);
@@ -1072,38 +1047,29 @@
   </script>
 
 
-  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
-
-
-  <!-- fastclick -->
-  <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      FastClick.attach(document.body)
-    }, false)
-  </script>
-
 
 
   
   
   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
     <script type="text/javascript">
       $(function(){
         if ('.cover') {
           $('.cover').backstretch(
-          ["https://img.vim-cn.com/69/104e0d1a60a99b72e5adfdfb5af3cfbaea47bb.jpg", "https://img.vim-cn.com/c9/1b86fe4d9802e0aae5072d6b3e8b124825593f.jpg", "https://img.vim-cn.com/a1/fd811d5d9621c590a608d6a7b968c064f514b3.jpg"],
+          ["https://img.vim-cn.com/69/104e0d1a60a99b72e5adfdfb5af3cfbaea47bb.jpg"],
           {
-            duration: "6000",
-            fade: "2500"
+            duration: "20000",
+            fade: "1500"
           });
         } else {
           $.backstretch(
-          ["https://img.vim-cn.com/69/104e0d1a60a99b72e5adfdfb5af3cfbaea47bb.jpg", "https://img.vim-cn.com/c9/1b86fe4d9802e0aae5072d6b3e8b124825593f.jpg", "https://img.vim-cn.com/a1/fd811d5d9621c590a608d6a7b968c064f514b3.jpg"],
+          ["https://img.vim-cn.com/69/104e0d1a60a99b72e5adfdfb5af3cfbaea47bb.jpg"],
           {
-            duration: "6000",
-            fade: "2500"
+            duration: "20000",
+            fade: "1500"
           });
         }
       });
@@ -1112,17 +1078,27 @@
 
 
 
-
-
-
-
-
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   
     
-      <script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/volantis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js" async></script>
+
+  
     
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js" async></script>
+
+  
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/valine.js"></script>
+
   
   <script>
   var GUEST_INFO = ['nick','mail','link'];
@@ -1144,22 +1120,31 @@
     pageSize:'10',
     avatar:'mp',
     lang:'zh-cn',
+    visitor: 'false',
     highlight:'true'
   })
   </script>
 
 
 
-  <script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/app.js"></script>
+  
+<script src="/js/app.js"></script>
 
 
-  <script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/search.js"></script>
 
+  
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.0.0/js/comment_typing.js"></script>
 
 
 
 <!-- 复制 -->
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script>
   let COPY_SUCCESS = "复制成功";
   let COPY_FAILURE = "复制失败";
@@ -1169,7 +1154,7 @@
     var initCopyCode = function(){
       var copyHtml = '';
       copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
       copyHtml += '</button>';
       $(".highlight .code pre").before(copyHtml);
       var clipboard = new ClipboardJS('.btn-copy', {
@@ -1243,10 +1228,13 @@
 </script>
 
 
+
+
 <!-- fancybox -->
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <script>
-  let LAZY_LOAD_IMAGE = "";
+  let LAZY_LOAD_IMAGE = "[object Object]";
   $(".article-entry").find("fancybox").find("img").each(function () {
       var element = document.createElement("a");
       $(element).attr("data-fancybox", "gallery");
@@ -1267,14 +1255,10 @@
 
 
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/sitetime.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/cooltext.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/clicklove.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/tagcanvas.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/tagcloud.js"></script>
-<script type="text/javascript" color="102,185,255" zindex="-10" opacity="50" count="99" src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/canvas-nest.min.js"></script>
+
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/sitetime.min.js'></script>
 
 
   <script>setLoadingBarProgress(100);</script>
-</body>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
 </html>
