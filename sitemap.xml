@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://crainyday.gitee.io/about.html</loc>
+    
+    <lastmod>2020-03-10T16:16:41.648Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://crainyday.gitee.io/JavaWeb1-1.html</loc>
     
     <lastmod>2020-03-10T16:06:21.809Z</lastmod>
@@ -124,13 +131,6 @@
     <loc>https://crainyday.gitee.io/friends/index.html</loc>
     
     <lastmod>2020-03-10T12:54:19.512Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://crainyday.gitee.io/about.html</loc>
-    
-    <lastmod>2020-03-10T10:03:40.242Z</lastmod>
     
   </url>
   
