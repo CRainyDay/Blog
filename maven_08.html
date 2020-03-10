@@ -517,11 +517,13 @@ Maven的聚合。">
 </ul>
 <hr>
 <h2 id="2-聚合">2.聚合</h2>
+<blockquote>
 <ul>
 <li>①作用：一键安装本地开发的相互依赖的各个工程模块。</li>
 <li>②配置方式：在一个“总的聚合工程”中配置各个参与聚合的模块信息。</li>
 <li>注意：可以将父工程作为聚合工程，但聚合工程可以不是父工程。</li>
 </ul>
+</blockquote>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--一般在父工程中配置聚合--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">modules</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--指定各个子工程的相对路径--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>../Hello<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>../Hello2<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>../MakeFriends<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">modules</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>③使用方式：在聚合工程的pom.xml上点击右键→Run as→Maven install，即可。</li>
@@ -594,7 +596,7 @@ Maven的聚合。">
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-10T17:22:17+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-10T23:26:49+08:00">
   <a class='notlink'>
     <i class="fas fa-save" aria-hidden="true"></i>
     <p>更新于：2020年3月10日</p>
@@ -682,7 +684,8 @@ Maven_Web工程的自动部署。
 
 1.Maven_Web工程的手动部署
 
-①Eclipse中，在要部署的Web工程的pom.xml上，右键单击→Run a...</p>
+
+①Eclipse中，在要部署的Web工程的pom.xml上，右键单击→Run ...</p>
               </a>
             
             

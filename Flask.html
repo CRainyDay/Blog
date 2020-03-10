@@ -480,7 +480,7 @@
 <a id="more"></a>
 <h2 id="1-在CentOS7上安装python3">1.在CentOS7上安装python3</h2>
 <blockquote>
-<p>详见: <a href="./Python.html">python2与python3共存</a></p>
+<p>详见: <btn><a href="./Python.html">python2与python3共存文档</a></btn>。</p>
 </blockquote>
 <h2 id="2-不使用python虚拟环境">2.不使用python虚拟环境</h2>
 <blockquote>
@@ -495,13 +495,13 @@
 <p>  将 Flask 项目上传到 服务器, 测试运行. 这里直接在 /opt/project/hello.py 简单测试.</p>
 </blockquote>
 <br>
-<p>第一步: 新建 <a href="http://hello.py" target="_blank" rel="noopener">hello.py</a> 文件, 注意: app.run(host=‘0.0.0.0’), 否则外网无法访问.</p>
+<p>第一步: 新建 <code>hello.py</code> 文件, 注意: app.run(host=‘0.0.0.0’), 否则外网无法访问.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># hello.py</span></span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Hello World!'</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run(host=<span class="string">'0.0.0.0'</span>)</span><br><span class="line"><span class="comment"># 默认为 0.0.0.0:5000</span></span><br></pre></td></tr></table></figure>
 <br>
-<p>第二步: 运行 Flask 应用, <a href="http://hello.py" target="_blank" rel="noopener">hello.py</a></p>
+<p>第二步: 运行 Flask 应用, <code>hello.py</code></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 hello.py</span><br></pre></td></tr></table></figure>
 <br>
-<p>第三步: 浏览器访问 <a href="http://%E4%BD%A0%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8IP:%E7%AB%AF%E5%8F%A3%E5%8F%B7">http://你的服务器IP:端口号</a>测试结果.</p>
+<p>第三步: 浏览器访问 <code>http://你的服务器IP:端口号</code>测试结果.</p>
 <p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/hello.py.png" alt="hello.py"></p>
 <br>
 <hr>
@@ -541,13 +541,13 @@
 <p>  这里直接在 /opt/project/hello.py 简单测试.</p>
 </blockquote>
 <br>
-<p>第一步: 新建 <a href="http://hello.py" target="_blank" rel="noopener">hello.py</a> 文件, 注意: app.run(host=‘0.0.0.0’), 否则外网无法访问.</p>
+<p>第一步: 新建 <code>hello.py</code> 文件, 注意: app.run(host=‘0.0.0.0’), 否则外网无法访问.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># hello.py</span></span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Hello World!'</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run(host=<span class="string">'0.0.0.0'</span>)</span><br><span class="line"><span class="comment"># 默认为 0.0.0.0:5000</span></span><br></pre></td></tr></table></figure>
 <br>
-<p>第二步: 进入虚拟环境运行 Flask 应用, <a href="http://hello.py" target="_blank" rel="noopener">hello.py</a></p>
+<p>第二步: 进入虚拟环境运行 Flask 应用, <code>hello.py</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">workon wpwl-env</span><br><span class="line">python hello.py</span><br></pre></td></tr></table></figure>
 <br>
-<p>第三步: 浏览器访问 <a href="http://%E4%BD%A0%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8IP:%E7%AB%AF%E5%8F%A3%E5%8F%B7">http://你的服务器IP:端口号</a>测试结果.</p>
+<p>第三步: 浏览器访问 <code>http://你的服务器IP:端口号</code>测试结果.</p>
 <p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/hello.py.png" alt="hello.py"></p>
 <br>
 <hr>
@@ -561,7 +561,7 @@
 <h3 id="②uwsgi启动Flask应用">②uwsgi启动Flask应用</h3>
 <p>第一种启动方式: 命令行参数启动.</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">uwsgi --http 0.0.0.0:5000 --wsgi-file /opt/project/hello.py --callable app -H /root/.virtualenvs/wpwl-env</span><br><span class="line"><span class="meta">#</span><span class="bash"> --http: 指定通过 HTTP 请求访问</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> --wsgi-file: 指定 Flask 应用文件</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -H 指定要使用的python虚拟环境</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 当然, 还有其他参数, 可到 uwsgi 的 API 中查看.</span></span><br></pre></td></tr></table></figure>
-<p>之后, 可通过浏览器访问 <a href="http://%E4%BD%A0%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8IP:%E7%AB%AF%E5%8F%A3%E5%8F%B7">http://你的服务器IP:端口号</a>测试结果.</p>
+<p>之后, 可通过浏览器访问 <code>http://你的服务器IP:端口号</code>测试结果.</p>
 <p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/hello.py.png" alt="hello.py"></p>
 <br>
 <p>第二种启动方式: .ini 配置文件启动.</p>
@@ -573,7 +573,9 @@
 <p>  再通过命令行运行 Flask 应用.</p>
 </blockquote>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwsgi hello.ini</span><br></pre></td></tr></table></figure>
-<p>之后, 可通过浏览器访问 <a href="http://%E4%BD%A0%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8IP:%E7%AB%AF%E5%8F%A3%E5%8F%B7">http://你的服务器IP:端口号</a>测试结果.</p>
+<ul>
+<li>之后, 可通过浏览器访问 <code>http://你的服务器IP:端口号</code>测试结果.</li>
+</ul>
 <p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/hello.py.png" alt="hello.py"></p>
 <br>
 <h3 id="③通过Nginx代理到uwsgi">③通过Nginx代理到uwsgi</h3>
@@ -588,7 +590,7 @@
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 当然在 listen 80的 server 块中</span></span><br><span class="line">server&#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    location / &#123;</span><br><span class="line">        include uwsgi_params;</span><br><span class="line">        uwsgi_pass 127.0.0.1:5000;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>之后, 可通过浏览器访问 <a href="http://xn--IP-0p3cl7jf7fo83a16x/" target="_blank" rel="noopener">http://你的服务器IP/</a>测试结果.</li>
+<li>之后, 可通过浏览器访问 <code>http://你的服务器IP/</code>测试结果.</li>
 </ul>
 <blockquote>
 <p>  注意: 若是不想 Nginx 直接代理网站根路径 ‘/’ 到 Flask应用, 而是想将 '/flask’代理到 Flask 应用, 则需修改两部分:</p>
@@ -596,7 +598,7 @@
 <p>②修改应用 py 文件, 每个路由添加上 ‘/flask’前缀, 如 hello.py更改为: @app.route(’/flask’)</p>
 </blockquote>
 <ul>
-<li>之后, 可通过浏览器访问 <a href="http://xn--IP-0p3cl7jf7fo83a16x/flask" target="_blank" rel="noopener">http://你的服务器IP/flask</a>测试结果.</li>
+<li>之后, 可通过浏览器访问 <code>http://你的服务器IP/flask</code>测试结果.</li>
 </ul>
 
           
@@ -666,7 +668,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-10T17:25:40+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-10T23:19:42+08:00">
   <a class='notlink'>
     <i class="fas fa-save" aria-hidden="true"></i>
     <p>更新于：2020年3月10日</p>
@@ -770,7 +772,8 @@ Maven_Web工程的自动部署。
 
 1.Maven_Web工程的手动部署
 
-①Eclipse中，在要部署的Web工程的pom.xml上，右键单击→Run a...</p>
+
+①Eclipse中，在要部署的Web工程的pom.xml上，右键单击→Run ...</p>
               </a>
             
           </div>

@@ -486,10 +486,14 @@
 <p>  其实不用安装，直接解压第一步下载下来的 zip文件就能运行。将下载下来的 XMind.zip 文件 mv 到你想要的地方，解压即可。涉及得到的命令如下：</p>
 </blockquote>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir /opt/xmind</span><br><span class="line">sudo mv xmind-8-update8-linux.zip /opt/xmind</span><br><span class="line">cd /opt</span><br><span class="line">sudo chmod -R 777 xmind</span><br><span class="line">cd /xmind</span><br><span class="line">sudo unzip xmind-8-update8-linux.zip</span><br><span class="line">sudo rm xmind-8-update8-linux.zip</span><br></pre></td></tr></table></figure>
-<p>重要的事情说三遍！！！这一步很重要，成败在此一举。在 Linux 中，文件系统安全很高，有好处也有弊端，在这里建议，以后安装或运行什么软件的时候，第一步就提权，不然可能会恶心死你，明明操作都对，结果不尽人愿，运行 web 项目的时候有时也要提权。</p>
+<blockquote>
+<p>  重要的事情说三遍！！！这一步很重要，成败在此一举。在 Linux 中，文件系统安全很高，有好处也有弊端，在这里建议，以后安装或运行什么软件的时候，第一步就提权，不然可能会恶心死你，明明操作都对，结果不尽人愿，运行 web 项目的时候有时也要提权。</p>
+</blockquote>
+<div class="danger">
 <p>一定要提权 /opt/xmind 目录。</p>
 <p>一定要提权 /opt/xmind 目录。</p>
 <p>一定要提权 /opt/xmind 目录。</p>
+</div>
 <blockquote>
 <p>这里简单说一下，XMind 的目录结构。</p>
 <ul>
@@ -586,10 +590,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-10T11:51:20+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-11T00:02:38+08:00">
   <a class='notlink'>
     <i class="fas fa-save" aria-hidden="true"></i>
-    <p>更新于：2020年3月10日</p>
+    <p>更新于：2020年3月11日</p>
   </a>
 </div>
 

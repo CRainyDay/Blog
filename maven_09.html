@@ -473,35 +473,54 @@ Maven_Web工程的自动部署。">
 <p>Maven_Web工程的自动部署。</p>
 <a id="more"></a>
 <h2 id="1-Maven-Web工程的手动部署">1.Maven_Web工程的手动部署</h2>
+<blockquote>
 <ul>
 <li>①Eclipse中，在要部署的Web工程的pom.xml上，右键单击→Run as→Maven build…：</li>
 <li>在 Goals 中填写打包 package 命令，再点击 Run 运行。就会打包Web项目为war包，(需要 Refresh 一下 target 目录)如图：</li>
 </ul>
+</blockquote>
 <p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/maven/maven_09_01.png" alt="maven_09_01"></p>
+<blockquote>
 <ul>
 <li>②将war包放进Servlet容器的webapps目录，并重命名：</li>
 </ul>
+</blockquote>
 <p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/maven/maven_09_02.png" alt="maven_09_02"></p>
+<blockquote>
 <ul>
 <li>③启动你的Servlet容器，便会自动解压war包：</li>
 </ul>
+</blockquote>
 <p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/maven/maven_09_03.png" alt="maven_09_03"></p>
+<blockquote>
 <ul>
-<li>④浏览器访问，<a href="http://localhost" target="_blank" rel="noopener">http://localhost</a>:你的Servlet容器端口号/myweb/ 即可成功访问到：</li>
+<li>④浏览器访问，<code>http://localhost:你的Servlet容器端口号/myweb/</code> 即可成功访问到：</li>
 </ul>
+</blockquote>
 <p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/maven/maven_09_04.png" alt="maven_09_04"></p>
 <hr>
 <h2 id="2-Maven-Web工程的自动部署">2.Maven_Web工程的自动部署</h2>
+<blockquote>
 <ul>
 <li>①配置Web工程的pom.xml文件，在projet节点下：</li>
 <li>注意：可以在 <a href="https://codehaus-cargo.github.io/" target="_blank" rel="noopener">cargo</a>官网，查看具体的Maven配置启动Servlet容器的信息。</li>
 </ul>
+</blockquote>
+
+<details>
+<summary>
+One More Thing 👇
+</summary>
+
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 配置当前工程构建过程中的特殊设置 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 部署后Web应用的名字 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">finalName</span>&gt;</span>MyWeb<span class="tag">&lt;/<span class="name">finalName</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 配置构建过程中需要使用的插件 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- cargo是一家专门从“启动Servlet容器”的组织 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.codehaus.cargo<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>cargo-maven2-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 针对插件进行的配置 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!-- 配置当前系统中容器的位置 --&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">container</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">containerId</span>&gt;</span>tomcat8x<span class="tag">&lt;/<span class="name">containerId</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">home</span>&gt;</span>你的Servlet容器的路径<span class="tag">&lt;/<span class="name">home</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">container</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">type</span>&gt;</span>existing<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">home</span>&gt;</span>你的Servlet容器的路径<span class="tag">&lt;/<span class="name">home</span>&gt;</span></span><br><span class="line">                    <span class="comment">&lt;!-- 如果Tomcat端口为默认值8080则不必设置该属性 --&gt;</span></span><br><span class="line">                    <span class="comment">&lt;!-- &lt;properties&gt;</span></span><br><span class="line"><span class="comment">       &lt;cargo.servlet.port&gt;8989&lt;/cargo.servlet.port&gt;</span></span><br><span class="line"><span class="comment">      &lt;/properties&gt; --&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 配置插件在什么情况下执行 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">executions</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">execution</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">id</span>&gt;</span>cargo-run<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">                    <span class="comment">&lt;!-- 生命周期的阶段 --&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">phase</span>&gt;</span>install<span class="tag">&lt;/<span class="name">phase</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">goals</span>&gt;</span></span><br><span class="line">                        <span class="comment">&lt;!-- 插件的目标 --&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">goal</span>&gt;</span>run<span class="tag">&lt;/<span class="name">goal</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">goals</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">execution</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">executions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</details>
+<blockquote>
 <ul>
 <li>②Eclipse中，在要部署的Web工程的pom.xml上，右键单击→Run as→Maven build…：</li>
 <li>在 Goals 中填写打包 deploy 命令，再点击 Run 运行。即可自动部署到本地的Servlet容器。</li>
 <li>但是在Eclipse中无法停止自动部署时，启动的 Servlet 容器，需要手动停止。</li>
 </ul>
+</blockquote>
 
           
             <br>
@@ -570,7 +589,7 @@ Maven_Web工程的自动部署。">
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-10T17:22:21+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-10T23:24:18+08:00">
   <a class='notlink'>
     <i class="fas fa-save" aria-hidden="true"></i>
     <p>更新于：2020年3月10日</p>

@@ -481,14 +481,20 @@
 <hr>
 <h3 id="②下载编译安装">②下载编译安装</h3>
 <p><strong>步骤1：在python官网找到 python-3.7.1.tgz 的地址</strong>：</p>
-<p><a href="https://www.python.org/ftp/python/3.7.1/Python-3.7.1.tgz" target="_blank" rel="noopener">https://www.python.org/ftp/python/3.7.1/Python-3.7.1.tgz</a></p>
+ 
+
+<btns rounded grid5>
+<a href='https://www.python.org/ftp/python/3.7.1/Python-3.7.1.tgz' target="_blank" rel="noopener"><i class='fas fa-download'></i>下载源码</a>
+</btns>
+
+ 
 <p><strong>步骤2：利用 wget 下载安装包.</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.python.org/ftp/python/3.7.1/Python-3.7.1.tgz</span><br><span class="line"><span class="meta">#</span><span class="bash"> 下载后的文件默认会在当前所在文件夹</span></span><br><span class="line">ls # 查看下载的文件</span><br></pre></td></tr></table></figure>
 <p><strong>步骤3：解压安装包.</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 针对不同类型的文件利用不中的命令解压即可.</span></span><br><span class="line">tar -zxvf Python-3.7.1.tgz</span><br></pre></td></tr></table></figure>
-<p>**步骤4：切换到解压后的目录下, configure. **</p>
+<p><strong>步骤4：切换到解压后的目录下, configure.</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd Python-3.7.1</span><br><span class="line">./configure</span><br><span class="line"><span class="meta">#</span><span class="bash"> 或者 利用 prefix 参数指定编译的时候用来存放程序的路径</span></span><br><span class="line">./configure --prefix=/usr/local/python3.7.1</span><br></pre></td></tr></table></figure>
-<p>**步骤5：编译安装. **</p>
+<p><strong>步骤5：编译安装.</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
 <hr>
 <h2 id="2-将python3配置为全局命令">2.将python3配置为全局命令</h2>
@@ -587,7 +593,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-10T17:27:15+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-10T23:13:35+08:00">
   <a class='notlink'>
     <i class="fas fa-save" aria-hidden="true"></i>
     <p>更新于：2020年3月10日</p>

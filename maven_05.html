@@ -500,11 +500,13 @@
 <p>③在Eclipse中执行Maven命令</p>
 <a id="more"></a>
 <h2 id="1-定制New菜单的透视图">1.定制New菜单的透视图</h2>
+<blockquote>
 <ul>
 <li>若在Eclipse中使用右键New一个新的工程时，没有出现Maven Project。可自己定制一下：</li>
 <li>依次选择：Window→Perspective→Customize Perspective→Menu Visibility：</li>
 <li>再依次打开 File→New，找到里面的 Maven Project 并打上勾：</li>
 </ul>
+</blockquote>
 <p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/maven/maven_05_01.png" alt="maven_05_01"></p>
 <h2 id="2-创建Maven版的Java工程">2.创建Maven版的Java工程</h2>
 <ul>
@@ -517,11 +519,13 @@
 <li>②输入Maven工程的坐标（GAV）：</li>
 </ul>
 <p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/maven/maven_05_03.png" alt="maven_05_03"></p>
+<blockquote>
 <ul>
 <li>③项目的结构和Maven约定结构一样，如下图：</li>
 <li>注意有一个严重的问题：这样使用Maven创建的工程是 JDK1.5 版本。</li>
-<li>当然，这样也能够使用，但是不能支持一些新的 JDK 特性。可以修改，<a href="#3.%E4%BF%AE%E6%94%B9Maven%E5%88%9B%E5%BB%BA%E5%B7%A5%E7%A8%8B%E7%9A%84JDK%E7%89%88%E6%9C%AC">点击参看</a>。</li>
+<li>当然，这样也能够使用，但是不能支持一些新的 JDK 特性。可以修改，<a href="#3-%E4%BF%AE%E6%94%B9Maven%E5%88%9B%E5%BB%BA%E5%B7%A5%E7%A8%8B%E7%9A%84JDK%E7%89%88%E6%9C%AC">点击参看</a>。</li>
 </ul>
+</blockquote>
 <p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/maven/maven_05_04.png" alt="maven_05_04"></p>
 <hr>
 <h2 id="3-修改Maven创建工程的JDK版本">3.修改Maven创建工程的JDK版本</h2>
@@ -570,47 +574,51 @@
 <p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/maven/maven_05_09.png" alt="maven_05_09"></p>
 <hr>
 <h2 id="5-创建Maven版的Web工程">5.创建Maven版的Web工程</h2>
+<blockquote>
 <ul>
 <li>①在Eclipse的 Package Explorer（或其他）中，右键→New→Maven Project：</li>
 <li><strong>注意：忽略类型选择，创建一个简单的工程。</strong></li>
 <li>当然，也可以不忽略类型，使用“类型”：maven-archetype-webapp 来创建 Web 工程。但这样创建的项目结构不太符合Maven的约定结构，<strong>没有resources包</strong>，可以自己试一下。</li>
 </ul>
+</blockquote>
 <p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/maven/maven_05_02.png" alt="maven_05_02"></p>
+<blockquote>
 <ul>
 <li>②输入Maven工程的坐标（GAV）：</li>
 <li>注意：要选择打包方式为 <strong>war 形式</strong>，这可以说是 Maven 来区别普通 Java 工程和Web 工程的地方。</li>
 </ul>
+</blockquote>
 <p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/maven/maven_05_10.png" alt="maven_05_10"></p>
+<blockquote>
 <ul>
 <li>创建完后，WebProject结构如下图：</li>
 <li>存在两个问题：目录结构不完整；pom.xml文件可能有报错。</li>
 </ul>
+</blockquote>
 <p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/maven/maven_05_11.png" alt="maven_05_11"></p>
+<blockquote>
 <ul>
 <li>③构建完整的Web工程：</li>
 <li>在当前Web工程上右键单击，选择项目属性 Properties→Project Facets</li>
 </ul>
+</blockquote>
 <p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/maven/maven_05_12.png" alt="maven_05_12"></p>
 <ul>
 <li>其中，动态Web工程的高级配置如下：</li>
 </ul>
 <p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/maven/maven_05_13.png" alt="maven_05_13"></p>
 <ul>
-<li>
-<p>若做完这些配置项目还有错或有警告，再次配置一下 Properties→Project Facets 即可。</p>
-</li>
-<li>
-<p>④注意，此时，这个Web工程还不是很完整，因为缺少 Servlet 的运行时环境。</p>
-</li>
-<li>
-<p>添加 Servlet 的运行时环境，有两种方法：在Eclipse中添加；使用 Maven 添加运行Servlet的api依赖。</p>
-</li>
-<li>
-<p>A.直接在Eclipse中添加 Servlet 运行时环境：</p>
-</li>
-<li>
-<p>在当前Web工程上右键单击，选择项目属性 Properties→Targeted Runtimes</p>
-</li>
+<li>若做完这些配置项目还有错或有警告，再次配置一下 Properties→Project Facets 即可。</li>
+</ul>
+<div class="danger">
+<ul>
+<li>④注意，此时，这个Web工程还不是很完整，因为缺少 Servlet 的运行时环境。</li>
+<li>添加 Servlet 的运行时环境，有两种方法：在Eclipse中添加；使用 Maven 添加运行Servlet的api依赖。</li>
+</ul>
+</div>
+<ul>
+<li>A.直接在Eclipse中添加 Servlet 运行时环境：</li>
+<li>在当前Web工程上右键单击，选择项目属性 Properties→Targeted Runtimes</li>
 </ul>
 <p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/maven/maven_05_14.png" alt="maven_05_14"></p>
 <ul>
@@ -647,6 +655,7 @@
 <p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/maven/maven_05_15.png" alt="maven_05_15"></p>
 <hr>
 <h2 id="6-Maven搜索网站">6.Maven搜索网站</h2>
+<div class="success">
 <ul>
 <li>
 <p>①<a href="https://mvnrepository.com/" target="_blank" rel="noopener">MVNRepository</a></p>
@@ -661,6 +670,7 @@
 <p>④<a href="https://maven.ityuan.com/" target="_blank" rel="noopener">IT猿网</a></p>
 </li>
 </ul>
+</div>
 
           
             <br>
@@ -729,7 +739,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-10T18:01:09+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-10T23:42:42+08:00">
   <a class='notlink'>
     <i class="fas fa-save" aria-hidden="true"></i>
     <p>更新于：2020年3月10日</p>
