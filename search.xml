@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>JS中UTF-8与汉字互转</title>
+      <link href="/JS_tools_01.html"/>
+      <url>/JS_tools_01.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>JavaScript简介</p><p>JS中UTF-8与汉字互转</p><a id="more"></a><blockquote><p>  关于在 JS 中UTF-8与汉字互转问题，搜到了很多方法，但就是这个方法最6。</p><p>利用正则匹配，代码少、效率较高。</p></blockquote><h2 id="函数定义">函数定义</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//UTF字符转换</span></span><br><span class="line"><span class="keyword">let</span> UTFTranslate = &#123;</span><br><span class="line">    Change : <span class="function"><span class="keyword">function</span>(<span class="params">pValue</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> pValue.replace(<span class="regexp">/[^\u0000-\u00FF]/g</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$<span class="number">0</span></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">escape</span>($<span class="number">0</span>).replace(<span class="regexp">/(%u)(\w&#123;4&#125;)/gi</span>, <span class="string">"&amp;#x$2;"</span>)</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    ReChange : <span class="function"><span class="keyword">function</span>(<span class="params">pValue</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">unescape</span>(pValue.replace(<span class="regexp">/&amp;#x/g</span>, <span class="string">'%u'</span>).replace(<span class="regexp">/\\u/g</span>, <span class="string">'%u'</span>)</span><br><span class="line">                .replace(<span class="regexp">/;/g</span>, <span class="string">''</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h2 id="使用">使用</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UTFTranslate.ReChange(<span class="string">'&amp;#x4E2D;&amp;#x6587;sdfdf'</span>); <span class="comment">//"中文sdfdf"</span></span><br><span class="line">UTFTranslate.Change(<span class="string">'中文sdfsf'</span>); <span class="comment">// "&amp;#x4E2D;&amp;#x6587;sdfsf"</span></span><br></pre></td></tr></table></figure><div class="success"><p>引用自这篇文章： <a href="https://www.cnblogs.com/if404/archive/2012/05/13/2498111.html" target="_blank" rel="noopener">JS中UTF编码与中文的互转</a>。</p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> JS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Ubuntu中py2与py3共存</title>
       <link href="/Python.html"/>
       <url>/Python.html</url>

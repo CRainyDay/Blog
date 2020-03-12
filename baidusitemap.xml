@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://crainyday.gitee.io/JS_tools_01.html</loc>
+    <lastmod>2020-03-12</lastmod>
+  </url>  <url>
+    <loc>https://crainyday.gitee.io/maven_05.html</loc>
+    <lastmod>2020-03-12</lastmod>
+  </url>  <url>
+    <loc>https://crainyday.gitee.io/Flask.html</loc>
+    <lastmod>2020-03-12</lastmod>
+  </url>  <url>
+    <loc>https://crainyday.gitee.io/Hexo.html</loc>
+    <lastmod>2020-03-12</lastmod>
+  </url>  <url>
+    <loc>https://crainyday.gitee.io/Hexo2.html</loc>
+    <lastmod>2020-03-12</lastmod>
+  </url>  <url>
     <loc>https://crainyday.gitee.io/Vue5-1.html</loc>
     <lastmod>2020-03-12</lastmod>
   </url>  <url>
@@ -268,15 +283,6 @@
     <loc>https://crainyday.gitee.io/hide-code.html</loc>
     <lastmod>2020-03-12</lastmod>
   </url>  <url>
-    <loc>https://crainyday.gitee.io/Hexo2.html</loc>
-    <lastmod>2020-03-12</lastmod>
-  </url>  <url>
-    <loc>https://crainyday.gitee.io/Hexo.html</loc>
-    <lastmod>2020-03-12</lastmod>
-  </url>  <url>
-    <loc>https://crainyday.gitee.io/Flask.html</loc>
-    <lastmod>2020-03-12</lastmod>
-  </url>  <url>
     <loc>https://crainyday.gitee.io/copy-code.html</loc>
     <lastmod>2020-03-12</lastmod>
   </url>  <url>
@@ -287,9 +293,6 @@
     <lastmod>2020-03-12</lastmod>
   </url>  <url>
     <loc>https://crainyday.gitee.io/Ajax1-0.html</loc>
-    <lastmod>2020-03-12</lastmod>
-  </url>  <url>
-    <loc>https://crainyday.gitee.io/maven_05.html</loc>
     <lastmod>2020-03-12</lastmod>
   </url>
 </urlset>

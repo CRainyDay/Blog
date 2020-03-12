@@ -2,6 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://crainyday.gitee.io/friends/index.html</loc>
+    
+    <lastmod>2020-03-12T14:25:18.303Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://crainyday.gitee.io/JS_tools_01.html</loc>
+    
+    <lastmod>2020-03-12T14:07:43.371Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://crainyday.gitee.io/about.html</loc>
+    
+    <lastmod>2020-03-12T13:58:52.241Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://crainyday.gitee.io/maven_05.html</loc>
+    
+    <lastmod>2020-03-12T08:31:57.565Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://crainyday.gitee.io/Flask.html</loc>
+    
+    <lastmod>2020-03-12T08:31:19.156Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://crainyday.gitee.io/Hexo.html</loc>
+    
+    <lastmod>2020-03-12T08:31:08.764Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://crainyday.gitee.io/Hexo2.html</loc>
+    
+    <lastmod>2020-03-12T08:29:56.753Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://crainyday.gitee.io/Vue5-1.html</loc>
     
     <lastmod>2020-03-12T07:03:51.470Z</lastmod>
@@ -625,27 +674,6 @@
   </url>
   
   <url>
-    <loc>https://crainyday.gitee.io/Hexo2.html</loc>
-    
-    <lastmod>2020-03-12T06:55:27.052Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://crainyday.gitee.io/Hexo.html</loc>
-    
-    <lastmod>2020-03-12T06:55:20.960Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://crainyday.gitee.io/Flask.html</loc>
-    
-    <lastmod>2020-03-12T06:55:13.955Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://crainyday.gitee.io/copy-code.html</loc>
     
     <lastmod>2020-03-12T06:55:06.663Z</lastmod>
@@ -670,27 +698,6 @@
     <loc>https://crainyday.gitee.io/Ajax1-0.html</loc>
     
     <lastmod>2020-03-12T06:54:40.125Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://crainyday.gitee.io/maven_05.html</loc>
-    
-    <lastmod>2020-03-12T06:54:15.179Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://crainyday.gitee.io/about.html</loc>
-    
-    <lastmod>2020-03-10T16:16:41.648Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://crainyday.gitee.io/friends/index.html</loc>
-    
-    <lastmod>2020-03-10T12:54:19.512Z</lastmod>
     
   </url>
   
