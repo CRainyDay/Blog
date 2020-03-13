@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://crainyday.gitee.io/JavaWeb1-0.html</loc>
+    
+    <lastmod>2020-03-13T14:09:04.459Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://crainyday.gitee.io/about/music.html</loc>
+    
+    <lastmod>2020-03-13T13:46:05.657Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://crainyday.gitee.io/about/index.html</loc>
+    
+    <lastmod>2020-03-13T13:44:57.790Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://crainyday.gitee.io/friends/index.html</loc>
     
-    <lastmod>2020-03-12T14:25:18.303Z</lastmod>
+    <lastmod>2020-03-13T13:40:59.248Z</lastmod>
     
   </url>
   
@@ -12,13 +33,6 @@
     <loc>https://crainyday.gitee.io/JS_tools_01.html</loc>
     
     <lastmod>2020-03-12T14:07:43.371Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://crainyday.gitee.io/about.html</loc>
-    
-    <lastmod>2020-03-12T13:58:52.241Z</lastmod>
     
   </url>
   
@@ -544,13 +558,6 @@
     <loc>https://crainyday.gitee.io/JavaWeb1-1.html</loc>
     
     <lastmod>2020-03-12T06:59:24.960Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://crainyday.gitee.io/JavaWeb1-0.html</loc>
-    
-    <lastmod>2020-03-12T06:59:20.969Z</lastmod>
     
   </url>
   
