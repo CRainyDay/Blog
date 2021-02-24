@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.1.2'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>JS对象补充 - CRainyDay</title>
+  
+    <meta name="keywords" content="JS">
+  
+  
+    <meta name="description" content="JS对象补充">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?bf368df5385d5be3472f3155e4cdb303";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow floatable blur">
+
+  <div class='wrapper'>
+    <div class='nav-sub container--flex'>
+      <a class="logo flat-box"></a>
+      <ul class='switcher h-list'>
+        <li><a class="s-comment flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main container container--flex">
+      
+        
+        <a class="logo flat-box" target="_self" href='/'>
+          
+          
+            <i class='fas fa-home'></i>
+          
+          
+            CRainyDay
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='h-list'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  
+                    <i class='fas fa-folder-open fa-fw'></i>
+                  
+                  分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  
+                    <i class='fas fa-archive fa-fw'></i>
+                  
+                  归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  
+                    <i class='fas fa-tags fa-fw'></i>
+                  
+                  标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  
+                    <i class='fas fa-link fa-fw'></i>
+                  
+                  友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  
+                    <i class='fas fa-ellipsis-v fa-fw'></i>
+                  
+                  更多
+                </a>
+                
+                  <ul class="submenu">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/about/music.html
+                  
+                  
+                  
+                    id="aboutmusic.html"
+                  >
+                  
+                    <i class='fas fa-music fa-fw'></i>
+                  
+                  往后余生
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/bbs/
+                  
+                  
+                  
+                    id="bbs"
+                  >
+                  
+                    <i class='fas fa-comment-alt fa-fw'></i>
+                  
+                  留言
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  
+                    <i class='fas fa-info-circle fa-fw'></i>
+                  
+                  关于
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      
+        <div class="m_search">
+          <form name="searchform" class="form u-search-form">
+            <i class="icon fas fa-search fa-fw"></i>
+            <input type="text" class="input u-search-input" placeholder="搜索" />
+          </form>
+        </div>
+      
+
+			<ul class='switcher h-list'>
+				
+					<li><a class="s-search flat-btn fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li><a class="s-menu flat-btn fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<ul class="menu-phone navigation white-box">
+  
+  
+    <li>
+      <a class="flat-box" href=/
+        
+        
+        
+          id="home"
+        >
+        
+          <i class='fas fa-home fa-fw'></i>
+        
+        博客
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/archives/
+        
+        
+        
+          id="archives"
+        >
+        
+          <i class='fas fa-archive fa-fw'></i>
+        
+        归档
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/categories/
+        
+        
+        
+          id="categories"
+        >
+        
+          <i class='fas fa-folder-open fa-fw'></i>
+        
+        分类
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/friends/
+        
+        
+        
+          id="friends"
+        >
+        
+          <i class='fas fa-link fa-fw'></i>
+        
+        友链
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/bbs/
+        
+        
+        
+          id="bbs"
+        >
+        
+          <i class='fas fa-comment-alt fa-fw'></i>
+        
+        留言
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/about/
+        
+        
+        
+          id="about"
+        >
+        
+          <i class='fas fa-info-circle fa-fw'></i>
+        
+        关于
+      </a>
+    </li>
+  
+</ul>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box shadow floatable article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+      <a title='JS对象补充' href='/JS2-2.html'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more01.png'></a>
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/JS2-2.html">
+        JS对象补充
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+<div class='new-meta-item author'>
+  <a href="https://crainyday.gitee.io" rel="nofollow">
+    <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/avatar.png">
+    <p>crainyday</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E5%89%8D%E7%AB%AF/JS/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>前端&nbsp;/&nbsp;JS</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-edit" aria-hidden="true"></i>
+    <p>发布于：2019年4月1日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard" aria-hidden="true"></i>
+      <p>字数：1.9k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+      <p>时长：7分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>JS对象补充</p>
+<a id="more"></a>
+<h2 id="一-工厂方法创建对象">一.工厂方法创建对象</h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name:,</span><br><span class="line">    age:,</span><br><span class="line">    sex:,</span><br><span class="line">    showMes:</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>  我们想要创建大量的上面的obj对象, 它们的属性名都一样, 但是值可能不一样, 这时, 为了&quot;偷懒&quot;, 我们可以使用工厂方法创建对象. 批量生产对象.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name, age, sex</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> obj = &#123;</span><br><span class="line">        name: name,</span><br><span class="line">        age: age,</span><br><span class="line">        sex: sex,</span><br><span class="line">        showMes: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            alert(name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> per1 = createPerson(<span class="string">"孙悟空"</span>, <span class="number">500</span>, <span class="string">"男"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(per1);<span class="comment">//Object &#123;name: "孙悟空", age: 500, sex: "男", showMes: ƒ&#125;</span></span><br><span class="line"><span class="keyword">var</span> per2 = createPerson(<span class="string">"猪八戒"</span>, <span class="number">300</span>, <span class="string">"男"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(per2);<span class="comment">//Object &#123;name: "猪八戒", age: 300, sex: "男", showMes: ƒ&#125;</span></span><br><span class="line"><span class="keyword">var</span> per3 = createPerson(<span class="string">"白骨精"</span>, <span class="number">500</span>, <span class="string">"女"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(per3);<span class="comment">//Object &#123;name: "白骨精", age: 500, sex: "女", showMes: ƒ&#125;</span></span><br><span class="line">per1.showMes();<span class="comment">//孙悟空</span></span><br><span class="line">per2.showMes();<span class="comment">//猪八戒</span></span><br><span class="line">per3.showMes();<span class="comment">//白骨精</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createDog</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">    obj.name = name;</span><br><span class="line">    obj.age = age;</span><br><span class="line">    obj.showMes = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> dog = createDog(<span class="string">"哮天犬"</span>,<span class="number">3</span>);</span><br><span class="line"><span class="built_in">console</span>.log(dog);<span class="comment">//Object &#123;name: "哮天犬", age: 3, showMes: ƒ&#125;</span></span><br><span class="line">dog.showMes();<span class="comment">//哮天犬</span></span><br></pre></td></tr></table></figure>
+<h2 id="二-构造函数">二.构造函数</h2>
+<ul>
+<li>从上面代码的注释中, 可以看见我们用工厂方法创建的对象都是Object类型的, 不易区分不同的对象(到底是Dog还是Person), 这时, 我们可以创建一个构造函数来专门创建某一类对象.</li>
+<li>构造函数是一类特殊的普通函数, 习惯上我们将构造函数的函数名首字母大写.</li>
+<li>构造函数与普通函数相比, 调用方式不同, 普通的直接调用即可, <font style='color:red;font-weight:bold;'>构造函数需要在new关键字之后调用.</font></li>
+<li>使用同一个构造函数创建的对象, 我们称为一类对象, 也将构造函数称为类, 将它创建的对象称为类的实例.</li>
+</ul>
+<p>构造函数的执行流程:</p>
+<ol>
+<li>被调用时, 首先创建一个新的对象</li>
+<li>将函数中的this指向新建的对象(即在构造函数中, 可以用this来引用正在新建的对象)</li>
+<li>逐行执行构造函数中的代码</li>
+<li>将新建的对象作为构造函数的返回值返回.</li>
+</ol>
+<h3 id="A-instanceof">A.instanceof</h3>
+<p>用法: 对象 instanceof 构造函数, 检查一个对象是否为一个构造函数的实例, 是返回true, 不是返回false.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,sex</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.sex = sex;</span><br><span class="line">    <span class="keyword">this</span>.showMes = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> per1 = <span class="keyword">new</span> Person(<span class="string">"孙悟空"</span>, <span class="number">500</span>, <span class="string">"男"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(per1);<span class="comment">//Person &#123;name: "孙悟空", age: 500, sex: "男", showMes: ƒ&#125;</span></span><br><span class="line"><span class="keyword">var</span> per2 = <span class="keyword">new</span> Person(<span class="string">"猪八戒"</span>, <span class="number">300</span>, <span class="string">"男"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(per1);<span class="comment">//Person &#123;name: "猪八戒", age: 300, sex: "男", showMes: ƒ&#125;</span></span><br><span class="line"><span class="keyword">var</span> per3 = <span class="keyword">new</span> Person(<span class="string">"白骨精"</span>, <span class="number">500</span>, <span class="string">"女"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(per1);<span class="comment">//Person &#123;name: "白骨精", age: 500, sex: "女", showMes: ƒ&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(per1 <span class="keyword">instanceof</span> Person);<span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(per1.showMes == per2.showMes);<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<p>上面的代码有一个弊端, 每一个由Person创建的对象都有一个自己的showMes()方法</p>
+<blockquote>
+<p>console.log(per1.showMes == per2.showMes);//false</p>
+</blockquote>
+<p>返回结果是false, 而这不是我们想要的, 这样的话会浪费很多的内存.故修改一下, 将该函数的声明放到外面</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showMes</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,sex</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.sex = sex;</span><br><span class="line">    <span class="keyword">this</span>.showMes = showMes;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> per1 = <span class="keyword">new</span> Person(<span class="string">"孙悟空"</span>, <span class="number">500</span>, <span class="string">"男"</span>);</span><br><span class="line"><span class="keyword">var</span> per2 = <span class="keyword">new</span> Person(<span class="string">"猪八戒"</span>, <span class="number">300</span>, <span class="string">"男"</span>);</span><br><span class="line"><span class="keyword">var</span> per3 = <span class="keyword">new</span> Person(<span class="string">"白骨精"</span>, <span class="number">500</span>, <span class="string">"女"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(per1.showMes == per2.showMes);<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h2 id="三-原型对象">三.原型对象</h2>
+<blockquote>
+<p>注意: 上述改进, 将对象共有的方法showMes()直接声明在全局作用域中, 也是存在一些弊端, ①污染了全局作用域(在全局作用域中不能再添加同名函数)②不是很安全. 因此, 这次我们采用一个非常好的办法, 即解决多个同类对象创建多个公共的方法, 又不会对全局作用域造成污染.</p>
+</blockquote>
+<p>原型: prototype</p>
+<ul>
+<li>我们创建的每一个函数, 解析器都会向函数中添加一个属性prototype, 这个属性对应着一个对象即原型对象</li>
+<li>如果函数作为普通函数调用prototype没有任何作用</li>
+<li>如果函数以构造函数的形式调用时,它创建的对象中都会有一个隐含的属性, 指向该构造函数的原型对象, 我怕们可以用对象的__proto__属性来访问该对象</li>
+<li>原型对象就相当于一个公共的区域, 所有同一个类的实例都能访问到这个对象, 我们可以将对象中共有的内容统一放到原型对象中.</li>
+<li>当我们访问一个对象的属性或方法时, 它会先在对象自身寻找, 如果有则直接使用, 若没有则会去原型对象中寻找, 如果原型对象中有则直接使用</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/JS/prototype.png" alt="prototype"></p>
+<p>改进如下:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,sex</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.sex = sex;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.showMes = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> per1 = <span class="keyword">new</span> Person(<span class="string">"孙悟空"</span>, <span class="number">500</span>, <span class="string">"男"</span>);</span><br><span class="line"><span class="keyword">var</span> per2 = <span class="keyword">new</span> Person(<span class="string">"猪八戒"</span>, <span class="number">300</span>, <span class="string">"男"</span>);</span><br><span class="line"><span class="keyword">var</span> per3 = <span class="keyword">new</span> Person(<span class="string">"白骨精"</span>, <span class="number">500</span>, <span class="string">"女"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype == per1.__proto__);<span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(per1.showMes == per2.showMes);<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h3 id="A-检查对象的属性">A.检查对象的属性</h3>
+<blockquote>
+<p>1.之前提到过用in运算符检查对象中是否包含某个属性, 但这样, 如果对象的原型对象中有这个属性, 也会返回true, 显然这不是我们想得到的结果.</p>
+<p>2.我们只想在对象本身的属性中搜索. 这时候可以用对象的hasOwnProperty()方法检查. hasOwnProperty方法其实在原型对象的原型中</p>
+<p>3.原型对象也是对象, 它也有原型. 我们调用一个对象的属性或方法时, 会先在对象自身寻找, 没有就去对象的原型中寻找, 还没有就去原型的原型中寻找, 直到找到Object对象的原型, 没有则返回undefined</p>
+<p>4.Object对象的原型没有原型, 它的值为null</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,sex</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.sex = sex;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.showMes = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;;</span><br><span class="line">Person.prototype.a = <span class="number">123</span>;</span><br><span class="line"><span class="keyword">var</span> per = <span class="keyword">new</span> Person(<span class="string">"孙悟空"</span>, <span class="number">500</span>, <span class="string">"男"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"a"</span> <span class="keyword">in</span> per);<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(per.hasOwnProperty(<span class="string">"a"</span>));<span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(per.__proto__.__proto__.hasOwnProperty(<span class="string">"hasOwnProperty"</span>));<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h2 id="四-toString">四.toString()</h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, sex</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.sex = sex;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.showMes = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> per = <span class="keyword">new</span> Person(<span class="string">"孙悟空"</span>, <span class="number">500</span>, <span class="string">"男"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(per);<span class="comment">//输出:[object Object]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.__proto__.hasOwnProperty(<span class="string">"toString"</span>));<span class="comment">//输出:true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>我们直接在页面打印对象的引用时, 实际上调用了对象的toString()方法, 打印的是toString()的返回值, 默认调用的是Object原型的toString()方法.</li>
+<li>假如我们想打印对象时, 按照我们自己的想法控制输出的内容, 我们就需要显示的添加一个toString()方法, 不让当前的对象向原型中搜寻方法.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, sex</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.sex = sex;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.toString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Person[name:"</span>+<span class="keyword">this</span>.name+<span class="string">",age:"</span>+<span class="keyword">this</span>.age+<span class="string">",sex:"</span>+<span class="keyword">this</span>.sex+<span class="string">"]"</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> per = <span class="keyword">new</span> Person(<span class="string">"孙悟空"</span>, <span class="number">500</span>, <span class="string">"男"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(per);<span class="comment">//Person[name:孙悟空,age:500,sex:男]</span></span><br></pre></td></tr></table></figure>
+<h2 id="五-垃圾回收-GC">五.垃圾回收(GC)</h2>
+<ol>
+<li>程序运行过程中也会产生垃圾, 若垃圾过多, 会使程序运行过慢, 因此我们需要一个垃圾回收机制来处理程序运行过程中产生的垃圾.</li>
+<li>当一个对象没有任何变量或属性对它进行引用, 我们将永远无法操作该对象, 这种对象就是垃圾.</li>
+<li>在JS中拥有自动的垃圾回收机制, 会自动将垃圾对象从内存中销毁, 我们不需要也不能进行垃圾回收的操作.</li>
+<li>假如我们不再使用某个对象的引用, 将它设置为null即可</li>
+</ol>
+
+          
+            <br>
+            
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://crainyday.gitee.io/JS2-2.html>https://crainyday.gitee.io/JS2-2.html</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <fancybox><img src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/alipay.png'
+        
+          height='64px'
+        ></fancybox>
+      
+    
+      
+        <fancybox><img src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/wechat.png'
+        
+          height='64px'
+        ></fancybox>
+      
+    
+  </div>
+</section>
+
+  
+
+
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-12T15:01:06+08:00">
+  <a class='notlink'>
+    <i class="fas fa-save" aria-hidden="true"></i>
+    <p>更新于：2020年3月12日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JS/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i><p>JS</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard" aria-hidden="true"></i>
+      <p>字数：1.9k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+      <p>时长：7分钟</p>
+    </a>
+  </div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://crainyday.gitee.io/JS2-2.html&title=JS对象补充 - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more01.png&summary=JS对象补充"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://crainyday.gitee.io/JS2-2.html&title=JS对象补充 - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more01.png&summary=JS对象补充"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://crainyday.gitee.io/JS2-2.html&title=JS对象补充 - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more01.png&summary=JS对象补充"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAAD4CAAAAADkunTXAAACT0lEQVR42u3aS3LCQAwFQN//0skJXNYvEGt6dkmBUQ8boafr59BzgYODg4ODL4JfxXP74JvX3b3v7nVPz6nWCw4ODg4OvhEebgCKgCgs+txqveDg4ODg4Jvh0Qai+v6ni8nC0/WCg4ODg4ODt+HTFwEODg4ODg7eh2dB6UAAHBwcHBwcfG5Anyw4uzgQDTQ+nqSAg4ODg4P/I3j2ZAcT03+X6wUHBwcHB18E755oI/IEmFroe6wXHBwcHBx8EbzaIHQvKvrc6frAwcHBwcFPgEeD/WpD0x0shKHZjQhwcHBwcPAXwaPAavAfbUy6gUJ5AgMODg4ODr4Qnr2IbEOTLrg4sAAHBwcHBz8J/lcB//QAo/xFgIODg4ODL4JPFV4dHGQDg/EkBRwcHBwcfAE8ehHV/0dBU4sD4QYGHBwcHBz8xfDs4KEb5Gc/N/v57UABHBwcHBz8hfBqo9K9qO7CQDtJAQcHBwcHfzE8O8CPDgiywcTVPOGGChwcHBwcfCE8G+xXG43o5049N52kgIODg4ODvxiebWw+3dCMBQrg4ODg4OAL4dUf/t3Fve5gIlwPODg4ODj4Ivj0D/8paHbRIHwx4ODg4ODgi+DdIH464J8agIQDBXBwcHBw8AXwbsPSLbi6MJCuHxwcHBwcfDG8CugOKsYGDdUGBhwcHBwcHHxssb96oeMbEeDg4ODg4AfBpwYaUwHF1zo3cHBwcHDwL8CrjcXUoGC6kQIHBwcHBz8BPr1wN9WYVBuhcKAADg4ODg7+YvhpBxwcHBwcfMH5BfAVBR8i/oHkAAAAAElFTkSuQmCC">
+          </div>
+        </div>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/JS2-3.html'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>JS数组</p>
+                <p class='content'>JS数组(内建对象), 之前都是说的自定义对象.
+
+一.数组简介
+
+数组也是一个对象
+它和普通对象的功能类似, 也是用来存储一些值的
+不同的是, 普通对象用字符串作为索引, 数组用数字(&gt;...</p>
+              </a>
+            
+            
+              <a class='next' href='/JS2-1.html'>
+                <p class='title'>JS函数<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>JS的函数function
+
+一.JS函数的简介
+函数(function):
+
+函数也是一个对象
+函数中封装了一些功能(代码), 在需要时可以执行这些功能(代码)
+封装到函数的代码不会立即执行,...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ajax1-0.html" title="Ajax简介" rel="bookmark">Ajax简介</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ajax1-1.html" title="Ajax数据格式" rel="bookmark">Ajax数据格式</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ajax1-2.html" title="Ajax-jQuery" rel="bookmark">Ajax-jQuery</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JS1-0.html" title="JS简介" rel="bookmark">JS简介</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JS-JSON.html" title="JS-JSON" rel="bookmark">JS-JSON</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments shadow floatable">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'JS对象补充',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ajax1-0.html" title="Ajax简介" rel="bookmark">Ajax简介</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ajax1-1.html" title="Ajax数据格式" rel="bookmark">Ajax数据格式</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ajax1-2.html" title="Ajax-jQuery" rel="bookmark">Ajax-jQuery</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JS1-0.html" title="JS简介" rel="bookmark">JS简介</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JS-JSON.html" title="JS-JSON" rel="bookmark">JS-JSON</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+
+<section class="widget grid shadow floatable desktop mobile">
+  
+  <header>
+    
+      <i class="fas fa-map-signs fa-fw" aria-hidden="true"></i><span class='name'>实用文档</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="grid navigation fixed">
+      
+        <a class="flat-box" title="/maven_05.html" href="/maven_05.html"
+          
+          
+          id="maven_05.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Maven工程
+        </a>
+      
+        <a class="flat-box" title="/Flask.html" href="/Flask.html"
+          
+          
+          id="Flask.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Flask应用
+        </a>
+      
+        <a class="flat-box" title="/Hexo.html" href="/Hexo.html"
+          
+          
+          id="Hexo.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Gitee搭站
+        </a>
+      
+        <a class="flat-box" title="/Ubuntu_006.html" href="/Ubuntu_006.html"
+          
+          
+          id="Ubuntu_006.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          v2ray
+        </a>
+      
+    </div>
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一-工厂方法创建对象"><span class="toc-text">一.工厂方法创建对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二-构造函数"><span class="toc-text">二.构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-instanceof"><span class="toc-text">A.instanceof</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三-原型对象"><span class="toc-text">三.原型对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-检查对象的属性"><span class="toc-text">A.检查对象的属性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四-toString"><span class="toc-text">四.toString()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五-垃圾回收-GC"><span class="toc-text">五.垃圾回收(GC)</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix ">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='true'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='2709912289'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="mailto:crainyday@qq.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/crainyday"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=1794783182"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        <div id='sitetime'></div>
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作为主题
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://crainyday.gitee.io">Copyright © 2019-2021 CRainyDay</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js" async></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_01.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_02.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_03.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_04.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_05.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js" async></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js" async></script>
+
+  
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "47GAhNwwbbNreaJdvDNWHhOo-gzGzoHsz",
+    appKey: "pndiLFAmJvnhcIutpj4HIj6t",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    visitor: 'false',
+    highlight:'true'
+  })
+  </script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    function on_success(){
+      let $btn = $('.highlight .code pre');
+      console.log($btn);
+    }
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copyed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-clipboard-check');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPYED';
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-exclamation-triangle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "[object Object]";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/sitetime.min.js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/clicklove.min.js'></script>
+
+
+  <script>setLoadingBarProgress(100);</script>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
+</html>

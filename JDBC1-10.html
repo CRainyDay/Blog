@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.1.2'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>JDBC-DBUtils - CRainyDay</title>
+  
+    <meta name="keywords" content="JDBC,JavaSE,Java,Database">
+  
+  
+    <meta name="description" content="DBUtils------Apache下的一个JDBC开源工具类库">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?bf368df5385d5be3472f3155e4cdb303";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow floatable blur">
+
+  <div class='wrapper'>
+    <div class='nav-sub container--flex'>
+      <a class="logo flat-box"></a>
+      <ul class='switcher h-list'>
+        <li><a class="s-comment flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main container container--flex">
+      
+        
+        <a class="logo flat-box" target="_self" href='/'>
+          
+          
+            <i class='fas fa-home'></i>
+          
+          
+            CRainyDay
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='h-list'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  
+                    <i class='fas fa-folder-open fa-fw'></i>
+                  
+                  分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  
+                    <i class='fas fa-archive fa-fw'></i>
+                  
+                  归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  
+                    <i class='fas fa-tags fa-fw'></i>
+                  
+                  标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  
+                    <i class='fas fa-link fa-fw'></i>
+                  
+                  友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  
+                    <i class='fas fa-ellipsis-v fa-fw'></i>
+                  
+                  更多
+                </a>
+                
+                  <ul class="submenu">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/about/music.html
+                  
+                  
+                  
+                    id="aboutmusic.html"
+                  >
+                  
+                    <i class='fas fa-music fa-fw'></i>
+                  
+                  往后余生
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/bbs/
+                  
+                  
+                  
+                    id="bbs"
+                  >
+                  
+                    <i class='fas fa-comment-alt fa-fw'></i>
+                  
+                  留言
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  
+                    <i class='fas fa-info-circle fa-fw'></i>
+                  
+                  关于
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      
+        <div class="m_search">
+          <form name="searchform" class="form u-search-form">
+            <i class="icon fas fa-search fa-fw"></i>
+            <input type="text" class="input u-search-input" placeholder="搜索" />
+          </form>
+        </div>
+      
+
+			<ul class='switcher h-list'>
+				
+					<li><a class="s-search flat-btn fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li><a class="s-menu flat-btn fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<ul class="menu-phone navigation white-box">
+  
+  
+    <li>
+      <a class="flat-box" href=/
+        
+        
+        
+          id="home"
+        >
+        
+          <i class='fas fa-home fa-fw'></i>
+        
+        博客
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/archives/
+        
+        
+        
+          id="archives"
+        >
+        
+          <i class='fas fa-archive fa-fw'></i>
+        
+        归档
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/categories/
+        
+        
+        
+          id="categories"
+        >
+        
+          <i class='fas fa-folder-open fa-fw'></i>
+        
+        分类
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/friends/
+        
+        
+        
+          id="friends"
+        >
+        
+          <i class='fas fa-link fa-fw'></i>
+        
+        友链
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/bbs/
+        
+        
+        
+          id="bbs"
+        >
+        
+          <i class='fas fa-comment-alt fa-fw'></i>
+        
+        留言
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/about/
+        
+        
+        
+          id="about"
+        >
+        
+          <i class='fas fa-info-circle fa-fw'></i>
+        
+        关于
+      </a>
+    </li>
+  
+</ul>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box shadow floatable article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+      <a title='JDBC-DBUtils' href='/JDBC1-10.html'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more05.png'></a>
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/JDBC1-10.html">
+        JDBC-DBUtils
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+<div class='new-meta-item author'>
+  <a href="https://crainyday.gitee.io" rel="nofollow">
+    <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/avatar.png">
+    <p>crainyday</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Java/JDBC/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>Java&nbsp;/&nbsp;JDBC</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-edit" aria-hidden="true"></i>
+    <p>发布于：2019年5月14日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard" aria-hidden="true"></i>
+      <p>字数：1.3k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+      <p>时长：5分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>DBUtils------Apache下的一个JDBC开源工具类库</p>
+<a id="more"></a>
+<h2 id="1-Apache—DBUtils简介">1.Apache—DBUtils简介</h2>
+<blockquote>
+<ul>
+<li>
+<p>commons-dbutils 是 Apache 组织提供的一个开源 JDBC工具类库，它是对JDBC的简单封装，学习成本极低，并且使用dbutils能极大简化jdbc编码的工作量，同时也不会影响程序的性能.</p>
+</li>
+<li>
+<p>API介绍:</p>
+</li>
+</ul>
+<p>  –org.apache.commons.dbutils.QueryRunner</p>
+<p>  –org.apache.commons.dbutils.ResultSetHandler</p>
+<p>  –工具类: org.apache.commons.dbutils.DbUtils、…</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>DbUtils类: 提供如关闭连接、装载JDBC驱动程序等常规工作的工具类，里面的所有方法都是静态的。主要方法如下:</li>
+</ul>
+<p>  –public static void close(…) throws java.sql.SQLException：　DbUtils类提供了三个重载的关闭方法。这些方法检查所提供的参数是不是NULL，如果不是的话，它们就关闭Connection、Statement和ResultSet.</p>
+<p>  –public static void closeQuietly(…): 这一类方法不仅能在Connection、Statement和ResultSet为NULL情况下避免关闭，还能隐藏一些在程序中抛出的SQLEeception.</p>
+<p>  –public static void commitAndCloseQuietly(Connection conn)： 用来提交连接，然后关闭连接，并且在关闭连接时不抛出SQL异常.</p>
+<p>  –public static boolean loadDriver(java.lang.String driverClassName)：这一方装载并注册JDBC驱动程序，如果成功就返回true. 使用该方法，你不需要捕捉这个异常ClassNotFoundException.</p>
+</blockquote>
+<h2 id="2-DBUtils的更新操作">2.DBUtils的更新操作</h2>
+<blockquote>
+<p>通过QueryRunner类执行SQL语句, 并将结果集按指定要求返回.</p>
+<ul>
+<li>
+<p>QueryRunner类简单化了SQL查询，它与ResultSetHandler组合在一起使用可以完成大部分的数据库操作，能够大大减少编码量.</p>
+</li>
+<li>
+<p>QueryRunner类提供了两个构造方法:</p>
+</li>
+</ul>
+<p>  –默认的构造方法</p>
+<p>  –需要一个 javax.sql.DataSource 来作参数的构造方法.</p>
+<ul>
+<li>QueryRunner类的主要方法:</li>
+</ul>
+<p>  –public Object query(Connection conn, String sql, Object[] params, ResultSetHandler rsh) throws SQLException：执行一个查询操作，在这个查询中，对象数组中的每个元素值被用来作为查询语句的置换参数。该方法会自行处理 PreparedStatement 和 ResultSet 的创建和关闭.</p>
+<p>  –public Object query(String sql, Object[] params, ResultSetHandler rsh) throws SQLException:　几乎与第一种方法一样；唯一的不同在于它不将数据库连接提供给方法，并且它是从提供给构造方法的数据源(DataSource) 或使用的setDataSource 方法中重新获得 Connection.</p>
+<p>  –public Object query(Connection conn, String sql, ResultSetHandler rsh) throws SQLException : 执行一个不需要置换参数的查询操作.</p>
+<p>  –public int update(Connection conn, String sql, Object[] params) throws SQLException:用来执行一个更新（插入、更新或删除）操作.</p>
+<p>  –public int update(Connection conn, String sql) throws SQLException：用来执行一个不需要置换参数的更新操作.</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testDBUtils</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//1. 创建执行SQL的 QueryRunner 对象</span></span><br><span class="line">    QueryRunner qr = <span class="keyword">new</span> QueryRunner();</span><br><span class="line">    <span class="comment">//2. 准备SQL语句,SQL可以是DELETE INSERT UPDATE操作</span></span><br><span class="line">    String sql = <span class="string">"delete from Student where id in (?,?)"</span>;</span><br><span class="line">    Connection conn = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">//4. 准备数据库连接</span></span><br><span class="line">        conn = JDBCTools.getConnection();</span><br><span class="line">        <span class="comment">//5. 传入相应参数,执行SQL</span></span><br><span class="line">        qr.update(conn, sql, <span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        JDBCTools.release(<span class="keyword">null</span>, <span class="keyword">null</span>, conn);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-DBUtils的查询操作">3.DBUtils的查询操作</h2>
+<blockquote>
+<p>通过DBUtils的QueryRunner类的query()方法实现数据库查询, 但是这里要给query方法的第三个参数传一个 ResultSetHandler 接口的实现类.</p>
+<ul>
+<li>
+<p>该接口用于处理 java.sql.ResultSet，将数据按要求转换为另一种形式.</p>
+</li>
+<li>
+<p>ResultSetHandler 接口提供了一个单独的方法: Object handle (java.sql.ResultSet .rs), 处理结果集时就是调用的该方法, 且query()方法的返回值就是 ResultSetHandler 实现类的 handle() 方法的返回值.</p>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>DBUtils提供的 ResultSetHandler 的实现类:</p>
+<ul>
+<li>
+<p>BeanHandler：将结果集中的第一行数据封装到一个对应的JavaBean实例中.</p>
+</li>
+<li>
+<p>BeanListHandler：将结果集中的每一行数据都封装到一个对应的JavaBean实例中，存放到List里.</p>
+</li>
+<li>
+<p>MapHandler：将结果集中的第一行数据封装到一个Map里，key是列名，value就是对应的值.</p>
+</li>
+<li>
+<p>MapListHandler：将结果集中的每一行数据都封装到一个Map里，然后再存放到List.</p>
+</li>
+<li>
+<p>ScalarHandler: 把结果集转换为一个值(该值可以是任意基本类型和String、Date 等)返回</p>
+</li>
+<li>
+<p>ArrayHandler：把结果集中的第一行数据转成对象数组.</p>
+</li>
+<li>
+<p>ArrayListHandler：把结果集中的每一行数据都转成一个数组，再存放到List中.</p>
+</li>
+<li>
+<p>ColumnListHandler：将结果集中某一列的数据存放到List中。</p>
+</li>
+<li>
+<p>KeyedHandler(name)：将结果集中的每一行数据都封装到一个Map里，再把这些map再存到一个map里，其key为指定的key.</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="A-BeanListHandler">A.BeanListHandler</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testBeanListHandler</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    QueryRunner qr = <span class="keyword">new</span> QueryRunner();</span><br><span class="line">    String sql = <span class="string">"SELECT id,name,email,birth date from Student where id in (?,?)"</span>;</span><br><span class="line">    Connection conn = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        conn = JDBCTools.getConnection();</span><br><span class="line">        List&lt;Student&gt; list = qr.query(conn, sql, <span class="keyword">new</span> BeanListHandler&lt;Student&gt;(Student.class),<span class="number">3</span>,<span class="number">4</span>);</span><br><span class="line">        System.out.println(list);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        JDBCTools.release(<span class="keyword">null</span>, <span class="keyword">null</span>, conn);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="B-MapListHandler">B.MapListHandler</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMapListHandler</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    QueryRunner qr = <span class="keyword">new</span> QueryRunner();</span><br><span class="line">    String sql = <span class="string">"SELECT id,name,email,birth date from Student where id in (?,?)"</span>;</span><br><span class="line">    Connection conn = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        conn = JDBCTools.getConnection();</span><br><span class="line">        List&lt;Map&lt;String, Object&gt;&gt; map = qr.query(conn, sql, <span class="keyword">new</span> MapListHandler(),<span class="number">3</span>,<span class="number">4</span>);</span><br><span class="line">        System.out.println(map);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        JDBCTools.release(<span class="keyword">null</span>, <span class="keyword">null</span>, conn);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="C-ScalarHandler">C.ScalarHandler</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testScalarHandler</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    QueryRunner qr = <span class="keyword">new</span> QueryRunner();</span><br><span class="line">    String sql = <span class="string">"SELECT name,birth date from Student where id in (?,?)"</span>;</span><br><span class="line">    Connection conn = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        conn = JDBCTools.getConnection();</span><br><span class="line">        <span class="comment">//注意: 这个查询结果只是一个值</span></span><br><span class="line">        Object obj = qr.query(conn, sql, <span class="keyword">new</span> ScalarHandler&lt;&gt;(),<span class="number">3</span>,<span class="number">4</span>);</span><br><span class="line">        System.out.println(obj);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        JDBCTools.release(<span class="keyword">null</span>, <span class="keyword">null</span>, conn);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+            <br>
+            
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://crainyday.gitee.io/JDBC1-10.html>https://crainyday.gitee.io/JDBC1-10.html</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <fancybox><img src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/alipay.png'
+        
+          height='64px'
+        ></fancybox>
+      
+    
+      
+        <fancybox><img src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/wechat.png'
+        
+          height='64px'
+        ></fancybox>
+      
+    
+  </div>
+</section>
+
+  
+
+
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-12T15:00:13+08:00">
+  <a class='notlink'>
+    <i class="fas fa-save" aria-hidden="true"></i>
+    <p>更新于：2020年3月12日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JDBC/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i><p>JDBC</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JavaSE/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i><p>JavaSE</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Java/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i><p>Java</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Database/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i><p>Database</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard" aria-hidden="true"></i>
+      <p>字数：1.3k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+      <p>时长：5分钟</p>
+    </a>
+  </div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://crainyday.gitee.io/JDBC1-10.html&title=JDBC-DBUtils - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more05.png&summary=DBUtils------Apache下的一个JDBC开源工具类库"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://crainyday.gitee.io/JDBC1-10.html&title=JDBC-DBUtils - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more05.png&summary=DBUtils------Apache下的一个JDBC开源工具类库"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://crainyday.gitee.io/JDBC1-10.html&title=JDBC-DBUtils - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more05.png&summary=DBUtils------Apache下的一个JDBC开源工具类库"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAAD4CAAAAADkunTXAAACQUlEQVR42u3aS5bCQAgAwNz/0jMHmEX49WhI9U6fdijcIHD9vPRc4ODg4ODgi+BX8fy58Ob96PfunteNFxwcHBwcfCM8XAAkgdlERRNTjRccHBwcHHwzPFpAVMHZBGSff/t5cHBwcHBw8HBjINuQqCYCHBwcHBwcvA6fbmR0Ew8ODg4ODv5GeLfB/+nGxb9NUsDBwcHBwb8IXl6Y+9Drj282goODg4ODfwG8e6qNiuj72YLlNl5wcHBwcPBF8GqBEE1ItdA4FR84ODg4OPhGeHWxLjooiN4/lbD0QAEcHBwcHPyB8ClIF9gdKJQ7MODg4ODg4Avg3YImC0sHXGxYgIODg4ODb4ZnB/HX4VNdCBibpICDg4ODgz8Qfrqw6Ca0Gm94kgIODg4ODv5AeLWxEP7jHwy8+vx0IsDBwcHBwRfDuw37akJPDTbAwcHBwcHfCE9fWCwougsD5YECODg4ODj4AngVOlXITC0cRAstcHBwcHDwjfBjDfyhe7KFTLiAAQcHBwcHXwjvPjD7+lRjBBwcHBwc/M3wuwInG8Cpxb7o/eDg4ODg4Jvg03/8pwf7U40OcHBwcHDwjfCpAcL0QmB28N9e8AMHBwcHB38wvFuwVBsT3YJobKAADg4ODg6+AF4tIO4SkU1AudHQnaSAg4ODg4ODhwOaSlx5oAAODg4ODg5eXvSbKmDCgw9wcHBwcPDF8OxA4fSi3/gPAA4ODg4OvhBeLQyqAU4PHMKLBODg4ODg4Ivgbzvg4ODg4OALzi+u+wM9mzA/NAAAAABJRU5ErkJggg==">
+          </div>
+        </div>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/Vue1-0.html'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Vue初识</p>
+                <p class='content'>初步认识VUE
+
+1. Vue.js是什么?
+
+
+
+一位华裔前Google工程师(尤雨溪)开发的前端js库
+
+
+
+
+作用: 动态构建用户界面即前端界面
+
+
+
+
+特点:
+
+①遵循MVVM模式, M...</p>
+              </a>
+            
+            
+              <a class='next' href='/JDBC1-9.html'>
+                <p class='title'>JDBC-数据库连接池<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>JAVA------数据库连接池
+
+1.JDBC数据库连接池的必要性
+
+
+在使用开发基于数据库的web程序时，传统的模式基本是按以下步骤:
+
+–在主程序（如servlet、beans）中建立数据...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JDBC1-0.html" title="JDBC初识" rel="bookmark">JDBC初识</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JDBC1-1.html" title="JDBC-DriverManger" rel="bookmark">JDBC-DriverManger</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JDBC1-2.html" title="JDBC-以OOP编写JDBC程序" rel="bookmark">JDBC-以OOP编写JDBC程序</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JDBC1-3.html" title="JDBC-PreparedStatement" rel="bookmark">JDBC-PreparedStatement</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JDBC1-5.html" title="JDBC-DAO设计模式" rel="bookmark">JDBC-DAO设计模式</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments shadow floatable">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'JDBC-DBUtils',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JDBC1-0.html" title="JDBC初识" rel="bookmark">JDBC初识</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JDBC1-1.html" title="JDBC-DriverManger" rel="bookmark">JDBC-DriverManger</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JDBC1-2.html" title="JDBC-以OOP编写JDBC程序" rel="bookmark">JDBC-以OOP编写JDBC程序</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JDBC1-3.html" title="JDBC-PreparedStatement" rel="bookmark">JDBC-PreparedStatement</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JDBC1-5.html" title="JDBC-DAO设计模式" rel="bookmark">JDBC-DAO设计模式</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+
+<section class="widget grid shadow floatable desktop mobile">
+  
+  <header>
+    
+      <i class="fas fa-map-signs fa-fw" aria-hidden="true"></i><span class='name'>实用文档</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="grid navigation fixed">
+      
+        <a class="flat-box" title="/maven_05.html" href="/maven_05.html"
+          
+          
+          id="maven_05.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Maven工程
+        </a>
+      
+        <a class="flat-box" title="/Flask.html" href="/Flask.html"
+          
+          
+          id="Flask.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Flask应用
+        </a>
+      
+        <a class="flat-box" title="/Hexo.html" href="/Hexo.html"
+          
+          
+          id="Hexo.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Gitee搭站
+        </a>
+      
+        <a class="flat-box" title="/Ubuntu_006.html" href="/Ubuntu_006.html"
+          
+          
+          id="Ubuntu_006.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          v2ray
+        </a>
+      
+    </div>
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Apache—DBUtils简介"><span class="toc-text">1.Apache—DBUtils简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-DBUtils的更新操作"><span class="toc-text">2.DBUtils的更新操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-DBUtils的查询操作"><span class="toc-text">3.DBUtils的查询操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-BeanListHandler"><span class="toc-text">A.BeanListHandler</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-MapListHandler"><span class="toc-text">B.MapListHandler</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-ScalarHandler"><span class="toc-text">C.ScalarHandler</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix ">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='true'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='2709912289'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="mailto:crainyday@qq.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/crainyday"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=1794783182"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        <div id='sitetime'></div>
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作为主题
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://crainyday.gitee.io">Copyright © 2019-2021 CRainyDay</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js" async></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_01.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_02.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_03.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_04.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_05.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js" async></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js" async></script>
+
+  
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "47GAhNwwbbNreaJdvDNWHhOo-gzGzoHsz",
+    appKey: "pndiLFAmJvnhcIutpj4HIj6t",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    visitor: 'false',
+    highlight:'true'
+  })
+  </script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    function on_success(){
+      let $btn = $('.highlight .code pre');
+      console.log($btn);
+    }
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copyed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-clipboard-check');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPYED';
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-exclamation-triangle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "[object Object]";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/sitetime.min.js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/clicklove.min.js'></script>
+
+
+  <script>setLoadingBarProgress(100);</script>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
+</html>

@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.1.2'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>安装Gitlab - CRainyDay</title>
+  
+    <meta name="keywords" content="Git,GitHub">
+  
+  
+    <meta name="description" content="在局域网环境下, 搭建局域网的代码托管中心------Gitlab.
+这里我用Virtual Box虚拟机搭建的Gitlab.
+系统是CentOS6.
+注意, 一定要在安装前做一个系统的快照, 防止安装过程中出错.">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?bf368df5385d5be3472f3155e4cdb303";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow floatable blur">
+
+  <div class='wrapper'>
+    <div class='nav-sub container--flex'>
+      <a class="logo flat-box"></a>
+      <ul class='switcher h-list'>
+        <li><a class="s-comment flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main container container--flex">
+      
+        
+        <a class="logo flat-box" target="_self" href='/'>
+          
+          
+            <i class='fas fa-home'></i>
+          
+          
+            CRainyDay
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='h-list'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  
+                    <i class='fas fa-folder-open fa-fw'></i>
+                  
+                  分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  
+                    <i class='fas fa-archive fa-fw'></i>
+                  
+                  归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  
+                    <i class='fas fa-tags fa-fw'></i>
+                  
+                  标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  
+                    <i class='fas fa-link fa-fw'></i>
+                  
+                  友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  
+                    <i class='fas fa-ellipsis-v fa-fw'></i>
+                  
+                  更多
+                </a>
+                
+                  <ul class="submenu">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/about/music.html
+                  
+                  
+                  
+                    id="aboutmusic.html"
+                  >
+                  
+                    <i class='fas fa-music fa-fw'></i>
+                  
+                  往后余生
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/bbs/
+                  
+                  
+                  
+                    id="bbs"
+                  >
+                  
+                    <i class='fas fa-comment-alt fa-fw'></i>
+                  
+                  留言
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  
+                    <i class='fas fa-info-circle fa-fw'></i>
+                  
+                  关于
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      
+        <div class="m_search">
+          <form name="searchform" class="form u-search-form">
+            <i class="icon fas fa-search fa-fw"></i>
+            <input type="text" class="input u-search-input" placeholder="搜索" />
+          </form>
+        </div>
+      
+
+			<ul class='switcher h-list'>
+				
+					<li><a class="s-search flat-btn fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li><a class="s-menu flat-btn fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<ul class="menu-phone navigation white-box">
+  
+  
+    <li>
+      <a class="flat-box" href=/
+        
+        
+        
+          id="home"
+        >
+        
+          <i class='fas fa-home fa-fw'></i>
+        
+        博客
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/archives/
+        
+        
+        
+          id="archives"
+        >
+        
+          <i class='fas fa-archive fa-fw'></i>
+        
+        归档
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/categories/
+        
+        
+        
+          id="categories"
+        >
+        
+          <i class='fas fa-folder-open fa-fw'></i>
+        
+        分类
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/friends/
+        
+        
+        
+          id="friends"
+        >
+        
+          <i class='fas fa-link fa-fw'></i>
+        
+        友链
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/bbs/
+        
+        
+        
+          id="bbs"
+        >
+        
+          <i class='fas fa-comment-alt fa-fw'></i>
+        
+        留言
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/about/
+        
+        
+        
+          id="about"
+        >
+        
+          <i class='fas fa-info-circle fa-fw'></i>
+        
+        关于
+      </a>
+    </li>
+  
+</ul>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box shadow floatable article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+      <a title='安装Gitlab' href='/Git_GitHub_04.html'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more07.png'></a>
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/Git_GitHub_04.html">
+        安装Gitlab
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+<div class='new-meta-item author'>
+  <a href="https://crainyday.gitee.io" rel="nofollow">
+    <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/avatar.png">
+    <p>crainyday</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/GitHub/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>Git&nbsp;/&nbsp;GitHub</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-edit" aria-hidden="true"></i>
+    <p>发布于：2020年3月27日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard" aria-hidden="true"></i>
+      <p>字数：802字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+      <p>时长：3分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>在局域网环境下, 搭建局域网的代码托管中心------Gitlab.</p>
+<p>这里我用Virtual Box虚拟机搭建的Gitlab.</p>
+<p>系统是CentOS6.</p>
+<p>注意, 一定要在安装前做一个系统的快照, 防止安装过程中出错.</p>
+<a id="more"></a>
+<h2 id="1-安装前准备">1.安装前准备</h2>
+<h3 id="Gitlab安装环境搭建">Gitlab安装环境搭建</h3>
+<ul>
+<li>这里用的是Virtual Box虚拟机.</li>
+<li>系统: CentOS6(干净的系统, 什么都没安装过).</li>
+<li>内存: 2GB.</li>
+<li>硬盘: 20GB. 硬盘是在SSD上的.</li>
+<li><red>注意: 安装之前做一个系统快照.</red></li>
+<li><red>注意: 安装完后Gitlab会开机自启, 和之前比会开机特别慢.</red></li>
+</ul>
+<h3 id="官网介绍">官网介绍</h3>
+<blockquote>
+<ul>
+<li>官网: <a href="https://about.gitlab.com/" target="_blank" rel="noopener">Gitlab</a>.</li>
+<li>可以按照官网的介绍安装Gitlab, 只不过可能会比较慢, 因为会下载一个大约八九百MB的文件(gitlab-ee或gitlab-ce).</li>
+<li>官网的安装介绍: 安装<a href="https://about.gitlab.com/installation/" target="_blank" rel="noopener">gitlab</a>.</li>
+</ul>
+</blockquote>
+<h3 id="下载gitlab-ce">下载gitlab-ce</h3>
+<ul>
+<li>下载地址: <a href="https://packages.gitlab.com/gitlab/gitlab-ce?page=1" target="_blank" rel="noopener">gitlab-ce</a>.</li>
+<li>下载你需要的版本, 我这里下载的是最新版的.</li>
+<li>注意: 最新版的不一定在上边, 要向下找一找, 如图(我安装时最新为12.9.1).</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_04_06.png" alt="Git_GitHub_04_06"></p>
+<h3 id="上传文件">上传文件</h3>
+<ul>
+<li>
+<p>将你下载的gitlab-ce上传到你的虚拟机系统的<code>/opt</code>目录下.</p>
+</li>
+<li>
+<p>将下述shell命令复制到新建的<code>/opt/install.sh</code>文件中:</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm -ivh /opt/gitlab-ce-12.9.1-ce.0.el6.x86_64.rpm</span><br><span class="line">sudo yum install -y curl policycoreutils-python openssh-server cronie</span><br><span class="line">sudo lokkit -s http -s ssh</span><br><span class="line">sudo yum install postfix</span><br><span class="line">sudo service postfix start</span><br><span class="line">sudo chkconfig postfix on</span><br><span class="line">curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | sudo bash</span><br><span class="line">sudo EXTERNAL_URL="http://gitlab.example.com" yum -y install gitlab-ce</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="2-安装gitlab">2.安装gitlab</h2>
+<ul>
+<li>这里的新版本和旧版本指的是: 最新版本的gitlab-ce的gitlab, 和旧版本的gitlab-ce的gitlab.</li>
+</ul>
+<h3 id="安装新版本">安装新版本</h3>
+<ul>
+<li>
+<p>注意: 要修改之前的<code>opt/install.sh</code>文件中第一行的rpm包名为最新版本的, 系统也要修改正确.</p>
+</li>
+<li>
+<p>例如: /opt/gitlab-ce-版本号-ce.0.el系统版本.x86_64.rpm</p>
+</li>
+<li>
+<p>之后, 执行:</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /opt</span><br><span class="line">./install.sh</span><br></pre></td></tr></table></figure>
+<ul>
+<li>等待安装完毕, 重启系统即可.</li>
+</ul>
+<h3 id="安装旧版本">安装旧版本</h3>
+<ul>
+<li>修改<code>opt/install.sh</code>文件:</li>
+<li>注意: 要修改gitlab-ce的版本号, 和CentOS的系统版本号.</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm -ivh /opt/gitlab-ce-12.9.1-ce.0.el6.x86_64.rpm</span><br><span class="line">sudo yum install -y curl policycoreutils-python openssh-server cronie</span><br><span class="line">sudo lokkit -s http -s ssh</span><br><span class="line">sudo yum install postfix</span><br><span class="line">sudo service postfix start</span><br><span class="line">sudo chkconfig postfix on</span><br><span class="line">curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | sudo bash</span><br><span class="line">sudo EXTERNAL_URL="http://gitlab.example.com" yum -y install gitlab-ce-12.9.1-ce.0.el6.x86_64</span><br></pre></td></tr></table></figure>
+<ul>
+<li>之后, 执行<code>install.sh</code>脚本安装即可, 成功后重启系统.</li>
+</ul>
+<hr>
+<h2 id="3-gitlab服务操作">3.gitlab服务操作</h2>
+<h3 id="初始化gitlab的配置">初始化gitlab的配置</h3>
+<ul>
+<li>执行命令:</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitlab-ctl reconfigure</span><br></pre></td></tr></table></figure>
+<ul>
+<li>注意: 初始化配置过程非常慢, 至少3~4分钟. 如图, 可能会停在<code>action run</code>:</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_04_03.png" alt="Git_GitHub_04_03"></p>
+<ul>
+<li>耐心等待即可.</li>
+</ul>
+<h3 id="启动gitlab服务">启动gitlab服务</h3>
+<ul>
+<li>执行命令:</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitlab-ctl start</span><br></pre></td></tr></table></figure>
+<ul>
+<li>注意: 之后执行<code>gitlab-ctl start</code>或<code>gitlab-ctl stop</code>等命令可能会出现下图情况, 没有权限:</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_04_01.png" alt="Git_GitHub_04_01"></p>
+<ul>
+<li>以root权限执行命令即可:</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_04_05.png" alt="Git_GitHub_04_05"></p>
+<ul>
+<li>可通过<code>gitlab-ctl help</code>查看命令帮助.</li>
+</ul>
+<hr>
+<h2 id="4-浏览器访问">4.浏览器访问</h2>
+<blockquote>
+<p>直接访问Linux服务器的 IP 地址即可, 如果想访问 EXTERNAL_URL 指定的域名还需要配置服务器和本地的 hosts 文件.</p>
+</blockquote>
+<ul>
+<li>初次登录时要为gitlab的root用户设置密码, 之后直接登录即可:</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_04_02.png" alt="Git_GitHub_04_02"></p>
+<ul>
+<li>进入之后的操作, 和其他的远程代码托管中心类似.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_04_04.png" alt="Git_GitHub_04_04"></p>
+
+          
+            <br>
+            
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://crainyday.gitee.io/Git_GitHub_04.html>https://crainyday.gitee.io/Git_GitHub_04.html</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <fancybox><img src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/alipay.png'
+        
+          height='64px'
+        ></fancybox>
+      
+    
+      
+        <fancybox><img src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/wechat.png'
+        
+          height='64px'
+        ></fancybox>
+      
+    
+  </div>
+</section>
+
+  
+
+
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-24T13:22:29+08:00">
+  <a class='notlink'>
+    <i class="fas fa-save" aria-hidden="true"></i>
+    <p>更新于：2021年2月24日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Git/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i><p>Git</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/GitHub/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i><p>GitHub</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard" aria-hidden="true"></i>
+      <p>字数：802字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+      <p>时长：3分钟</p>
+    </a>
+  </div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://crainyday.gitee.io/Git_GitHub_04.html&title=安装Gitlab - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more07.png&summary=在局域网环境下, 搭建局域网的代码托管中心------Gitlab.
+这里我用Virtual Box虚拟机搭建的Gitlab.
+系统是CentOS6.
+注意, 一定要在安装前做一个系统的快照, 防止安装过程中出错."
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://crainyday.gitee.io/Git_GitHub_04.html&title=安装Gitlab - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more07.png&summary=在局域网环境下, 搭建局域网的代码托管中心------Gitlab.
+这里我用Virtual Box虚拟机搭建的Gitlab.
+系统是CentOS6.
+注意, 一定要在安装前做一个系统的快照, 防止安装过程中出错."
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://crainyday.gitee.io/Git_GitHub_04.html&title=安装Gitlab - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more07.png&summary=在局域网环境下, 搭建局域网的代码托管中心------Gitlab.
+这里我用Virtual Box虚拟机搭建的Gitlab.
+系统是CentOS6.
+注意, 一定要在安装前做一个系统的快照, 防止安装过程中出错."
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAAAAACi5bZQAAAC+0lEQVR42u3aS3ICMQwFQO5/6WSfhBr9yCDT3gHD2G5vXkl+fBl/jgcCMGDAgAEDZg3Mozh+vfDH98+ej36++v/VOqr7AQMGDBgwYMDsgwkHoODzV89F4brQ2XWCAQMGDBgwYPbCRANWNnBFn58CLO8HDBgwYMCAAfOxMNHCVjYYdgthYMCAAQMGDBgw2QVm31+FAgMGDBgwYMCASTeomgvvzlN9PxgwYMCAAQPmHJjsiG7grs/l/YABAwYMGDBg1sB0R7WxFg2C3QZeej1gwIABAwYMmDUwUxeBpgtY1YZd9yITGDBgwIABA2YPTDXARQtX1Y1mD6I7DxgwYMCAAQNmH0x0w9nfs4WnbnCMFsIu5wMDBgwYMGDArIOpQmQLXlGwbsOu2rgDAwYMGDBgwOyDqQayqaA3PX81kIIBAwYMGDBg9sBEC0LVBterLxZNXSgCAwYMGDBgwOyD6V7k6RaKqv/P/j7eiQQDBgwYMGDA3A4zfVGn24CbaqxV5wUDBgwYMGDA7IHJBrfqxNmgVgVvF9DAgAEDBgwYMMfAvLpAVW6MFRuAYMCAAQMGDJjzYKpBKrvQ6QbZVPADAwYMGDBgwOyDyW6wu+Ap0KkDeRrwwIABAwYMGDBvD1MNctMNuezBTF1kCidfMGDAgAEDBswamOyCulDdoFcFTAc8MGDAgAEDBszbw3SDX7Uxlw5kQxeIwIABAwYMGDDnwHQLU1GwbACsBsbwwYEBAwYMGDBgjoG5q6E2dSEoG/TAgAEDBgwYMHtguiPbkOs21qYO8unzYMCAAQMGDJg1MN2gNFW4qgJn4dKFKjBgwIABAwbM28NUA93U5yxY9qDCARIMGDBgwIABsxZmulCUbbRVC1f/1okEAwYMGDBgwBwLk91oNrBV4cP7AQMGDBgwYMB8HEy6sdV8fzcIhi8OgQEDBgwYMGDWwLwqSEXfE22cZaHBgAEDBgwYMOfCdBtX2Y1XG3fdYHm5bjBgwIABAwbMGhgDDBgwYMCAAbNsfAO8DGWOBoCFXQAAAABJRU5ErkJggg==">
+          </div>
+        </div>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/SSM.html'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Maven下的SSM整合</p>
+                <p class='content'>在Eclipse下使用Maven创建和管理SSM项目.
+
+1.使用Maven搭建JavaWeb项目
+
+  具体搭建方法: 创建Maven版的Web工程
+
+2.使用Maven导入SSM框架所需ja...</p>
+              </a>
+            
+            
+              <a class='next' href='/Git_GitHub_03.html'>
+                <p class='title'>Eclipse中使用Git<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>在Eclipse中使用Git:
+①将工程初始化为本地库.
+②在Eclipse中忽略一些配置文件, 不让Git对其管理.
+③推送本地库到远程库.
+④克隆远程库到本地.
+⑤在Eclipse中解决冲突...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Git_GitHub_01.html" title="版本控制及Git简介" rel="bookmark">版本控制及Git简介</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Git_GitHub_02.html" title="Git的常用命令" rel="bookmark">Git的常用命令</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Git_GitHub_03.html" title="Eclipse中使用Git" rel="bookmark">Eclipse中使用Git</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Hexo2.html" title="利用Hexo和GitHub搭建一个静态博客" rel="bookmark">利用Hexo和GitHub搭建一个静态博客</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments shadow floatable">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '安装Gitlab',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Git_GitHub_01.html" title="版本控制及Git简介" rel="bookmark">版本控制及Git简介</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Git_GitHub_02.html" title="Git的常用命令" rel="bookmark">Git的常用命令</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Git_GitHub_03.html" title="Eclipse中使用Git" rel="bookmark">Eclipse中使用Git</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Hexo2.html" title="利用Hexo和GitHub搭建一个静态博客" rel="bookmark">利用Hexo和GitHub搭建一个静态博客</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+
+<section class="widget grid shadow floatable desktop mobile">
+  
+  <header>
+    
+      <i class="fas fa-map-signs fa-fw" aria-hidden="true"></i><span class='name'>实用文档</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="grid navigation fixed">
+      
+        <a class="flat-box" title="/maven_05.html" href="/maven_05.html"
+          
+          
+          id="maven_05.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Maven工程
+        </a>
+      
+        <a class="flat-box" title="/Flask.html" href="/Flask.html"
+          
+          
+          id="Flask.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Flask应用
+        </a>
+      
+        <a class="flat-box" title="/Hexo.html" href="/Hexo.html"
+          
+          
+          id="Hexo.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Gitee搭站
+        </a>
+      
+        <a class="flat-box" title="/Ubuntu_006.html" href="/Ubuntu_006.html"
+          
+          
+          id="Ubuntu_006.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          v2ray
+        </a>
+      
+    </div>
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-安装前准备"><span class="toc-text">1.安装前准备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Gitlab安装环境搭建"><span class="toc-text">Gitlab安装环境搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#官网介绍"><span class="toc-text">官网介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#下载gitlab-ce"><span class="toc-text">下载gitlab-ce</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上传文件"><span class="toc-text">上传文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-安装gitlab"><span class="toc-text">2.安装gitlab</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装新版本"><span class="toc-text">安装新版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装旧版本"><span class="toc-text">安装旧版本</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-gitlab服务操作"><span class="toc-text">3.gitlab服务操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化gitlab的配置"><span class="toc-text">初始化gitlab的配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动gitlab服务"><span class="toc-text">启动gitlab服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-浏览器访问"><span class="toc-text">4.浏览器访问</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix ">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='true'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='2709912289'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="mailto:crainyday@qq.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/crainyday"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=1794783182"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        <div id='sitetime'></div>
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作为主题
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://crainyday.gitee.io">Copyright © 2019-2021 CRainyDay</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js" async></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_01.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_02.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_03.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_04.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_05.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js" async></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js" async></script>
+
+  
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "47GAhNwwbbNreaJdvDNWHhOo-gzGzoHsz",
+    appKey: "pndiLFAmJvnhcIutpj4HIj6t",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    visitor: 'false',
+    highlight:'true'
+  })
+  </script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    function on_success(){
+      let $btn = $('.highlight .code pre');
+      console.log($btn);
+    }
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copyed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-clipboard-check');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPYED';
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-exclamation-triangle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "[object Object]";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/sitetime.min.js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/clicklove.min.js'></script>
+
+
+  <script>setLoadingBarProgress(100);</script>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
+</html>

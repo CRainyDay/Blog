@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.1.2'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>Java数组 - CRainyDay</title>
+  
+    <meta name="keywords" content="JavaSE,Java">
+  
+  
+    <meta name="description" content="Java基本语法续
+Java数组">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?bf368df5385d5be3472f3155e4cdb303";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow floatable blur">
+
+  <div class='wrapper'>
+    <div class='nav-sub container--flex'>
+      <a class="logo flat-box"></a>
+      <ul class='switcher h-list'>
+        <li><a class="s-comment flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main container container--flex">
+      
+        
+        <a class="logo flat-box" target="_self" href='/'>
+          
+          
+            <i class='fas fa-home'></i>
+          
+          
+            CRainyDay
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='h-list'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  
+                    <i class='fas fa-folder-open fa-fw'></i>
+                  
+                  分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  
+                    <i class='fas fa-archive fa-fw'></i>
+                  
+                  归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  
+                    <i class='fas fa-tags fa-fw'></i>
+                  
+                  标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  
+                    <i class='fas fa-link fa-fw'></i>
+                  
+                  友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  
+                    <i class='fas fa-ellipsis-v fa-fw'></i>
+                  
+                  更多
+                </a>
+                
+                  <ul class="submenu">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/about/music.html
+                  
+                  
+                  
+                    id="aboutmusic.html"
+                  >
+                  
+                    <i class='fas fa-music fa-fw'></i>
+                  
+                  往后余生
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/bbs/
+                  
+                  
+                  
+                    id="bbs"
+                  >
+                  
+                    <i class='fas fa-comment-alt fa-fw'></i>
+                  
+                  留言
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  
+                    <i class='fas fa-info-circle fa-fw'></i>
+                  
+                  关于
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      
+        <div class="m_search">
+          <form name="searchform" class="form u-search-form">
+            <i class="icon fas fa-search fa-fw"></i>
+            <input type="text" class="input u-search-input" placeholder="搜索" />
+          </form>
+        </div>
+      
+
+			<ul class='switcher h-list'>
+				
+					<li><a class="s-search flat-btn fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li><a class="s-menu flat-btn fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<ul class="menu-phone navigation white-box">
+  
+  
+    <li>
+      <a class="flat-box" href=/
+        
+        
+        
+          id="home"
+        >
+        
+          <i class='fas fa-home fa-fw'></i>
+        
+        博客
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/archives/
+        
+        
+        
+          id="archives"
+        >
+        
+          <i class='fas fa-archive fa-fw'></i>
+        
+        归档
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/categories/
+        
+        
+        
+          id="categories"
+        >
+        
+          <i class='fas fa-folder-open fa-fw'></i>
+        
+        分类
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/friends/
+        
+        
+        
+          id="friends"
+        >
+        
+          <i class='fas fa-link fa-fw'></i>
+        
+        友链
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/bbs/
+        
+        
+        
+          id="bbs"
+        >
+        
+          <i class='fas fa-comment-alt fa-fw'></i>
+        
+        留言
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/about/
+        
+        
+        
+          id="about"
+        >
+        
+          <i class='fas fa-info-circle fa-fw'></i>
+        
+        关于
+      </a>
+    </li>
+  
+</ul>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box shadow floatable article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+      <a title='Java数组' href='/JavaSE2-3.html'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more04.png'></a>
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/JavaSE2-3.html">
+        Java数组
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+<div class='new-meta-item author'>
+  <a href="https://crainyday.gitee.io" rel="nofollow">
+    <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/avatar.png">
+    <p>crainyday</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Java/JavaSE/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>Java&nbsp;/&nbsp;JavaSE</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-edit" aria-hidden="true"></i>
+    <p>发布于：2019年3月18日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard" aria-hidden="true"></i>
+      <p>字数：1.2k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+      <p>时长：5分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>Java基本语法续</p>
+<p>Java数组</p>
+<a id="more"></a>
+<h2 id="font-color-black-一-一维数组-font"><font color='black'>一.一维数组</font></h2>
+<p>数组: 相同数据类型的数据的组合.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//如: 多个int</span></span><br><span class="line"><span class="keyword">int</span> score1 = <span class="number">72</span>;</span><br><span class="line"><span class="keyword">int</span> score2 = <span class="number">90</span>;</span><br><span class="line"><span class="keyword">int</span> score3 = <span class="number">59</span>;</span><br><span class="line"><span class="comment">//使用数组存储</span></span><br><span class="line"><span class="keyword">int</span>[] scores1 = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">72</span>,<span class="number">90</span>,<span class="number">59</span>&#125;;</span><br><span class="line"><span class="comment">//静态初始化:声明并初始化数组与给数组相应的元素赋值操作同时进行</span></span><br><span class="line"><span class="keyword">int</span> scores2[] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];<span class="comment">//动态初始化:声明并初始化数组与数组相应的元素赋值操作分开进行</span></span><br><span class="line">scores2[<span class="number">0</span>] = <span class="number">72</span>;</span><br><span class="line">scores2[<span class="number">1</span>] = <span class="number">90</span>;</span><br><span class="line">scores2[<span class="number">2</span>] = <span class="number">59</span>;</span><br><span class="line"><span class="keyword">int</span>[] arr = &#123;<span class="number">72</span>,<span class="number">90</span>,<span class="number">59</span>&#125;;<span class="comment">//这样可以</span></span><br><span class="line"><span class="comment">//声明数组的错误写法:</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">String[] names = new String[5]&#123;"AA","BB","CC"&#125;;//这样用时不能指定大小</span></span><br><span class="line"><span class="comment">int i[10];</span></span><br><span class="line"><span class="comment">int i = new int[];//i是int型</span></span><br><span class="line"><span class="comment">int[] arr;arr = &#123;10,11,12&#125;;//两句分开不行, 合并为一句可以</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">System.out.println(scores2.length);<span class="comment">//求数组长度</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; scores1.length;i++)&#123;<span class="comment">//遍历数组</span></span><br><span class="line">    System.out.println(scores1[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em><strong>注意</strong></em></p>
+<blockquote>
+<p>  1.不管是动态还是静态初始化数组, 一定在<strong>创建的时候, 就指明了数组的长度</strong><br>
+  2.如何引用数组元素: 通过数组的下角标的方式. 下角标从0开始, 到n-1结束.其中n为数组的长度</p>
+<p>  3.关于数组元素的默认初始化值</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>byte short int long 而言:0</li>
+<li>float double 而言:0.0</li>
+<li>char而言:空格</li>
+<li>boolean而言:false</li>
+<li>引用类型变量而言:null</li>
+</ul>
+</blockquote>
+<h3 id="4-数组的内存结构">4.数组的内存结构</h3>
+<p>内存结构图:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Java/%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="内存结构图"></p>
+<p><font style='color:red;font-weight:bold'>在JAVA中, 凡是new出来的东西, 都会被默认初始化并赋值. new 出来的东西都存放在 <em>堆中</em></font></p>
+<p>对于数组来讲:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Java/%E6%95%B0%E7%BB%84.png" alt="数组"></p>
+<p>字符串: 面向对象之后再看</p>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Java/String.png" alt="String"></p>
+<h2 id="font-color-black-二-二维数组-font"><font color='black'>二.二维数组</font></h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.声明并初始化</span></span><br><span class="line"><span class="comment">//一维:类型后一个[]</span></span><br><span class="line"><span class="keyword">int</span>[] i = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">12</span>];</span><br><span class="line">i[<span class="number">0</span>] = <span class="number">12</span>;</span><br><span class="line"><span class="keyword">int</span>[] j = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">12</span>,<span class="number">3</span>&#125;;</span><br><span class="line"><span class="comment">//二维:类型后两个[]</span></span><br><span class="line">String[][] str = <span class="keyword">new</span> String[<span class="number">4</span>][<span class="number">3</span>];<span class="comment">//4行3列</span></span><br><span class="line">String[][] str1 = <span class="keyword">new</span> String[<span class="number">4</span>][];<span class="comment">//4行, 每行的列可能不一样</span></span><br><span class="line">str1[<span class="number">0</span>] = <span class="keyword">new</span> String[<span class="number">3</span>];</span><br><span class="line"><span class="comment">//...</span></span><br><span class="line">str1[<span class="number">3</span>] = <span class="keyword">new</span> String[<span class="number">5</span>];</span><br><span class="line"><span class="keyword">int</span>[][] arr = <span class="keyword">new</span> <span class="keyword">int</span>[][]&#123;&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;,&#123;<span class="number">4</span>,<span class="number">5</span>&#125;,&#123;<span class="number">6</span>&#125;&#125;;</span><br><span class="line"><span class="comment">//2.如何引用二维数组的元素</span></span><br><span class="line">arr[<span class="number">1</span>][<span class="number">0</span>] = <span class="number">12</span>;</span><br><span class="line"><span class="comment">//3.二维数组的长度:</span></span><br><span class="line">arr.length;<span class="comment">//3</span></span><br><span class="line">arr[<span class="number">1</span>].length;<span class="comment">//2</span></span><br><span class="line"><span class="comment">//4.遍历二维数组</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; arr.length;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; arr[i].length;j++)&#123;</span><br><span class="line">        System.out.print(arr[i][j] + <span class="string">"\t"</span>);	</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println();</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5-二维数组的结构">5.二维数组的结构:</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Java/String%5B%5D%5B%5D.png" alt="String[][]"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Java/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84.png" alt="二维数组"></p>
+<h2 id="font-color-black-三-数组中常见的异常-font"><font color='black'>三.数组中常见的异常</font></h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.数组下标越界的异常:java.lang.ArrayIndexOutOfBoundsException</span></span><br><span class="line"><span class="keyword">int</span>[] i = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line"><span class="comment">//i[0] = 90;</span></span><br><span class="line"><span class="comment">//i[10] = 99;//最大i[9]</span></span><br><span class="line"><span class="comment">//for(int m = 0;m &lt;= i.length;m++)&#123;</span></span><br><span class="line"><span class="comment">//    System.out.println(i[m]);//最大i[i.length-1]</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2.空指针的异常:NullPointerException</span></span><br><span class="line"><span class="comment">//第一种:</span></span><br><span class="line"><span class="comment">//boolean[] b = new boolean[3];</span></span><br><span class="line"><span class="comment">//b = null;</span></span><br><span class="line"><span class="comment">//System.out.println(b[0]);//b已经为空</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//第二种:</span></span><br><span class="line"><span class="comment">//String[] str = new String[4];</span></span><br><span class="line"><span class="comment">//System.out.println(str[3].toString());//没有初始化str[3]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//第三种:</span></span><br><span class="line"><span class="keyword">int</span>[][] j = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>][];</span><br><span class="line"><span class="comment">//j[2][0] = 12;//j的第二维还未初始化</span></span><br></pre></td></tr></table></figure>
+<h2 id="font-color-black-四-数组中常用的算法-font"><font color='black'>四.数组中常用的算法</font></h2>
+<h3 id="求数组元素的最大值-最小值-和-平均数">求数组元素的最大值&amp;最小值&amp;和&amp;平均数</h3>
+<h3 id="数组的复制和反转">数组的复制和反转</h3>
+<p>情况1: 浅复制, 两个数组的引用指向同一片内存空间, 改变一个的内容另一个也会改变</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr1 = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>&#125;;</span><br><span class="line"><span class="keyword">int</span>[] arr2 = arr1;</span><br></pre></td></tr></table></figure>
+<p>情况2: 深复制, 将一片内存里的内容, 复制到另一片内存里(如何实现复制)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr1 = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>&#125;;</span><br><span class="line"><span class="keyword">int</span>[] arr2 = <span class="keyword">new</span> <span class="keyword">int</span>[arr1.length];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; arr1.length;i ++)&#123;</span><br><span class="line">    arr2[i] = arr1[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>数组的反转：<br>
+数组元素的反转</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//①</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; arr.length/<span class="number">2</span>;i++)&#123;</span><br><span class="line">    <span class="keyword">int</span> temp = arr[i];</span><br><span class="line">    arr[i] = arr[arr.length-<span class="number">1</span> - i];</span><br><span class="line">    arr[arr.length - <span class="number">1</span> - i] = temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//②</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">0</span>, y = arr.length - <span class="number">1</span>; x &lt; y; x++, y--) &#123;</span><br><span class="line">    <span class="keyword">int</span> temp = arr[x];</span><br><span class="line">    arr[x] = arr[y];</span><br><span class="line">    arr[y] = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>拓展:String str = “abcdefg”;</p>
+<h3 id="数组的排序">数组的排序</h3>
+<blockquote>
+<ul>
+<li>
+<p>插入排序: 直接插入排序、折半插入排序、Shell排序</p>
+</li>
+<li>
+<p>交换排序: 冒泡排序、快速排序(或分区交换排序)</p>
+</li>
+<li>
+<p>选择排序: 简单选择排序、堆排序</p>
+</li>
+<li>
+<p>归并排序</p>
+</li>
+<li>
+<p>基数排序</p>
+</li>
+</ul>
+</blockquote>
+<p>使用冒泡排序使数组元素从小到大排列</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; arr.length - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>]) &#123;</span><br><span class="line">            <span class="keyword">int</span> temp = arr[j];</span><br><span class="line">            arr[j] = arr[j + <span class="number">1</span>];</span><br><span class="line">            arr[j + <span class="number">1</span>] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用直接选择排序使数组元素从小到大排列</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++)&#123;</span><br><span class="line">    <span class="keyword">int</span> t = i;<span class="comment">//默认i处是最小的</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = i;j &lt; arr.length;j++)&#123;</span><br><span class="line">        <span class="comment">//一旦在i后发现存在比其小的元素，就记录那个元素的下角标</span></span><br><span class="line">        <span class="keyword">if</span>(arr[t] &gt; arr[j])&#123;</span><br><span class="line">            t = j;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(t != i)&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = arr[t];</span><br><span class="line">        arr[t] = arr[i];</span><br><span class="line">        arr[i] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>还可以调用: <em><strong>Arrays工具类</strong></em>: <font style='color:red;font-weight:bold'>Arrays.sort(arr);</font></p>
+
+          
+            <br>
+            
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://crainyday.gitee.io/JavaSE2-3.html>https://crainyday.gitee.io/JavaSE2-3.html</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <fancybox><img src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/alipay.png'
+        
+          height='64px'
+        ></fancybox>
+      
+    
+      
+        <fancybox><img src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/wechat.png'
+        
+          height='64px'
+        ></fancybox>
+      
+    
+  </div>
+</section>
+
+  
+
+
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-12T14:56:01+08:00">
+  <a class='notlink'>
+    <i class="fas fa-save" aria-hidden="true"></i>
+    <p>更新于：2020年3月12日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JavaSE/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i><p>JavaSE</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Java/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i><p>Java</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard" aria-hidden="true"></i>
+      <p>字数：1.2k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+      <p>时长：5分钟</p>
+    </a>
+  </div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://crainyday.gitee.io/JavaSE2-3.html&title=Java数组 - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more04.png&summary=Java基本语法续
+Java数组"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://crainyday.gitee.io/JavaSE2-3.html&title=Java数组 - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more04.png&summary=Java基本语法续
+Java数组"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://crainyday.gitee.io/JavaSE2-3.html&title=Java数组 - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more04.png&summary=Java基本语法续
+Java数组"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAAD4CAAAAADkunTXAAACQUlEQVR42u3aS3LDQAgFQN//0skBUinxgHwK9+wky6VpssgzzOvjTdcLHBwcHBz8EPzVXN99/8uLHj5/ev7pffF+wcHBwcHBD8LLAeCbjTxdVwvztJ/xfsHBwcHBwQ/DqwGiWpA0+KTvj58HBwcHBwcHLzcGug2ENECBg4ODg4OD9wPMdIPVhgM4ODg4ODj43kCher8KrQ4g/nySAg4ODg4O/o/g3UbBX1239wsODg4ODn4IPl1bhUmDSXu/4ODg4ODgh+DVjaSNgurn08AUO8DBwcHBwQ/Cu438aYCZFiQ9YAAODg4ODn4Jng7cq9C0wZAeHOg+Bw4ODg4OfhGeBo4U0G14bBUMHBwcHBwcvD/Y3xocjAMOODg4ODj4Qfj2wbtpg2K7wODg4ODg4Bfh3QN52+B08N8+qAAODg4ODn4QPv2Bv7WxbmAp3wcHBwcHBz8ET19YHQBMBwTV96UDCXBwcHBw8MvwaYNhawCR3i8HI3BwcHBw8EPw8j/+5poODrYKCA4ODg4OfhH+U4Fhen97kAAODg4ODn4Zvn3wrjtQSBseccHAwcHBwcEPwrd++E8DS1qwtBDg4ODg4OCX4NOAkAafbnDqFvZxkgIODg4ODn4AvhVYtgb56WChXBBwcHBwcPDD8O3AMg4czUAFDg4ODg4OnjcCfgtQDTrg4ODg4ODgew39rUZEGQoODg4ODv5G8O5GqxvYOliQXoODg4ODg1+GpysNQFvfr/4BwMHBwcHB3wH+bgscHBwcHPzA+gT2D8NuXc8W8AAAAABJRU5ErkJggg==">
+          </div>
+        </div>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/JavaSE3-1.html'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>面向对象1.1</p>
+                <p class='content'>面向对象的初步认识
+什么是面向对象?
+如何面向对象?
+为什么是面向对象?还面向什么吗?
+
+一.面向对象的初步认识
+1.(了解)面向对象vs面向过程
+例:实现人把大象装进冰箱
+
+面向对象:
+
+12...</p>
+              </a>
+            
+            
+              <a class='next' href='/JavaSE2-2.html'>
+                <p class='title'>Java基本语法2<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>Java的一些基本语法续
+流程控制
+（数组）后续
+
+4.流程控制
+A.顺序结构
+程序从上往下的顺序执行
+B.分支结构
+if-else &amp; switch-case
+123456789101...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JDBC1-0.html" title="JDBC初识" rel="bookmark">JDBC初识</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JDBC1-1.html" title="JDBC-DriverManger" rel="bookmark">JDBC-DriverManger</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JDBC1-10.html" title="JDBC-DBUtils" rel="bookmark">JDBC-DBUtils</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JDBC1-2.html" title="JDBC-以OOP编写JDBC程序" rel="bookmark">JDBC-以OOP编写JDBC程序</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JavaSE11-Thread.html" title="Thread" rel="bookmark">Thread</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments shadow floatable">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Java数组',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JDBC1-0.html" title="JDBC初识" rel="bookmark">JDBC初识</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JDBC1-1.html" title="JDBC-DriverManger" rel="bookmark">JDBC-DriverManger</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JDBC1-10.html" title="JDBC-DBUtils" rel="bookmark">JDBC-DBUtils</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JDBC1-2.html" title="JDBC-以OOP编写JDBC程序" rel="bookmark">JDBC-以OOP编写JDBC程序</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JavaSE11-Thread.html" title="Thread" rel="bookmark">Thread</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+
+<section class="widget grid shadow floatable desktop mobile">
+  
+  <header>
+    
+      <i class="fas fa-map-signs fa-fw" aria-hidden="true"></i><span class='name'>实用文档</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="grid navigation fixed">
+      
+        <a class="flat-box" title="/maven_05.html" href="/maven_05.html"
+          
+          
+          id="maven_05.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Maven工程
+        </a>
+      
+        <a class="flat-box" title="/Flask.html" href="/Flask.html"
+          
+          
+          id="Flask.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Flask应用
+        </a>
+      
+        <a class="flat-box" title="/Hexo.html" href="/Hexo.html"
+          
+          
+          id="Hexo.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Gitee搭站
+        </a>
+      
+        <a class="flat-box" title="/Ubuntu_006.html" href="/Ubuntu_006.html"
+          
+          
+          id="Ubuntu_006.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          v2ray
+        </a>
+      
+    </div>
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#font-color-black-一-一维数组-font"><span class="toc-text">一.一维数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-数组的内存结构"><span class="toc-text">4.数组的内存结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#font-color-black-二-二维数组-font"><span class="toc-text">二.二维数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-二维数组的结构"><span class="toc-text">5.二维数组的结构:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#font-color-black-三-数组中常见的异常-font"><span class="toc-text">三.数组中常见的异常</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#font-color-black-四-数组中常用的算法-font"><span class="toc-text">四.数组中常用的算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#求数组元素的最大值-最小值-和-平均数"><span class="toc-text">求数组元素的最大值&amp;最小值&amp;和&amp;平均数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组的复制和反转"><span class="toc-text">数组的复制和反转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组的排序"><span class="toc-text">数组的排序</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix ">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='true'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='2709912289'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="mailto:crainyday@qq.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/crainyday"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=1794783182"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        <div id='sitetime'></div>
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作为主题
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://crainyday.gitee.io">Copyright © 2019-2021 CRainyDay</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js" async></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_01.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_02.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_03.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_04.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_05.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js" async></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js" async></script>
+
+  
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "47GAhNwwbbNreaJdvDNWHhOo-gzGzoHsz",
+    appKey: "pndiLFAmJvnhcIutpj4HIj6t",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    visitor: 'false',
+    highlight:'true'
+  })
+  </script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    function on_success(){
+      let $btn = $('.highlight .code pre');
+      console.log($btn);
+    }
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copyed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-clipboard-check');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPYED';
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-exclamation-triangle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "[object Object]";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/sitetime.min.js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/clicklove.min.js'></script>
+
+
+  <script>setLoadingBarProgress(100);</script>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
+</html>

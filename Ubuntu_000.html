@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.1.2'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>记录一次Ubuntu痛苦的重装之旅 - CRainyDay</title>
+  
+    <meta name="keywords" content="Ubuntu">
+  
+  
+    <meta name="description" content="本篇主要内容:
+一定要看的安装前言, 非常值得一看.
+安装ubuntu前的准备.
+安装ubuntu系统.
+ubuntu系统的一些基础配置.
+搭建ubuntu常用的软件环境(安装ubuntu常用软件).">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?bf368df5385d5be3472f3155e4cdb303";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow floatable blur">
+
+  <div class='wrapper'>
+    <div class='nav-sub container--flex'>
+      <a class="logo flat-box"></a>
+      <ul class='switcher h-list'>
+        <li><a class="s-comment flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main container container--flex">
+      
+        
+        <a class="logo flat-box" target="_self" href='/'>
+          
+          
+            <i class='fas fa-home'></i>
+          
+          
+            CRainyDay
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='h-list'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  
+                    <i class='fas fa-folder-open fa-fw'></i>
+                  
+                  分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  
+                    <i class='fas fa-archive fa-fw'></i>
+                  
+                  归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  
+                    <i class='fas fa-tags fa-fw'></i>
+                  
+                  标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  
+                    <i class='fas fa-link fa-fw'></i>
+                  
+                  友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  
+                    <i class='fas fa-ellipsis-v fa-fw'></i>
+                  
+                  更多
+                </a>
+                
+                  <ul class="submenu">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/about/music.html
+                  
+                  
+                  
+                    id="aboutmusic.html"
+                  >
+                  
+                    <i class='fas fa-music fa-fw'></i>
+                  
+                  往后余生
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/bbs/
+                  
+                  
+                  
+                    id="bbs"
+                  >
+                  
+                    <i class='fas fa-comment-alt fa-fw'></i>
+                  
+                  留言
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  
+                    <i class='fas fa-info-circle fa-fw'></i>
+                  
+                  关于
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      
+        <div class="m_search">
+          <form name="searchform" class="form u-search-form">
+            <i class="icon fas fa-search fa-fw"></i>
+            <input type="text" class="input u-search-input" placeholder="搜索" />
+          </form>
+        </div>
+      
+
+			<ul class='switcher h-list'>
+				
+					<li><a class="s-search flat-btn fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li><a class="s-menu flat-btn fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<ul class="menu-phone navigation white-box">
+  
+  
+    <li>
+      <a class="flat-box" href=/
+        
+        
+        
+          id="home"
+        >
+        
+          <i class='fas fa-home fa-fw'></i>
+        
+        博客
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/archives/
+        
+        
+        
+          id="archives"
+        >
+        
+          <i class='fas fa-archive fa-fw'></i>
+        
+        归档
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/categories/
+        
+        
+        
+          id="categories"
+        >
+        
+          <i class='fas fa-folder-open fa-fw'></i>
+        
+        分类
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/friends/
+        
+        
+        
+          id="friends"
+        >
+        
+          <i class='fas fa-link fa-fw'></i>
+        
+        友链
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/bbs/
+        
+        
+        
+          id="bbs"
+        >
+        
+          <i class='fas fa-comment-alt fa-fw'></i>
+        
+        留言
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/about/
+        
+        
+        
+          id="about"
+        >
+        
+          <i class='fas fa-info-circle fa-fw'></i>
+        
+        关于
+      </a>
+    </li>
+  
+</ul>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box shadow floatable article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+      <a title='记录一次Ubuntu痛苦的重装之旅' href='/Ubuntu_000.html'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more03.png'></a>
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/Ubuntu_000.html">
+        记录一次Ubuntu痛苦的重装之旅
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+<div class='new-meta-item author'>
+  <a href="https://crainyday.gitee.io" rel="nofollow">
+    <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/avatar.png">
+    <p>crainyday</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Ubuntu/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>Ubuntu</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-edit" aria-hidden="true"></i>
+    <p>发布于：2021年1月25日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard" aria-hidden="true"></i>
+      <p>字数：3.3k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+      <p>时长：12分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>本篇主要内容:</p>
+<p>一定要看的安装前言, 非常值得一看.</p>
+<p>安装ubuntu前的准备.</p>
+<p>安装ubuntu系统.</p>
+<p>ubuntu系统的一些基础配置.</p>
+<p>搭建ubuntu常用的软件环境(安装ubuntu常用软件).</p>
+<a id="more"></a>
+<h2 id="一-安装前言">一.安装前言</h2>
+<div class="danger">
+<p>  重装原因: 之前的 SSD 突然坏掉了, SSD 无法正常识别(掉盘).</p>
+<p>之前的 SSD 是三星的 PM981(TLC颗粒), 才用了不到一年半😰, 然后生气换了个 MLC 颗粒的 SM961(不知道能用多久, 坏了后会在此记录).</p>
+</div>
+<p><font style='color:red;font-weight:bloder;'>重要的数据一定要备份!</font></p>
+<div class="danger">
+<p>  数据恢复: 等到失去的时候, 真正了解了 <strong>“数据无价”</strong>. 找了个专业的数据恢复公司, 经过检测是 SSD 的主控坏了, 幸好存储颗粒没坏, 但也失去了近 400 RMB(我的 SSD 是 256 GB 的, 容量越大数据恢复约贵), 后来想想感觉被坑了点钱, 也无所谓了, 就当买了个教训.</p>
+</div>
+<p><font style='color:red;font-weight:bloder;'>重要的数据一定要备份!</font></p>
+<div class="info">
+<p>  主控突然坏掉的猜测:</p>
+<ul>
+<li>NPY 打开电脑玩, 在 GRUB 引导界面敲打了一通键盘 “???”, 导致 SSD 主控中的程序乱了. (一种可能的怀疑, 因为数据恢复后, 我插上坏的 SSD, 又正常识别了三四次, 还以为被坑了呢, 之后再也无法识别)</li>
+<li>坏的前几天, 笔记本上插 SSD 的附近好像有过静电(被电了好几次), 也有可能是 SSD 真的突然坏了.</li>
+</ul>
+</div>
+<p><font style='color:red;font-weight:bloder;'>重要的数据一定要备份!</font></p>
+<blockquote>
+<p>  善意的提醒:</p>
+<ul>
+<li>不要太相信 SSD, 重要的数据一定要备份!</li>
+<li>不要买太大的 SSD, 万一真的需要专业数据恢复, 容量越大约贵的.</li>
+<li>买个机械盘存放重要数据, 不是很建议将重要数据同步到云端.</li>
+</ul>
+</blockquote>
+<p><font style='color:red;font-weight:bloder;'>重要的数据一定要备份!</font></p>
+<hr>
+<h2 id="二-安装前准备">二.安装前准备</h2>
+<h3 id="1-硬件-软件准备">1.硬件/软件准备</h3>
+<ul>
+<li>U 盘一个(16G 足够了), 用作 U盘启动盘, 提前保存好 U盘数据, 将 U 盘格式化.</li>
+<li>启动盘制作软件, 我这里用的是 <a href="https://github.com/balena-io/etcher/releases" target="_blank" rel="noopener">balenaEtcher</a> 软件, 这是全平台的.</li>
+<li><a href="https://ubuntu.com/download" target="_blank" rel="noopener">ubuntu官网</a>, 下载 ubuntu 桌面版 ISO 文件. (<a href="https://ubuntu.com/download/desktop/thank-you?version=20.04.1&amp;architecture=amd64" target="_blank" rel="noopener">ubuntu-20.04.1-desktop-amd64.iso</a>)</li>
+</ul>
+<h3 id="2-制作U盘启动盘">2.制作U盘启动盘</h3>
+<ul>
+<li>
+<p>①打开安装好的 balenaEtcher.</p>
+</li>
+<li>
+<p>②选择你下载好的 ISO 文件.</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_000_01.png" alt="Ubuntu_000_01"></p>
+<ul>
+<li>③选择你要制作启动盘的U盘, 看好别选错了.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_000_02.png" alt="Ubuntu_000_02"></p>
+<ul>
+<li>④点击 Flash 写入即可, 需要等待几分钟, 最后的检验环节, 可以点击 Skip 跳过.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_000_03.png" alt="Ubuntu_000_03"></p>
+<hr>
+<h2 id="三-安装ubuntu">三.安装ubuntu</h2>
+<h3 id="1-从U盘启动">1.从U盘启动</h3>
+<ul>
+<li>①查看你的主板的U盘启动快捷键(自行百度搜索).</li>
+<li>②开机时按下相应按键, 然后从U盘启动, 进入 GRUB 引导界面.</li>
+<li>③在 GRUB 界面选择第一项(默认选第一项), 按回车即可进入ubuntu安装界面.</li>
+<li>如下图的硬盘检测界面可能会有点慢, 等待结束即可正式开始安装.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_000_04.png" alt="Ubuntu_000_04"></p>
+<h3 id="2-正式安装">2.正式安装</h3>
+<ul>
+<li>①选择语言. 向下滚动找到中文简体, 然后点击 <strong>安装ubuntu</strong>.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_000_05.png" alt="Ubuntu_000_05"></p>
+<ul>
+<li>②选择键盘布局. 默认即可, Chinese. 然后点击 <strong>继续</strong>.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_000_06.png" alt="Ubuntu_000_06"></p>
+<ul>
+<li>③网络连接.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_000_16.png" alt="Ubuntu_000_16"></p>
+<ul>
+<li>④安装选项. 选择我这里选择了 <strong>最小安装</strong>, 取消 <strong>安装ubuntu时下载更新</strong>, 然后点击 <strong>继续</strong>.</li>
+<li>当然, 日常用的话, 你可以选择正常安装. 这里本人不建议 <strong>安装时下载更新</strong>, 有点慢.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_000_07.png" alt="Ubuntu_000_07"></p>
+<ul>
+<li>⑤安装类型. 这里选择 <strong>其他选项</strong>, 多个系统并存, 自定义分区, 然后点击 <strong>继续</strong>.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_000_08.png" alt="Ubuntu_000_08"></p>
+<hr>
+<h4 id="⑥自定义分区">⑥自定义分区</h4>
+<ul>
+<li>A.在你要安装ubuntu的设备上, 右键单击, <strong>新建分区表</strong>.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_000_09.png" alt="Ubuntu_000_09"></p>
+<ul>
+<li>
+<p>B.在空闲分区上右键单击, 再点击 <strong>添加</strong>, 添加一个分区.</p>
+</li>
+<li>
+<p>C.添加Swap分区(交换分区, 相当于虚拟内存), 对于内存大的电脑, 可以不设置交换分区, 交换分区大小设置为真实内存大小即可. 我的内存是 16GB, SSD 是256GB的, Swap分区大小设置了 16000MB(16GB).</p>
+</li>
+<li>
+<p>注意: 这里的 1000MB = 1GB.</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_000_10.png" alt="Ubuntu_000_10"></p>
+<ul>
+<li>D.添加 Ext4 挂载 /home. 在这里我的分区大小: 64000 MB(64GB).</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_000_11.png" alt="Ubuntu_000_11"></p>
+<ul>
+<li>E.添加 Ext4 挂载 / . 将剩下的空间分给根目录即可. 在这里, 使用 SSD 安装的, 建议留个 几 GB 的空闲分区, 在这我剩了 6GB 左右.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_000_12.png" alt="Ubuntu_000_12"></p>
+<ul>
+<li>F. 记住一般都是最后挂载 根目录 <code>/</code> 的. 当然, 你可以按照自己的喜好自行分区.</li>
+<li>最终的分区情况如图:</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_000_13.png" alt="Ubuntu_000_13"></p>
+<hr>
+<ul>
+<li>⑦分区完后, 继续下一步, 会提示是否将改动写入磁盘, 点击 <strong>继续</strong> 即可.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_000_14.png" alt="Ubuntu_000_14"></p>
+<ul>
+<li>⑧选择时区. 默认 Shanghai 即可.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_000_15.png" alt="Ubuntu_000_15"></p>
+<ul>
+<li>⑨最后一步, 输入相应信息 <strong>继续</strong> 即可.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_000_17.png" alt="Ubuntu_000_17"></p>
+<ul>
+<li>⑩等待安装结束即可.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_000_18.png" alt="Ubuntu_000_18"></p>
+<ul>
+<li>⑪安装结束后, 重启系统, 拔掉启动盘即可.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_000_19.png" alt="Ubuntu_000_19"></p>
+<hr>
+<h2 id="四-ubuntu基础配置">四.ubuntu基础配置</h2>
+<h3 id="1-安装更新">1.安装更新</h3>
+<ul>
+<li>注意: 建议先更换 apt 源. <a href="https://blog.csdn.net/wangyijieonline/article/details/105360138" target="_blank" rel="noopener">Ubuntu 20.04换阿里源</a>.</li>
+<li>也可以在 <strong>软件更新器</strong> 中切换下载更新的服务器站点, 选择国内的即可.</li>
+</ul>
+<blockquote>
+<p>  由于在之前的系统安装过程中, 取消了 <strong>安装ubuntu时下载更新</strong> 选项, 首次进入系统后, 需要先更新系统.</p>
+<ul>
+<li>注意: 安装更新非常慢, 需要联网下载很多东西, 期间尽量不要断网.</li>
+</ul>
+</blockquote>
+<ul>
+<li>①打开 <strong>软件更新器</strong> 进行更新.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_000_21.png" alt="Ubuntu_000_21"></p>
+<ul>
+<li>②使用命令: <code>sudo apt-get update</code> 进行更新.</li>
+</ul>
+<h3 id="2-切换英伟达驱动">2.切换英伟达驱动</h3>
+<ul>
+<li>点击附加驱动, 切换为英伟达闭源驱动.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_000_22.png" alt="Ubuntu_000_22"></p>
+<h3 id="3-u-win10双系统时间不一致">3.u+win10双系统时间不一致</h3>
+<ul>
+<li>依次执行以下命令即可.</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install ntpdate</span><br><span class="line">sudo ntpdate time.windows.com</span><br><span class="line">sudo hwclock --localtime --systohc</span><br></pre></td></tr></table></figure>
+<h3 id="4-插入鼠标自动禁用触摸板">4.插入鼠标自动禁用触摸板</h3>
+<ul>
+<li>使用 touchpad-indicator 软件实现.</li>
+<li>依次执行以下命令安装 touchpad-indicator.</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:atareao/atareao</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install touchpad-indicator</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 卸载 touchpad-indicator</span></span><br><span class="line">sudo apt-get remove --purge touchpad-indicator</span><br></pre></td></tr></table></figure>
+<h3 id="5-修改root密码">5.修改root密码</h3>
+<ul>
+<li>刚装完系统, 不知道root密码, 则无法通过 <code>su root</code> 切换root用户.</li>
+<li>修改root密码, 在终端输入: <code>sudo passwd</code> 输入新密码即可.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_000_24.png" alt="Ubuntu_000_24"></p>
+<hr>
+<h2 id="五-安装ubuntu常用软件">五.安装ubuntu常用软件</h2>
+<ul>
+<li>注意: 使用 dpkg 安装 deb 包时, 若出现依赖问题, 执行命令: <code>sudo apt-get -f install</code> 修复安装即可.</li>
+<li>若是仍有问题, 卸载相关出现问题的软件, 重新安装一遍即可.</li>
+</ul>
+<h3 id="1-搜狗输入法">1.搜狗输入法</h3>
+<ul>
+<li>可以参考<a href="https://pinyin.sogou.com/linux/help.php" target="_blank" rel="noopener">搜狗官网的指南</a>安装.</li>
+<li>①安装 fcitx. 命令: <code>sudo apt-get install fcitx</code>.</li>
+<li>②在系统的 <strong>语言支持</strong> 中, 将键盘输入法系统切换为 fcitx.</li>
+<li>③点击 <strong>应用到整个系统</strong> , 之后重启系统即可.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_000_23.png" alt="Ubuntu_000_23"></p>
+<ul>
+<li>④在搜狗官网下载最新的deb包.</li>
+<li>⑤使用命令: <code>sudo dpkg -i sogoupinyin_版本号_amd64.deb</code> 安装输入法.</li>
+<li>注意: 若安装个过程出现依赖问题, 使用命令: <code>sudo apt -f install</code> 即可解决.</li>
+<li>⑥安装完成后再次重启系统.</li>
+<li>上述安装完毕后, 还可以直接安装 <a href="https://srf.baidu.com/site/guanwang_linux/index.html" target="_blank" rel="noopener">百度输入法</a>.</li>
+<li>个人感觉Linux下还是搜狗好用一点.</li>
+</ul>
+<hr>
+<h3 id="2-截图软件">2.截图软件</h3>
+<blockquote>
+<p>  <strong>flameshot</strong> 和 <strong>shutter</strong> 很好用的截图软件, 类似 QQ 截图.</p>
+<p>这两个软件各有各的好处, 可以自行选择安装, shutter 的功能更强大一点, flameshot截图更有效率.</p>
+<ul>
+<li>flameshot软件方便复制/保存.</li>
+<li>shutter软件方便编辑.</li>
+<li>但是, flameshot与shutter软件都无法对打开的菜单项进行截图.</li>
+<li>这时候就要用系统自带的 截图功能: <strong>“复制选区截图到粘贴板”</strong>. 默认快捷键为: <code>Shift+Ctrl+Print</code>.</li>
+<li><strong>&quot;复制选区截图到粘贴板&quot;</strong> + Pinta 软件可以实现任何界面截图.</li>
+</ul>
+</blockquote>
+<h4 id="flameshot">flameshot</h4>
+<ul>
+<li>使用命令: <code>sudo apt-get install flameshot</code> 安装.</li>
+<li>设置启动快捷键, 启动命令: <code>flameshot gui</code>.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_000_20.png" alt="Ubuntu_000_20"></p>
+<h4 id="shutter">shutter</h4>
+<ul>
+<li>参照<a href="https://shutter-project.org/downloads/third-party-packages/" target="_blank" rel="noopener">shutter官网</a>介绍安装即可.</li>
+<li>依次执行以下命令即可安装:</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:linuxuprising/shutter</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt install shutter</span><br><span class="line"><span class="meta">#</span><span class="bash"> 网页长截图支持</span></span><br><span class="line">sudo apt install gnome-web-photo</span><br></pre></td></tr></table></figure>
+<ul>
+<li>安装完后, 可类比flameshot添加快捷键, 启动命令: <code>shutter -s</code>.</li>
+</ul>
+<h4 id="Pinta">Pinta</h4>
+<ul>
+<li>方便的的图片编辑器.</li>
+<li>使用命令: <code>sudo apt-get install pinta</code>安装即可.</li>
+</ul>
+<hr>
+<h3 id="3-typora">3.typora</h3>
+<ul>
+<li>最受欢迎的 MD 编辑器.</li>
+<li>不要直接在ubuntu软件商店里安装, 有问题的.</li>
+<li>按照官方提示, 使用命令安装即可.(可能速度有点慢, 可以科学上网)</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE</span></span><br><span class="line">wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -</span><br><span class="line"><span class="meta">#</span><span class="bash"> add Typora<span class="string">'s repository</span></span></span><br><span class="line">sudo add-apt-repository 'deb https://typora.io/linux ./'</span><br><span class="line">sudo apt-get update</span><br><span class="line"><span class="meta">#</span><span class="bash"> install typora</span></span><br><span class="line">sudo apt-get install typora</span><br></pre></td></tr></table></figure>
+<h3 id="4-gnome-tweak-tool">4.gnome-tweak-tool</h3>
+<ul>
+<li>安装 tweak 进行 gnome 桌面美化.</li>
+<li>执行命令: <code>sudo apt-get install gnome-tweak-tool</code>进行安装.</li>
+<li>具体美化步骤见: <a href="/Ubuntu_007.html">ubuntu GNOME 美化</a>.</li>
+</ul>
+<h3 id="5-WPS套件">5.WPS套件</h3>
+<ul>
+<li>①进入<a href="https://www.wps.cn/product/wpslinux" target="_blank" rel="noopener">WPS官网</a>, 下载<a href="https://wdl1.cache.wps.cn/wps/download/ep/Linux2019/10161/wps-office_11.1.0.10161_amd64.deb" target="_blank" rel="noopener">deb文件</a>.</li>
+<li>②使用dpkg命令安装WPS即可: <code>sudo dpkg -i wps-office_11.1.0.10161_amd64.deb</code>.</li>
+<li>若有依赖问题, 使用 <code>sudo apt-get -f install</code> 命令修复即可.</li>
+<li>还需要添加 wps 所需要的字体: <a href="https://pan.baidu.com/s/1msopqmA00XFo3wGcpSyHCw" target="_blank" rel="noopener">wps_symbol_fonts.zip</a>, 提取码：<code>kf2n</code></li>
+<li>下载后将字体解压到 <code>/usr/share/fonts/wps-office</code> 目录下.</li>
+</ul>
+<h3 id="6-CopyQ">6.CopyQ</h3>
+<ul>
+<li>目前我觉得最好用的剪切板管理工具.</li>
+<li>在<a href="https://github.com/hluk/CopyQ/releases" target="_blank" rel="noopener">GitHub下载安装包</a>, 使用dpkg命令安装即可.</li>
+</ul>
+<h3 id="7-Chrome浏览器">7.Chrome浏览器</h3>
+<ul>
+<li>
+<p><a href="https://www.google.cn/chrome/" target="_blank" rel="noopener">Chrome官网</a>下载 deb 安装包.</p>
+</li>
+<li>
+<p>使用命令安装 Chrome 即可.</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/下载</span><br><span class="line">sudo dpkg -i google-chrome-stable_current_amd64.deb</span><br></pre></td></tr></table></figure>
+<h3 id="8-网易云音乐">8.网易云音乐</h3>
+<ul>
+<li><a href="https://music.163.com/#/download" target="_blank" rel="noopener">网易云官网</a>下载 deb 包.</li>
+<li>使用 dpkg 命令安装 deb 包即可.</li>
+</ul>
+<h3 id="9-VLC播放器">9.VLC播放器</h3>
+<ul>
+<li>视频播放器: VLC.</li>
+<li>使用命令: <code>sudo apt-get install vls</code> 安装即可.</li>
+<li>若是找不到 VLC 软件, 添加 PPA 即可.</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:videolan/stable-daily</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install vlc</span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除 PPA</span></span><br><span class="line">sudo add-apt-repository --remove ppa:videolan/stable-daily</span><br></pre></td></tr></table></figure>
+<h3 id="10-Virtual-Box">10.Virtual Box</h3>
+<ul>
+<li>进入<a href="https://www.virtualbox.org/wiki/Linux_Downloads" target="_blank" rel="noopener">Virtual Box官网</a>下载对应系统版本的最新 deb 安装包.</li>
+<li>执行 <code>sudo dpkg -i virtualbox-6.1_6.1.18-142142_Ubuntu_eoan_amd64.deb </code>.</li>
+<li>若是出现依赖问题, 输入命令 <code>sudo apt --fix-broken install</code> 进行修复.</li>
+<li>若是修复安装仍然不行, 卸载残留的 Virtual Box 重新安装.</li>
+</ul>
+<h3 id="11-科学上网软件">11.科学上网软件</h3>
+<h4 id="①v2ray">①v2ray</h4>
+<ul>
+<li>需要下载: <a href="https://github.com/v2fly/v2ray-core/releases" target="_blank" rel="noopener">v2ray-core</a> 和 <a href="https://github.com/Qv2ray/Qv2ray/releases" target="_blank" rel="noopener">Qv2ray</a>.</li>
+<li>具体步骤可查看: <a href="/Ubuntu_006.html">ubuntu之v2ray科学上网</a>.</li>
+</ul>
+<h4 id="②electron-ssr">②electron-ssr</h4>
+<ul>
+<li>electron-ssr原作者已删除软件不再更新, 这里提供他的最后一个版本: <a href="https://pan.baidu.com/s/1fQ0YeWMRHFj9iDKO3GkKpA" target="_blank" rel="noopener">electron-ssr-0.2.6.deb</a> 提取码: <code>qfnf</code>.</li>
+<li>下载 deb 后使用 dpkg 命令安装即可.</li>
+</ul>
+<h3 id="12-录屏软件">12.录屏软件</h3>
+<blockquote>
+<p>  这里推荐 深度录屏 和 simplescreenrecorder.</p>
+<ul>
+<li>深度录屏可以录制 GIF 图片, 也可以录制MP4, 但是没有声音.</li>
+<li>simplescreenrecorder 可以录制功能强大, 可以录制系统声音和麦克风.</li>
+</ul>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install deepin-screen-recorder</span><br><span class="line">sudo apt-get install simplescreenrecorder</span><br></pre></td></tr></table></figure>
+<ul>
+<li>深度录屏安装完后, 可类比flameshot添加快捷键, 启动命令: <code>deepin-screen-recorder</code>.</li>
+</ul>
+<h3 id="13-百度网盘">13.百度网盘</h3>
+<blockquote>
+<ul>
+<li><a href="http://pan.baidu.com/download" target="_blank" rel="noopener">百度网盘官网</a>下载deb包.</li>
+<li>使用dpkg命令安装即可.</li>
+</ul>
+</blockquote>
+<h3 id="14-下载器">14.下载器</h3>
+<h4 id="①Motrix">①Motrix</h4>
+<blockquote>
+<ul>
+<li>多平台的多线程下载器: <a href="https://github.com/agalwood/Motrix/releases" target="_blank" rel="noopener">Motrix</a></li>
+<li>下载 deb 安装包, 使用 dpkg 命令安装即可.</li>
+</ul>
+</blockquote>
+<h4 id="②迅雷">②迅雷</h4>
+<blockquote>
+<ul>
+<li>迅雷的Linux版本, 这里提供统信商店的 deb: <a href="https://pan.baidu.com/s/1en-TepGGHn29BxFmyOiw_w" target="_blank" rel="noopener">com.xunlei.download_1.0.0.1_amd64.deb</a> 提取码: <code>2fgf</code>.</li>
+<li>下载 deb 包后, 使用 dpkg 命令安装即可.</li>
+</ul>
+</blockquote>
+<h4 id="③uGet">③uGet</h4>
+<blockquote>
+<ul>
+<li>使用命令: <code>sudo apt-get install uget</code>安装即可.</li>
+</ul>
+</blockquote>
+<h4 id="④qBittorrent">④qBittorrent</h4>
+<blockquote>
+<ul>
+<li>使用命令: <code>sudo apt-get install qbittorrent</code>安装即可.</li>
+<li>可能需要 apt 换源才能下载.</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="15-远程控制软件">15.远程控制软件</h3>
+<h4 id="①Remmina">①Remmina</h4>
+<blockquote>
+<ul>
+<li>一个强大的远程桌面客户端, 一般用于 SSH 和 SFTP 协议 连接 远程服务器.</li>
+<li>支持常用的很多协议, 见下图.</li>
+<li>使用命令: <code>sudo apt-get install remmina</code> 安装即可.</li>
+</ul>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_000_25.png" alt="Ubuntu_000_25"></p>
+<h4 id="②向日葵">②向日葵</h4>
+<blockquote>
+<ul>
+<li>国产软件, 可用于跨系统之间的电脑远程控制.</li>
+<li>通过Linux远程控制macOS、Android、Windows、Linux设备.</li>
+<li><a href="https://sunlogin.oray.com/download/" target="_blank" rel="noopener">向日葵官网</a>下载 deb 安装包, 使用 dpkg 命令安装即可.</li>
+<li>支持语音等.</li>
+<li>若出现依赖问题, 使用: <code>sudo apt-get install -f</code>修复.</li>
+</ul>
+</blockquote>
+<h4 id="③TeamViewer">③TeamViewer</h4>
+<blockquote>
+<ul>
+<li>外国软件, 可也用于跨系统之间的电脑远程控制.</li>
+<li><a href="https://www.teamviewer.com/en/download/linux/" target="_blank" rel="noopener">TeamViewer官网</a>下载 deb 包, 使用 dpkg 命令安装即可.</li>
+<li>若出现依赖问题, 使用: <code>sudo apt-get install -f</code>修复.</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="16-Baobab">16.Baobab</h3>
+<blockquote>
+<ul>
+<li>突然发现之前一直使用的 <strong>磁盘使用情况分析</strong> 没了. Ubuntu 20.01没有自带.</li>
+<li>使用命令: <code>sudo apt-get install baobab</code> 手动安装即可.</li>
+</ul>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_000_26.png" alt="Ubuntu_000_26"></p>
+<h3 id="17-XMind">17.XMind</h3>
+<blockquote>
+<ul>
+<li>最受欢迎的思维导图软件---------XMind.</li>
+<li>可以参看: <a href="/Ubuntu-XMind.html">Ubuntu中安装XMind</a> 进行安装.</li>
+</ul>
+</blockquote>
+<h3 id="18-Sublime-text">18.Sublime-text</h3>
+<blockquote>
+<ul>
+<li>一款强大的文本编辑器.</li>
+<li>按照 <a href="http://www.sublimetext.cn/docs/3/linux_repositories.html" target="_blank" rel="noopener">Sublime-text 官网文档</a>, 一步步安装即可.</li>
+<li>依次执行下列命令:</li>
+</ul>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装GPG密钥</span></span><br><span class="line">wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -</span><br><span class="line"><span class="meta">#</span><span class="bash"> 确保apt已设置为使用https源</span></span><br><span class="line">sudo apt-get install apt-transport-https</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 选择要使用的频道: 执行下面两条的一个即可</span></span><br><span class="line">echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list</span><br><span class="line"><span class="meta">#</span><span class="bash"> 或</span></span><br><span class="line">echo "deb https://download.sublimetext.com/ apt/dev/" | sudo tee /etc/apt/sources.list.d/sublime-text.list</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 更新apt源并安装Sublime Text</span></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install sublime-text</span><br></pre></td></tr></table></figure>
+<h3 id="19-pavucontrol">19.pavucontrol</h3>
+<blockquote>
+<ul>
+<li>音量控制软件, 可以更好的设置你的电脑的声音输入输出设备.</li>
+<li>使用命令: <code>sudo apt-get install pavucontrol</code> 安装即可.</li>
+</ul>
+</blockquote>
+<h3 id="20-xDroid">20.xDroid</h3>
+<blockquote>
+<ul>
+<li>非常好用的一个 Android 虚拟机.</li>
+<li>从 <a href="https://www.linzhuotech.com/product/download" target="_blank" rel="noopener">xDroid</a> 官网下载压缩包, 使用命令安装即可.</li>
+</ul>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 解压</span></span><br><span class="line">tar -zxvf xDroidInstall-x86_64-v5.1508.tar.gz</span><br><span class="line">cd xDroidInstall-x86_64</span><br><span class="line"><span class="meta">#</span><span class="bash"> 提权</span></span><br><span class="line">chmod +x install.sh</span><br><span class="line">chmod +x uninstall.sh</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装</span></span><br><span class="line">./install.sh</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 还可以卸载</span></span><br><span class="line">./uninstall.sh</span><br><span class="line"><span class="meta">#</span><span class="bash"> 卸载完成后重启计算机, 手动删除 /var/xdroid/ 目录即可</span></span><br><span class="line">sudo rm -rf /var/xdroid</span><br></pre></td></tr></table></figure>
+
+          
+            <br>
+            
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://crainyday.gitee.io/Ubuntu_000.html>https://crainyday.gitee.io/Ubuntu_000.html</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <fancybox><img src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/alipay.png'
+        
+          height='64px'
+        ></fancybox>
+      
+    
+      
+        <fancybox><img src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/wechat.png'
+        
+          height='64px'
+        ></fancybox>
+      
+    
+  </div>
+</section>
+
+  
+
+
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-24T23:14:35+08:00">
+  <a class='notlink'>
+    <i class="fas fa-save" aria-hidden="true"></i>
+    <p>更新于：2021年2月24日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Ubuntu/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i><p>Ubuntu</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard" aria-hidden="true"></i>
+      <p>字数：3.3k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+      <p>时长：12分钟</p>
+    </a>
+  </div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://crainyday.gitee.io/Ubuntu_000.html&title=记录一次Ubuntu痛苦的重装之旅 - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more03.png&summary=本篇主要内容:
+一定要看的安装前言, 非常值得一看.
+安装ubuntu前的准备.
+安装ubuntu系统.
+ubuntu系统的一些基础配置.
+搭建ubuntu常用的软件环境(安装ubuntu常用软件)."
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://crainyday.gitee.io/Ubuntu_000.html&title=记录一次Ubuntu痛苦的重装之旅 - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more03.png&summary=本篇主要内容:
+一定要看的安装前言, 非常值得一看.
+安装ubuntu前的准备.
+安装ubuntu系统.
+ubuntu系统的一些基础配置.
+搭建ubuntu常用的软件环境(安装ubuntu常用软件)."
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://crainyday.gitee.io/Ubuntu_000.html&title=记录一次Ubuntu痛苦的重装之旅 - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more03.png&summary=本篇主要内容:
+一定要看的安装前言, 非常值得一看.
+安装ubuntu前的准备.
+安装ubuntu系统.
+ubuntu系统的一些基础配置.
+搭建ubuntu常用的软件环境(安装ubuntu常用软件)."
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAAD4CAAAAADkunTXAAACOElEQVR42u3cS5LCMAwFwNz/0jMHoFLRLxRR2jvAJm6vHpaK4++l4wAHBwcHB18EP4rjav3Z5x8buVgfnR/eLzg4ODg4+EJ4OACcwKLrsvOj74f3Cw4ODg4OvhgeDSTZ9d1gM7ZfcHBwcHBw8CMbVKah4ODg4ODg4HMBpjove2EBDg4ODg4OPldQqBbsp5//9UoKODg4ODj4D8GnNv6t12MNfuDg4ODg4A+GT41qg0C3ETC9T3BwcHBw8EXwuy4WphoAxgsM4ODg4ODgi+F3BYjuBUL2AE8PChwcHBwc/AXwLKAaYKrg8v7BwcHBwcEXwrM/+LMXAllAtYBxOQ8cHBwcHHwRPHsB0QVONxyk14ODg4ODg78AXgVNXUxMFSTAwcHBwcHfAI+Cpkf0wKIHevkaHBwcHBx8Ebz7Q78aaKYuIMDBwcHBwcHva+ibhrQPFBwcHBwc/AXw6oay8GqBoVzAAAcHBwcHXwifKiRMBZ9uISF8EQEODg4ODr4Ing0O1QJBNQi1Aw84ODg4OPhiePZAusGmCss+FxwcHBwcfCO8O6KFh2zQqDYuhBsDwMHBwcHBF8C7wWAKVC0cgIODg4ODg/cb9abh2QAT3j84ODg4OPhieDSwdC8iouBusAIHBwcHBwc/fmZ+Nrh8rAMHBwcHBwcv/6FttYEgeyCnn4ODg4ODgy+GZwNBdyPR78k+Jx1gwMHBwcHBHwzvXtx3x9QBpBsDwMHBwcHBHwx/2wAHBwcHB18w/gFNNUXQV/nifwAAAABJRU5ErkJggg==">
+          </div>
+        </div>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/Ubuntu_007.html'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Ubuntu之GNOME桌面美化</p>
+                <p class='content'>GNOME桌面美化:
+安装tweak.
+安装gnome浏览器插件.
+常用的gnome扩展.
+下载系统主题、图标、Shell主题等资源.
+更换系统主题、系统图标、Shell主题.
+下面的都是基于U...</p>
+              </a>
+            
+            
+              <a class='next' href='/SSM.html'>
+                <p class='title'>Maven下的SSM整合<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>在Eclipse下使用Maven创建和管理SSM项目.
+
+1.使用Maven搭建JavaWeb项目
+
+  具体搭建方法: 创建Maven版的Web工程
+
+2.使用Maven导入SSM框架所需ja...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Python.html" title="Ubuntu中py2与py3共存" rel="bookmark">Ubuntu中py2与py3共存</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ubuntu_003.html" title="Ubuntu修改GRUB2和开关机界面主题" rel="bookmark">Ubuntu修改GRUB2和开关机界面主题</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ubuntu_002.html" title="Ubuntu添加自定义图标和透明化shell顶部状态栏" rel="bookmark">Ubuntu添加自定义图标和透明化shell顶部状态栏</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ubuntu_005.html" title="修改root密码" rel="bookmark">修改root密码</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ubuntu_004.html" title="Ubuntu安装OpenGL" rel="bookmark">Ubuntu安装OpenGL</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments shadow floatable">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '记录一次Ubuntu痛苦的重装之旅',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Python.html" title="Ubuntu中py2与py3共存" rel="bookmark">Ubuntu中py2与py3共存</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ubuntu_003.html" title="Ubuntu修改GRUB2和开关机界面主题" rel="bookmark">Ubuntu修改GRUB2和开关机界面主题</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ubuntu_002.html" title="Ubuntu添加自定义图标和透明化shell顶部状态栏" rel="bookmark">Ubuntu添加自定义图标和透明化shell顶部状态栏</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ubuntu_005.html" title="修改root密码" rel="bookmark">修改root密码</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ubuntu_004.html" title="Ubuntu安装OpenGL" rel="bookmark">Ubuntu安装OpenGL</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+
+<section class="widget grid shadow floatable desktop mobile">
+  
+  <header>
+    
+      <i class="fas fa-map-signs fa-fw" aria-hidden="true"></i><span class='name'>实用文档</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="grid navigation fixed">
+      
+        <a class="flat-box" title="/maven_05.html" href="/maven_05.html"
+          
+          
+          id="maven_05.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Maven工程
+        </a>
+      
+        <a class="flat-box" title="/Flask.html" href="/Flask.html"
+          
+          
+          id="Flask.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Flask应用
+        </a>
+      
+        <a class="flat-box" title="/Hexo.html" href="/Hexo.html"
+          
+          
+          id="Hexo.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Gitee搭站
+        </a>
+      
+        <a class="flat-box" title="/Ubuntu_006.html" href="/Ubuntu_006.html"
+          
+          
+          id="Ubuntu_006.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          v2ray
+        </a>
+      
+    </div>
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一-安装前言"><span class="toc-text">一.安装前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二-安装前准备"><span class="toc-text">二.安装前准备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-硬件-软件准备"><span class="toc-text">1.硬件&#x2F;软件准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-制作U盘启动盘"><span class="toc-text">2.制作U盘启动盘</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三-安装ubuntu"><span class="toc-text">三.安装ubuntu</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-从U盘启动"><span class="toc-text">1.从U盘启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-正式安装"><span class="toc-text">2.正式安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#⑥自定义分区"><span class="toc-text">⑥自定义分区</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四-ubuntu基础配置"><span class="toc-text">四.ubuntu基础配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-安装更新"><span class="toc-text">1.安装更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-切换英伟达驱动"><span class="toc-text">2.切换英伟达驱动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-u-win10双系统时间不一致"><span class="toc-text">3.u+win10双系统时间不一致</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-插入鼠标自动禁用触摸板"><span class="toc-text">4.插入鼠标自动禁用触摸板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-修改root密码"><span class="toc-text">5.修改root密码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五-安装ubuntu常用软件"><span class="toc-text">五.安装ubuntu常用软件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-搜狗输入法"><span class="toc-text">1.搜狗输入法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-截图软件"><span class="toc-text">2.截图软件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#flameshot"><span class="toc-text">flameshot</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#shutter"><span class="toc-text">shutter</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Pinta"><span class="toc-text">Pinta</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-typora"><span class="toc-text">3.typora</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-gnome-tweak-tool"><span class="toc-text">4.gnome-tweak-tool</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-WPS套件"><span class="toc-text">5.WPS套件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-CopyQ"><span class="toc-text">6.CopyQ</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-Chrome浏览器"><span class="toc-text">7.Chrome浏览器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-网易云音乐"><span class="toc-text">8.网易云音乐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-VLC播放器"><span class="toc-text">9.VLC播放器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-Virtual-Box"><span class="toc-text">10.Virtual Box</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-科学上网软件"><span class="toc-text">11.科学上网软件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#①v2ray"><span class="toc-text">①v2ray</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#②electron-ssr"><span class="toc-text">②electron-ssr</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-录屏软件"><span class="toc-text">12.录屏软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-百度网盘"><span class="toc-text">13.百度网盘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-下载器"><span class="toc-text">14.下载器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#①Motrix"><span class="toc-text">①Motrix</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#②迅雷"><span class="toc-text">②迅雷</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#③uGet"><span class="toc-text">③uGet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#④qBittorrent"><span class="toc-text">④qBittorrent</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-远程控制软件"><span class="toc-text">15.远程控制软件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#①Remmina"><span class="toc-text">①Remmina</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#②向日葵"><span class="toc-text">②向日葵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#③TeamViewer"><span class="toc-text">③TeamViewer</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-Baobab"><span class="toc-text">16.Baobab</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-XMind"><span class="toc-text">17.XMind</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-Sublime-text"><span class="toc-text">18.Sublime-text</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19-pavucontrol"><span class="toc-text">19.pavucontrol</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20-xDroid"><span class="toc-text">20.xDroid</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix ">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='true'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='2709912289'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="mailto:crainyday@qq.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/crainyday"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=1794783182"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        <div id='sitetime'></div>
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作为主题
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://crainyday.gitee.io">Copyright © 2019-2021 CRainyDay</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js" async></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_01.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_02.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_03.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_04.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_05.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js" async></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js" async></script>
+
+  
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "47GAhNwwbbNreaJdvDNWHhOo-gzGzoHsz",
+    appKey: "pndiLFAmJvnhcIutpj4HIj6t",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    visitor: 'false',
+    highlight:'true'
+  })
+  </script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    function on_success(){
+      let $btn = $('.highlight .code pre');
+      console.log($btn);
+    }
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copyed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-clipboard-check');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPYED';
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-exclamation-triangle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "[object Object]";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/sitetime.min.js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/clicklove.min.js'></script>
+
+
+  <script>setLoadingBarProgress(100);</script>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
+</html>

@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.1.2'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>JS函数 - CRainyDay</title>
+  
+    <meta name="keywords" content="JS">
+  
+  
+    <meta name="description" content="JS的函数function">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?bf368df5385d5be3472f3155e4cdb303";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow floatable blur">
+
+  <div class='wrapper'>
+    <div class='nav-sub container--flex'>
+      <a class="logo flat-box"></a>
+      <ul class='switcher h-list'>
+        <li><a class="s-comment flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main container container--flex">
+      
+        
+        <a class="logo flat-box" target="_self" href='/'>
+          
+          
+            <i class='fas fa-home'></i>
+          
+          
+            CRainyDay
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='h-list'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  
+                    <i class='fas fa-folder-open fa-fw'></i>
+                  
+                  分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  
+                    <i class='fas fa-archive fa-fw'></i>
+                  
+                  归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  
+                    <i class='fas fa-tags fa-fw'></i>
+                  
+                  标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  
+                    <i class='fas fa-link fa-fw'></i>
+                  
+                  友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  
+                    <i class='fas fa-ellipsis-v fa-fw'></i>
+                  
+                  更多
+                </a>
+                
+                  <ul class="submenu">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/about/music.html
+                  
+                  
+                  
+                    id="aboutmusic.html"
+                  >
+                  
+                    <i class='fas fa-music fa-fw'></i>
+                  
+                  往后余生
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/bbs/
+                  
+                  
+                  
+                    id="bbs"
+                  >
+                  
+                    <i class='fas fa-comment-alt fa-fw'></i>
+                  
+                  留言
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  
+                    <i class='fas fa-info-circle fa-fw'></i>
+                  
+                  关于
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      
+        <div class="m_search">
+          <form name="searchform" class="form u-search-form">
+            <i class="icon fas fa-search fa-fw"></i>
+            <input type="text" class="input u-search-input" placeholder="搜索" />
+          </form>
+        </div>
+      
+
+			<ul class='switcher h-list'>
+				
+					<li><a class="s-search flat-btn fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li><a class="s-menu flat-btn fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<ul class="menu-phone navigation white-box">
+  
+  
+    <li>
+      <a class="flat-box" href=/
+        
+        
+        
+          id="home"
+        >
+        
+          <i class='fas fa-home fa-fw'></i>
+        
+        博客
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/archives/
+        
+        
+        
+          id="archives"
+        >
+        
+          <i class='fas fa-archive fa-fw'></i>
+        
+        归档
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/categories/
+        
+        
+        
+          id="categories"
+        >
+        
+          <i class='fas fa-folder-open fa-fw'></i>
+        
+        分类
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/friends/
+        
+        
+        
+          id="friends"
+        >
+        
+          <i class='fas fa-link fa-fw'></i>
+        
+        友链
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/bbs/
+        
+        
+        
+          id="bbs"
+        >
+        
+          <i class='fas fa-comment-alt fa-fw'></i>
+        
+        留言
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/about/
+        
+        
+        
+          id="about"
+        >
+        
+          <i class='fas fa-info-circle fa-fw'></i>
+        
+        关于
+      </a>
+    </li>
+  
+</ul>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box shadow floatable article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+      <a title='JS函数' href='/JS2-1.html'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more01.png'></a>
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/JS2-1.html">
+        JS函数
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+<div class='new-meta-item author'>
+  <a href="https://crainyday.gitee.io" rel="nofollow">
+    <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/avatar.png">
+    <p>crainyday</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E5%89%8D%E7%AB%AF/JS/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>前端&nbsp;/&nbsp;JS</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-edit" aria-hidden="true"></i>
+    <p>发布于：2019年3月31日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard" aria-hidden="true"></i>
+      <p>字数：2.3k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+      <p>时长：8分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>JS的函数function</p>
+<a id="more"></a>
+<h2 id="一-JS函数的简介">一.JS函数的简介</h2>
+<p>函数(function):</p>
+<ul>
+<li>函数也是一个对象</li>
+<li>函数中封装了一些功能(代码), 在需要时可以执行这些功能(代码)</li>
+<li>封装到函数的代码不会立即执行, 只有调用时才会执行</li>
+<li>调用函数时代码顺序执行, 调用语法: 函数对象()</li>
+<li>使用typeof检查一个函数对象时, 会返回function</li>
+</ul>
+<h3 id="A-创建一个函数对象">A.创建一个函数对象</h3>
+<ol>
+<li>将要封装的代码以字符串形式传递给构造函数, 例:</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fun = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"console.log('这是我的第一个函数~~~')"</span>);</span><br><span class="line">fun[<span class="string">'value'</span>] = <span class="string">"123"</span>;<span class="comment">//函数是对象, 也可以像对象那样用, 但我们一般不这样用</span></span><br><span class="line">fun();<span class="comment">//这样调用函数</span></span><br><span class="line"><span class="comment">//实际编程中我们很少用这种方式创建一个函数</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>使用函数声明来船舰一个函数(对象), 格式:</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params">[形参<span class="number">1</span>,形参<span class="number">2</span>,形参<span class="number">3</span>,...,形参n]</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//代码...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>使用函数表达式创建一个函数, 格式:</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> 函数名 = <span class="function"><span class="keyword">function</span>(<span class="params">[形参<span class="number">1</span>,形参<span class="number">2</span>,形参<span class="number">3</span>,...,形参n]</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//代码...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="B-参数">B.参数</h3>
+<ul>
+<li>在函数的()中, 可以指定0个或多个形参</li>
+<li>多个形参之间用逗号隔开, 声明了形参就相当于在函数内部声明了对应的变量</li>
+<li>声明的形参并没有被赋值</li>
+<li>调用函数时, 可以在()中指定实参, 实参的值会依次赋值给形参</li>
+<li>调用函数时, 解析器不会检查形参与实参的数量是否匹配</li>
+<li>函数的实参可以是任何类型的值, 包括基本类型、对象、函数(对象).</li>
+</ul>
+<p><font style='color:red;font-size:1.2em;font-weight:bold;'>特别注意: 调用函数时, 解析器也不会检查实参的类型, 所以要检查一下参数是否合法</font></p>
+<p>例题: 定义一个能求两个数和的函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>((<span class="keyword">typeof</span> a) == <span class="string">"number"</span>&amp;&amp;(<span class="keyword">typeof</span> b) == <span class="string">"number"</span>)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(a+b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">sum(<span class="number">123</span>,<span class="number">456</span>);</span><br><span class="line">sum(<span class="number">123</span>,<span class="string">"456"</span>);<span class="comment">//不输出内容</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"我是"</span> + obj.name + <span class="string">",性别"</span> + obj.sex + <span class="string">",我今年"</span> + obj.age + <span class="string">"岁了"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">    name:<span class="string">"孙悟空"</span>,</span><br><span class="line">    sex:<span class="string">"男"</span>,</span><br><span class="line">    age:<span class="number">500</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//函数实参为对象</span></span><br><span class="line">show(person);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    a(person);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//函数实参为函数(对象),将max赋值给了a,故a(person);与show(person);等价</span></span><br><span class="line">fun(max);</span><br></pre></td></tr></table></figure>
+<h3 id="C-返回值">C.返回值</h3>
+<ul>
+<li>在函数中, 可以用return关键字返回一个表达式的值</li>
+<li>可以在调用函数处, 声明一个变量接收该函数的返回值</li>
+<li>若函数中不写return或没有return一个值, 则会默认return undefined;</li>
+<li>return语句之后的代码不会被执行</li>
+<li>函数的返回值也可以是任意类型的值, 基本类型、对象、函数</li>
+</ul>
+<p>例: 定义一个能求两个数最大值的函数, 并将最大值返回.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">max</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>((<span class="keyword">typeof</span> a) == <span class="string">"number"</span>&amp;&amp;(<span class="keyword">typeof</span> b) == <span class="string">"number"</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> a&gt;b?a:b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> maxNum = max(<span class="number">123</span>,<span class="number">456</span>);</span><br><span class="line"><span class="built_in">console</span>.log(maxNum);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"a = "</span> + a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//函数实参为函数(对象)</span></span><br><span class="line">fun(max);</span><br><span class="line"><span class="comment">//函数实参为函数的返回值</span></span><br><span class="line">fun(max(<span class="number">123</span>,<span class="number">456</span>));</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//return &#123;name:"孙悟空"&#125;;//返回一个对象</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fun3</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">"我是fun3函数"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//return fun3();//这样是返回fun3函数的返回值</span></span><br><span class="line">    <span class="keyword">return</span> fun3;<span class="comment">//返回fun3这个函数</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> f = fun2();<span class="comment">//此时f为fun3</span></span><br><span class="line">f();<span class="comment">//调用fun3函数</span></span><br><span class="line">fun2()();<span class="comment">//和f();等价,也是调用fun3()函数</span></span><br></pre></td></tr></table></figure>
+<h3 id="D-立即执行函数">D.立即执行函数</h3>
+<ul>
+<li>函数定义完, 立即就会被调用</li>
+<li>这种函数往往是匿名函数, 只会执行一次.例:</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//先用一对小括号将匿名函数括起来,表示是一个整体,否则不允许这样声明函数</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"a = "</span> + a);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"b = "</span> + b);</span><br><span class="line">&#125;)(<span class="number">123</span>, <span class="number">456</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="E-方法-method">E.方法(method)</h3>
+<ul>
+<li>一类特殊的函数, 这类函数是对象的属性</li>
+<li>若一个函数成了对象的一个属性, 那这个函数就叫做对象的方法</li>
+<li>调用函数就叫做调用的对象的某方法</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.write(<span class="string">"Hello"</span>);<span class="comment">//调用document对象的write方法</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Hello"</span>);<span class="comment">//调用console对象的log方法</span></span><br></pre></td></tr></table></figure>
+<h2 id="二-作用域-Scope">二.作用域(Scope)</h2>
+<h3 id="A-全局作用域">A.全局作用域</h3>
+<ul>
+<li>直接编写在script标签中的JS代码, 都在全局作用域中</li>
+<li>全局作用域在页面打开时创建, 在页面关闭时销毁</li>
+<li>全局作用域中有一个<font style="color:red;">全局对象window</font>, 它代表一个浏览器窗口, 由浏览器创建, 我们可以直接使用</li>
+<li>全局作用域中我们创建的变量都会作为<font style="color:red;">window对象的属性保存</font>, 函数作为window的方法</li>
+<li>全局作用域里的变量都是全局变量, 在页面的任何部分都能访问到</li>
+</ul>
+<blockquote>
+<p>变量的声明提前: 使用var声明的变量, 会在所有的代码执行之前被声明(但不会被赋值)<br>
+但声明变量时不使用var, 则变量不会被提前声明<br>
+函数的声明提前: 使用函数声明的形式创建的函数 function 函数名(){}<br>
+会在所有代码执行前被创建, 所以我们可以在函数声明前调用它.<br>
+但是用函数表达式创建的函数 var fun = function(){};<br>
+不会被声明提前, 所以不能在声明前调用.</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//输出:undefined</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;<span class="comment">//去掉var之后, 第一行报错</span></span><br><span class="line">fun();</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"我是fun"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fun1 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"我是fun1"</span>);</span><br><span class="line">&#125;;</span><br><span class="line">fun1();<span class="comment">//只能在这之后调用, 否则会报错.</span></span><br></pre></td></tr></table></figure>
+<h3 id="B-函数作用域">B.函数作用域</h3>
+<ul>
+<li>函数被调用时, 创建自己的函数作用域, 函数执行完毕, 函数作用域销毁</li>
+<li>每调用一次函数, 创建一个新的函数作用域, 作用域之间互相独立</li>
+<li>函数作用域中可以访问到全局变量, 但全局作用域无法访问到局部变量</li>
+<li>在函数中操作一个变量时, 首先在自身作用域中寻找, 没有的话向上一级寻找</li>
+<li>函数中想使用全局变量, 可以使用window.变量名</li>
+<li>函数的形参相当于在函数作用域中声明的.</li>
+</ul>
+<blockquote>
+<p>也存在声明提前的问题, 但提前声明于当前作用域</p>
+</blockquote>
+<h2 id="三-debug">三.debug</h2>
+<p>这种调试, 可以查看执行过程中内存的状态, 各变变量的情况.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">alert(d);<span class="comment">//声明提前</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = <span class="number">15</span>;</span><br><span class="line">c = <span class="number">20</span>;<span class="comment">//不要监视c可能会出错卡死</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"我是fun"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> d = <span class="number">25</span>;</span><br></pre></td></tr></table></figure>
+<p>先打开, 浏览器的开发者工具, 以chrome为例, 按F12, 选择sources, 之后如下图:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="imgs%5CJS%5Cdebug.png" alt="debug"></p>
+<p>其他浏览器类似</p>
+<h2 id="四-this">四.this</h2>
+<p>你可以这样理解:</p>
+<p>  解析器在调用函数时每次都会向函数内部传递一个隐含的参数this, this指向一个对象, 这个函数我们称为函数执行的上下文对象, 根据函数的调用方式不同, this会指向不同的对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">" "</span> + <span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line">fun();<span class="comment">//这时this指向window对象,this.name="全局的name";</span></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">"全局的name"</span>;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name:<span class="string">"孙悟空"</span>,</span><br><span class="line">    show:fun</span><br><span class="line">&#125;;</span><br><span class="line">obj.show();<span class="comment">//这时this指向obj, this.name="孙悟空";</span></span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    name:<span class="string">"猪八戒"</span>,</span><br><span class="line">    show:fun</span><br><span class="line">&#125;;</span><br><span class="line">obj1.show();<span class="comment">//这时this指向obj1, this.name="猪八戒";</span></span><br></pre></td></tr></table></figure>
+<h2 id="五-call-和apply">五.call()和apply()</h2>
+<ul>
+<li>这两个方法都是函数对象的方法, 需要通过函数对象来调用</li>
+<li>当函数对象调用call()和apply()方法时, 函数中的代码也会执行.</li>
+<li>可以将一个对象指定为call和apply的第一个参数, 这个对象将会成为函数执行时的this</li>
+<li>call()方法, 将函数原本的实参在第一个参数(对象)以后依次传递给函数的形参</li>
+<li>apply()方法, 将函数原本的实参封装到一个数组统一传递.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;<span class="attr">name</span>:<span class="string">"obj1"</span>,<span class="attr">show</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;&#125;;</span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;<span class="attr">name</span>:<span class="string">"obj2"</span>&#125;;</span><br><span class="line"></span><br><span class="line">fun();<span class="comment">//输出:window</span></span><br><span class="line">fun.call(obj1);<span class="comment">//输出:object</span></span><br><span class="line">fun.apply(obj2);<span class="comment">//输出:object</span></span><br><span class="line"></span><br><span class="line">obj1.show();<span class="comment">//输出:obj1</span></span><br><span class="line">obj1.show.call(obj2);<span class="comment">//输出:obj2</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun2</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"a = "</span>+a);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"b = "</span>+b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun2.call(obj1,<span class="number">1</span>,<span class="number">2</span>);<span class="comment">//将参数依次传递</span></span><br><span class="line">fun2.apply(obj1,[<span class="number">1</span>,<span class="number">2</span>]);<span class="comment">//将参数封装成数组统一传递</span></span><br></pre></td></tr></table></figure>
+<h3 id="this的情况">this的情况:</h3>
+<ol>
+<li>在函数中调用时, this永远指window</li>
+<li>在方法中调用时, this是调用方法的对象</li>
+<li>在构造函数中调用时, this是正在创建的对象</li>
+<li>使用call和apply调用时, this是参数传递过来的对象</li>
+</ol>
+<h2 id="六-arguments">六.arguments</h2>
+<blockquote>
+<p>在调用函数时, 浏览器都会传递进两个隐含的参数:<br>
+①函数的上下文对象:this<br>
+②封装实参的对象: arguments, 我们传递的实参都保存在里面</p>
+</blockquote>
+<ul>
+<li>arguments是一个类数组对象, 它不是数组, 但是它也可以通过数字索引来操作数据.</li>
+<li>arguments.length可以获取实参的长度, 我们即使没定义形参, 也可以通过arguments来使用形参, 但这样比较麻烦</li>
+<li>arguments[0]表示第一个实参, 以此类推.</li>
+<li>arguments.callee属性, 表示当前的函数对象</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span> <span class="keyword">instanceof</span> <span class="built_in">Array</span>);<span class="comment">//判断arguments是不是数组,输出:false</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">Array</span>.isArray(<span class="built_in">arguments</span>));<span class="comment">//判断arguments是不是数组,输出:false</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.length);<span class="comment">//输出:4</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>[<span class="number">3</span>]);<span class="comment">//输出:true</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.callee == fun);<span class="comment">//输出:true</span></span><br><span class="line">&#125;</span><br><span class="line">fun(<span class="string">"one"</span>,<span class="string">"two"</span>,<span class="number">3</span>,<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+
+          
+            <br>
+            
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://crainyday.gitee.io/JS2-1.html>https://crainyday.gitee.io/JS2-1.html</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <fancybox><img src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/alipay.png'
+        
+          height='64px'
+        ></fancybox>
+      
+    
+      
+        <fancybox><img src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/wechat.png'
+        
+          height='64px'
+        ></fancybox>
+      
+    
+  </div>
+</section>
+
+  
+
+
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-12T15:01:04+08:00">
+  <a class='notlink'>
+    <i class="fas fa-save" aria-hidden="true"></i>
+    <p>更新于：2020年3月12日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JS/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i><p>JS</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard" aria-hidden="true"></i>
+      <p>字数：2.3k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+      <p>时长：8分钟</p>
+    </a>
+  </div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://crainyday.gitee.io/JS2-1.html&title=JS函数 - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more01.png&summary=JS的函数function"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://crainyday.gitee.io/JS2-1.html&title=JS函数 - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more01.png&summary=JS的函数function"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://crainyday.gitee.io/JS2-1.html&title=JS函数 - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more01.png&summary=JS的函数function"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAAD4CAAAAADkunTXAAACRklEQVR42u3aS27CQBAFQN//0s4+EqJ/Btyu2QUEnppsHv3mOB+6DnBwcHBw8EXwo7jCD3rzuf+vv3ted7/g4ODg4OAb4VlIFhiFRQ+mul9wcHBwcPDN8GiA6B7EFDy9X3BwcHBwcPDw56cGFuDg4ODg4OCfDzDZoFN9Pjg4ODg4OHhhQH8RKFtofLxJAQcHBwcH/yF4+cLcl/7++s1GcHBwcHDwH4B3V/fAqoOO8n7BwcHBwcEXwasBIVrsZ7+/ehEgfLEAHBwcHBx8ETw6sM8W8lcFoDQ0OogABwcHBwe/MTxb8HcPIHvAUwcODg4ODg6+Cd7dQPegqkEnu19wcHBwcPCN8OyGog/OFvvdCwHlQgEcHBwcHPzG8OwP/+jr3UHG1ODjZaEADg4ODg6+CD4Frhb62cFG+4IfODg4ODj4Qnh2Y1MFxMcGI+Dg4ODg4AvhUUg0MHSDyplc7UIBHBwcHBx8Abxa5HchR3OFgxQ4ODg4OPhieDsgNIuCs7nayQ0cHBwcHPzG8OmCIXqxoHowY4UCODg4ODj4Ynj1QdVA1B1EvHwfHBwcHBx8EfyqH/7Z4DIVlMDBwcHBwZ8E7xbx1YHGdPFfvuAHDg4ODg6+AF4NLN1gEoVVLwKAg4ODg4M/Cd4NENXBxdigoRpgwMHBwcHBwcvBKHtA2cEHODg4ODg4eH1QEP3e6WLi8gADDg4ODg7+Q/CpYNENNt1/ADg4ODg4+JPgV124qw4OqgVFulAABwcHBwe/MfxpCxwcHBwcfMH6A88kBC4oDzQPAAAAAElFTkSuQmCC">
+          </div>
+        </div>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/JS2-2.html'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>JS对象补充</p>
+                <p class='content'>JS对象补充
+
+一.工厂方法创建对象
+123456var obj = &#123;    name:,    age:,    sex:,    showMes:&#125;;
+  我们想要创建...</p>
+              </a>
+            
+            
+              <a class='next' href='/JS2-0.html'>
+                <p class='title'>JS对象简介<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>JS的Object类型
+
+一.Object对象
+Object类型, 我们也称为一个对象. 是JavaScript中的引用数据类型.
+
+它是一种复合值, 它将很多值聚合到一起, 可以通过名字访问这...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ajax1-0.html" title="Ajax简介" rel="bookmark">Ajax简介</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ajax1-1.html" title="Ajax数据格式" rel="bookmark">Ajax数据格式</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ajax1-2.html" title="Ajax-jQuery" rel="bookmark">Ajax-jQuery</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JS1-0.html" title="JS简介" rel="bookmark">JS简介</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JS-JSON.html" title="JS-JSON" rel="bookmark">JS-JSON</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments shadow floatable">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'JS函数',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ajax1-0.html" title="Ajax简介" rel="bookmark">Ajax简介</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ajax1-1.html" title="Ajax数据格式" rel="bookmark">Ajax数据格式</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ajax1-2.html" title="Ajax-jQuery" rel="bookmark">Ajax-jQuery</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JS1-0.html" title="JS简介" rel="bookmark">JS简介</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JS-JSON.html" title="JS-JSON" rel="bookmark">JS-JSON</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+
+<section class="widget grid shadow floatable desktop mobile">
+  
+  <header>
+    
+      <i class="fas fa-map-signs fa-fw" aria-hidden="true"></i><span class='name'>实用文档</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="grid navigation fixed">
+      
+        <a class="flat-box" title="/maven_05.html" href="/maven_05.html"
+          
+          
+          id="maven_05.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Maven工程
+        </a>
+      
+        <a class="flat-box" title="/Flask.html" href="/Flask.html"
+          
+          
+          id="Flask.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Flask应用
+        </a>
+      
+        <a class="flat-box" title="/Hexo.html" href="/Hexo.html"
+          
+          
+          id="Hexo.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Gitee搭站
+        </a>
+      
+        <a class="flat-box" title="/Ubuntu_006.html" href="/Ubuntu_006.html"
+          
+          
+          id="Ubuntu_006.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          v2ray
+        </a>
+      
+    </div>
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一-JS函数的简介"><span class="toc-text">一.JS函数的简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-创建一个函数对象"><span class="toc-text">A.创建一个函数对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-参数"><span class="toc-text">B.参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-返回值"><span class="toc-text">C.返回值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#D-立即执行函数"><span class="toc-text">D.立即执行函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#E-方法-method"><span class="toc-text">E.方法(method)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二-作用域-Scope"><span class="toc-text">二.作用域(Scope)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-全局作用域"><span class="toc-text">A.全局作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-函数作用域"><span class="toc-text">B.函数作用域</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三-debug"><span class="toc-text">三.debug</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四-this"><span class="toc-text">四.this</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五-call-和apply"><span class="toc-text">五.call()和apply()</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#this的情况"><span class="toc-text">this的情况:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六-arguments"><span class="toc-text">六.arguments</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix ">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='true'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='2709912289'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="mailto:crainyday@qq.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/crainyday"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=1794783182"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        <div id='sitetime'></div>
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作为主题
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://crainyday.gitee.io">Copyright © 2019-2021 CRainyDay</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js" async></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_01.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_02.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_03.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_04.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_05.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js" async></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js" async></script>
+
+  
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "47GAhNwwbbNreaJdvDNWHhOo-gzGzoHsz",
+    appKey: "pndiLFAmJvnhcIutpj4HIj6t",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    visitor: 'false',
+    highlight:'true'
+  })
+  </script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    function on_success(){
+      let $btn = $('.highlight .code pre');
+      console.log($btn);
+    }
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copyed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-clipboard-check');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPYED';
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-exclamation-triangle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "[object Object]";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/sitetime.min.js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/clicklove.min.js'></script>
+
+
+  <script>setLoadingBarProgress(100);</script>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
+</html>

@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.1.2'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>Git的常用命令 - CRainyDay</title>
+  
+    <meta name="keywords" content="Git,GitHub">
+  
+  
+    <meta name="description" content="Git的常用命令:
+123456789101112131415161718192021222324252627282930git initgit config user.name xxxgit config user.email xxx@qq.comgit config  --global user.name x...">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?bf368df5385d5be3472f3155e4cdb303";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow floatable blur">
+
+  <div class='wrapper'>
+    <div class='nav-sub container--flex'>
+      <a class="logo flat-box"></a>
+      <ul class='switcher h-list'>
+        <li><a class="s-comment flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main container container--flex">
+      
+        
+        <a class="logo flat-box" target="_self" href='/'>
+          
+          
+            <i class='fas fa-home'></i>
+          
+          
+            CRainyDay
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='h-list'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  
+                    <i class='fas fa-folder-open fa-fw'></i>
+                  
+                  分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  
+                    <i class='fas fa-archive fa-fw'></i>
+                  
+                  归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  
+                    <i class='fas fa-tags fa-fw'></i>
+                  
+                  标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  
+                    <i class='fas fa-link fa-fw'></i>
+                  
+                  友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  
+                    <i class='fas fa-ellipsis-v fa-fw'></i>
+                  
+                  更多
+                </a>
+                
+                  <ul class="submenu">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/about/music.html
+                  
+                  
+                  
+                    id="aboutmusic.html"
+                  >
+                  
+                    <i class='fas fa-music fa-fw'></i>
+                  
+                  往后余生
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/bbs/
+                  
+                  
+                  
+                    id="bbs"
+                  >
+                  
+                    <i class='fas fa-comment-alt fa-fw'></i>
+                  
+                  留言
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  
+                    <i class='fas fa-info-circle fa-fw'></i>
+                  
+                  关于
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      
+        <div class="m_search">
+          <form name="searchform" class="form u-search-form">
+            <i class="icon fas fa-search fa-fw"></i>
+            <input type="text" class="input u-search-input" placeholder="搜索" />
+          </form>
+        </div>
+      
+
+			<ul class='switcher h-list'>
+				
+					<li><a class="s-search flat-btn fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li><a class="s-menu flat-btn fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<ul class="menu-phone navigation white-box">
+  
+  
+    <li>
+      <a class="flat-box" href=/
+        
+        
+        
+          id="home"
+        >
+        
+          <i class='fas fa-home fa-fw'></i>
+        
+        博客
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/archives/
+        
+        
+        
+          id="archives"
+        >
+        
+          <i class='fas fa-archive fa-fw'></i>
+        
+        归档
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/categories/
+        
+        
+        
+          id="categories"
+        >
+        
+          <i class='fas fa-folder-open fa-fw'></i>
+        
+        分类
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/friends/
+        
+        
+        
+          id="friends"
+        >
+        
+          <i class='fas fa-link fa-fw'></i>
+        
+        友链
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/bbs/
+        
+        
+        
+          id="bbs"
+        >
+        
+          <i class='fas fa-comment-alt fa-fw'></i>
+        
+        留言
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/about/
+        
+        
+        
+          id="about"
+        >
+        
+          <i class='fas fa-info-circle fa-fw'></i>
+        
+        关于
+      </a>
+    </li>
+  
+</ul>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box shadow floatable article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+      <a title='Git的常用命令' href='/Git_GitHub_02.html'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more07.png'></a>
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/Git_GitHub_02.html">
+        Git的常用命令
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+<div class='new-meta-item author'>
+  <a href="https://crainyday.gitee.io" rel="nofollow">
+    <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/avatar.png">
+    <p>crainyday</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/GitHub/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>Git&nbsp;/&nbsp;GitHub</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-edit" aria-hidden="true"></i>
+    <p>发布于：2020年3月26日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard" aria-hidden="true"></i>
+      <p>字数：1.9k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+      <p>时长：7分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>Git的常用命令:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git config user.name xxx</span><br><span class="line">git config user.email xxx@qq.com</span><br><span class="line">git config  --global user.name xxx</span><br><span class="line">git config  --global user.email xxx@qq.com</span><br><span class="line">git status</span><br><span class="line">git add [filename]</span><br><span class="line">git commit -m "commit message" [file name]</span><br><span class="line">git log</span><br><span class="line">git log --pretty=oneline</span><br><span class="line">git log --oneline</span><br><span class="line">git reflog</span><br><span class="line">git reset --hard [局部索引值]</span><br><span class="line">git reset --hard HEAD^</span><br><span class="line">git reset --hard HEAD~1</span><br><span class="line">git diff [文件名]</span><br><span class="line">git diff [本地库中的历史版本] [文件名]</span><br><span class="line">git branch [新建的分支名]</span><br><span class="line">git branch -v</span><br><span class="line">git checkout [要切换的分支名]</span><br><span class="line">git merge [有新内容的分支名]</span><br><span class="line">git remote -v</span><br><span class="line">git remote add [别名] [远程地址]</span><br><span class="line">git push [别名] [本地分支名]</span><br><span class="line">git clone [远程地址]</span><br><span class="line">git fetch [远程库地址别名] [远程分支名]</span><br><span class="line">git merge [远程库地址别名/远程分支名]</span><br><span class="line">git pull [远程库地址别名] [远程分支名]</span><br><span class="line">ssh-keygen -t rsa -C GitHub用户的邮箱</span><br><span class="line">git remote add origin_ssh [远程仓库的ssh地址]</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="1-git-init">1.git init</h2>
+<ul>
+<li>使用<code>git init</code>命令, 初始化本地库.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_02_01.png" alt="Git_GitHub_02_01"></p>
+<ul>
+<li>注意: .git 目录中存放的是当前项目的本地库相关配置, 不要删除, 也不要胡乱修改.</li>
+</ul>
+<hr>
+<h2 id="2-git-config">2.git config</h2>
+<ul>
+<li>设置签名.</li>
+<li>设置当前项目的签名信息:</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name crainyday</span><br><span class="line">git config user.email crainyday@qq.com</span><br></pre></td></tr></table></figure>
+<ul>
+<li>设置好后, 签名信息保存在当前项目的.git/config文件中:</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_02_02.png" alt="Git_GitHub_02_02"></p>
+<ul>
+<li>设置全局签名, 使用: <code>git config --global</code>, 即可.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_02_03.png" alt="Git_GitHub_02_03"></p>
+<hr>
+<h2 id="3-查看状态、追踪、提交">3.查看状态、追踪、提交</h2>
+<h3 id="git-status">git status</h3>
+<ul>
+<li>查看工作区、暂存区状态.</li>
+<li>新建一个文件, 再使用<code>git status</code>命令:</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">touch hello.txt</span><br><span class="line">ls</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_02_04.png" alt="Git_GitHub_02_04"></p>
+<ul>
+<li>状态信息: 检测到一个未跟踪的文件. 提示你使用<code>git add &lt;filename&gt;</code>建立跟踪.</li>
+</ul>
+<h3 id="git-add">git add</h3>
+<ul>
+<li>使用<code>git add [filename]</code>建立文件的跟踪.</li>
+<li>将工作区的&quot;新建/修改&quot;添加到暂存区.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_02_05.png" alt="Git_GitHub_02_05"></p>
+<h3 id="git-commit">git commit</h3>
+<ul>
+<li>使用<code>git commit -m &quot;提交的消息&quot; [filename]</code>, 将暂存区的内容提交到本地库.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_02_05.png" alt="Git_GitHub_02_05"></p>
+<ul>
+<li>同样, 可以直接使用<code>git commit</code>将文件提交到本地库并在暂存区建立跟踪.</li>
+<li>这样做的前提是: 你之前已经对该文件用过了<code>git add</code>命令.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_02_06.png" alt="Git_GitHub_02_06"></p>
+<hr>
+<h2 id="4-查看文件历史">4.查看文件历史</h2>
+<h3 id="git-log">git log</h3>
+<h4 id="①不带参数">①不带参数</h4>
+<ul>
+<li>直接使用<code>git log</code>, 查询打印文件历史记录最详细的信息.</li>
+<li>注意: 只会显示当前&quot;HEAD&quot;指针之前的历史记录, 可以对比后边的<code>git reflog</code>命令.</li>
+<li>多屏控制:
+<ul>
+<li><code>空格</code>向下翻一页.</li>
+<li><code>b</code>向上翻一页.</li>
+<li><code>q</code>退出查看历史.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_02_07.png" alt="Git_GitHub_02_07"></p>
+<h4 id="②带–pretty参数">②带–pretty参数</h4>
+<ul>
+<li>使用<code>git log --pretty=oneline</code>命令, 将一个历史显示为一行, 并显示全部索引值.</li>
+<li>注意: 只会显示当前&quot;HEAD&quot;指针之前的历史记录, 可以对比后边的<code>git reflog</code>命令.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_02_08.png" alt="Git_GitHub_02_08"></p>
+<h4 id="③带–oneline">③带–oneline</h4>
+<ul>
+<li>使用<code>git log --oneline</code>命令, 将一个历史显示为一行, 并显示局部索引值.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_02_09.png" alt="Git_GitHub_02_09"></p>
+<h3 id="git-reflog">git reflog</h3>
+<ul>
+<li>
+<p>显示当前本地库所有的文件历史记录, 只显示局部索引值、HEAD@{n}、提交时的消息.</p>
+</li>
+<li>
+<p>其中: <code>xxxxxxx HEAD@{n}</code> 表示移动到xxxxxxx版本需要移动HEAD指针n步.</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_02_10.png" alt="Git_GitHub_02_10"></p>
+<hr>
+<h2 id="5-git-reset">5.git reset</h2>
+<h3 id="–hard参数">–hard参数</h3>
+<ul>
+<li>
+<p>git可以在各个本地库版本之间穿梭的本质: &quot;HEAD&quot;指针的操作.</p>
+</li>
+<li>
+<p>①使用局部索引值修改HEAD指针:</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard [局部索引值]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>②使用<code>^</code>符号修改HEAD指针, 只能后退到之前的版本:</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 一个^后退一步，n 个后退 n 步</span></span><br><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure>
+<ul>
+<li>③使用<code>~</code>符号加数字修改HEAD指针, 只能后退到之前的版本:</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD~n</span><br></pre></td></tr></table></figure>
+<h3 id="reset命令的三个参数">reset命令的三个参数</h3>
+<ul>
+<li>
+<p>①–soft 参数</p>
+</li>
+<li>
+<p>只会在本地库移动 HEAD 指针</p>
+</li>
+<li>
+<p>不会改变暂存区和工作区内容.</p>
+</li>
+<li>
+<p>②–mixed 参数</p>
+</li>
+<li>
+<p>在本地库移动 HEAD 指针</p>
+</li>
+<li>
+<p>并重置暂存区</p>
+</li>
+<li>
+<p>但不会改变工作区内容.</p>
+</li>
+<li>
+<p>③–hard 参数</p>
+</li>
+<li>
+<p>在本地库移动 HEAD 指针</p>
+</li>
+<li>
+<p>并重置暂存区</p>
+</li>
+<li>
+<p>并重置工作区</p>
+</li>
+</ul>
+<div class="success">
+<p>一般来说, 只会用到 --hard 参数.</p>
+</div>
+<h3 id="git-reset的应用">git reset的应用</h3>
+<ul>
+<li>
+<p>找回已经删除了的文件.</p>
+</li>
+<li>
+<p>前提: 删除该文件前, 文件存在时的状态提交到了本地库.</p>
+</li>
+<li>
+<p>命令: <code>git reset --hard [指针位置]</code></p>
+</li>
+<li>
+<p>①若删除操作已经提交到本地库, 指针位置为之前的历史记录的<code>局部索引值</code>.</p>
+</li>
+<li>
+<p>②若删除操作尚未提交到本地库, 指针位置直接填入<code>HEAD</code>即可.</p>
+</li>
+</ul>
+<hr>
+<h2 id="6-git-diff">6.git diff</h2>
+<ul>
+<li>
+<p>用于比较文件之间的差异.</p>
+</li>
+<li>
+<p>①<code>git diff [文件名]</code></p>
+</li>
+<li>
+<p>将工作区中的文件和暂存区进行比较.</p>
+</li>
+<li>
+<p>②<code>git diff [本地库中历史版本的局部索引值] [文件名]</code></p>
+</li>
+<li>
+<p>将工作区中的文件和本地库历史记录进行比较.</p>
+</li>
+</ul>
+<div class="success">
+<p>不带文件名则比较多个文件.</p>
+</div>
+<hr>
+<h2 id="7-分支管理">7.分支管理</h2>
+<h3 id="分支操作">分支操作</h3>
+<ul>
+<li>①创建分支</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch [要创建的分支名]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>②查看分支</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -v</span><br></pre></td></tr></table></figure>
+<ul>
+<li>③切换分支</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch checkout [要切换到的分支名]</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_02_11.png" alt="Git_GitHub_02_11"></p>
+<ul>
+<li>④强制删除分支</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -D [要删除的分支]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>⑤查看<code>git branch</code>的帮助</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -help</span><br></pre></td></tr></table></figure>
+<h3 id="合并分支">合并分支</h3>
+<ul>
+<li>①切换到被合并分支(你要修改的分支)</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout [被合并分支名]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>②使用merge命令合并分支(不会删除)</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge [合并分支名]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>③若无冲突, 则会成功合并; 否则, 需要解决冲突.如下图:</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_02_12.png" alt="Git_GitHub_02_12"></p>
+<h3 id="解决冲突">解决冲突</h3>
+<ul>
+<li>冲突的表现:</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_02_13.png" alt="Git_GitHub_02_13"></p>
+<ul>
+<li>
+<p>解决步骤:</p>
+</li>
+<li>
+<p>①编辑有冲突的文件, 删除特殊符号.</p>
+</li>
+<li>
+<p>②修改文件到你满意的程度, 保存退出.</p>
+</li>
+<li>
+<p>③使用<code>git add [文件名]</code>命令, 添加冲突文件到暂存区.</p>
+</li>
+<li>
+<p>④使用<code>git commit -m &quot;日志信息&quot;</code>命令, 提交冲突文件到本地库即可.</p>
+</li>
+</ul>
+<div class="warning">
+<p>注意: 第④步中, commit 时一定不能带具体文件名.</p>
+</div>
+<hr>
+<h2 id="8-和远程库相关操作">8.和远程库相关操作</h2>
+<h3 id="创建远程库地址别名">创建远程库地址别名</h3>
+<ul>
+<li>前提: 确保你在代码托管中心申请了账号, 并创建了一个远程仓库, 得到了远程仓库的HTTP地址.</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 添加远程库</span></span><br><span class="line">git remote add [远程库别名] [远程库地址]</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看当前项目的远程库地址及别名</span></span><br><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_02_14.png" alt="Git_GitHub_02_14"></p>
+<h3 id="Push">Push</h3>
+<ul>
+<li>即, 推送本地库到远程库.</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push [要推送到的远程库别名] [要推送的本地分支]</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_02_15.png" alt="Git_GitHub_02_15"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_02_16.png" alt="Git_GitHub_02_16"></p>
+<h3 id="Clone">Clone</h3>
+<ul>
+<li>即, 克隆远程库到本地库.</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone [远程库地址]</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_02_17.png" alt="Git_GitHub_02_17"></p>
+<ul>
+<li>git clone的效果:</li>
+<li>①完整的把远程库内容下载到本地.</li>
+<li>②创建 origin 远程地址别名, 指向你克隆的地址.</li>
+<li>③初始化本地库(相当于执行了<code>git init</code>命令).</li>
+</ul>
+<h3 id="Pull">Pull</h3>
+<ul>
+<li>
+<p>即, 拉取远程库内容到本地.</p>
+</li>
+<li>
+<p>若是多人协作开发的话, 你需要从远程库&quot;Pull&quot;别人更新的代码.</p>
+</li>
+<li>
+<p><code>pull</code>命令, 其实可以拆分为: <code>fetch+merge</code>命令.</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git fetch [远程库地址别名] [远程分支名]</span><br><span class="line">git merge [远程库地址别名/远程分支名]</span><br><span class="line">git pull [远程库地址别名] [远程分支名]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在<code>merge</code>的时候, 可能会产生冲突, 若产生冲突, 参照<a href="#%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81">解决冲突</a>即可.</li>
+</ul>
+<div class="danger">
+<p>注意: 有一些远程库, 若是本地库的修改不是基于远程库的最新版所做的修改, 不能Push, 必须先Pull. 解决冲突后, 再Push. 例如: GitHub远程库等.</p>
+</div>
+<hr>
+<h2 id="9-使用SSH">9.使用SSH</h2>
+<ul>
+<li>①进入当前用户的家目录.</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br></pre></td></tr></table></figure>
+<ul>
+<li>②删除之前的.ssh 目录.</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf .ssh</span><br></pre></td></tr></table></figure>
+<ul>
+<li>③运行命令重新生成.ssh密钥目录. 注意: <code>大写-C</code></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C [你的代码托管中心的账户邮箱]</span><br><span class="line"><span class="meta">#</span><span class="bash"> 输入完上面命令后, 一直按回车确认即可.</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_02_18.png" alt="Git_GitHub_02_18"></p>
+<ul>
+<li>④进入.ssh目录查看文件id_rsa.pub文件内容, 得到SSH密钥.</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd .ssh</span><br><span class="line">ll</span><br><span class="line">cat id_rsa.pub</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_02_19.png" alt="Git_GitHub_02_19"></p>
+<ul>
+<li>
+<p>⑤复制<code>id_rsa.pub文件</code>内容.</p>
+</li>
+<li>
+<p>⑥登录你的代码托管中心, 新建一个SSH密钥, 添加上即可. 下面是Gitee的, 其他类似.</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_02_20.png" alt="Git_GitHub_02_20"></p>
+<ul>
+<li>⑦得到你的远程库的SSH地址并复制, 不要HTTP的.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_02_21.png" alt="Git_GitHub_02_21"></p>
+<ul>
+<li>⑧添加远程库的SSH地址别名:</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin_ssh git@gitee.com:CRainyDay/test.git</span><br></pre></td></tr></table></figure>
+<ul>
+<li>⑨Push文件进行测试.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/Git/Git_GitHub_02_22.png" alt="Git_GitHub_02_22"></p>
+
+          
+            <br>
+            
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://crainyday.gitee.io/Git_GitHub_02.html>https://crainyday.gitee.io/Git_GitHub_02.html</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <fancybox><img src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/alipay.png'
+        
+          height='64px'
+        ></fancybox>
+      
+    
+      
+        <fancybox><img src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/wechat.png'
+        
+          height='64px'
+        ></fancybox>
+      
+    
+  </div>
+</section>
+
+  
+
+
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-24T13:22:29+08:00">
+  <a class='notlink'>
+    <i class="fas fa-save" aria-hidden="true"></i>
+    <p>更新于：2021年2月24日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Git/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i><p>Git</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/GitHub/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i><p>GitHub</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard" aria-hidden="true"></i>
+      <p>字数：1.9k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+      <p>时长：7分钟</p>
+    </a>
+  </div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://crainyday.gitee.io/Git_GitHub_02.html&title=Git的常用命令 - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more07.png&summary=Git的常用命令:
+123456789101112131415161718192021222324252627282930git initgit config user.name xxxgit config user.email xxx@qq.comgit config  --global user.name xxxgit config  --global user.email xxx@qq.comgit statusgit add [filename]git commit -m "commit message" [file name]git loggit log --pretty=onelinegit log --onelinegit refloggit reset --hard [局部索引值]git reset --hard HEAD^git reset --hard HEAD~1git diff [文件名]git diff [本地库中的历史版本] [文件名]git branch [新建的分支名]git branch -vgit checkout [要切换的分支名]git merge [有新内容的分支名]git remote -vgit remote add [别名] [远程地址]git push [别名] [本地分支名]git clone [远程地址]git fetch [远程库地址别名] [远程分支名]git merge [远程库地址别名/远程分支名]git pull [远程库地址别名] [远程分支名]ssh-keygen -t rsa -C GitHub用户的邮箱git remote add origin_ssh [远程仓库的ssh地址]"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://crainyday.gitee.io/Git_GitHub_02.html&title=Git的常用命令 - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more07.png&summary=Git的常用命令:
+123456789101112131415161718192021222324252627282930git initgit config user.name xxxgit config user.email xxx@qq.comgit config  --global user.name xxxgit config  --global user.email xxx@qq.comgit statusgit add [filename]git commit -m "commit message" [file name]git loggit log --pretty=onelinegit log --onelinegit refloggit reset --hard [局部索引值]git reset --hard HEAD^git reset --hard HEAD~1git diff [文件名]git diff [本地库中的历史版本] [文件名]git branch [新建的分支名]git branch -vgit checkout [要切换的分支名]git merge [有新内容的分支名]git remote -vgit remote add [别名] [远程地址]git push [别名] [本地分支名]git clone [远程地址]git fetch [远程库地址别名] [远程分支名]git merge [远程库地址别名/远程分支名]git pull [远程库地址别名] [远程分支名]ssh-keygen -t rsa -C GitHub用户的邮箱git remote add origin_ssh [远程仓库的ssh地址]"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://crainyday.gitee.io/Git_GitHub_02.html&title=Git的常用命令 - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more07.png&summary=Git的常用命令:
+123456789101112131415161718192021222324252627282930git initgit config user.name xxxgit config user.email xxx@qq.comgit config  --global user.name xxxgit config  --global user.email xxx@qq.comgit statusgit add [filename]git commit -m "commit message" [file name]git loggit log --pretty=onelinegit log --onelinegit refloggit reset --hard [局部索引值]git reset --hard HEAD^git reset --hard HEAD~1git diff [文件名]git diff [本地库中的历史版本] [文件名]git branch [新建的分支名]git branch -vgit checkout [要切换的分支名]git merge [有新内容的分支名]git remote -vgit remote add [别名] [远程地址]git push [别名] [本地分支名]git clone [远程地址]git fetch [远程库地址别名] [远程分支名]git merge [远程库地址别名/远程分支名]git pull [远程库地址别名] [远程分支名]ssh-keygen -t rsa -C GitHub用户的邮箱git remote add origin_ssh [远程仓库的ssh地址]"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAAAAACi5bZQAAAC8UlEQVR42u3aS27EIBAFwLn/pZMDJJH7h0Q7xW40Bpti89TN58v4dXwQgAEDBgwYMGtgPsXx1/yndaPzfnzww3pj+wEDBgwYMGDArIMJB6Dg81WIKGj0d/o7wYABAwYMGDBrYbIfdiqATUOF54MBAwYMGDBg/g1MN3A9QVafAwMGDBgwYMCAmSoMPQW+6Aar88CAAQMGDBgw74c53UibAj31PBgwYMCAAQNmH0x2TBWuTv0u7wcMGDBgwIABswamO6Iv7K4TDZbt/YABAwYMGDBg1sBMX8SZCmpVuOxBlSt4YMCAAQMGDJhrYLIFqW7Dq72BJmw44IEBAwYMGDBgroU53XibBqgWqsLrggEDBgwYMGDWwkwFtuo63fdk1wEDBgwYMGDAvAcme1Gn+lwVbKrhBgYMGDBgwIB5H0y20FOdl934NGi64QYGDBgwYMCAuRamW+CpBrBoMKwGy3bDDQwYMGDAgAFzLUy1oJS90FMFm5ofPngwYMCAAQMGzFqYqYBXDY7dxlk7CIIBAwYMGDBg1sJkG1zZoNdtyB1v5IEBAwYMGDBg1sF0g9EpkG5hq91wAwMGDBgwYMBcC5MFigambiDsrl89QDBgwIABAwbMHpjqhZ3pQlO2oHTqoMCAAQMGDBgw+2CqL+oWrqYCXLUBF+5EggEDBgwYMGCug5m6oDP1XPQgug09MGDAgAEDBsz7YLqFpm7Q6xbIqheLwIABAwYMGDD7YKoLVi8GVQPh1Hg8QDBgwIABAwbMGpjumC4cTTXmysERDBgwYMCAAbMGphuUpgpP3QJYtYFXTr5gwIABAwYMmGtgqh9yauPZRlv3e8GAAQMGDBgw+2GqF3amNl4NdMc6kWDAgAEDBgyY18J0G2/ZDWbB0xejwIABAwYMGDD/HiZbsOqu2wUFAwYMGDBgwOyH6TbcpgJdt0D1VRxgwIABAwYMmH0w1QJPtjHX3Xj0/3IDDwwYMGDAgAGzBsb4I+AZYMCAAQMGzK3jGx8nncaGiJMJAAAAAElFTkSuQmCC">
+          </div>
+        </div>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/Git_GitHub_03.html'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Eclipse中使用Git</p>
+                <p class='content'>在Eclipse中使用Git:
+①将工程初始化为本地库.
+②在Eclipse中忽略一些配置文件, 不让Git对其管理.
+③推送本地库到远程库.
+④克隆远程库到本地.
+⑤在Eclipse中解决冲突...</p>
+              </a>
+            
+            
+              <a class='next' href='/Git_GitHub_01.html'>
+                <p class='title'>版本控制及Git简介<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>版本控制思想及简单介绍.
+版本控制工具: SVN、Git等.
+Git的简单介绍.
+
+1.版本控制
+①为什么要进行版本控制
+
+  对于个人来说:
+
+版本管理: 方便我们对代码版本的管理与维护.
+数...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Git_GitHub_01.html" title="版本控制及Git简介" rel="bookmark">版本控制及Git简介</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Git_GitHub_04.html" title="安装Gitlab" rel="bookmark">安装Gitlab</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Git_GitHub_03.html" title="Eclipse中使用Git" rel="bookmark">Eclipse中使用Git</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Hexo2.html" title="利用Hexo和GitHub搭建一个静态博客" rel="bookmark">利用Hexo和GitHub搭建一个静态博客</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments shadow floatable">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Git的常用命令',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Git_GitHub_01.html" title="版本控制及Git简介" rel="bookmark">版本控制及Git简介</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Git_GitHub_04.html" title="安装Gitlab" rel="bookmark">安装Gitlab</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Git_GitHub_03.html" title="Eclipse中使用Git" rel="bookmark">Eclipse中使用Git</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Hexo2.html" title="利用Hexo和GitHub搭建一个静态博客" rel="bookmark">利用Hexo和GitHub搭建一个静态博客</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+
+<section class="widget grid shadow floatable desktop mobile">
+  
+  <header>
+    
+      <i class="fas fa-map-signs fa-fw" aria-hidden="true"></i><span class='name'>实用文档</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="grid navigation fixed">
+      
+        <a class="flat-box" title="/maven_05.html" href="/maven_05.html"
+          
+          
+          id="maven_05.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Maven工程
+        </a>
+      
+        <a class="flat-box" title="/Flask.html" href="/Flask.html"
+          
+          
+          id="Flask.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Flask应用
+        </a>
+      
+        <a class="flat-box" title="/Hexo.html" href="/Hexo.html"
+          
+          
+          id="Hexo.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Gitee搭站
+        </a>
+      
+        <a class="flat-box" title="/Ubuntu_006.html" href="/Ubuntu_006.html"
+          
+          
+          id="Ubuntu_006.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          v2ray
+        </a>
+      
+    </div>
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-git-init"><span class="toc-text">1.git init</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-git-config"><span class="toc-text">2.git config</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-查看状态、追踪、提交"><span class="toc-text">3.查看状态、追踪、提交</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#git-status"><span class="toc-text">git status</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-add"><span class="toc-text">git add</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-commit"><span class="toc-text">git commit</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-查看文件历史"><span class="toc-text">4.查看文件历史</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#git-log"><span class="toc-text">git log</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#①不带参数"><span class="toc-text">①不带参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#②带–pretty参数"><span class="toc-text">②带–pretty参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#③带–oneline"><span class="toc-text">③带–oneline</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-reflog"><span class="toc-text">git reflog</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-git-reset"><span class="toc-text">5.git reset</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#–hard参数"><span class="toc-text">–hard参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reset命令的三个参数"><span class="toc-text">reset命令的三个参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-reset的应用"><span class="toc-text">git reset的应用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-git-diff"><span class="toc-text">6.git diff</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-分支管理"><span class="toc-text">7.分支管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分支操作"><span class="toc-text">分支操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#合并分支"><span class="toc-text">合并分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决冲突"><span class="toc-text">解决冲突</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-和远程库相关操作"><span class="toc-text">8.和远程库相关操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建远程库地址别名"><span class="toc-text">创建远程库地址别名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Push"><span class="toc-text">Push</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Clone"><span class="toc-text">Clone</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pull"><span class="toc-text">Pull</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-使用SSH"><span class="toc-text">9.使用SSH</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix ">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='true'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='2709912289'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="mailto:crainyday@qq.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/crainyday"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=1794783182"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        <div id='sitetime'></div>
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作为主题
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://crainyday.gitee.io">Copyright © 2019-2021 CRainyDay</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js" async></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_01.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_02.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_03.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_04.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_05.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js" async></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js" async></script>
+
+  
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "47GAhNwwbbNreaJdvDNWHhOo-gzGzoHsz",
+    appKey: "pndiLFAmJvnhcIutpj4HIj6t",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    visitor: 'false',
+    highlight:'true'
+  })
+  </script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    function on_success(){
+      let $btn = $('.highlight .code pre');
+      console.log($btn);
+    }
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copyed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-clipboard-check');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPYED';
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-exclamation-triangle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "[object Object]";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/sitetime.min.js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/clicklove.min.js'></script>
+
+
+  <script>setLoadingBarProgress(100);</script>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
+</html>

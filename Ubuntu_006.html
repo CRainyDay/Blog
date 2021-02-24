@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.1.2'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>Ubuntu安装v2ray - CRainyDay</title>
+  
+    <meta name="keywords" content="CentOS,Ubuntu,v2ray">
+  
+  
+    <meta name="description" content="v2ray简介。
+配置v2ray服务端。
+配置v2ray客户端：
+
+1.v2ray-core
+2.v2ray客户端界面
+
+v2ray免费账号分享。
+飞机场分享。">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?bf368df5385d5be3472f3155e4cdb303";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow floatable blur">
+
+  <div class='wrapper'>
+    <div class='nav-sub container--flex'>
+      <a class="logo flat-box"></a>
+      <ul class='switcher h-list'>
+        <li><a class="s-comment flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main container container--flex">
+      
+        
+        <a class="logo flat-box" target="_self" href='/'>
+          
+          
+            <i class='fas fa-home'></i>
+          
+          
+            CRainyDay
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='h-list'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  
+                    <i class='fas fa-folder-open fa-fw'></i>
+                  
+                  分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  
+                    <i class='fas fa-archive fa-fw'></i>
+                  
+                  归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  
+                    <i class='fas fa-tags fa-fw'></i>
+                  
+                  标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  
+                    <i class='fas fa-link fa-fw'></i>
+                  
+                  友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  
+                    <i class='fas fa-ellipsis-v fa-fw'></i>
+                  
+                  更多
+                </a>
+                
+                  <ul class="submenu">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/about/music.html
+                  
+                  
+                  
+                    id="aboutmusic.html"
+                  >
+                  
+                    <i class='fas fa-music fa-fw'></i>
+                  
+                  往后余生
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/bbs/
+                  
+                  
+                  
+                    id="bbs"
+                  >
+                  
+                    <i class='fas fa-comment-alt fa-fw'></i>
+                  
+                  留言
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  
+                    <i class='fas fa-info-circle fa-fw'></i>
+                  
+                  关于
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      
+        <div class="m_search">
+          <form name="searchform" class="form u-search-form">
+            <i class="icon fas fa-search fa-fw"></i>
+            <input type="text" class="input u-search-input" placeholder="搜索" />
+          </form>
+        </div>
+      
+
+			<ul class='switcher h-list'>
+				
+					<li><a class="s-search flat-btn fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li><a class="s-menu flat-btn fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<ul class="menu-phone navigation white-box">
+  
+  
+    <li>
+      <a class="flat-box" href=/
+        
+        
+        
+          id="home"
+        >
+        
+          <i class='fas fa-home fa-fw'></i>
+        
+        博客
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/archives/
+        
+        
+        
+          id="archives"
+        >
+        
+          <i class='fas fa-archive fa-fw'></i>
+        
+        归档
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/categories/
+        
+        
+        
+          id="categories"
+        >
+        
+          <i class='fas fa-folder-open fa-fw'></i>
+        
+        分类
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/friends/
+        
+        
+        
+          id="friends"
+        >
+        
+          <i class='fas fa-link fa-fw'></i>
+        
+        友链
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/bbs/
+        
+        
+        
+          id="bbs"
+        >
+        
+          <i class='fas fa-comment-alt fa-fw'></i>
+        
+        留言
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/about/
+        
+        
+        
+          id="about"
+        >
+        
+          <i class='fas fa-info-circle fa-fw'></i>
+        
+        关于
+      </a>
+    </li>
+  
+</ul>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box shadow floatable article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+      <a title='Ubuntu安装v2ray' href='/Ubuntu_006.html'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more03.png'></a>
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/Ubuntu_006.html">
+        Ubuntu安装v2ray
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+<div class='new-meta-item author'>
+  <a href="https://crainyday.gitee.io" rel="nofollow">
+    <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/avatar.png">
+    <p>crainyday</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/CentOS/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>Ubuntu&nbsp;/&nbsp;CentOS</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-edit" aria-hidden="true"></i>
+    <p>发布于：2020年3月18日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard" aria-hidden="true"></i>
+      <p>字数：1.3k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+      <p>时长：5分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>v2ray简介。</p>
+<p>配置v2ray服务端。</p>
+<p>配置v2ray客户端：</p>
+<ul>
+<li>1.v2ray-core</li>
+<li>2.v2ray客户端界面</li>
+</ul>
+<p>v2ray免费账号分享。</p>
+<p>飞机场分享。</p>
+<a id="more"></a>
+<h2 id="1-简介">1.简介</h2>
+<blockquote>
+<p>  其实，v2ray是不区分客户端和服务端的。服务端与客户端的区别，只不过是<code>config.json</code>配置文件内容不一样。</p>
+<p>  v2ray与另一个科学上网工具<code>Shadowsocks(r)</code>相比更好一点，支持自定义协议，被办的风险小。具体可百度查看。</p>
+</blockquote>
+<div class="danger">
+<p>注意：这里的所有服务器信息及机场均来自互联网，非盈利目的，仅供大家交流学习使用，出现一切问题本站作者概不负责。</p>
+<p>这里不提供任何收费服务，不推荐任何收费机场（可能有的以后会收费，可以选择不用）。</p>
+</div>
+<div class="success">
+<p>这里提供科学上网的教程，只是用来学习用的，本人经常需要从Github、Ubuntu等这类技术网站下载东西，奈何不敢苟同国内和它们连接的速度啊。千万不要做一些违法的事情，天网恢恢。</p>
+<p>另外，若科学上网成功，记得我们是中国人，要热爱祖国哦。不浏览不良信息，不要发表不利于祖国的不良言论。</p>
+</div>
+<hr>
+<h2 id="2-服务端一键安装v2ray">2.服务端一键安装v2ray</h2>
+<ul>
+<li>注意：没有 curl 的需要用命令安装。</li>
+<li>Ubuntu：<code>sudo apt-get install curl</code>。</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -L -s https://install.direct/go.sh)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>当然，我这里是先下载安装脚本：</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://install.direct/go.sh</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_006_02.png" alt="Ubuntu_006_02"></p>
+<ul>
+<li>通过脚本下载并安装v2ray，成功后，会显示port和UUID：</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_006_01.png" alt="Ubuntu_006_01"></p>
+<ul>
+<li>还可以通过下载下来的<code>go.sh</code>来做一些其他事：</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_006_08.png" alt="Ubuntu_006_08"></p>
+<ul>
+<li>当然，port 和 UUID 都可以在<code>config.json</code>中查看并修改，在配置客户端时要用到。</li>
+<li>这里的配置文件无需做修改，安装完即可正常使用。</li>
+<li>最后，一定不要忘了，防火墙放行监听的端口，并设置开机自启v2ray：</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Ubuntu系统：ufw</span></span><br><span class="line">ufw allow 30522/tcp # 30522 改为你的配置文件中的端口号</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> CentOS系统：firewall</span></span><br><span class="line">firewall-cmd --permanent --add-port=30522/tcp # 30522 改为你的配置文件中的端口号</span><br><span class="line">firewall-cmd --reload</span><br><span class="line"><span class="meta">#</span><span class="bash"> CentOS系统：iptables</span></span><br><span class="line">iptables -I INPUT -p tcp --dport 30522 -j ACCEPT</span><br></pre></td></tr></table></figure>
+<ul>
+<li>v2ray服务相关命令：</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable v2ray # 设置开机自启</span><br><span class="line">systemctl start v2ray # 运行v2ray</span><br><span class="line">systemctl stop v2ray # 停止v2ray</span><br><span class="line"><span class="meta">#</span><span class="bash"> ubuntu上述启动命令无效时：</span></span><br><span class="line">service v2ray start # 运行v2ray</span><br><span class="line">service v2ray stop # 停止v2ray</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查看v2ray服务运行端口：</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo netstat -tunlp | grep v2ray</span><br><span class="line"><span class="meta">#</span><span class="bash"> 或</span></span><br><span class="line">sudo ss -tunlp | grep v2ray</span><br></pre></td></tr></table></figure>
+<ul>
+<li>v2ray服务端设置多用户客户端：<a href="https://www.hijk.pw/v2ray-multiple-users/" target="_blank" rel="noopener">多用户</a></li>
+</ul>
+<hr>
+<h2 id="3-安装v2ray客户端">3.安装v2ray客户端</h2>
+<blockquote>
+<p>  v2ray客户端分为：v2ray-core 和别人开发的 v2ray 界面程序。</p>
+<p>这里我用的是ubuntu系统下的Qv2ray客户端。</p>
+</blockquote>
+<h3 id="v2ray-core">v2ray-core</h3>
+<ul>
+<li>可以使用：<code>bash &lt;(curl -L -s https://install.direct/go.sh)</code>命令一键安装。</li>
+<li>也可以进官网下载：<a href="https://github.com/v2ray/v2ray-core/releases/" target="_blank" rel="noopener">v2ray核心</a>。</li>
+<li>下载后解压到任意目录下即可，我这里下载解压到了：<code>~/.config/qv2ray/vcore</code>目录下，之后不用再修改qv2ray的v2ray-core配置😅。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_006_04.png" alt="Ubuntu_006_04"></p>
+<h3 id="v2ray界面">v2ray界面</h3>
+<blockquote>
+<p>  这里我是用的ubuntu系统，用的 <a href="https://github.com/Qv2ray/Qv2ray/releases" target="_blank" rel="noopener">Qv2ray</a> 客户端，挺好用的。</p>
+<ul>
+<li>其他客户端可以在这里下载：<a href="https://tlanyan.me/v2ray-clients-download/" target="_blank" rel="noopener">客户端下载</a>。</li>
+</ul>
+</blockquote>
+<ul>
+<li>直接下载：<a href="https://github.com/Qv2ray/Qv2ray/releases/download/v2.2.3/Qv2ray.v2.2.3.linux-x64.AppImage" target="_blank" rel="noopener">Qv2ray.v2.2.3.linux-x64.AppImage</a>，AppImage文件可直接运行。</li>
+<li>注意：下载后，若不能直接运行，需要赋予运行权限<code>右键</code>→<code>属性</code>→<code>权限</code>→<code>允许文件作为程序执行</code>。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_006_03.png" alt="Ubuntu_006_03"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 通过命令提权并执行</span></span><br><span class="line">sudo chmod +x ./Qv2ray.v2.2.3.linux-x64.AppImage</span><br><span class="line"><span class="meta">#</span><span class="bash"> 若是sudo不能成功运行，请去掉sudo</span></span><br><span class="line">sudo ./Qv2ray.v2.2.3.linux-x64.AppImage</span><br></pre></td></tr></table></figure>
+<ul>
+<li>运行程序，如图：</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_006_05.png" alt="Ubuntu_006_05"></p>
+<h3 id="配置qv2ray">配置qv2ray</h3>
+<ul>
+<li>点击<code>首选项</code>，开始配置：<code>常规配置</code>。配置后，可点击<code>检查v2ray核心设置</code>来确定是否配置成功。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_006_06.png" alt="Ubuntu_006_06"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_006_07.png" alt="Ubuntu_006_07"></p>
+<ul>
+<li>至此，基本配置完毕。剩下的就是，订阅或直接添加你的服务器配置信息。</li>
+</ul>
+<hr>
+<h2 id="4-订阅或添加服务器">4.订阅或添加服务器</h2>
+<h3 id="获取订阅地址">获取订阅地址</h3>
+<blockquote>
+<p>  通过飞机场获取订阅地址，这里分享几个飞机场：<a href="#%E9%A3%9E%E6%9C%BA%E5%9C%BA">飞机场</a></p>
+</blockquote>
+<ul>
+<li>例如：这里获取的是佚名机场的订阅地址。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_006_13.png" alt="Ubuntu_006_13"></p>
+<h3 id="获取免费服务器">获取免费服务器</h3>
+<div class="success">
+<p>免费账号：<a href="#error">xxxx-ss</a>。</p>
+<p>但是，这个网站需要科学上网才能访问。这个速度还可以。</p>
+<p>当然，你可以通过修改电脑的host文件实现。</p>
+<p>注意：这个链接每天24:00会重置，需要每天再重新配置或重新下载<code>config.json</code>文件配置。</p>
+</div>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_006_11.png" alt="Ubuntu_006_11"></p>
+<div class="success">
+<p>免费账号：<a href="#error">Xxxx-Air</a>。(这个网站国内可以访问)</p>
+<p>GitHub的地址：<a href="#error">v2ray免费账号</a>。</p>
+</div>
+<div class="success">
+<p>免费账号：<a href="#error">翻个墙网</a>。</p>
+<p>但是，这个网站需要科学上网才能访问。</p>
+<p>当然，你可以通过修改电脑的host文件实现。</p>
+<p>注意：这个账号大约 3-5 天更新一次密码。</p>
+</div>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_006_10.png" alt="Ubuntu_006_10"></p>
+<h3 id="配置客户端">配置客户端</h3>
+<blockquote>
+<p>注意：这里使用的是ubuntu的Qv2ray客户端，其他系统客户端配置类似。</p>
+</blockquote>
+<ul>
+<li>1）若是直接有订阅地址的话，就比较简单，直接添加就OK。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_006_12.png" alt="Ubuntu_006_12"></p>
+<ul>
+<li>2）没有订阅地址的话，可以使用免费的或自己搭建的v2ray服务器。</li>
+<li>这里采用<a href="#error">Xxxx-Air网站</a>的服务器信息来说明如何配置。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_006_09.png" alt="Ubuntu_006_09"></p>
+<ul>
+<li>3）设置Q2ray客户端的代理设置：</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_006_14.png" alt="Ubuntu_006_14"></p>
+<ul>
+<li>4）配置浏览器SwitchOmega插件：</li>
+<li>规则列表网址：<code>https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt</code></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_006_15.png" alt="Ubuntu_006_15"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_006_16.png" alt="Ubuntu_006_16"></p>
+<ul>
+<li>5）科学上网：</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/ubuntu/Ubuntu_006_17.png" alt="Ubuntu_006_17"></p>
+<h3 id="飞机场">飞机场</h3>
+
+<btns rounded grid4>
+
+<a href='#error'><i class='fas fa-plane'></i>XX云</a>
+
+<a href='#error'><i class='fas fa-plane'></i>XX飞机</a>
+<a href='#error'><i class='fas fa-plane'></i>XX号机场</a>
+
+<a href='#error'><i class='fas fa-plane'></i>XXXXXX闪电</a>
+
+</btns>
+
+<btns rounded grid4>
+
+<a href='#error'><i class='fas fa-plane'></i>X飞机</a>
+
+<a href='#error'><i class='fas fa-plane'></i>XX网络</a>
+
+<a href='#error'><i class='fas fa-plane'></i>XXXX</a>
+
+<a href='#error'><i class='fas fa-plane'></i>XX666</a>
+
+</btns>
+
+
+<hr>
+<h3 id="error">error</h3>
+<div class="danger">
+<p>不能传播，秘密😄，秘密😄，秘密😄。</p>
+</div>
+
+          
+            <br>
+            
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://crainyday.gitee.io/Ubuntu_006.html>https://crainyday.gitee.io/Ubuntu_006.html</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <fancybox><img src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/alipay.png'
+        
+          height='64px'
+        ></fancybox>
+      
+    
+      
+        <fancybox><img src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/wechat.png'
+        
+          height='64px'
+        ></fancybox>
+      
+    
+  </div>
+</section>
+
+  
+
+
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-26T21:05:45+08:00">
+  <a class='notlink'>
+    <i class="fas fa-save" aria-hidden="true"></i>
+    <p>更新于：2020年5月26日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/CentOS/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i><p>CentOS</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Ubuntu/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i><p>Ubuntu</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/v2ray/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i><p>v2ray</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard" aria-hidden="true"></i>
+      <p>字数：1.3k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+      <p>时长：5分钟</p>
+    </a>
+  </div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://crainyday.gitee.io/Ubuntu_006.html&title=Ubuntu安装v2ray - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more03.png&summary=v2ray简介。
+配置v2ray服务端。
+配置v2ray客户端：
+
+1.v2ray-core
+2.v2ray客户端界面
+
+v2ray免费账号分享。
+飞机场分享。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://crainyday.gitee.io/Ubuntu_006.html&title=Ubuntu安装v2ray - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more03.png&summary=v2ray简介。
+配置v2ray服务端。
+配置v2ray客户端：
+
+1.v2ray-core
+2.v2ray客户端界面
+
+v2ray免费账号分享。
+飞机场分享。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://crainyday.gitee.io/Ubuntu_006.html&title=Ubuntu安装v2ray - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more03.png&summary=v2ray简介。
+配置v2ray服务端。
+配置v2ray客户端：
+
+1.v2ray-core
+2.v2ray客户端界面
+
+v2ray免费账号分享。
+飞机场分享。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAAD4CAAAAADkunTXAAACPklEQVR42u3aSXaDQAwFQO5/aecEfmgCB1G945mhq7NR9HV8XroOcHBwcHDwRfCjuE4/8OX+s+fPvtfdLzg4ODg4+EZ4uAD4cn91g9nvdfcLDg4ODg6+GR4tIKrXWUD0/eH9goODg4ODg4efrxY42YMABwcHBwcHn4dnQdXvg4ODg4ODgxca9CeNhiooG2jcnqSAg4ODg4P/I3h5YO5H1+X9goODg4ODL4J3V7bhUB0UHNsvODg4ODj4Ini1QKg2LLLvnd4fODg4ODj4Jng3AJgKDI7mSgcK4ODg4ODgC+DVgqIL7gYU2YIKHBwcHBx8I3y6AXEGiwYL2feFDxwcHBwcHHwRfLphkB0cqDYuygcNDg4ODg6+CD4d3GcbEFNBxm1JCjg4ODg4+APhXdDVAcZlBQw4ODg4OPgD4HevLDgbSISTFHBwcHBw8EXw7IBddMNTBch4oAAODg4ODv5g+FTDvlqIHEMr/IcDBwcHBwdfDI8WClODAdV9ZBsT4ODg4ODgb4B3GwJZ+NR96UABHBwcHBx8ITxasEwN/k01KKIHBg4ODg4Ovgl+1T/+3QIk+3v4YMDBwcHBwRfBu0F8trDpDhy0BxnAwcHBwcEXwqcHA8aC/OLv7Q4MODg4ODj4A+HRhn03MOg2NMaTFHBwcHBwcPByw2H6OXBwcHBwcPD5Auaq+8PBBzg4ODg4+GJ4t2FQLTTShUjyGhwcHBwcfDO8WhhkGwnV904NKoCDg4ODg2+Cv22Bg4ODg4MvWH+XOYaBOgdonwAAAABJRU5ErkJggg==">
+          </div>
+        </div>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/Git_GitHub_01.html'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>版本控制及Git简介</p>
+                <p class='content'>版本控制思想及简单介绍.
+版本控制工具: SVN、Git等.
+Git的简单介绍.
+
+1.版本控制
+①为什么要进行版本控制
+
+  对于个人来说:
+
+版本管理: 方便我们对代码版本的管理与维护.
+数...</p>
+              </a>
+            
+            
+              <a class='next' href='/Ubuntu_005.html'>
+                <p class='title'>修改root密码<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>这里说的是，在忘记了root密码，无法进入系统时，如何修改root密码。
+
+1.修改Ubuntu的root密码
+
+  这里是在GRUB引导下的修改密码，其他的可能类似。毕竟没试过😅。
+可以自己...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Python.html" title="Ubuntu中py2与py3共存" rel="bookmark">Ubuntu中py2与py3共存</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ubuntu_005.html" title="修改root密码" rel="bookmark">修改root密码</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Flask.html" title="CentOS7上部署Flash应用" rel="bookmark">CentOS7上部署Flash应用</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ubuntu_000.html" title="记录一次Ubuntu痛苦的重装之旅" rel="bookmark">记录一次Ubuntu痛苦的重装之旅</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments shadow floatable">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Ubuntu安装v2ray',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Python.html" title="Ubuntu中py2与py3共存" rel="bookmark">Ubuntu中py2与py3共存</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ubuntu_005.html" title="修改root密码" rel="bookmark">修改root密码</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Flask.html" title="CentOS7上部署Flash应用" rel="bookmark">CentOS7上部署Flash应用</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ubuntu_000.html" title="记录一次Ubuntu痛苦的重装之旅" rel="bookmark">记录一次Ubuntu痛苦的重装之旅</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+
+<section class="widget grid shadow floatable desktop mobile">
+  
+  <header>
+    
+      <i class="fas fa-map-signs fa-fw" aria-hidden="true"></i><span class='name'>实用文档</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="grid navigation fixed">
+      
+        <a class="flat-box" title="/maven_05.html" href="/maven_05.html"
+          
+          
+          id="maven_05.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Maven工程
+        </a>
+      
+        <a class="flat-box" title="/Flask.html" href="/Flask.html"
+          
+          
+          id="Flask.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Flask应用
+        </a>
+      
+        <a class="flat-box" title="/Hexo.html" href="/Hexo.html"
+          
+          
+          id="Hexo.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Gitee搭站
+        </a>
+      
+        <a class="flat-box" title="/Ubuntu_006.html" href="/Ubuntu_006.html"
+          
+          
+          id="Ubuntu_006.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          v2ray
+        </a>
+      
+    </div>
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-简介"><span class="toc-text">1.简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-服务端一键安装v2ray"><span class="toc-text">2.服务端一键安装v2ray</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-安装v2ray客户端"><span class="toc-text">3.安装v2ray客户端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#v2ray-core"><span class="toc-text">v2ray-core</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v2ray界面"><span class="toc-text">v2ray界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置qv2ray"><span class="toc-text">配置qv2ray</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-订阅或添加服务器"><span class="toc-text">4.订阅或添加服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取订阅地址"><span class="toc-text">获取订阅地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取免费服务器"><span class="toc-text">获取免费服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置客户端"><span class="toc-text">配置客户端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#飞机场"><span class="toc-text">飞机场</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#error"><span class="toc-text">error</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix ">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='true'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='2709912289'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="mailto:crainyday@qq.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/crainyday"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=1794783182"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        <div id='sitetime'></div>
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作为主题
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://crainyday.gitee.io">Copyright © 2019-2021 CRainyDay</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js" async></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_01.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_02.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_03.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_04.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_05.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js" async></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js" async></script>
+
+  
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "47GAhNwwbbNreaJdvDNWHhOo-gzGzoHsz",
+    appKey: "pndiLFAmJvnhcIutpj4HIj6t",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    visitor: 'false',
+    highlight:'true'
+  })
+  </script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    function on_success(){
+      let $btn = $('.highlight .code pre');
+      console.log($btn);
+    }
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copyed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-clipboard-check');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPYED';
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-exclamation-triangle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "[object Object]";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/sitetime.min.js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/clicklove.min.js'></script>
+
+
+  <script>setLoadingBarProgress(100);</script>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
+</html>

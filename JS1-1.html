@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.1.2'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>JS基础语法 - CRainyDay</title>
+  
+    <meta name="keywords" content="JS">
+  
+  
+    <meta name="description" content="JS基础语法">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?bf368df5385d5be3472f3155e4cdb303";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow floatable blur">
+
+  <div class='wrapper'>
+    <div class='nav-sub container--flex'>
+      <a class="logo flat-box"></a>
+      <ul class='switcher h-list'>
+        <li><a class="s-comment flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main container container--flex">
+      
+        
+        <a class="logo flat-box" target="_self" href='/'>
+          
+          
+            <i class='fas fa-home'></i>
+          
+          
+            CRainyDay
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='h-list'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  
+                    <i class='fas fa-folder-open fa-fw'></i>
+                  
+                  分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  
+                    <i class='fas fa-archive fa-fw'></i>
+                  
+                  归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  
+                    <i class='fas fa-tags fa-fw'></i>
+                  
+                  标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  
+                    <i class='fas fa-link fa-fw'></i>
+                  
+                  友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  
+                    <i class='fas fa-ellipsis-v fa-fw'></i>
+                  
+                  更多
+                </a>
+                
+                  <ul class="submenu">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/about/music.html
+                  
+                  
+                  
+                    id="aboutmusic.html"
+                  >
+                  
+                    <i class='fas fa-music fa-fw'></i>
+                  
+                  往后余生
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/bbs/
+                  
+                  
+                  
+                    id="bbs"
+                  >
+                  
+                    <i class='fas fa-comment-alt fa-fw'></i>
+                  
+                  留言
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  
+                    <i class='fas fa-info-circle fa-fw'></i>
+                  
+                  关于
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      
+        <div class="m_search">
+          <form name="searchform" class="form u-search-form">
+            <i class="icon fas fa-search fa-fw"></i>
+            <input type="text" class="input u-search-input" placeholder="搜索" />
+          </form>
+        </div>
+      
+
+			<ul class='switcher h-list'>
+				
+					<li><a class="s-search flat-btn fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li><a class="s-menu flat-btn fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<ul class="menu-phone navigation white-box">
+  
+  
+    <li>
+      <a class="flat-box" href=/
+        
+        
+        
+          id="home"
+        >
+        
+          <i class='fas fa-home fa-fw'></i>
+        
+        博客
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/archives/
+        
+        
+        
+          id="archives"
+        >
+        
+          <i class='fas fa-archive fa-fw'></i>
+        
+        归档
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/categories/
+        
+        
+        
+          id="categories"
+        >
+        
+          <i class='fas fa-folder-open fa-fw'></i>
+        
+        分类
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/friends/
+        
+        
+        
+          id="friends"
+        >
+        
+          <i class='fas fa-link fa-fw'></i>
+        
+        友链
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/bbs/
+        
+        
+        
+          id="bbs"
+        >
+        
+          <i class='fas fa-comment-alt fa-fw'></i>
+        
+        留言
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/about/
+        
+        
+        
+          id="about"
+        >
+        
+          <i class='fas fa-info-circle fa-fw'></i>
+        
+        关于
+      </a>
+    </li>
+  
+</ul>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box shadow floatable article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+      <a title='JS基础语法' href='/JS1-1.html'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more01.png'></a>
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/JS1-1.html">
+        JS基础语法
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+<div class='new-meta-item author'>
+  <a href="https://crainyday.gitee.io" rel="nofollow">
+    <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/avatar.png">
+    <p>crainyday</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E5%89%8D%E7%AB%AF/JS/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>前端&nbsp;/&nbsp;JS</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-edit" aria-hidden="true"></i>
+    <p>发布于：2019年3月29日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard" aria-hidden="true"></i>
+      <p>字数：1.7k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+      <p>时长：6分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>JS基础语法</p>
+<a id="more"></a>
+<h2 id="一-JS注释">一.JS注释</h2>
+<ul>
+<li>和其他高级语言差不多, 分为:</li>
+<li>多行注释: /**/</li>
+<li>单行注释: //</li>
+<li>注释中的代码不会被执行, 只能在源码中看见注释的内容</li>
+</ul>
+<h2 id="二-JS的变量与字面量">二.JS的变量与字面量</h2>
+<p>变量的作用是给某一个值或对象标注名称, 方便复用, 变量也用来保存字面量</p>
+<p>字面量: 可以直接使用, 不能更改其值, 像: 123、“Hello”、1.23等</p>
+<ul>
+<li>变量的声明: 使用<font style='color:red;'>var关键字声明一个变量</font>, 例: var a;</li>
+<li>变量的赋值: 使用=为变量赋值, 例: a=123;</li>
+<li>声明和赋值同时进行, 例, var a = 123;</li>
+</ul>
+<h2 id="三-JS标识符">三.JS标识符</h2>
+<p>所谓标识符, 就是指变量、函数、属性的名字, 或函数的参数.要求:</p>
+<ul>
+<li>第一个字符必须是一个字母、下划线_或一个美元符号$.</li>
+<li>不能以数字开头, 不能是关键字或保留字</li>
+<li>其他字符可以是字母、下划线、美元符号或数字.</li>
+<li>标识符一般采用驼峰命名法(规范): 首字母小写, 每个单词首字母大写其他字母小写, 例: xxxYyyZzz</li>
+</ul>
+<p>JS底层保存标识符是用Unicode编码的</p>
+<p>命名时, 尽量见名知意, 遵守它的规则和行业规范.</p>
+<h2 id="四-数据类型">四.数据类型</h2>
+<ul>
+<li>String(字符串型), 例: &quot;Hello World&quot;或’Hello World’</li>
+<li>Number(数值型), 例: 123、1.23</li>
+<li>Boolean(布尔型), 只有 true false两个取值</li>
+<li>Null(null型), 只有一个取值: null, 用来表示一个对象为空; 用 typeof null;会返回object</li>
+<li>Undefined(undefined型), 未定义, 当声明了一个变量而没赋值时, 变量的值就是undefined</li>
+<li>上述五种基本类型之外的类型: Object</li>
+</ul>
+<p>String: 使用单或双引号括起来的整体, 但是单双引号不能嵌套. 了解一些常见的转义字符</p>
+<p>Number: 正无穷(Infinity), 负无穷(-Infinity); Nut a Number(NaN)</p>
+<p><font style='color:red;font-weight:bold;'>尽量避免用JS做一些高精度的计算问题</font></p>
+<p>用typeof运算符可以检查变量的类型, 例:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">123</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a);<span class="comment">//输出结果为:number</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="built_in">Number</span>.MAX_VALUE + <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(b);<span class="comment">//输出结果为:Infinity</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="built_in">Number</span>.MIN_VALUE;<span class="comment">//JS能表示的大于零的最小值</span></span><br><span class="line"><span class="comment">//Number有它能表示的最大值, 为Number.MAX_VALUE;</span></span><br><span class="line"><span class="comment">//当计算结果超过它时, 输出结果为:Infinity(number型)即正无穷</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"123"</span> * <span class="string">"123"</span>;</span><br><span class="line"><span class="comment">//当计算结果非数字时, 会返回一个NaN(number型)</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> str);<span class="comment">//结果为:NaN</span></span><br></pre></td></tr></table></figure>
+<h2 id="五-强制类型转换">五.强制类型转换</h2>
+<ul>
+<li>其他类型变量转换为String, 调用变量的toString()方法, 或调用String()函数</li>
+<li>其他类型变量转换为Number, 调用Number()函数, 对于字符串还可调用parseInt()或parseFloat()函数</li>
+<li>其他类型变量转换为Boolean, 调用Boolean()函数</li>
+</ul>
+
+<details>
+<summary>
+One More Thing 👇
+</summary>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//其他类型变量转换为String</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">123</span>;<span class="comment">//注意:当a = null;或a = undefined;时, 不能调用a.toString()方法</span></span><br><span class="line">a = a.toString();<span class="comment">//toString()方法, 无参数, 将a的内容变为string后返回</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="literal">null</span>;</span><br><span class="line">b = <span class="built_in">String</span>(b);<span class="comment">//String()函数, 将要转换的变量作为参数传递给函数, 后函数将结果返回</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"a = "</span> + a);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a);<span class="comment">//输出:string</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"b = "</span> + b);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> b);</span><br><span class="line"></span><br><span class="line"><span class="comment">//其他类型变量转换为Number</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"123"</span>;<span class="comment">//若字符串内容有非数字和空格, Number()函数会将内容转换为NaN</span></span><br><span class="line">str = <span class="built_in">Number</span>(str);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"str = "</span> + str);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> str);</span><br><span class="line"><span class="keyword">var</span> bool = <span class="literal">true</span>;<span class="comment">//true==&gt;1  false==&gt;0  null==&gt;0  undefined==&gt;NaN</span></span><br><span class="line">bool = <span class="built_in">Number</span>(bool);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"bool = "</span> + bool);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> bool);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> px = <span class="string">"123px"</span>;</span><br><span class="line">px = <span class="built_in">parseInt</span>(px);<span class="comment">//从第一个字符开始转换, 直到遇到非空和非数字.parseFolat()函数类似</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"px = "</span> + px);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> px);</span><br><span class="line"><span class="comment">//JS中数字的进制, 0x开头表示16进制, 0开头表示8进制</span></span><br><span class="line">px = <span class="string">"070"</span>;</span><br><span class="line">px = <span class="built_in">parseInt</span>(px,<span class="number">10</span>);<span class="comment">//第二个参数, 表示以几进制进行解析</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"px = "</span> + px);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> px);</span><br><span class="line"></span><br><span class="line"><span class="comment">//其他类型变量转换为Boolean</span></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">123</span>;<span class="comment">//数字只有0和NaN转换为false, 字符串只有空串转换为false</span></span><br><span class="line">num = <span class="built_in">Boolean</span>(num);<span class="comment">//null和undefined转换为false, 对象都转换为true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"num = "</span> + num);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> num);</span><br><span class="line"></span><br><span class="line"><span class="comment">//这里说一个isNaN()函数, 判断一个数字是不是NaN, 若是返回true, 不是返回false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(num));</span><br></pre></td></tr></table></figure>
+</details>
+<h2 id="六-运算符">六.运算符</h2>
+<ul>
+<li>算术运算符  + - * / ++(前置和后置) --(前置和后置) +(符号不变) -(符合取反) %(取模)</li>
+<li>逻辑运算符  &amp;&amp; || !  &amp; |</li>
+<li>关系运算符  &gt;  &lt;  &gt;=  &lt;=  ==  !=  ===  !==</li>
+<li>赋值运算符  = += -= *= /= %=</li>
+<li>条件运算符  ?:, 格式: 条件表达式?表达式1:表达式2; 若条件表达式为true, 整个表达式值为表达式1的值, 否则为表达式2的值.</li>
+<li>位运算符  ^ &amp; | ! (用于数值类型的操作)</li>
+<li>typeof运算符  判断类型并以字符串形式返回</li>
+</ul>
+<h3 id="A-算术运算符">A.算术运算符:</h3>
+<p>+的特殊性, 可以用来拼接字符串, 例:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span> + <span class="number">2</span> + <span class="string">"3"</span>;<span class="comment">//33</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="string">"1"</span> + <span class="number">2</span> + <span class="number">3</span>;<span class="comment">//123</span></span><br></pre></td></tr></table></figure>
+<p>其他算数运算符在进行运算时, 会将操作数先转换为Number类型, 再进行运算, 并将结果以数值类型返回</p>
+<p>前++: 先对原变量加1, 在使用该变量的值;后++: 先使用给变量的值, 再给变量加1;–类似</p>
+<h3 id="B-逻辑运算符">B.逻辑运算符</h3>
+<p>与 或 非, 运算时将其他类型转换为Boolean型, 再运算;</p>
+<p>注意短路与(&amp;&amp;)和短路或(||):</p>
+<p>短路与: 若第一个值为true, 则返回第二个值; 若第一个值为false, 则返回第一个值;</p>
+<p>短路或: 若第一个值为true, 则返回第一个值; 若第一个值为false, 则返回第二个值;</p>
+<h3 id="C-关系元算符">C.关系元算符</h3>
+<p>比较两个字符串时, 比较的是字符串的字符编码(按位比较); 其他类型转换为数值类型比较; 比较结果为true或false, 以字符串形式返回比较的结果.</p>
+<p>注意==判等时会做隐式类型转换, ===表示全等; != 与 !==一样</p>
+<h3 id="D-赋值运算符">D.赋值运算符</h3>
+<p>将运算符左边的表达式的值做一个操作, 然后将操作后的值赋值给右边的变量.</p>
+<h2 id="七-Unicode编码表">七.Unicode编码表</h2>
+<p>在JS的字符串中, 使用转义字符\u+四位16进制的编码表示Unicode编码</p>
+<p>在HTML中, 使用 “&amp;#10进制编码;” 表示Unicode编码.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>JS基础<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">            <span class="keyword">var</span> str = <span class="string">"\u2620"</span>;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(str);</span></span><br><span class="line"><span class="undefined">		</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&amp;#9760;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>注意:</p>
+<ul>
+<li>JS中严格区分大小写(HTML中不区分)</li>
+<li>JS中一个分号代表一条命令的结束</li>
+<li>JS会忽略多个空格与换行符, 因此我们可以用来格式化自己的代码</li>
+<li>JS代码是一条条以;结尾的语句, 可用{}将语句分组, 一个{}也叫一个代码块</li>
+</ul>
+
+          
+            <br>
+            
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://crainyday.gitee.io/JS1-1.html>https://crainyday.gitee.io/JS1-1.html</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <fancybox><img src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/alipay.png'
+        
+          height='64px'
+        ></fancybox>
+      
+    
+      
+        <fancybox><img src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/wechat.png'
+        
+          height='64px'
+        ></fancybox>
+      
+    
+  </div>
+</section>
+
+  
+
+
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-12T15:00:54+08:00">
+  <a class='notlink'>
+    <i class="fas fa-save" aria-hidden="true"></i>
+    <p>更新于：2020年3月12日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JS/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i><p>JS</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard" aria-hidden="true"></i>
+      <p>字数：1.7k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+      <p>时长：6分钟</p>
+    </a>
+  </div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://crainyday.gitee.io/JS1-1.html&title=JS基础语法 - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more01.png&summary=JS基础语法"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://crainyday.gitee.io/JS1-1.html&title=JS基础语法 - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more01.png&summary=JS基础语法"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://crainyday.gitee.io/JS1-1.html&title=JS基础语法 - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more01.png&summary=JS基础语法"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAAD4CAAAAADkunTXAAACR0lEQVR42u3cS3KDMBAFQN//0s4BXBTzw8FDaxciQC02r2ZUfr0fOl7g4ODg4OCL4K/iOLr/40UH84/mHf1/bL3g4ODg4OAL4eEAEISc3Td9PbxecHBwcHDwxfBoYMnOz27Y9PvBwcHBwcHB44WE7LwsFBwcHBwcHHwuwGQbANH3Rwsh4ODg4ODg4PkCfbYRUG1I3K6TAg4ODg4OfiN494Dft/++zclGcHBwcHDwf4RPjWiw6BYi2usEBwcHBwdfBO828LuBo9ooKDcYwMHBwcHBF8GrwSEKyjYWpp9zmtzAwcHBwcF/GF4NMNH5UwuuNiDAwcHBwcE3w8M3NIPNdAMhCg4XIsDBwcHBwX8QPt0w6M7LNgzSGwQODg4ODr4IHi7EFwPO1YWO9IcDBwcHBwdfCM8WGKauVw8KZIMTODg4ODj4Rni4EN9s9EeDylTBAxwcHBwc/AnwLDhbOKgGpakP83EfODg4ODj4IvjUAqsbU93Y6sEBcHBwcHDwjfCpBkD3AEC3UXG6MeDg4ODg4Ivh2YJCuABQDErZAwun6wUHBwcHB18Mrzb4sxuY3bCxdYCDg4ODgy+CTweIbxU4ogEMHBwcHBx8M7wbDKbuy24YODg4ODg4eL7Qf1XA6AaY8PPAwcHBwcEXw6sBIrqQbiGj3cgABwcHBwcHH/9huulgAw4ODg4ODn5do74aWNoNCXBwcHBw8MXwbCDIFhymrmc3AhwcHBwcfDO8WrjPFvavel74w4GDg4ODgy+CP22Ag4ODg4MvGH9Fq0TfBPCeDAAAAABJRU5ErkJggg==">
+          </div>
+        </div>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/JS1-2.html'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>JS流程控制</p>
+                <p class='content'>JS的基本语法: 流程控制
+
+
+条件判断语句 if-else
+条件分支语句 switch-case
+循环语句 for while
+
+一.if-else
+123456789101112131415...</p>
+              </a>
+            
+            
+              <a class='next' href='/JS1-0.html'>
+                <p class='title'>JS简介<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>JavaScript简介
+
+一.起源
+
+JavaScript诞生于1995年, 它的出现主要是用于处理网页中的前端验证.
+所谓的前端验证, 就是指检查用户输入的内容是否符合一定的规则.
+比如: ...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ajax1-0.html" title="Ajax简介" rel="bookmark">Ajax简介</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ajax1-1.html" title="Ajax数据格式" rel="bookmark">Ajax数据格式</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ajax1-2.html" title="Ajax-jQuery" rel="bookmark">Ajax-jQuery</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JS1-0.html" title="JS简介" rel="bookmark">JS简介</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JS-JSON.html" title="JS-JSON" rel="bookmark">JS-JSON</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments shadow floatable">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'JS基础语法',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ajax1-0.html" title="Ajax简介" rel="bookmark">Ajax简介</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ajax1-1.html" title="Ajax数据格式" rel="bookmark">Ajax数据格式</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Ajax1-2.html" title="Ajax-jQuery" rel="bookmark">Ajax-jQuery</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JS1-0.html" title="JS简介" rel="bookmark">JS简介</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/JS-JSON.html" title="JS-JSON" rel="bookmark">JS-JSON</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+
+<section class="widget grid shadow floatable desktop mobile">
+  
+  <header>
+    
+      <i class="fas fa-map-signs fa-fw" aria-hidden="true"></i><span class='name'>实用文档</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="grid navigation fixed">
+      
+        <a class="flat-box" title="/maven_05.html" href="/maven_05.html"
+          
+          
+          id="maven_05.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Maven工程
+        </a>
+      
+        <a class="flat-box" title="/Flask.html" href="/Flask.html"
+          
+          
+          id="Flask.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Flask应用
+        </a>
+      
+        <a class="flat-box" title="/Hexo.html" href="/Hexo.html"
+          
+          
+          id="Hexo.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Gitee搭站
+        </a>
+      
+        <a class="flat-box" title="/Ubuntu_006.html" href="/Ubuntu_006.html"
+          
+          
+          id="Ubuntu_006.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          v2ray
+        </a>
+      
+    </div>
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一-JS注释"><span class="toc-text">一.JS注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二-JS的变量与字面量"><span class="toc-text">二.JS的变量与字面量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三-JS标识符"><span class="toc-text">三.JS标识符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四-数据类型"><span class="toc-text">四.数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五-强制类型转换"><span class="toc-text">五.强制类型转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六-运算符"><span class="toc-text">六.运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-算术运算符"><span class="toc-text">A.算术运算符:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-逻辑运算符"><span class="toc-text">B.逻辑运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-关系元算符"><span class="toc-text">C.关系元算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#D-赋值运算符"><span class="toc-text">D.赋值运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#七-Unicode编码表"><span class="toc-text">七.Unicode编码表</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix ">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='true'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='2709912289'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="mailto:crainyday@qq.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/crainyday"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=1794783182"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        <div id='sitetime'></div>
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作为主题
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://crainyday.gitee.io">Copyright © 2019-2021 CRainyDay</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js" async></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_01.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_02.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_03.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_04.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_05.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js" async></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js" async></script>
+
+  
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "47GAhNwwbbNreaJdvDNWHhOo-gzGzoHsz",
+    appKey: "pndiLFAmJvnhcIutpj4HIj6t",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    visitor: 'false',
+    highlight:'true'
+  })
+  </script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    function on_success(){
+      let $btn = $('.highlight .code pre');
+      console.log($btn);
+    }
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copyed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-clipboard-check');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPYED';
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-exclamation-triangle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "[object Object]";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/sitetime.min.js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/clicklove.min.js'></script>
+
+
+  <script>setLoadingBarProgress(100);</script>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
+</html>
