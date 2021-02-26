@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.1.2'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>Eclipse常用配置 - CRainyDay</title>
+  
+    <meta name="keywords" content="eclipse">
+  
+  
+    <meta name="description" content="Eclipse 的常用插件.
+Eclipse 的常用配置.
+以免重装Eclipse后忘记配置.">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crainyday/blog@master/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?bf368df5385d5be3472f3155e4cdb303";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow floatable blur">
+
+  <div class='wrapper'>
+    <div class='nav-sub container--flex'>
+      <a class="logo flat-box"></a>
+      <ul class='switcher h-list'>
+        <li><a class="s-comment flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main container container--flex">
+      
+        
+        <a class="logo flat-box" target="_self" href='/'>
+          
+          
+            <i class='fas fa-home'></i>
+          
+          
+            CRainyDay
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='h-list'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  
+                    <i class='fas fa-folder-open fa-fw'></i>
+                  
+                  分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  
+                    <i class='fas fa-archive fa-fw'></i>
+                  
+                  归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  
+                    <i class='fas fa-tags fa-fw'></i>
+                  
+                  标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  
+                    <i class='fas fa-link fa-fw'></i>
+                  
+                  友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  
+                    <i class='fas fa-ellipsis-v fa-fw'></i>
+                  
+                  更多
+                </a>
+                
+                  <ul class="submenu">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/about/music.html
+                  
+                  
+                  
+                    id="aboutmusic.html"
+                  >
+                  
+                    <i class='fas fa-music fa-fw'></i>
+                  
+                  往后余生
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/bbs/
+                  
+                  
+                  
+                    id="bbs"
+                  >
+                  
+                    <i class='fas fa-comment-alt fa-fw'></i>
+                  
+                  留言
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  
+                    <i class='fas fa-info-circle fa-fw'></i>
+                  
+                  关于
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      
+        <div class="m_search">
+          <form name="searchform" class="form u-search-form">
+            <i class="icon fas fa-search fa-fw"></i>
+            <input type="text" class="input u-search-input" placeholder="搜索" />
+          </form>
+        </div>
+      
+
+			<ul class='switcher h-list'>
+				
+					<li><a class="s-search flat-btn fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li><a class="s-menu flat-btn fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<ul class="menu-phone navigation white-box">
+  
+  
+    <li>
+      <a class="flat-box" href=/
+        
+        
+        
+          id="home"
+        >
+        
+          <i class='fas fa-home fa-fw'></i>
+        
+        博客
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/archives/
+        
+        
+        
+          id="archives"
+        >
+        
+          <i class='fas fa-archive fa-fw'></i>
+        
+        归档
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/categories/
+        
+        
+        
+          id="categories"
+        >
+        
+          <i class='fas fa-folder-open fa-fw'></i>
+        
+        分类
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/friends/
+        
+        
+        
+          id="friends"
+        >
+        
+          <i class='fas fa-link fa-fw'></i>
+        
+        友链
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/bbs/
+        
+        
+        
+          id="bbs"
+        >
+        
+          <i class='fas fa-comment-alt fa-fw'></i>
+        
+        留言
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/about/
+        
+        
+        
+          id="about"
+        >
+        
+          <i class='fas fa-info-circle fa-fw'></i>
+        
+        关于
+      </a>
+    </li>
+  
+</ul>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box shadow floatable article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+      <a title='Eclipse常用配置' href='/eclipse_01.html'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more04.png'></a>
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/eclipse_01.html">
+        Eclipse常用配置
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+<div class='new-meta-item author'>
+  <a href="https://crainyday.gitee.io" rel="nofollow">
+    <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/avatar.png">
+    <p>crainyday</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/eclipse/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>eclipse</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-edit" aria-hidden="true"></i>
+    <p>发布于：2021年1月24日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard" aria-hidden="true"></i>
+      <p>字数：1.2k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+      <p>时长：5分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>Eclipse 的常用插件.</p>
+<p>Eclipse 的常用配置.</p>
+<p>以免重装Eclipse后忘记配置.</p>
+<a id="more"></a>
+<h2 id="一-Eclipse常用插件">一.Eclipse常用插件</h2>
+<ul>
+<li>注意: 点击 Help 中的 Eclipse Marketplace 即可打开 Eclipse 插件应用市场.</li>
+<li>使用 Eclipse Marketplace 安装插件较慢, 需要连接外网.</li>
+</ul>
+<h3 id="1-Spring-Tools插件">1.Spring Tools插件</h3>
+<blockquote>
+<p>  Spring开发的支持插件, 在搜索框搜索 <code>Spring Tools</code> 安装第一个即可. 不支持的话, 安装下一个.</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/eclipse/eclipse_010.png" alt="eclipse_010"></p>
+<h3 id="2-DevStyle">2.DevStyle</h3>
+<blockquote>
+<p>  DevStyle 插件可以修改 Eclipse 的主题, 可以改为 暗黑模式.</p>
+<p>在搜索框搜索 <code>DevStyle</code> 安装第一个即可.</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/eclipse/eclipse_014.png" alt="eclipse_014"></p>
+<h3 id="3-Eclipse-Class-Decompiler">3.Eclipse Class Decompiler</h3>
+<blockquote>
+<p>  Eclipse Class Decompiler, Java反编译插件.</p>
+<p>在搜索框搜索 <code>Eclipse Class Decompiler</code> 安装第一个即可.</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/eclipse/eclipse_015.png" alt="eclipse_015"></p>
+<ul>
+<li>在想要查看的 class 文件上右键单击, 然后依次选择: Open With→Class Decompiler Viewer 即可查看.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/eclipse/eclipse_016.png" alt="eclipse_016"></p>
+<h3 id="4-SVN插件">4.SVN插件</h3>
+<blockquote>
+<p>  在旧版的 Eclipse 中都集成了 SVN 插件, 不清楚哪个版本开始, Eclipse不再集成 SVN 插件, 需要的人要自己安装.</p>
+<p>  在搜索框搜索 <code>Subversive</code> 安装第一个即可. 当然, 也可以使用 Subclipse 插件.</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/eclipse/eclipse_011.png" alt="eclipse_011"></p>
+<ul>
+<li>①注意: 安装时选择下述安装即可.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/eclipse/eclipse_012.png" alt="eclipse_012"></p>
+<ul>
+<li>②等待安装结束并重启 Eclipse 后. 打开 Preferences 的 Version Control(Team)→SVN.</li>
+<li>③找到 SVN Connector, 你点一下 SVN Connector, 它会提示你缺少 Connector, 然后你安装所有的 SVN Connector 等待重启即可.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/eclipse/eclipse_013.png" alt="eclipse_013"></p>
+<h3 id="5-QuickImage">5.QuickImage</h3>
+<blockquote>
+<p>  可以更方便的在 Eclipse 中查看图片.</p>
+<p>  在搜索框搜索 <code>QuickImage</code> 安装第一个即可.</p>
+<p>打开图片时, 需要右键单击图片依次选择: Open With→QuickImage 打开查看即可.</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/eclipse/eclipse_017.png" alt="eclipse_017"></p>
+<h3 id="6-Autodetect-Encoding">6.Autodetect Encoding</h3>
+<blockquote>
+<p>  支持在 Eclipse 的右下角显示当前文件的编码格式和换行符格式. 当然, 支持在 编码 或 换行格式 上右键单击进行切换.</p>
+<p>  需要注意的是, 若是切换 文件的编码格式, 可能会导致部分文字的乱码(变为???).</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/eclipse/eclipse_018.png" alt="eclipse_018"></p>
+<h3 id="7-批量编码转换插件">7.批量编码转换插件</h3>
+<blockquote>
+<p>  支持多种编码之间的互转, 当切换操作系统时, 可以很方便的转换项目的编码.</p>
+<ul>
+<li>①从GitHub下载jar包, <a href="https://github.com/jiangxincode/com.lifesting.tool.encoding/releases" target="_blank" rel="noopener">https://github.com/jiangxincode/com.lifesting.tool.encoding/releases</a></li>
+<li>②将下载的jar放到你的 Eclipse 软件的 plugins 目录下.</li>
+<li>③选择你要转换的项目, 右键单击后, 点击 properties, 再点击 Convert Setting, 之后添加转换规则.</li>
+<li>④选择你要转换的项目, 在项目的 src 目录上右键单击, 再点击 <code>Lifesting Tools</code> → <code>Set Encoding</code>.</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="二-Eclipse常用Preferences">二.Eclipse常用Preferences</h2>
+<h3 id="1-添加JDK环境">1.添加JDK环境</h3>
+<blockquote>
+<p>  依次找到 Java→Installed JREs, Add 你安装的JDK即可.</p>
+</blockquote>
+<ul>
+<li>①选择 Standard VM</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/eclipse/eclipse_004.png" alt="eclipse_004"></p>
+<ul>
+<li>②选择你的 JDK 安装路径, Finish 即可.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/eclipse/eclipse_005.png" alt="eclipse_005"></p>
+<ul>
+<li>③当你有多个 JRE 环境时, 你可以切换 Eclipse 默认的 JDK 版本. 切换后保存应用即可.</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/eclipse/eclipse_006.png" alt="eclipse_006"></p>
+<ul>
+<li>④如果你切换了Workspace默认的JDK版本, 你需要修改 JDK 编译 level:</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/eclipse/eclipse_007.png" alt="eclipse_007"></p>
+<hr>
+<h3 id="2-修改编码为UTF-8">2.修改编码为UTF-8</h3>
+<h4 id="①Content-Types">①Content Types</h4>
+<blockquote>
+<p>  依次找到 General → Content Types 中的 Text. 将其中的:</p>
+<ul>
+<li>Java Properties File</li>
+<li>JSP</li>
+</ul>
+<p>等的 Default encoding 修改为 <code>UTF-8</code>.</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/eclipse/eclipse_001.png" alt="eclipse_001"></p>
+<h4 id="②Spelling">②Spelling</h4>
+<blockquote>
+<p>  依次找到 General →Editors→Text Editors →Spelling, 修改编码格式为  <code>UTF-8</code> 即可.</p>
+<p>在这里还可以使用用户自定义的字典, 用于 Eclipse 检查英文单词(变量)的拼写.</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/eclipse/eclipse_002.png" alt="eclipse_002"></p>
+<h4 id="③Workspace">③Workspace</h4>
+<blockquote>
+<p>  依次找到 General→Workspace, 修改工作空间的默认编码为  <code>UTF-8</code> , 修改换行符样式为 Unix 即可.</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/eclipse/eclipse_003.png" alt="eclipse_003"></p>
+<h4 id="④SQL">④SQL</h4>
+<blockquote>
+<p>  依次找到 Data Management→SQL Development, 将其中的:</p>
+<ul>
+<li>Execution Plan View Options</li>
+<li>SQL Results View Options→Export Format Options</li>
+</ul>
+<p>中的编码格式均改为  <code>UTF-8</code> .</p>
+</blockquote>
+<h4 id="⑤Web">⑤Web</h4>
+<blockquote>
+<p>  依次找到 Web 中的:</p>
+<ul>
+<li>CSS Files</li>
+<li>HTML Files</li>
+<li>JSP Files</li>
+</ul>
+<p>将其中的 Encoding 改为  <code>UTF-8</code> 保存应用即可.</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/eclipse/eclipse_008.png" alt="eclipse_008"></p>
+<h4 id="⑥XML">⑥XML</h4>
+<blockquote>
+<p>  依次找到 XML→XML Files, 将其中的 Encoding 改为  <code>UTF-8</code> 保存应用即可.</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/eclipse/eclipse_009.png" alt="eclipse_009"></p>
+<hr>
+<h3 id="3-Maven配置">3.Maven配置</h3>
+<blockquote>
+<ul>
+<li>①下载最新的maven, <a href="http://maven.apache.org/" target="_blank" rel="noopener">Maven官网</a>.</li>
+<li>②修改Maven的conf目录的 settings.xml 配置文件:</li>
+</ul>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--可以修改localRepository节点的值切换Maven本地仓库路径--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>/path/to/local/repo<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--①在 mirrors 节点添加下载镜像地址--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span>&gt;</span>aliyunmaven<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>*<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>阿里云公共仓库<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url</span>&gt;</span>https://maven.aliyun.com/repository/public<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--②在 profile 节点添加如下内容--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span>&gt;</span>jdk-1.8<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">activation</span>&gt;</span></span><br><span class="line">        	<span class="tag">&lt;<span class="name">activeByDefault</span>&gt;</span>true<span class="tag">&lt;/<span class="name">activeByDefault</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">jdk</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">jdk</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">activation</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">        	<span class="tag">&lt;<span class="name">maven.compiler.source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.source</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">maven.compiler.target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.target</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">maven.compiler.compilerVersion</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.compilerVersion</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--上述配置可以使得用Maven构建的项目使用JDK1.8--&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>③在 Eclipse 中, 依次点击 Preferences→Maven→Installations, 添加你的 Maven:</li>
+</ul>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/eclipse/eclipse_019.png" alt="eclipse_019"></p>
+<blockquote>
+<ul>
+<li>④在 Eclipse 中, 依次点击 Preferences→Maven→User Settings, 将配置文件修改为你在②中修改的 settings.xml</li>
+</ul>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/eclipse/eclipse_020.png" alt="eclipse_020"></p>
+<h3 id="4-高级内容提示">4.高级内容提示</h3>
+<blockquote>
+<p>  依次点击 Preferences→Java→Editor→Content Assist, 如下图所示, 填上所有的字母后, 点击保存应用即可.</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/eclipse/eclipse_021.png" alt="eclipse_021"></p>
+<h3 id="5-Server">5.Server</h3>
+<blockquote>
+<p>  依次点击 Preferences→Server→Runtime Environments, 如下图所示, 再点击 Add 后, 选择你的 Server 版本, 之后选择你的 Server 路径, 之后点击 Finish 保存应用即可.</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/eclipse/eclipse_022.png" alt="eclipse_022"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/eclipse/eclipse_023.png" alt="eclipse_023"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/eclipse/eclipse_024.png" alt="eclipse_024"></p>
+
+          
+            <br>
+            
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://crainyday.gitee.io/eclipse_01.html>https://crainyday.gitee.io/eclipse_01.html</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <fancybox><img src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/alipay.png'
+        
+          height='64px'
+        ></fancybox>
+      
+    
+      
+        <fancybox><img src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/wechat.png'
+        
+          height='64px'
+        ></fancybox>
+      
+    
+  </div>
+</section>
+
+  
+
+
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-26T14:52:43+08:00">
+  <a class='notlink'>
+    <i class="fas fa-save" aria-hidden="true"></i>
+    <p>更新于：2021年2月26日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/eclipse/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i><p>eclipse</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard" aria-hidden="true"></i>
+      <p>字数：1.2k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+      <p>时长：5分钟</p>
+    </a>
+  </div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://crainyday.gitee.io/eclipse_01.html&title=Eclipse常用配置 - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more04.png&summary=Eclipse 的常用插件.
+Eclipse 的常用配置.
+以免重装Eclipse后忘记配置."
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://crainyday.gitee.io/eclipse_01.html&title=Eclipse常用配置 - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more04.png&summary=Eclipse 的常用插件.
+Eclipse 的常用配置.
+以免重装Eclipse后忘记配置."
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://crainyday.gitee.io/eclipse_01.html&title=Eclipse常用配置 - CRainyDay&pics=https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/more/more04.png&summary=Eclipse 的常用插件.
+Eclipse 的常用配置.
+以免重装Eclipse后忘记配置."
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a><img src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/lazyload.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAAD4CAAAAADkunTXAAACTUlEQVR42u3aQW7DMAwEQP//0+0DisDkii4SZnxzoVoc9bIVef186XOBg4ODg4Mvgl/h8+r3/2z0Yv3Lwpr7tesFBwcHBwdfCC8HgCLkrvDq+rv92/WCg4ODg4MvhlcDRHXD7vceXw8ODg4ODg5+pYGmezDpd8DBwcHBwcH7Fwlpo6D6PXBwcHBwcPC5hsJUQ6B6MG/TSQEHBwcHB38j+OmA33+/jw34gYODg4ODfzD89JlqAHSDSVwvODg4ODj4IvhdYdONhu73x/cBBwcHBwdfDD9t5HcBU89YJwUcHBwcHPyD4NVgUX2vBot0oOB0HTg4ODg4+EZ4t2GQNvCr+3XXxwEGHBwcHBz8g+HVi4g0wKQNie6gQDnggIODg4ODL4KfBojHLgyGLizKyQ0cHBwcHPwD4dUCpgcFptaDg4ODg4OD9wfp0oDxVBAq/xwcHBwcHHwhvHvxfzrY123sp3WCg4ODg4NvhleDxFTDf+pg0oFCcHBwcHDwTfA0iJyCTwf64j8UODg4ODj4Inh6od9tQHT3m24kgIODg4ODb4ang3vdAJIGm3SAARwcHBwc/Bvgp//4P9VYSBsaL+sABwcHBwdfBD8NCOnFQ1x4cf/yYAA4ODg4OPgCeNp4P70gSAf10oMHBwcHBwffDJ+6UHiq0dANVLcXEeDg4ODg4F8MT99PAdUAAw4ODg4ODj4HqRbeBZUPHhwcHBwcfDE8vTDorusGk9PgBA4ODg4OvhmeNvjTg0gbCN2DBQcHBwcH3wz/tgccHBwcHHzB8wsRPkEbwNUuPwAAAABJRU5ErkJggg==">
+          </div>
+        </div>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/Ubuntu_000.html'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>记录一次Ubuntu痛苦的重装之旅</p>
+                <p class='content'>本篇主要内容:
+一定要看的安装前言, 非常值得一看.
+安装ubuntu前的准备.
+安装ubuntu系统.
+ubuntu系统的一些基础配置.
+搭建ubuntu常用的软件环境(安装ubuntu常用软...</p>
+              </a>
+            
+            
+              <a class='next' href='/SSM.html'>
+                <p class='title'>Maven下的SSM整合<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>在Eclipse下使用Maven创建和管理SSM项目.
+
+1.使用Maven搭建JavaWeb项目
+
+  具体搭建方法: 创建Maven版的Web工程
+
+2.使用Maven导入SSM框架所需ja...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      
+    </div>
+  </section>
+
+
+  
+
+
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments shadow floatable">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Eclipse常用配置',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+
+<section class="widget grid shadow floatable desktop mobile">
+  
+  <header>
+    
+      <i class="fas fa-map-signs fa-fw" aria-hidden="true"></i><span class='name'>实用文档</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="grid navigation fixed">
+      
+        <a class="flat-box" title="/maven_05.html" href="/maven_05.html"
+          
+          
+          id="maven_05.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Maven工程
+        </a>
+      
+        <a class="flat-box" title="/Flask.html" href="/Flask.html"
+          
+          
+          id="Flask.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Flask应用
+        </a>
+      
+        <a class="flat-box" title="/Hexo.html" href="/Hexo.html"
+          
+          
+          id="Hexo.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          Gitee搭站
+        </a>
+      
+        <a class="flat-box" title="/Ubuntu_006.html" href="/Ubuntu_006.html"
+          
+          
+          id="Ubuntu_006.html">
+          
+            <i class="fas fa-file fa-fw" aria-hidden="true"></i>
+          
+          v2ray
+        </a>
+      
+    </div>
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow floatable desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一-Eclipse常用插件"><span class="toc-text">一.Eclipse常用插件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Spring-Tools插件"><span class="toc-text">1.Spring Tools插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-DevStyle"><span class="toc-text">2.DevStyle</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Eclipse-Class-Decompiler"><span class="toc-text">3.Eclipse Class Decompiler</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-SVN插件"><span class="toc-text">4.SVN插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-QuickImage"><span class="toc-text">5.QuickImage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-Autodetect-Encoding"><span class="toc-text">6.Autodetect Encoding</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-批量编码转换插件"><span class="toc-text">7.批量编码转换插件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二-Eclipse常用Preferences"><span class="toc-text">二.Eclipse常用Preferences</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-添加JDK环境"><span class="toc-text">1.添加JDK环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-修改编码为UTF-8"><span class="toc-text">2.修改编码为UTF-8</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#①Content-Types"><span class="toc-text">①Content Types</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#②Spelling"><span class="toc-text">②Spelling</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#③Workspace"><span class="toc-text">③Workspace</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#④SQL"><span class="toc-text">④SQL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#⑤Web"><span class="toc-text">⑤Web</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#⑥XML"><span class="toc-text">⑥XML</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Maven配置"><span class="toc-text">3.Maven配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-高级内容提示"><span class="toc-text">4.高级内容提示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Server"><span class="toc-text">5.Server</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix ">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='true'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='2709912289'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="mailto:crainyday@qq.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/crainyday"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=1794783182"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        <div id='sitetime'></div>
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作为主题
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://crainyday.gitee.io">Copyright © 2019-2021 CRainyDay</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js" async></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_01.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_02.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_03.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_04.jpg", "https://cdn.jsdelivr.net/gh/crainyday/blog@master/imgs/bg/blog_bg_05.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js" async></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js" async></script>
+
+  
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "47GAhNwwbbNreaJdvDNWHhOo-gzGzoHsz",
+    appKey: "pndiLFAmJvnhcIutpj4HIj6t",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    visitor: 'false',
+    highlight:'true'
+  })
+  </script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    function on_success(){
+      let $btn = $('.highlight .code pre');
+      console.log($btn);
+    }
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copyed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-clipboard-check');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPYED';
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-exclamation-triangle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "[object Object]";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/sitetime.min.js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/crainyday/blog@master/js/clicklove.min.js'></script>
+
+
+  <script>setLoadingBarProgress(100);</script>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
+</html>
